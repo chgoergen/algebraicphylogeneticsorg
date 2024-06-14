@@ -7,6 +7,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    justify-content: center;
 }
 
 header {
@@ -73,7 +74,7 @@ a:hover {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
     margin: 1rem 0;
 }
@@ -86,10 +87,14 @@ a:hover {
 }
 
 .span-1 {
-    grid-column: span 1;
+    grid-column: span 3;
 }
 
 .span-2 {
+    grid-column: span 6;
+}
+
+.span-3 {
     grid-column: span 2;
 }
 
@@ -97,4 +102,9 @@ a:hover {
     border-bottom: 1px solid #d3d3d3;
     padding-bottom: 5px;
     margin-bottom: 10px;
+}
+
+
+div {
+    text-align: center;
 }
