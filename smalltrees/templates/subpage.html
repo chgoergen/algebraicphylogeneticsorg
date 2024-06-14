@@ -7,21 +7,25 @@
 
 <div class="grid-container">
     {% if details.phylogenetic_tree %}
-    <div class="module span-1">
+    <div class="module span-3">
         <h3>Phylogenetic tree</h3>
-        <p>{{ details.phylogenetic_tree }}</p>
+        <p>
+        <script type="text/tikz">
+            {{ details.phylogenetic_tree }}
+        </script>
+        </p>
     </div>
     {% endif %}
 
     {% if details.evolutionary_model %}
-    <div class="module span-2">
+    <div class="module span-3">
         <h3>Evolutionary model</h3>
         <p>{{ details.evolutionary_model }}</p>
     </div>
     {% endif %}
 
     {% if details.summary %}
-    <div class="module span-1">
+    <div class="module span-3">
         <h3>Summary</h3>
         <p>{{ details.summary }}</p>
     </div>
