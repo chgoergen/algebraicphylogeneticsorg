@@ -1,0 +1,82 @@
+trees:
+  - name: "Tree 1"
+    image: "trees/3-taxa.gif"
+    models:
+      - name: "CFN"
+        dim: "4"
+        deg: "1"
+        np: "4"
+        na: "4"
+        # is na == nq?
+        sD: "-"
+        sd: "-"
+        MLdeg: "1"
+        EDdeg: "1"
+        details:
+          phylogenetic_tree: |-
+            Unrooted phylogenetic tree with three leaves.
+          evolutionary_model: "Jukes Cantor model with transition matrices..."
+          summary: "Dimension: D, Degree: d, ..."
+          probability_parametrization: |-
+            pAAA = a1*a2*a3 + 3*b1*b2*b3
+            pAAC = 3*(a1*a2*b3 + a3*b1*b2 + 2*b1*b2*b3)
+            pACA = 3*(a1*a3*b2 + a2*b1*b3 + 2*b1*b2*b3)
+            pACC = 3*(a1*b2*b3 + a2*a3*b1 + 2*b1*b2*b3)
+            pACG = 6*(a1*b2*b3 + a2*b1*b3 + a3*b1*b2 + b1*b2*b3)
+          equivalent_classes_prob: "Equivalent classes of probability parametrization"
+          fourier_parametrization: "Detailed Fourier parametrization"
+          equivalent_classes_fourier: "Equivalent classes of Fourier parametrization"
+          invariants: "Invariants in Fourier coordinates"
+          grobner_basis: "Grobner basis of ideal of invariants"
+          specialized_fourier_transform: "Detailed specialized Fourier transform"
+      - name: "JK69"
+        dim: "4"
+        deg: "3"
+        np: "5"
+        na: "5"
+        # is na == nq?
+        sD: "2"
+        sd: "3"
+        MLdeg: "23"
+        EDdeg: "13"
+        details:
+          phylogenetic_tree: |-
+            Unrooted phylogenetic tree with three leaves.
+          evolutionary_model: "Jukes Cantor model with transition matrices:\\[ M_j = \\begin{pmatrix} a_i & b_i & b_i & b_i \\\\ b_i & a_i & b_i & b_i \\\\ b_i & b_i & a_i & b_i \\\\ b_i & b_i & b_i & a_i \\end{pmatrix} \\]"
+          summary: "Dimension: D, Degree: d, ..."
+          probability_parametrization: |-
+            pAAA = a1*a2*a3 + 3*b1*b2*b3
+            pAAC = 3*(a1*a2*b3 + a3*b1*b2 + 2*b1*b2*b3)
+            pACA = 3*(a1*a3*b2 + a2*b1*b3 + 2*b1*b2*b3)
+            pACC = 3*(a1*b2*b3 + a2*a3*b1 + 2*b1*b2*b3)
+            pACG = 6*(a1*b2*b3 + a2*b1*b3 + a3*b1*b2 + b1*b2*b3)
+          equivalent_classes_prob: "Equivalent classes of probability parametrization"
+          fourier_parametrization: "Detailed Fourier parametrization"
+          equivalent_classes_fourier: "Equivalent classes of Fourier parametrization"
+          invariants: "Invariants in Fourier coordinates"
+          grobner_basis: "Grobner basis of ideal of invariants"
+          specialized_fourier_transform: "Detailed specialized Fourier transform"
+  - name: "Tree 2"
+    image: "trees/4-taxa-1.gif"
+    models:
+      - name: "CFN"
+        dim: "dim value"
+        deg: "deg value"
+        np: "np value"
+        na: "na value"
+        sD: "sD value"
+        sd: "sd value"
+        MLdeg: "MLdeg value"
+        EDdeg: "EDdeg value"
+        details:
+          phylogenetic_tree: "Unrooted binary phylogenetic tree with 3 leaves"
+          evolutionary_model: "Jukes Cantor model with transition matrices..."
+          summary: "Dimension: D, Degree: d, ..."
+          probability_parametrization: "Detailed probability parametrization"
+          equivalent_classes_prob: "Equivalent classes of probability parametrization"
+          fourier_parametrization: "Detailed Fourier parametrization"
+          equivalent_classes_fourier: "Equivalent classes of Fourier parametrization"
+          invariants: "Invariants in Fourier coordinates"
+          grobner_basis: "Grobner basis of ideal of invariants"
+          specialized_fourier_transform: "Detailed specialized Fourier transform"
+  # Repeat for other trees and models...

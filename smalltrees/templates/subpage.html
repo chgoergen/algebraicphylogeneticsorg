@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}DSTNAP - {{ model_name }} Details{% endblock %}
+
+{% block content %}
+<h2>{{ tree_name }} - {{ model_name }}</h2>
+
+<div class="grid-container">
+    {% if details.phylogenetic_tree %}
+    <div class="module span-1">
+        <h3>Phylogenetic tree</h3>
+        <p>{{ details.phylogenetic_tree }}</p>
+    </div>
+    {% endif %}
+
+    {% if details.evolutionary_model %}
+    <div class="module span-2">
+        <h3>Evolutionary model</h3>
+        <p>{{ details.evolutionary_model }}</p>
+    </div>
+    {% endif %}
+
+    {% if details.summary %}
+    <div class="module span-1">
+        <h3>Summary</h3>
+        <p>{{ details.summary }}</p>
+    </div>
+    {% endif %}
+
+    {% if details.probability_parametrization %}
+    <div class="module span-1">
+        <h3>Probability parametrization</h3>
+        <p>{{ details.probability_parametrization }}</p>
+    </div>
+    {% endif %}
+
+    {% if details.equivalent_classes_prob %}
+    <div class="module span-1">
+        <h3>Equivalent classes of probability parametrization</h3>
+        <p>{{ details.equivalent_classes_prob }}</p>
+    </div>
+    {% endif %}
+
+    {% if details.fourier_parametrization %}
+    <div class="module span-1">
+        <h3>Fourier parametrization</h3>
+        <p>{{ details.fourier_parametrization }}</p>
+    </div>
+    {% endif %}
+
+    {% if details.equivalent_classes_fourier %}
+    <div class="module span-1">
+        <h3>Equivalent classes of Fourier parametrization</h3>
+        <p>{{ details.equivalent_classes_fourier }}</p>
+    </div>
+    {% endif %}
+
+    {% if details.invariants %}
+    <div class="module span-1">
+        <h3>Invariants in Fourier coordinates</h3>
+        <p>{{ details.invariants }}</p>
+    </div>
+    {% endif %}
+
+    {% if details.grobner_basis %}
+    <div class="module span-1">
+        <h3>Grobner basis of ideal of invariants</h3>
+        <p>{{ details.grobner_basis }}</p>
+    </div>
+    {% endif %}
+
+    {% if details.specialized_fourier_transform %}
+    <div class="module span-2">
+        <h3>Specialized Fourier transform</h3>
+        <p>{{ details.specialized_fourier_transform }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

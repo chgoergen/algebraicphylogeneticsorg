@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}DSTNAP{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+      };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="/notation">Links to Notation</a></li>
+                <li><a href="https://docs.oscar-system.org/dev/">The OSCAR Package/Documentation</a></li>
+                <li><a href="https://www.coloradocollege.edu/aapps/ldg/small-trees/">The Previous Website</a></li>
+                <li><a href="#">Authors and Papers</a></li>
+            </ul>
+        </nav>
+        
+    <h1><a href="/">SOME CATCHY AND SHORT NAME (DSTNAP)</a></h1>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
