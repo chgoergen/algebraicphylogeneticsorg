@@ -22,9 +22,9 @@ def subpage(tree_name, model_name):
                     return render_template('subpage.html', tree_name=tree_name, model_name=model_name, details=model['details'])
     return "Page not found", 404
 
-@app.route('/about')
+@app.route('/references')
 def about():
-    return render_template('about.html')
+    return render_template('references.html')
 
 @app.route('/notation')
 def notation():

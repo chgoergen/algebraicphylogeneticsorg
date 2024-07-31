@@ -1,58 +1,30 @@
 {% extends "base.html" %}
 
 
-
 {% block content %}
-<h2>Notation</h2>
-<div style="text-align: justify;">
+<h2>Notions and notation</h2>
+<div style="text-align: left;">
     <p></p>
     <dl>
     <P>
-    <dt><i><b>D</b></i></dt><dd>  The dimension of the model. This corresponds to the least number of parameters needed to specify
-    the model plus one. This numerical invariant is actually the algebraic dimension of the toric ideal.
-    After slicing the corresponding variety with the hyperplane given by the polynomial obtained from adding all indeterminates 
-    <i>q<sub>j</sub> </i> minus 1, the dimension drops by one 
-    giving exactly the minimum number of parameters needed to specify the model.  This algebraic operation corresponds to considering
-    only the points in the variety whose coordinates sum up to 1.
+    <dt><b>Labelling conventions</b></dt><dd>  
     <P>
-    </dd><dt><i><b>d</b></i></dt><dd> The degree of the model.  Algebraically, this is defined as the number of
-    points in the intersection of the model and a generic (i.e. "random") subspace of complementary dimension. This is one of the most
-    important numerical invariants of a variety. In particular, when the variety is zero-dimensional (a collection of points), this numerical 
-    invariant gives the actual number of points. 
+    If $T$ is a rooted tree, there is a distinguished vertex of $T$ called the root. The tree $T$ is drawn with the root at the top and all its children and their respective children below, with the leaves on the bottom-most level. The edges are numbered $e_1, e_2, ...$ starting at the upper left hand corner, proceeding left to right and top to bottom. The leaves are labeled with the numbers $1,2,3,...$ starting with the left-most leaf and proceeding left to right.
     <P>
-    </dd><dt><i><b>E</b></i></dt><dd> The largest degree of a generator in the degree reverse lexicographic reduced Gr&ouml;bner
-    basis. 
-    <P>
-    </dd><dt><i><b>e</b></i></dt><dd> 
-    The largest degree of an element in a minimal generating set for the ideal of phylogenetic invariants.
-    This could be thought as a measure of the complexity of the model. 
-    <P>
-    </dd><dt><i><b>M</b></i></dt><dd> The cardinality of the <em>degree reverse lexicographic reduced  Gr&ouml;bner basis</em> of 
-    the ideal of phylogenetic invariants. We always use the ordering <i>q<sub>1</sub> &gt; q<sub>2</sub> &gt; q<sub>3</sub> &gt; &#183;&#183;&#183;</i>.
-    <P>
-    </dd><dt><i><b>mld</b></i></dt><dd> The maximum likelihood degree of the model. This is the degree of the <em>ML equations</em> of the model. 
-    Given some data and a model, the likelihood function is a rational function on the corresponding (projective) variety.  
-    The set of solutions to the ML equations consists of all critical points of the Likelihood function. These gives an algebraic
-    algorithm to compute symbolically <b>all</b> local maxima of the Likelihood function. the ML degree is a measure of how many 
-    local maxima are there. This numerical invariant should be useful when applying hill-climbing algorithms to compute local
-    maxima if it is used as a measure of confidence on the chances that the local maxima approximated is actually a global maximum.   
-    <P>
-    </dd><dt><i><b>&#181;</b></i></dt><dd> The cardinality of the smallest set of generators
-    that define the ideal of phylogenetic invariants.
-    <P>
-    </dd><dt><i><b>np</b></i></dt><dd>  Number of equivalences classes of the probability coordinates.
-    <P>
-    </dd><dt><i><b>nq</b></i></dt><dd>  Number of equivalence classes of Fourier coordinates without
-    counting class 0.  This is also the dimension of the smallest linear space that contains the model.
-    <P>
-    </dd><dt><i><b>p<sub>i</sub></b></i></dt><dd> The sum of all probability coordinates in the <i>i</i>th equivalence class. These indeterminates form 
-    a set of sufficient statistics for the given model.  
-    <P>
-    </dd><dt><i><b>q<sub>j</sub></b></i></dt><dd> The average of all Fourier coordinates in the <i>j</i>th equivalence class.
-    <P>
-    </dd><dt><i><b>sD</b></i></dt><dd>  The dimension of the set of singular points of the model. The singular locus of a model
-    is very important to understand the geometry of the model. In particular, it is necessary for the ML degree computation.
-    <P>
-    </dd><dt><i><b>sd</b></i></dt><dd>  The algebraic degree of the set of singular points of the model.
-    </dd></dl></div>
+    If $T$ is an unrooted tree, it is drawn with the leaves on a circle and all inner edges and vertices within that circle. The edges of $T$ are numbered $e_1,e_2,...$ starting at the upper left hand corner of the figure and proceeding left to right and top to bottom. The leaves are labeled with the numbers $1,2,3,...$ starting at the first leaf strictly left of the 12 o'clock position and proceeding counterclockwise around the perimeter of the circle. 
+    <P> Here's a test tikz treeeeee!
+    <script type="text/tikz">
+        \begin{tikzpicture}[%
+            inner/.style={draw,circle,inner sep=1pt,fill=black},
+            leaf/.style={draw,circle,inner sep=2pt}]
+        \node (root) [inner] at (0,0) {};
+        \node (leaf1) [leaf,label=left:$X_1$] at (-1,0) {};
+        \node (leaf2) [leaf,label=below:$X_2$] at (1,-1) {};
+        \node (leaf3) [leaf,label=right:$X_3$] at (1,1) {};
+        \draw (root) -- node [above] {$M_1$} (leaf1);
+        \draw (root) -- node [below=2pt,pos=0.4] {$M_2$} (leaf2);
+        \draw (root) -- node [below=3pt,pos=0.8] {$M_3$} (leaf3);
+        \end{tikzpicture}
+    </script>
+    
 {% endblock %}
