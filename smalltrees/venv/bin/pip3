@@ -1,4 +1,4 @@
-#!/home/christiane/Dropbox/shared/Arbeit/MTMVC/Website/arbusculae/smalltrees/venv/bin/python3
+#!/home/goergen/smalltrees/website/smalltreeswebsite/smalltrees/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>About</h2>
+
+<div style="text-align: left;">
+  <p></p>
+  <dl>
+  <P>
+  <dt><b>Scope</b></dt><dd>  
+  <P>
+  This website presents an algebraic classification of small tree models in phylogenetics. It currently hosts data on twentysix trees, paired with five different model types. For each, we determine algebraic invariants which describe the model's geometry. These are listed in the table on the landing page. Mathematical details can be found on individual subpages for each tree and model.
+
+  We focus on providing thorough computational proof for every result. To achieve this, the website is supplemented by the <a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics/phylogenetics/">AlgebraicPhylogenetics.jl</a> software. The code is part of the <a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics">AlgebraicStatistics.jl</a> package in the <a href="https://docs.oscar-system.org">OSCAR project</a>, written in <a href="https://julialang.org">Julia</a>.
+
+  <dt><b>Background</b></dt><dd>  
+  <P>
+  The models studied here are the following.
+  Neaman
+  Jukes-Cantor 
+  Kimura 2
+  Kimura 3
+  General Markov
+
+The algebraic-geometry theory is based on
+
+
+<dt><b>Contribution</b></dt><dd>  
+  <P>
+  This website was set up and is currently maintained by 
+
+  <a href="https://sites.google.com/view/marinagarrotelopez">Marina Garrote-López</a>,
+  <a href="https://luisgarciapuente.github.io">Luis David Garcia Puente</a>,
+  <a href="https://sites.google.com/view/goergen">Christiane Görgen</a>, and
+  <a href="https://www.mardi4nfdi.de/community/help-desk">Tabea Bacher</a>.
+
+  Its design was adapted to fit our needs from <a href="https://www.fanography.info">fanography.info</a> thanks to <a href="https://axtimhaus.eu">Victor Zimmermann</a>
+
+  The source code is available on <a href="https://github.com/chgoergen/smalltreeswebsite">GitHub</a> under the <a href="https://choosealicense.com/licenses/mit">MIT License</a>. You can copy, use, and modify this project freely.
+
+  Want to contribute? Please do! You can join our team on GitHub by forking <a href="https://github.com/chgoergen/smalltreeswebsite">the repository this website is build on</a> or <a href="https://github.com/bkholler/Oscar.jl">our software package</a>, modifying the content at your leasure, and sending us a pull request.
+
+<dt><b>Citation</b></dt><dd>  
+  <P>
+
+You can cite this database as
+<div class="box">
+  <pre>
+  <code>
+@online{smalltrees,
+  author = {The algebraic-phylogenetics collaboration},
+  title = {A database of small tress and networks in algebraic phylogenetics},
+  year = 2024,
+  url = {http://www.algebraicphylogenetics.org},
+  urldate = {<span class="date-today">31 January 2023</span>}
+}
+  </code>
+  </pre>
+</div>
+
+{% endblock %}
