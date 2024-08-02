@@ -28,16 +28,13 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 80px;
+    margin-right: 35px;
+    margin-left: 35px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: black;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
 }
 
 table {
@@ -46,31 +43,31 @@ table {
 }
 
 th, td {
-    padding: 10px;
-    text-align: center;
+    font-weight: normal;
+    padding: 6px;
+    text-align: left;
     border: none;
+    margin-left: 6px;
 }
 
 th {
     background-color: #f2f2f2;
-    border-bottom: 2px solid black;
+    margin-bottom: 2px;
 }
 
 tr.tree-separator td {
-    border-top: 2px dashed black;
+    border-top: 1px dashed black;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
 tr.model-separator td {
-    border-top: 1px solid gray;
+    border-top: 1px dashed #f2f2f2;
 }
 
 a {
     color: green;
     text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 .grid-container {
@@ -81,10 +78,10 @@ a:hover {
 }
 
 .module {
-    border: 1px solid #ccc;
+    border: 1px solid #f2f2f2;
     padding: 1rem;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #f2f2f2;
 }
 
 .span-1 {
@@ -100,7 +97,7 @@ a:hover {
 }
 
 .module h3 {
-    border-bottom: 1px solid #d3d3d3;
+    border-bottom: 1px solid #f2f2f2;
     padding-bottom: 5px;
     margin-bottom: 10px;
 }
@@ -112,12 +109,11 @@ div {
 
 div.codebox {
     text-align: left;
-    padding: 5px;
-    text-padding: 10px;
-    border: 1px solid #CDCDCD;
+    padding: 2px;
+    text-padding: 2px;
+    border: 1px solid #f2f2f2;
     border-radius: 5px;
-    background-color: #F5F5F5;
-    box-shadow: 3px 3px 3px #0D47A1;
+    background-color: #f2f2f2;
     white-space: pre;
 }
 
@@ -125,4 +121,5 @@ div.codebox {
     font-family: monospace;
     margin: 2px;
     margin-right: 20px;
+    background-color: #f2f2f2;
 }

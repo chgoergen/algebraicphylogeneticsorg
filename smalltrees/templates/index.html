@@ -11,7 +11,7 @@
             <th>dim</th>
             <th>deg</th>
             <th>np</th>
-            <th>na</th>
+            <th>nq</th>
             <th>sD</th>
             <th>sd</th>
             <th>MLdeg</th>
@@ -21,12 +21,12 @@
     <tbody>
         {% for tree in trees %}
         <tr class="tree-separator">
-            <td rowspan="{{ tree.models|length }}"><img src="{{ url_for('static', filename=tree.image) }}" alt="{{ tree.name }}"></td>
+            <td rowspan="{{ tree.models|length }}"><script type="text/tikz",style="padding:100px">{{ tree.image }}</script></td>
             <td><a href="{{ url_for('subpage', tree_name=tree.name, model_name=tree.models[0].name) }}">{{ tree.models[0].name }}</a></td>
             <td><a href="#">{{ tree.models[0].dim }}</a></td>
             <td><a href="#">{{ tree.models[0].deg }}</a></td>
             <td><a href="#">{{ tree.models[0].np }}</a></td>
-            <td><a href="#">{{ tree.models[0].na }}</a></td>
+            <td><a href="#">{{ tree.models[0].nq }}</a></td>
             <td><a href="#">{{ tree.models[0].sD }}</a></td>
             <td><a href="#">{{ tree.models[0].sd }}</a></td>
             <td><a href="#">{{ tree.models[0].MLdeg }}</a></td>
@@ -38,7 +38,7 @@
             <td><a href="#">{{ model.dim }}</a></td>
             <td><a href="#">{{ model.deg }}</a></td>
             <td><a href="#">{{ model.np }}</a></td>
-            <td><a href="#">{{ model.na }}</a></td>
+            <td><a href="#">{{ model.nq }}</a></td>
             <td><a href="#">{{ model.sD }}</a></td>
             <td><a href="#">{{ model.sd }}</a></td>
             <td><a href="#">{{ model.MLdeg }}</a></td>
