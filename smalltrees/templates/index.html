@@ -10,10 +10,10 @@
             <th>Model</th>
             <th>dim</th>
             <th>deg</th>
-            <th>np</th>
-            <th>nq</th>
-            <th>sD</th>
-            <th>sd</th>
+            <th>number of <br> probability <br> coordinates</th>
+            <th>number of <br> Fourier <br> coordinates</th>
+            <th>dim of <br> Singular Locus</th>
+            <th>deg of <br> Singular Locus</th>
             <th>MLdeg</th>
             <th>EDdeg</th>
         </tr>
@@ -21,7 +21,7 @@
     <tbody>
         {% for tree in trees %}
         <tr class="tree-separator">
-            <td rowspan="{{ tree.models|length }}"><script type="text/tikz",style="padding:100px">{{ tree.image }}</script></td>
+            <td rowspan="{{ tree.models|length }}"><script type="text/tikz"; style="padding:100px;">{{ tree.image }}</script></td>
             <td><a href="{{ url_for('subpage', tree_name=tree.name, model_name=tree.models[0].name) }}">{{ tree.models[0].name }}</a></td>
             <td><a href="#">{{ tree.models[0].dim }}</a></td>
             <td><a href="#">{{ tree.models[0].deg }}</a></td>

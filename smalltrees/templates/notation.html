@@ -6,12 +6,34 @@
 <div style="text-align: left;">
     <p></p>
     <dl>
+    <P>  
+  <dt><b>Introduction</b></dt><dd>  
     <P>
+    The algebraic-geometry theory is based on results collected by Lior Pachter and Bernd Sturmfels (2005; Algebraic Statistics for computational biology. Cambridge University Press) and follow-up work. In particular, the 2006 version of this database is discussed in Chapter 15 "Catalog of Small Trees" in that book, written by Marta Casanellas, Luis David Garcia Puente, and Seth Sullivant.
+    <p>
+    The models studied here are the following.
+    <p>
+    <b>CFN or Cavender-Ferris-Neyman</b>
+    <p>
+    <b>JC69 or Jukes-Cantor:</b>
+    Jukes, Thomas H. and Charles R. Cantor (1969). "Evolution of protein molecules". In: Mammalian protein metabolism 3, pp. 21–132. <a hef="https://doi.org/10.1016/B978-1-4832-3211-9.50009-7">doi: 10.1016/B978-1-4832-3211-9.50009-7</a>
+    <p>
+    <b>K80 or Kimura 3:</b>
+    Kimura, Motoo (1980). "A simple method for estimating evolutionary rates of base substitutions through comparative studies of nucleotide sequences". In: Journal of Molecular Evolution 16(2), pp. 111–120. issn: 0022-2844. <a hef="https://doi.org/10.1007/BF01731581">doi: 10.1007/BF01731581</a>.
+    <p>
+    <b>K81 or Kimura 2:</b>
+    Kimura, Motoo (1981). "Estimation of evolutionary distances between homologous nucleotide sequences." In: Proceedings of the National Academy of Sciences 78(1), pp. 454–458. issn: 0027-8424. <a hef="https://doi.org/10.1073/pnas.78.1.454">doi: 10.1073/pnas.78.1.454</a>
+    <p>
+    <b>GM or General Markov:</b>
+    Allman, Elizabeth S., John A. Rhodes, and Amelia Taylor (2014). "A Semialgebraic Description of the General Markov Model on Phylogenetic Trees". In: SIAM Journal on Discrete Mathematics 28(2), pp. 736–755. issn: 0895-4801. <a hef="https://doi.org/10.1137/120901568">doi: 10.1137/120901568</a>. eprint: 1212.1200 (q-bio.PE).
+  
+  
     <dt><b>Labelling conventions</b></dt><dd>  
     <P>
     If $T$ is a rooted tree, there is a distinguished vertex of $T$ called the root. The tree $T$ is drawn with the root at the top and all its children and their respective children below, with the leaves on the bottom-most level. The edges are numbered $e_1, e_2, ...$ starting at the upper left hand corner, proceeding left to right and top to bottom. The leaves are labeled with the numbers $1,2,3,...$ starting with the left-most leaf and proceeding left to right.
     <P>
     If $T$ is an unrooted tree, it is drawn with the leaves on a circle and all inner edges and vertices within that circle. The edges of $T$ are numbered $e_1,e_2,...$ starting at the upper left hand corner of the figure and proceeding left to right and top to bottom. The leaves are labeled with the numbers $1,2,3,...$ starting at the first leaf strictly left of the 12 o'clock position and proceeding counterclockwise around the perimeter of the circle. 
+    leaf i has ingoing edge  ei, labeled Mi; for inrerior nodes proceed top left to bottom righte
     <P> Here's a test tikz treeeeee!
     <script type="text/tikz">
         \begin{tikzpicture}[%
@@ -27,7 +49,7 @@
         \end{tikzpicture}
     </script>
     And here's the same tree in julia cooooode
-    <div class="box">
+    <div class="codebox">
         <pre>
         <code>
         graph_from_edges(Directed,[[4,1],[4,2],[4,3]])
