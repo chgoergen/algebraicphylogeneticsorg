@@ -1,41 +1,52 @@
-body {
-    font-family: Arial, sans-serif;
-}
-
 .container {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
-    padding: 20px;
     text-align: center;
     justify-content: center;
 }
 
-header {
-    margin-bottom: 20px;
-}
-
 nav {
     background-color: #f2f2f2;
-    margin-bottom: 3px;
-    margin-top: 3px;
-    border-radius: 2px;
+    margin-bottom: 0rem;
+    margin-top: 0.4rem;
+    border-radius: 0.4rem;
 }
-
 nav ul {
     list-style-type: none;
     padding: 0;
 }
-
 nav ul li {
     display: inline;
-    margin-right: 35px;
-    margin-left: 35px;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
-
 nav ul li a {
-    text-decoration: none;
     color: black;
 }
+
+h1 {
+    display: block;
+    color: #228B22;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+
+h2 {
+    display: block;
+    color: black;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    font-weight: bold;
+  }
 
 table {
     width: 100%;
@@ -44,7 +55,7 @@ table {
 
 th, td {
     font-weight: normal;
-    padding: 6px;
+    padding: 0.2rem;
     text-align: left;
     border: none;
     margin-left: 1rem;
@@ -65,6 +76,8 @@ tr.tree-separator td {
 tr.model-separator td {
     border-top: 1px dashed #f2f2f2;
 }
+
+tr:hover td {background:#f2f2f2;}
 
 a {
     color: #228B22;
@@ -107,9 +120,17 @@ div {
 
 div.codebox {
     text-align: left;
-    padding: 2px;
+    padding: 0.5rem;
     border: none;
-    background-color: #f2f2f2;
     white-space: 0px;
     font-family: monospace;
+    border-radius: 2px;
 }
+
+pre code {
+    background-color: #f2f2f2;
+    border: none;
+    display: block;
+    white-space: 0px;
+    margin: 0;
+  }

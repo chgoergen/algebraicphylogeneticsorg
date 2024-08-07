@@ -1,22 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>About</h2>
+<h2>About this project</h2>
 
 <div style="text-align: left;">
-  <p></p>
   <dl>
-  <P>
   <dt><b>Scope</b></dt><dd>  
   <P>
-  This website presents an algebraic classification of small tree models in phylogenetics. It currently hosts data on twentysix trees, paired with five different model types. For each, we determine algebraic invariants which describe the model's geometry. These are listed in the table on the landing page. Mathematical details can be found on individual subpages for each tree and model.
+  This website presents an algebraic classification of small tree and network models in phylogenetics. It currently hosts data on twentysix trees, paired with five different model types. These are listed in the table on the landing page. Mathematical details can be found on individual subpages for each tree and model.
 
   We focus on providing thorough computational proof for every result. To achieve this, the website is supplemented by the <a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics/phylogenetics/">AlgebraicPhylogenetics.jl</a> software. The code is part of the <a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics">AlgebraicStatistics.jl</a> package in the <a href="https://docs.oscar-system.org">OSCAR project</a>, written in <a href="https://julialang.org">Julia</a>.
 
-<dt><b>Contribution</b></dt><dd>  
+  The page <a href="/notation">Notions and notation</a> gives a mathematical introduction to the topic, and presents code snippets in a running example. You can download all our data under this <a href="#">link</a>, in the <a href="https://link.springer.com/chapter/10.1007/978-3-031-64529-7_25">.mrdi</a> format.
+
+  <dt><b>Contribution</b></dt><dd>  
   <P>
   This website was set up and is currently maintained by 
-
   <a href="https://sites.google.com/view/marinagarrotelopez">Marina Garrote-López</a>,
   <a href="https://luisgarciapuente.github.io">Luis David Garcia Puente</a>,
   <a href="https://sites.google.com/view/goergen">Christiane Görgen</a>, and
@@ -24,38 +23,33 @@
 
   The source code is available on <a href="https://github.com/chgoergen/smalltreeswebsite">GitHub</a> under the <a href="https://choosealicense.com/licenses/mit">MIT License</a>. You can copy, use, and modify this project freely.
 
-  Want to contribute? Please do! You can join our team on GitHub by forking <a href="https://github.com/chgoergen/smalltreeswebsite">the repository this website is build on</a> or <a href="https://github.com/bkholler/Oscar.jl">our software package</a>, modifying the content at your leasure, and sending us a pull request.
+  Want to contribute? Please do! You can join our team on GitHub by forking <a href="https://github.com/chgoergen/smalltreeswebsite">the repository this website is build on</a> or <a href="https://github.com/bkholler/Oscar.jl">our software package</a>, modifying the content at your leisure, and sending us a pull request.
 
-<dt><b>Citation</b></dt><dd>  
+  <dt><b>Citation</b></dt><dd>  
   <P>
-
-You may cite this database as
-<div class="box">
+  You may cite this database as
+  <div class="codebox">
   <pre>
   <code>
-@online{smalltrees,
-  author = {The algebraic-phylogenetics collaboration},
-  title = {A database of small tress and networks in algebraic phylogenetics},
-  year = 2024,
-  url = {http://www.algebraicphylogenetics.org},
-  urldate = {}
-}
+  @online{smalltrees,
+    author = {The algebraic-phylogenetics collaboration},
+    title = {A database of small tress and networks in algebraic phylogenetics},
+    year = 2024,
+    url = {http://www.algebraicphylogenetics.org},
+    urldate = {}
+  }
   </code>
   </pre>
-</div>
+  </div>
 
-<dt><b>References</b></dt><dd>  
+  <dt><b>References</b></dt><dd>  
   <P>
-our two papers...
+  We are in the process of preparing a report on technological and design decisions and lessons learned in setting up this project, both as a website, a software package, and a sustainable, FAIR database. 
 
 <dt><b>Acknowledgements</b></dt><dd>  
   <P>
-    Its design was adapted to fit our needs from <a href="https://www.fanography.info">fanography.info</a> thanks to <a href="https://axtimhaus.eu">Victor Zimmermann</a>
-
-OSCAR
-
-    MaRDI
-
-    MPI
+  The design of this website was adapted to fit our needs from <a href="https://www.fanography.info">fanography.info</a> thanks to <a href="https://axtimhaus.eu">Victor Zimmermann</a>.
+  <P>
+  Tabea Bacher, Christiane Görgen, and Victor Zimmermann were supported by "MaRDI – Mathematische Forschungsdateninitiative" (Mathematical Research Data Initiative), funded by the Deutsche Forschungsgemeinschaft (DFG), Projektnummer 460135501. NFDI 29/1. Marina Garrote-López was supported by the Max Planck Institute for Mathematics in the Sciences. We are all highly indebted to the OSCAR group and their amazing ability to quickly adapt to our technical needs.
     
 {% endblock %}

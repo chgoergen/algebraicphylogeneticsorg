@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}A database of small trees and networks in algebraic phylogenetics{% endblock %}</title>
+    <title>{% block title %}algebraicphylogenetics.org{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -32,14 +32,13 @@
     <div class="container">
         <nav>
             <ul>
-                <li><a href="/notation">Notions and notation</a></li>                  
+                <li style="color:#228B22; font-weight:bold;"><a href="/">Database</a></li>
+                <li><a href="/notation">Notions and notation</a></li>  
+                <li><a href="/about">About this project</a></li>                
                 <li><a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics/phylogenetics">AlgebraicPhylogenetics.jl documentation</a></li>
-                <li><a href="/about">About</a></li>
                 <li><a href="https://www.coloradocollege.edu/aapps/ldg/small-trees/small-trees_0.html">Small Phylogenetic Trees (2007)</a></li>
             </ul>
-        </nav>
-        
-    <h1><a href="/">A database of small trees and networks in algebraic phylogenetics</a></h1>
+        </nav>   
         {% block content %}{% endblock %}
     </div>
 </body>
