@@ -21,30 +21,19 @@ specifying algebraic invariants of small trees and networks in phylogenetics
         </tr>
     </thead>
     <tbody>
-        {% for tree in trees %}
+        {% for tikzpicture in treesastex %}
         <tr class="tree-separator">
-            <td rowspan="{{ tree.models|length }}"><script type="text/tikz"; style="padding:100px;">{{ tree.image }}</script></td>
-            <td><a href="{{ url_for('subpage', tree_name=tree.name, model_name=tree.models[0].name) }}">{{ tree.models[0].name }}</a></td>
-            <td>{{ tree.models[0].deg }}</td>
-            <td>{{ tree.models[0].np }}</td>
-            <td>{{ tree.models[0].dim }}</td>
-            <td>{{ tree.models[0].nq }}</td>
-            <td>{{ tree.models[0].sD }}</td>
-            <td>{{ tree.models[0].sd }}</td>
-            <td>{{ tree.models[0].MLdeg }}</td>
-            <td>{{ tree.models[0].EDdeg }}</td>
-        </tr>
-        {% for model in tree.models[1:] %}
-        <tr class="model-separator">
-            <td><a href="{{ url_for('subpage', tree_name=tree.name, model_name=model.name) }}">{{ model.name }}</a></td>
-            <td>{{ model.dim }}</td>
-            <td>{{ model.deg }}</td>
-            <td>{{ model.np }}</td>
-            <td>{{ model.nq }}</td>
-            <td>{{ model.sD }}</td>
-            <td>{{ model.sd }}</td>
-            <td>{{ model.MLdeg }}</td>
-            <td>{{ model.EDdeg }}</td>
+            <td rowspan="4"><script type="text/tikz">{{ tikzpicture.image }}</script></td>
+        {% for treeandmodel in treesandmodels %}
+            <td><a>{{ treeandmodel.modelname }}</a></td>
+            <td>{{ treeandmodel.deg }}</td>
+            <td>{{ treeandmodel.np }}</td>
+            <td>{{ treeandmodel.dim }}</td>
+            <td>{{ treeandmodel.nq }}</td>
+            <td>{{ treeandmodel.sD }}</td>
+            <td>{{ treeandmodel.sd }}</td>
+            <td>{{ treeandmodel.MLdeg }}</td>
+            <td>{{ treeandmodel.EDdeg }}</td>
         </tr>
         {% endfor %}
         {% endfor %}

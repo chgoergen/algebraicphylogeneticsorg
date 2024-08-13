@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>The algebraic phylogenetics database</h1>
+specifying algebraic invariants of small trees and networks in phylogenetics
+<p style="margin-bottom:2rem;"></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Tree</th>
+            <th>Model</th>
+            <th>dim</th>
+            <th>deg</th>
+            <th>number of <br> probability <br> coordinates</th>
+            <th>number of <br> Fourier <br> coordinates</th>
+            <th>dim of <br> Singular Locus</th>
+            <th>deg of <br> Singular Locus</th>
+            <th>MLdeg</th>
+            <th>EDdeg</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tree in trees %}
+        <tr class="tree-separator">
+            <td rowspan="{{ tree.models|length }}"><script type="text/tikz"; style="padding:100px;">{{ tree.image }}</script></td>
+            <td><a href="{{ url_for('subpage', tree_name=tree.name, model_name=tree.models[0].name) }}">{{ tree.models[0].name }}</a></td>
+            <td>{{ tree.models[0].deg }}</td>
+            <td>{{ tree.models[0].np }}</td>
+            <td>{{ tree.models[0].dim }}</td>
+            <td>{{ tree.models[0].nq }}</td>
+            <td>{{ tree.models[0].sD }}</td>
+            <td>{{ tree.models[0].sd }}</td>
+            <td>{{ tree.models[0].MLdeg }}</td>
+            <td>{{ tree.models[0].EDdeg }}</td>
+        </tr>
+        {% for model in tree.models[1:] %}
+        <tr class="model-separator">
+            <td><a href="{{ url_for('subpage', tree_name=tree.name, model_name=model.name) }}">{{ model.name }}</a></td>
+            <td>{{ model.dim }}</td>
+            <td>{{ model.deg }}</td>
+            <td>{{ model.np }}</td>
+            <td>{{ model.nq }}</td>
+            <td>{{ model.sD }}</td>
+            <td>{{ model.sd }}</td>
+            <td>{{ model.MLdeg }}</td>
+            <td>{{ model.EDdeg }}</td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
