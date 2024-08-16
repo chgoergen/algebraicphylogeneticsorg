@@ -1,80 +1,102 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>{{ tree_name }}: {{ model_name }} model</h2>
+
+<!-- Include MathJax script -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+
+
+<h2>{{ tree_id }}: {{ treeandmodel_id }} model</h2>
 
 <div class="grid-container">
-    {% if details.phylogenetic_tree %}
+    {% if data.details.phylogenetic_tree %}
     <div class="module span-3">
         <h3>Phylogenetic tree</h3>
         <p>
         <script type="text/tikz">
-            {{ details.phylogenetic_tree }}
+            {{ data.details.phylogenetic_tree }}
         </script>
         </p>
     </div>
     {% endif %}
 
-    {% if details.evolutionary_model %}
+    {% if data.details.evolutionary_model %}
     <div class="module span-3">
         <h3>Evolutionary model</h3>
-        <p>{{ details.evolutionary_model }}</p>
+        <p>{{ data.details.evolutionary_model }}</p>
     </div>
     {% endif %}
 
-    {% if details.summary %}
+    {% if data.details.summary %}
     <div class="module span-3">
         <h3>Summary</h3>
-        <p>{{ details.summary }}</p>
+        <pre>{{ data.details.summary }}</pre>
     </div>
     {% endif %}
 
-    {% if details.probability_parametrization %}
+
+    {% if data.details.probability_parametrization %}
     <div class="module span-1">
-        <h3>Probability parametrization</h3>
-        <p>{{ details.probability_parametrization }}</p>
+        <div id="title">
+            <h3>Probability parametrization</h3>
+          </div>
+          <div id="content">
+            <div>{{ data.details.probability_parametrization | safe }}</div>
+        </div>
     </div>
     {% endif %}
+   <!-- Script to render MathJax -->
+   <script>
+    // Ensure that MathJax processes the content after it has been loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        MathJax.typeset();
+    });
+    </script>
 
-    {% if details.equivalent_classes_prob %}
+
+    {% if data.details.equivalent_classes_prob %}
     <div class="module span-1">
-        <h3>Equivalent classes of probability parametrization</h3>
-        <p>{{ details.equivalent_classes_prob }}</p>
+        <div id="title">
+            <h3>Equivalent classes of probability parametrization</h3>
+          </div>
+          <div id="content">
+            <div>{{ data.details.equivalent_classes_prob | safe }}</div>
+        </div>
     </div>
     {% endif %}
 
-    {% if details.fourier_parametrization %}
+    {% if data.details.fourier_parametrization %}
     <div class="module span-1">
         <h3>Fourier parametrization</h3>
-        <p>{{ details.fourier_parametrization }}</p>
+        <p>{{ data.details.fourier_parametrization }}</p>
     </div>
     {% endif %}
 
-    {% if details.equivalent_classes_fourier %}
+    {% if data.details.equivalent_classes_fourier %}
     <div class="module span-1">
         <h3>Equivalent classes of Fourier parametrization</h3>
-        <p>{{ details.equivalent_classes_fourier }}</p>
+        <p>{{ data.details.equivalent_classes_fourier }}</p>
     </div>
     {% endif %}
 
-    {% if details.invariants %}
+    {% if data.details.invariants %}
     <div class="module span-1">
         <h3>Invariants in Fourier coordinates</h3>
-        <p>{{ details.invariants }}</p>
+        <p>{{ data.details.invariants }}</p>
     </div>
     {% endif %}
 
-    {% if details.grobner_basis %}
+    {% if data.details.grobner_basis %}
     <div class="module span-1">
         <h3>Gröbner basis of ideal of invariants</h3>
-        <p>{{ details.grobner_basis }}</p>
+        <p>{{ data.details.grobner_basis }}</p>
     </div>
     {% endif %}
 
-    {% if details.specialized_fourier_transform %}
+    {% if data.details.specialized_fourier_transform %}
     <div class="module span-2">
         <h3>Specialized Fourier transform</h3>
-        <p>{{ details.specialized_fourier_transform }}</p>
+        <p>{{ data.details.specialized_fourier_transform }}</p>
     </div>
     {% endif %}
 </div>

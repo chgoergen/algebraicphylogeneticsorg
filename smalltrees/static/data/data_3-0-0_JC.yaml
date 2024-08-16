@@ -22,21 +22,20 @@ details:
     a_i &  b_i &  b_i &  b_i\\\\ &  b_i &  a_i &  b_i &  b_i\\\\ &  b_i &  b_i &  a_i &  b_i\\\\ &  b_i &  b_i &  b_i &  a_i
     \\end{pmatrix} \\]
   probability_parametrization: |-
-    \\[\\begin{align}
-    p_{ACA} &= \frac{1}{2}(a_1a_3b_2 + a_2b_1b_3 + 2b_1b_2b_3)\\\\
-    p_{AAA} &= \frac{1}{2}(a_1a_2a_3 + 3b_1b_2b_3)\\\\
-    p_{ACC} &= \frac{1}{2}(a_1b_2b_3 + a_2a_3b_1 + 2b_1b_2b_3)\\\\
-    p_{ACG} &= \frac{1}{2}(a_1b_2b_3 + a_2b_1b_3 + a_3b_1b_2 + b_1b_2b_3)\\\\
-    p_{AAC} &= \frac{1}{2}(a_1a_2b_3 + a_3b_1b_2 + 2b_1b_2b_3)
-    \\end{align}\\]
+    $p_{ACA} = \dfrac{1}{2}(a_1a_3b_2 + a_2b_1b_3 + 2b_1b_2b_3)$
+    
+    $p_{AAA} = \dfrac{1}{2}(a_1a_2a_3 + 3b_1b_2b_3)$
+    $p_{ACC} = \dfrac{1}{2}(a_1b_2b_3 + a_2a_3b_1 + 2b_1b_2b_3)$
+    $p_{ACG} = \dfrac{1}{2}(a_1b_2b_3 + a_2b_1b_3 + a_3b_1b_2 + b_1b_2b_3)$
+    $p_{AAC} = \dfrac{1}{2}(a_1a_2b_3 + a_3b_1b_2 + 2b_1b_2b_3)$
   equivalent_classes_prob: |-
-    \\[\\begin{align}
-    \\text{Class} &p_{AAA}:\ p_{AAA}, p_{CCC}, p_{GGG}, p_{TTT}\\\\
-    \\text{Class} &p_{AAC}:\ p_{AAC}, p_{AAG}, p_{AAT}, p_{CCA}, p_{CCG}, p_{CCT}, p_{GGA}, p_{GGC}, p_{GGT}, p_{TTA}, p_{TTC}, p_{TTG}\\\\
-    \\text{Class} &p_{ACA}:\ p_{ACA}, p_{AGA}, p_{ATA}, p_{CAC}, p_{CGC}, p_{CTC}, p_{GAG}, p_{GCG}, p_{GTG}, p_{TAT}, p_{TCT}, p_{TGT}\\\\
-    \\text{Class} &p_{ACC}:\ p_{ACC}, p_{AGG}, p_{ATT}, p_{CAA}, p_{CGG}, p_{CTT}, p_{GAA}, p_{GCC}, p_{GTT}, p_{TAA}, p_{TCC}, p_{TGG}\\\\
-    \\text{Class} &p_{ACG}:\ p_{ACG}, p_{ACT}, p_{AGC}, p_{AGT}, p_{ATC}, p_{ATG}, p_{CAG}, p_{CAT}, p_{CGA}, p_{CGT}, p_{CTA}, p_{CTG}, p_{GAC}, p_{GAT}, p_{GCA}, p_{GCT}, p_{GTA}, p_{GTC}, p_{TAC}, p_{TAG}, p_{TCA}, p_{TCG}, p_{TGA}, p_{TGC}
-    \\end{align}\\]
+    \[\begin{align}
+    \text{Class } &p_{AAA}:\ p_{AAA},\ p_{CCC},\ p_{GGG},\ p_{TTT}\\
+    \text{Class } &p_{AAC}:\ p_{AAC},\ p_{AAG},\ p_{AAT},\ p_{CCA}, p_{CCG}, p_{CCT}, p_{GGA}, p_{GGC}, p_{GGT}, p_{TTA}, p_{TTC}, p_{TTG}\\
+    \text{Class } &p_{ACA}:\ p_{ACA},\ p_{AGA},\ p_{ATA},\ p_{CAC}, p_{CGC}, p_{CTC}, p_{GAG}, p_{GCG}, p_{GTG}, p_{TAT}, p_{TCT}, p_{TGT}\\
+    \text{Class } &p_{ACC}:\ p_{ACC},\ p_{AGG},\ p_{ATT},\ p_{CAA}, p_{CGG}, p_{CTT}, p_{GAA}, p_{GCC}, p_{GTT}, p_{TAA}, p_{TCC}, p_{TGG}\\
+    \text{Class } &p_{ACG}:\ p_{ACG},\ p_{ACT},\ p_{AGC},\ p_{AGT}, p_{ATC}, p_{ATG}, p_{CAG}, p_{CAT}, p_{CGA}, p_{CGT}, p_{CTA}, p_{CTG}, p_{GAC}, p_{GAT}, p_{GCA}, p_{GCT}, p_{GTA}, p_{GTC}, p_{TAC}, p_{TAG}, p_{TCA}, p_{TCG}, p_{TGA}, p_{TGC}
+    \end{align}\]
   fourier_parametrization: |-
     \\[\\begin{align}
     q_{AAA} &= x^{(1)}_{1}x^{(2)}_{1}x^{(3)}_{1}\\\\
