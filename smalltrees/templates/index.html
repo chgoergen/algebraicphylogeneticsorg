@@ -25,7 +25,7 @@ specifying algebraic invariants of small trees and networks in phylogenetics
         <tr class="tree-separator">
             <td rowspan="4"><script type="text/tikz">{{ tikzpicture.image }}</script></td>
         {% for treeandmodel in treesandmodels[tikzpicture.id] %}
-            <td><a>{{ treeandmodel.modelname }}</a></td>
+            <td><a href="{{ url_for('subpage', treeandmodel_id=treeandmodel.id) }}">{{ treeandmodel.modelname }}</a></td>
             <td>{{ treeandmodel.deg }}</td>
             <td>{{ treeandmodel.np }}</td>
             <td>{{ treeandmodel.dim }}</td>

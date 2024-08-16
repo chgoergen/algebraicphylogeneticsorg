@@ -12,44 +12,27 @@ def load_data(filename):
         return yaml.safe_load(file)
 
 texlist = [load_data(filename) for filename in texfiles]
-treeindex = [texlist[i]['id'] for i in range(len(texlist))]
-
-### just test
 datalist = [load_data(filename) for filename in datafiles]
-modelandtree_idx = [datalist[i]['id'] for i in range(len(datalist))]
 
-longertreeidx = treeindex+['4-0-0']
-
-[v for v in modelandtree_idx if treeindex[0] in v]
-### until here
-
-#aim is to transform the above to
-#datadict = 
-#texdict =
-
-
-
-
-#treeindex = all values of id in latex
-#treeandmodelindex = all values of id in data 
-
-# dict where key=tikzpicture; value=data
-
+treesandmodels = {}
+for tikzpicture in texlist:
+    idx = tikzpicture['id']
+    treesandmodels[idx] = [d for d in datalist if idx in d['id']]
 
 @app.route('/')
 def index():
     return render_template('index.html', 
-                            treesandmodels=datadict,
-                            treesastex=texdict)
+                            treesandmodels=treesandmodels,
+                            treesastex=texlist)
 
-#@app.route('/tree/<tree_name>/model/<model_name>')
-#def subpage(tree_name, model_name):
-#    for tree in data['trees']:
-#        if tree['name'] == tree_name:
-#            for model in tree['models']:
-#                if model['name'] == model_name:
-#                    return render_template('subpage.html', tree_name=tree_name, model_name=model_name, details=model['details'])
-#    return "Page not found", 404
+@app.route('/details/<treeandmodel_id>')
+def subpage(treeandmodel_id):
+    tree_id = treeandmodel_id.rpartition('-')[0]
+    treeandmodels = treesandmodels[tree_id]
+    for treeandmodel in treeandmodels:
+        if treeandmodel['id'] == treeandmodel_id:
+            return render_template('subpage.html', tree_id=tree_id, treeandmodel_id=treeandmodel_id, data=treeandmodel)     
+    return "Page not found", 404
 
 @app.route('/about')
 def about():
