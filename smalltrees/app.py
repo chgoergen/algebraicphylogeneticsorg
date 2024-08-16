@@ -4,21 +4,43 @@ import glob
 
 app = Flask(__name__)
 
-datafiles = glob.glob("static/data_and_tex/data/*.yaml")
-texfiles = glob.glob("static/data_and_tex/tex/*.yaml")
+datafiles = glob.glob("static/data/*.yaml")
+texfiles = glob.glob("static/tex/*.yaml")
 
 def load_data(filename):
     with open(filename, 'r') as file:
         return yaml.safe_load(file)
 
-data = [load_data(filename) for filename in datafiles]
-latex = [load_data(filename) for filename in texfiles]
+texlist = [load_data(filename) for filename in texfiles]
+treeindex = [texlist[i]['id'] for i in range(len(texlist))]
+
+### just test
+datalist = [load_data(filename) for filename in datafiles]
+modelandtree_idx = [datalist[i]['id'] for i in range(len(datalist))]
+
+longertreeidx = treeindex+['4-0-0']
+
+[v for v in modelandtree_idx if treeindex[0] in v]
+### until here
+
+#aim is to transform the above to
+#datadict = 
+#texdict =
+
+
+
+
+#treeindex = all values of id in latex
+#treeandmodelindex = all values of id in data 
+
+# dict where key=tikzpicture; value=data
+
 
 @app.route('/')
 def index():
     return render_template('index.html', 
-                            treesandmodels=[data[i]['treeandmodel'] for i in range(len(data))], 
-                            treesastex=[latex[j]['treeandmodel'] for j in range(len(latex))])
+                            treesandmodels=datadict,
+                            treesastex=texdict)
 
 #@app.route('/tree/<tree_name>/model/<model_name>')
 #def subpage(tree_name, model_name):

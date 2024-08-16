@@ -24,7 +24,7 @@ specifying algebraic invariants of small trees and networks in phylogenetics
         {% for tikzpicture in treesastex %}
         <tr class="tree-separator">
             <td rowspan="4"><script type="text/tikz">{{ tikzpicture.image }}</script></td>
-        {% for treeandmodel in treesandmodels %}
+        {% for treeandmodel in treesandmodels[tikzpicture.id] %}
             <td><a>{{ treeandmodel.modelname }}</a></td>
             <td>{{ treeandmodel.deg }}</td>
             <td>{{ treeandmodel.np }}</td>
