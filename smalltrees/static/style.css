@@ -1,15 +1,26 @@
-.container {
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
-    justify-content: center;
+/* website background, overall settings */ 
+:root {
+    /*https://maketintsandshades.com/#228B22*/
+    --green-color:#1f7d1f;
+    --shade-green-color:#bddcbd;
+    --grey-color:#f2f2f2;
 }
 
+.container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* navigation bar content and behaviour */
 nav {
-    background-color: #f2f2f2;
-    margin-bottom: 0rem;
-    margin-top: 0.4rem;
-    border-radius: 0.4rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: var(--shade-green-color);
+    margin-bottom: 2rem;
+    border-bottom: 0.1rem solid var(--green-color);
+    float: left;
 }
 nav ul {
     list-style-type: none;
@@ -23,24 +34,22 @@ nav ul li {
 nav ul li a {
     color: black;
 }
+nav ul li a.split {
+    display: inline;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    float: right;
+}
+nav ul li a:active {
+    font-weight: bold;
+}
 
+/* header settings */
 h1 {
     display: block;
-    color: #228B22;
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
-    font-weight: bold;
-  }
-
-h2 {
-    display: block;
-    color: black;
-    font-size: 1.2rem;
-    margin-top: 0;
+    color: var(--green-color);
+    font-size: 2rem;
+    margin-top: 5rem;
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
@@ -48,9 +57,24 @@ h2 {
     font-weight: bold;
 }
 
+h2 {
+    display: block;
+    color: black;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+/* table settings for landing page*/
 table {
-    width: 100%;
+    width: 85%;
     border-collapse: collapse;
+    margin-left: auto; 
+    margin-right: auto
 }
 
 th, td {
@@ -62,7 +86,7 @@ th, td {
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: var(--grey-color);
     margin-bottom: 2px;
     border-radius: 2px;
 }
@@ -74,16 +98,17 @@ tr.tree-separator td {
 }
 
 tr.model-separator td {
-    border-top: 1px dashed #f2f2f2;
+    border-top: 1px dashed var(--grey-color);
 }
 
-tr:hover td {background:#f2f2f2;}
+tr:hover td {background:var(--grey-color);}
 
 a {
-    color: #228B22;
+    color: var(--green-color);
     text-decoration: none;
 }
 
+/* subpage style and grid settings */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -94,7 +119,7 @@ a {
 .module {
     padding: 0rem;
     border-radius: 0px;
-    background-color: #f2f2f2;
+    background-color: var(--grey-color);
     border-radius: 10px;
 }
 
@@ -114,13 +139,14 @@ a {
     text-align: center;
 }
 
+/* box settings */
 
 div#title {
     text-align: center;
     /*flex: 1;*/
-    border-bottom: 1px solid #4b9c46; /* Adjust border style as needed */
+    border-bottom: 1px solid var(--green-color); /* Adjust border style as needed */
     padding: 5px;
-    background-color: #DEE7DD; 
+    background-color: var(--grey-color); 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
@@ -130,7 +156,7 @@ div#title {
     padding: 1rem 1.5rem;
     /*overflow-x: scroll;
     overflow-y: scroll;*/
-    background-color: #f2f2f2;
+    background-color: var(--grey-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     overflow-x: auto;
