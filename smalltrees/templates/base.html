@@ -22,24 +22,18 @@
     <script src="https://tikzjax.com/v1/tikzjax.js"></script>
     <link rel="stylesheet" type="text/css"
     href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
-    <style>
-      body {
-        font-family: "Computer Modern Sans", sans-serif;
-      }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <ul>
-                <li style="color:var(--green-color); font-weight:bold;"><a href="/">Database</a></li>
-                <li><a href="/notation">Notions and notation</a></li>  
-                <li><a href="/about">About this project</a></li>                
-                <li><a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics/phylogenetics" class="split" target="_blank"><img style="height:1rem" src="https://docs.oscar-system.org/stable/assets/logo.png"> AlgebraicPhylogenetics.jl documentation</a></li>
-                <li><a href="https://www.coloradocollege.edu/aapps/ldg/small-trees/small-trees_0.html" class="split"  target="_blank">Small Phylogenetic Trees (2007)</a></li>
-            </ul>
-        </nav>   
-        {% block content %}{% endblock %}
+    <div class="topnav">
+                <a href="/" style="color:var(--green-color); font-weight:bold;">Database</a>
+                <a href="/notation">Notions and notation</a>
+                <a href="/about">About this project</a>               
+                <a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics/phylogenetics" class="split" target="_blank">AlgebraicPhylogenetics.jl documentation in <img style="height:1rem" src="https://docs.oscar-system.org/stable/assets/logo.png"></a>
+                <a href="https://www.coloradocollege.edu/aapps/ldg/small-trees/small-trees_0.html" class="split"  target="_blank">Small Phylogenetic Trees (2007)</a>
+    </div>
+    {% block content %}{% endblock %}
+    <div class="footer">
+    Hosted at MPI MiS with much thanks -- or some similar text ...
     </div>
 </body>
 </html>

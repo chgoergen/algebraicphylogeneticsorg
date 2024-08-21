@@ -1,80 +1,108 @@
-/* website background, overall settings */ 
+/* ------------------------------------ */
+/* CSS STYLE FOR ALL OUR HTML DOCUMENTS */
+/* ------------------------------------ */
+
+/* background, overall settings */ 
 :root {
-    /*https://maketintsandshades.com/#228B22*/
+    /* variations of a forest green,
+       see https://maketintsandshades.com/#228B22*/
     --green-color:#1f7d1f;
     --shade-green-color:#bddcbd;
     --grey-color:#f2f2f2;
 }
 
-.container {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
+body {
+    margin: 0px;
+    font-family: "Computer Modern Sans", sans-serif;
 }
 
-/* navigation bar content and behaviour */
-nav {
-    width: 100%;
+/* bottom bar */
+.footer {
     position: fixed;
-    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--grey-color);
+    color: black;
+    text-align: left;
+    border-top: 0.1rem solid var(--green-color);
+}
+
+/* top navigation bar */
+.topnav {
     background-color: var(--shade-green-color);
-    margin-bottom: 2rem;
+    overflow: hidden;
+    padding: 0.5rem;
+    width: 100%;
     border-bottom: 0.1rem solid var(--green-color);
+  }
+  .topnav a {
     float: left;
-}
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-nav ul li {
-    display: inline;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-nav ul li a {
+    text-align: center;
     color: black;
-}
-nav ul li a.split {
-    display: inline;
     margin-left: 1rem;
     margin-right: 1rem;
-    float: right;
-}
-nav ul li a:active {
-    font-weight: bold;
-}
-
-/* header settings */
-h1 {
-    display: block;
+    text-decoration: none;
+  }
+  .topnav a:hover {
     color: var(--green-color);
-    font-size: 2rem;
-    margin-top: 5rem;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
-    font-weight: bold;
-}
-
-h2 {
-    display: block;
+  }
+  .topnav a:active {
     color: black;
-    font-size: 1.5rem;
-    margin-top: 5rem;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
     font-weight: bold;
+  }
+  .topnav a.split {
+    float: right;
+  }
+
+/* main body of the website */
+.main {
+    width: 85%;
+    padding: 0;
+    text-align: center;
+    margin-left: auto; 
+    margin-right: auto;
 }
 
-/* table settings for landing page*/
+    /* clickable text */
+    .main a {
+        text-decoration: none;
+        color: var(--green-color);
+    }
+
+    /*  headers */
+    .main h1 {
+        display: block;
+        color: var(--green-color);
+        font-size: 2.5rem;
+        margin-top: 5rem;
+        margin-bottom: 0rem;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        font-weight: bold;
+        background-color: var(--grey-color);
+    }
+
+    .main h2 {
+        display: block;
+        color: black;
+        font-size: 1.5rem;
+        margin-top: 0rem;
+        margin-bottom: 5rem;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        font-weight: normal;
+        background-color: var(--grey-color);
+    }
+
+/* tables */
 table {
-    width: 85%;
+    width: 100%;
     border-collapse: collapse;
     margin-left: auto; 
-    margin-right: auto
+    margin-right: auto;
 }
 
 th, td {
@@ -87,8 +115,8 @@ th, td {
 
 th {
     background-color: var(--grey-color);
-    margin-bottom: 2px;
-    border-radius: 2px;
+    margin-bottom: 0.1rem;
+    border-radius: 0.3rem;
 }
 
 tr.tree-separator td {
@@ -103,13 +131,9 @@ tr.model-separator td {
 
 tr:hover td {background:var(--grey-color);}
 
-a {
-    color: var(--green-color);
-    text-decoration: none;
-}
-
 /* subpage style and grid settings */
 .grid-container {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
@@ -118,9 +142,8 @@ a {
 
 .module {
     padding: 0rem;
-    border-radius: 0px;
     background-color: var(--grey-color);
-    border-radius: 10px;
+    border-radius: 0.3rem;
 }
 
 .span-1 {
@@ -135,33 +158,29 @@ a {
     grid-column: span 2;
 }
 
-.module h3 {
-    text-align: center;
-}
-
 /* box settings */
-
-div#title {
+.module div#title {
     text-align: center;
-    /*flex: 1;*/
-    border-bottom: 1px solid var(--green-color); /* Adjust border style as needed */
-    padding: 5px;
-    background-color: var(--grey-color); 
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    font-weight: bold;
+    color: black;
+    border-bottom: 0.1rem solid var(--green-color);
+    padding: 0.5rem;
+    background-color: var(--shade-green-color); 
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
   }
   
-  div#content {
+.module div#content {
     margin: 0 auto;
-    padding: 1rem 1.5rem;
+    padding: 1rem;
     /*overflow-x: scroll;
     overflow-y: scroll;*/
     background-color: var(--grey-color);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
     overflow-x: auto;
     /*white-space: nowrap;  Prevents the content from wrapping to the next line */
-    height: 200px; /* Set a fixed height for your container */
+    height: 10rem; /* Set a fixed height for your container */
   }
 
 

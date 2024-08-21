@@ -1,29 +1,25 @@
 {% extends "base.html" %}
-
 {% block content %}
 
-<!-- Include MathJax script -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
-
-
-<h2>{{ tree_id }}: {{ treeandmodel_id }} model</h2>
+<div class="main">
+<h2>Details: {{ data.treename }} tree with {{data.modelname}} model ({{ treeandmodel_id }})</h2>
 
 <div class="grid-container">
     {% if data.details.phylogenetic_tree %}
     <div class="module span-3">
-        <h3>Phylogenetic tree</h3>
-        <p>
-        <script type="text/tikz">
-            {{ data.details.phylogenetic_tree }}
-        </script>
-        </p>
+        <div id="title">Phylogenetic tree {{ tree_id }}</div>
+        <div id="content">
+            <script type="text/tikz">
+                {{ data.details.phylogenetic_tree }}
+            </script>
+        </div>
     </div>
     {% endif %}
 
     {% if data.details.evolutionary_model %}
     <div class="module span-3">
-        <h3>Evolutionary model</h3>
-        <p>{{ data.details.evolutionary_model }}</p>
+        <div id="title">Evolutionary model</div>
+        <div id="content">{{ data.details.evolutionary_model }}</div>
     </div>
     {% endif %}
 
@@ -37,67 +33,53 @@
 
     {% if data.details.probability_parametrization %}
     <div class="module span-1">
-        <div id="title">
-            <h3>Probability parametrization</h3>
-          </div>
-          <div id="content">
-            <div>{{ data.details.probability_parametrization | safe }}</div>
-        </div>
+        <div id="title">Probability parametrization</div>
+        <div id="content">{{ data.details.probability_parametrization | safe }}</div>
     </div>
     {% endif %}
-   <!-- Script to render MathJax -->
-   <script>
-    // Ensure that MathJax processes the content after it has been loaded
-    document.addEventListener('DOMContentLoaded', function () {
-        MathJax.typeset();
-    });
-    </script>
-
 
     {% if data.details.equivalent_classes_prob %}
     <div class="module span-1">
-        <div id="title">
-            <h3>Equivalent classes of probability parametrization</h3>
-          </div>
-          <div id="content">
-            <div>{{ data.details.equivalent_classes_prob | safe }}</div>
-        </div>
+        <div id="title">Equivalent classes of probability parametrization</div>
+        <div id="content">{{ data.details.equivalent_classes_prob | safe }}</div>
     </div>
     {% endif %}
 
     {% if data.details.fourier_parametrization %}
     <div class="module span-1">
-        <h3>Fourier parametrization</h3>
-        <p>{{ data.details.fourier_parametrization }}</p>
+        <div id="title">Fourier parametrization</div>
+        <div id="content">{{ data.details.fourier_parametrization }}</div>
     </div>
     {% endif %}
 
     {% if data.details.equivalent_classes_fourier %}
     <div class="module span-1">
-        <h3>Equivalent classes of Fourier parametrization</h3>
-        <p>{{ data.details.equivalent_classes_fourier }}</p>
+        <div id="title">Equivalent classes of Fourier parametrization</div>
+        <div id="content">{{ data.details.equivalent_classes_fourier }}</div>
     </div>
     {% endif %}
 
     {% if data.details.invariants %}
     <div class="module span-1">
-        <h3>Invariants in Fourier coordinates</h3>
-        <p>{{ data.details.invariants }}</p>
+        <div id="title">Invariants in Fourier coordinates</div>
+        <div id="content">{{ data.details.invariants }}</div>
     </div>
     {% endif %}
 
     {% if data.details.grobner_basis %}
     <div class="module span-1">
-        <h3>Gröbner basis of ideal of invariants</h3>
-        <p>{{ data.details.grobner_basis }}</p>
+        <div id="title">Gröbner basis of ideal of invariants</div>
+        <div id="content">{{ data.details.grobner_basis }}</div>
     </div>
     {% endif %}
 
     {% if data.details.specialized_fourier_transform %}
     <div class="module span-2">
-        <h3>Specialized Fourier transform</h3>
-        <p>{{ data.details.specialized_fourier_transform }}</p>
+        <div id="title">Specialized Fourier transform</div>
+        <div id="content">{{ data.details.specialized_fourier_transform }}</div>
     </div>
     {% endif %}
 </div>
+</div>
+
 {% endblock %}
