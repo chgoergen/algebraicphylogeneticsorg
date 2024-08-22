@@ -22,6 +22,7 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
+    padding: 0.3rem;
     background-color: var(--grey-color);
     color: black;
     text-align: left;
@@ -55,6 +56,27 @@ body {
     float: right;
   }
 
+/* header landing page */
+h1 {
+    display: block;
+    color: black;
+    font-size: 1.5rem;
+    padding: 2rem;
+    font-weight: normal;
+    background-color: var(--grey-color);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 4rem;
+}
+
+h1 strong {
+    display: block;
+    color: var(--green-color);
+    font-size: 2.5rem;
+    font-weight: bold;
+    background-color: var(--grey-color);
+}
+
 /* main body of the website */
 .main {
     width: 85%;
@@ -68,33 +90,6 @@ body {
     .main a {
         text-decoration: none;
         color: var(--green-color);
-    }
-
-    /*  headers */
-    .main h1 {
-        display: block;
-        color: var(--green-color);
-        font-size: 2.5rem;
-        margin-top: 5rem;
-        margin-bottom: 0rem;
-        margin-left: 0;
-        margin-right: 0;
-        padding: 0;
-        font-weight: bold;
-        background-color: var(--grey-color);
-    }
-
-    .main h2 {
-        display: block;
-        color: black;
-        font-size: 1.5rem;
-        margin-top: 0rem;
-        margin-bottom: 5rem;
-        margin-left: 0;
-        margin-right: 0;
-        padding: 0;
-        font-weight: normal;
-        background-color: var(--grey-color);
     }
 
 /* tables */

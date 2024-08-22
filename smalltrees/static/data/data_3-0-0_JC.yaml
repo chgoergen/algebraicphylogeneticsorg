@@ -37,13 +37,13 @@ details:
     \text{Class } &p_{ACG}:\ p_{ACG},\ p_{ACT},\ p_{AGC},\ p_{AGT}, p_{ATC}, p_{ATG}, p_{CAG}, p_{CAT}, p_{CGA}, p_{CGT}, p_{CTA}, p_{CTG}, p_{GAC}, p_{GAT}, p_{GCA}, p_{GCT}, p_{GTA}, p_{GTC}, p_{TAC}, p_{TAG}, p_{TCA}, p_{TCG}, p_{TGA}, p_{TGC}
     \end{align}\]
   fourier_parametrization: |-
-    \\[\\begin{align}
+    $\begin{align}
     q_{AAA} &= x^{(1)}_{1}x^{(2)}_{1}x^{(3)}_{1}\\\\
     q_{CGT} &= x^{(1)}_{2}x^{(2)}_{2}x^{(3)}_{2}\\\\
     q_{CCA} &= x^{(3)}_{1}x^{(1)}_{2}x^{(2)}_{2}\\\\
     q_{ACC} &= x^{(1)}_{1}x^{(2)}_{2}x^{(3)}_{2}\\\\
     q_{CAC} &= x^{(2)}_{1}x^{(1)}_{2}x^{(3)}_{2}
-    \\end{align}\\]
+    \end{align}$
   equivalent_classes_fourier: |-
     \\[\\begin{align}
     \\text{Class} &0:\ q_{CAA}, q_{GAA}, q_{TAA}, q_{ACA}, q_{GCA}, q_{TCA}, q_{AGA}, q_{CGA}, q_{TGA}, q_{ATA}, q_{CTA}, q_{GTA}, q_{AAC}, q_{GAC}, q_{TAC}, q_{CCC}, q_{GCC}, q_{TCC}, q_{AGC}, q_{CGC}, q_{GGC}, q_{ATC}, q_{CTC}, q_{TTC}, q_{AAG}, q_{CAG}, q_{TAG}, q_{ACG}, q_{CCG}, q_{GCG}, q_{CGG}, q_{GGG}, q_{TGG}, q_{ATG}, q_{GTG}, q_{TTG}, q_{AAT}, q_{CAT}, q_{GAT}, q_{ACT}, q_{CCT}, q_{TCT}, q_{AGT}, q_{GGT}, q_{TGT}, q_{CTT}, q_{GTT}, q_{TTT}
