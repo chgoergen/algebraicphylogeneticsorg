@@ -22,12 +22,13 @@ details:
     a_i &  b_i &  b_i &  b_i\\\\ &  b_i &  a_i &  b_i &  b_i\\\\ &  b_i &  b_i &  a_i &  b_i\\\\ &  b_i &  b_i &  b_i &  a_i
     \\end{pmatrix} \\]
   probability_parametrization: |-
-    $p_{ACA} = \dfrac{1}{2}(a_1a_3b_2 + a_2b_1b_3 + 2b_1b_2b_3)$
-    
-    $p_{AAA} = \dfrac{1}{2}(a_1a_2a_3 + 3b_1b_2b_3)$
-    $p_{ACC} = \dfrac{1}{2}(a_1b_2b_3 + a_2a_3b_1 + 2b_1b_2b_3)$
-    $p_{ACG} = \dfrac{1}{2}(a_1b_2b_3 + a_2b_1b_3 + a_3b_1b_2 + b_1b_2b_3)$
-    $p_{AAC} = \dfrac{1}{2}(a_1a_2b_3 + a_3b_1b_2 + 2b_1b_2b_3)$
+    $\begin{align}
+    p_{ACA} &= \frac{1}{2}(a_1a_3b_2 + a_2b_1b_3 + 2b_1b_2b_3)\\\\
+    p_{AAA} &= \frac{1}{2}(a_1a_2a_3 + 3b_1b_2b_3)\\\\
+    p_{ACC} &= \frac{1}{2}(a_1b_2b_3 + a_2a_3b_1 + 2b_1b_2b_3)\\\\
+    p_{ACG} &= \frac{1}{2}(a_1b_2b_3 + a_2b_1b_3 + a_3b_1b_2 + b_1b_2b_3)\\\\
+    p_{AAC} &= \frac{1}{2}(a_1a_2b_3 + a_3b_1b_2 + 2b_1b_2b_3)
+    \end{align}$
   equivalent_classes_prob: |-
     \[\begin{align}
     \text{Class } &p_{AAA}:\ p_{AAA},\ p_{CCC},\ p_{GGG},\ p_{TTT}\\

@@ -14,6 +14,7 @@
 body {
     margin: 0px;
     font-family: "Computer Modern Sans", sans-serif;
+    font-size: larger;
 }
 
 /* bottom bar */
@@ -175,7 +176,8 @@ tr:hover td {background:var(--grey-color);}
     border-bottom-right-radius: 0.2rem;
     overflow-x: auto;
     /*white-space: nowrap;  Prevents the content from wrapping to the next line */
-    height: 10rem; /* Set a fixed height for your container */
+    height: 20rem;
+    font-size: medium;
   }
 
 
