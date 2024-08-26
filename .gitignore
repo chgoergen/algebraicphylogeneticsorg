@@ -1,3 +1,4 @@
 /venv
 .DS_Store
 smalltrees/__pycache__/app.cpython-39.pyc
+smalltrees/__pycache__/app.cpython-38.pyc

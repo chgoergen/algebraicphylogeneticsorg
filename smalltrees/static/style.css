@@ -15,11 +15,11 @@ body {
     margin: 0px;
     font-family: "Computer Modern Sans", sans-serif;
     font-size: larger;
+    max-width: 100%;
 }
 
 /* bottom bar */
 .footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -32,9 +32,13 @@ body {
 
 /* top navigation bar */
 .topnav {
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2; /* stack order; avoids tex going atop navigation */
     background-color: var(--shade-green-color);
     overflow: hidden;
-    padding: 0.5rem;
+    padding: 0;
     width: 100%;
     border-bottom: 0.1rem solid var(--green-color);
   }
@@ -42,6 +46,8 @@ body {
     float: left;
     text-align: center;
     color: black;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     margin-left: 1rem;
     margin-right: 1rem;
     text-decoration: none;
@@ -57,8 +63,9 @@ body {
     float: right;
   }
 
-/* header landing page */
+/* headers */
 h1 {
+    max-width: 100%;
     display: block;
     color: black;
     font-size: 1.5rem;
@@ -66,22 +73,24 @@ h1 {
     font-weight: normal;
     background-color: var(--grey-color);
     text-align: center;
-    margin-top: 0;
     margin-bottom: 4rem;
+    margin-top: 2.7rem; /* is there a more elegant way to place this? */
 }
-
-h1 strong {
-    display: block;
-    color: var(--green-color);
-    font-size: 2.5rem;
-    font-weight: bold;
-    background-color: var(--grey-color);
-}
+    /* landing page */
+    h1 strong {
+        max-width: 100%;
+        display: block;
+        color: var(--green-color);
+        font-size: 2.5rem;
+        font-weight: bold;
+        background-color: var(--grey-color);
+    }
 
 /* main body of the website */
 .main {
     width: 85%;
     padding: 0;
+    margin: 0;
     text-align: center;
     margin-left: auto; 
     margin-right: auto;
@@ -97,8 +106,6 @@ h1 strong {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-left: auto; 
-    margin-right: auto;
 }
 
 th, td {
@@ -107,12 +114,13 @@ th, td {
     text-align: left;
     border: none;
     margin-left: 1rem;
+    border-top-right-radius: 0.3rem;
+    border-top-left-radius: 0.3rem;
 }
 
 th {
     background-color: var(--grey-color);
     margin-bottom: 0.1rem;
-    border-radius: 0.3rem;
 }
 
 tr.tree-separator td {

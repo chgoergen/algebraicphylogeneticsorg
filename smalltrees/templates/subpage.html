@@ -5,12 +5,12 @@
 
 <div class="main">
 <div class="grid-container">
-    {% if data.details.phylogenetic_tree %}
+    {% if pictures.tree_id %}
     <div class="module span-3">
         <div id="title">Phylogenetic tree {{ tree_id }}</div>
         <div id="content">
             <script type="text/tikz">
-                {{ data.details.phylogenetic_tree }}
+                {{ pictures.imagelabelled }}
             </script>
         </div>
     </div>

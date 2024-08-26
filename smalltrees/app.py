@@ -31,7 +31,7 @@ def subpage(treeandmodel_id):
     treeandmodels = treesandmodels[tree_id]
     for treeandmodel in treeandmodels:
         if treeandmodel['id'] == treeandmodel_id:
-            return render_template('subpage.html', tree_id=tree_id, treeandmodel_id=treeandmodel_id, data=treeandmodel)     
+            return render_template('subpage.html', tree_id=tree_id, treeandmodel_id=treeandmodel_id, data=treeandmodel,pictures=texlist)     
     return "Page not found", 404
 
 @app.route('/about')
