@@ -29,9 +29,10 @@ def index():
 def subpage(treeandmodel_id):
     tree_id = treeandmodel_id.rpartition('-')[0]
     treeandmodels = treesandmodels[tree_id]
+    texpicture = [d for d in texlist if tree_id == d['id']]
     for treeandmodel in treeandmodels:
         if treeandmodel['id'] == treeandmodel_id:
-            return render_template('subpage.html', tree_id=tree_id, treeandmodel_id=treeandmodel_id, data=treeandmodel,pictures=texlist)     
+            return render_template('subpage.html', tree_id=tree_id, treeandmodel_id=treeandmodel_id, data=treeandmodel, picture=texpicture[0])     
     return "Page not found", 404
 
 @app.route('/about')

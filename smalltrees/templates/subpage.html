@@ -5,28 +5,39 @@
 
 <div class="main">
 <div class="grid-container">
-    {% if pictures.tree_id %}
+    {% if picture %}
     <div class="module span-3">
         <div id="title">Phylogenetic tree {{ tree_id }}</div>
-        <div id="content">
+        <div id="picture">
             <script type="text/tikz">
-                {{ pictures.imagelabelled }}
+                {{ picture.imagelabelled }}
             </script>
         </div>
     </div>
     {% endif %}
 
-    {% if data.details.evolutionary_model %}
+    {% if data.details.transition_matrix %}
     <div class="module span-3">
         <div id="title">Evolutionary model</div>
-        <div id="content">{{ data.details.evolutionary_model }}</div>
+        <div id="content">{{ data.modelname }} with transition matrices
+            {{ data.details.transition_matrix }}
+        </div>
     </div>
     {% endif %}
 
-    {% if data.details.summary %}
+    {% if data.treename %}
     <div class="module span-3">
-        <h3>Summary</h3>
-        <pre>{{ data.details.summary }}</pre>
+        <div id="title">Summary</div>
+        <div id="content">
+            Dimension: {{ data.dim }} <br>
+            Degree: {{ data.deg }} <br>
+            Probability coordinates: {{ data.np }} <br>
+            Fourier coordinates: {{ data.nq }} <br>
+            dim of Singular locus: {{ data.sd }} <br>
+            deg of Singular locus: {{ data.sD }} <br>
+            MLdeg: {{ data.MLdeg }} <br>
+            EDdeg: {{ data.EDdeg }} <br>
+        </div>
     </div>
     {% endif %}
 

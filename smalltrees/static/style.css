@@ -23,11 +23,11 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    padding: 0.3rem;
+    padding: 0.1rem;
     background-color: var(--grey-color);
     color: black;
     text-align: left;
-    font-size: medium;
+    font-size: smaller;
     border-top: 0.1rem solid var(--green-color);
 }
     .footer a {
@@ -80,6 +80,8 @@ h1 {
     text-align: center;
     margin-bottom: 4rem;
     margin-top: 2.7rem; /* is there a more elegant way to place this? */
+    margin-left: 0;
+    margin-right: 0;
 }
     /* landing page */
     h1 strong {
@@ -115,6 +117,7 @@ table {
 
 th, td {
     font-weight: normal;
+    font-size: 1.3rem;
     padding: 0.2rem;
     text-align: left;
     border: none;
@@ -178,7 +181,14 @@ tr:hover td {background:var(--grey-color);}
     border-top-left-radius: 0.2rem;
     border-top-right-radius: 0.2rem;
   }
-  
+
+.module div#picture { 
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    margin: auto;
+}
+
 .module div#content {
     margin: 0 auto;
     padding: 1rem;
