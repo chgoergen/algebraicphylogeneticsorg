@@ -27,8 +27,13 @@ body {
     background-color: var(--grey-color);
     color: black;
     text-align: left;
+    font-size: medium;
     border-top: 0.1rem solid var(--green-color);
 }
+    .footer a {
+        text-decoration: none;
+        color: var(--green-color);
+    }
 
 /* top navigation bar */
 .topnav {
