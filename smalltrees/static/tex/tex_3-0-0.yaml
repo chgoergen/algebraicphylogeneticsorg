@@ -10,7 +10,7 @@ image: |-
     \path (root) edge (\i);};
   \end{tikzpicture}
 imagelabelled: |-
-  \begin{tikzpicture}[scale=3.5,
+  \begin{tikzpicture}[scale=3,
     every node/.style={font=\huge},
     every edge/.style={draw,very thick},
     inner/.style={draw,circle,inner sep=3pt,fill=white},
