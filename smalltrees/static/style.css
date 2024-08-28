@@ -128,8 +128,8 @@ th, td {
     text-align: left;
     border: none;
     margin-left: 1rem;
-    border-top-right-radius: 0.3rem;
-    border-top-left-radius: 0.3rem;
+    border-top-right-radius: var(--rounded-corners);
+    border-top-left-radius: var(--rounded-corners);
 }
 
 th {
@@ -161,7 +161,7 @@ tr:hover td {background:var(--grey-color);}
 .module {
     padding: 0rem;
     background-color: var(--grey-color);
-    border-radius: 0.3rem;
+    border-radius: var(--rounded-corners);
 }
 
 .span-1 {
@@ -184,8 +184,8 @@ tr:hover td {background:var(--grey-color);}
     border-bottom: 0.1rem solid var(--green-color);
     padding: 0.5rem;
     background-color: var(--shade-green-color); 
-    border-top-left-radius: 0.2rem;
-    border-top-right-radius: 0.2rem;
+    border-top-left-radius: var(--rounded-corners);
+    border-top-right-radius: var(--rounded-corners);
   }
 
 .module div#picture { 
@@ -201,8 +201,8 @@ tr:hover td {background:var(--grey-color);}
     /*overflow-x: scroll;
     overflow-y: scroll;*/
     background-color: var(--grey-color);
-    border-bottom-left-radius: 0.2rem;
-    border-bottom-right-radius: 0.2rem;
+    border-bottom-left-radius: var(--rounded-corners);
+    border-bottom-right-radius: var(--rounded-corners);
     overflow-x: auto;
     /*white-space: nowrap;  Prevents the content from wrapping to the next line */
     height: 15rem;
@@ -224,7 +224,7 @@ div.codebox {
     border: none;
     white-space: 0px;
     font-family: monospace;
-    border-radius: 2px;
+    border-radius: var(--rounded-corners);
 }
 
 pre code {
