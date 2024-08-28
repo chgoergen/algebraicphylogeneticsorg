@@ -23,6 +23,7 @@ body {
 .footer {
     left: 0;
     bottom: 0;
+    margin-top: 2rem;
     width: 100%;
     padding: 0.1rem;
     background-color: var(--grey-color);

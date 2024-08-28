@@ -10,11 +10,11 @@ image: |-
     \path (root) edge (\i);};
   \end{tikzpicture}
 imagelabelled: |-
-  \begin{tikzpicture}[scale=3,
+  \begin{tikzpicture}[scale=3,%green!30!darkgray
     every node/.style={font=\huge},
-    every edge/.style={draw,line width=0.25em,green!30!darkgray},
+    every edge/.style={draw,line width=0.25em},
     inner/.style={draw,circle,inner sep=4pt,fill=white},
-    leaf/.style={draw,circle,inner sep=4pt,fill=green!30!darkgray}]
+    leaf/.style={draw,circle,inner sep=4pt,fill=black}]
   \node (root) [inner] at (0,0) {};
   \foreach \i in {1,2,3}{%
         \node (\i) [leaf] at (\i*360/3+60: 1) {};
