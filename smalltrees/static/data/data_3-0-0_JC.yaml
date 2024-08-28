@@ -19,7 +19,10 @@ EDdeg: "0"
 details:
   transition_matrix: |-
     $$M_i = \begin{pmatrix}
-    a_i &  b_i &  b_i &  b_i\\\\ &  b_i &  a_i &  b_i &  b_i\\\\ &  b_i &  b_i &  a_i &  b_i\\\\ &  b_i &  b_i &  b_i &  a_i
+    a_i &  b_i &  b_i &  b_i\\
+    b_i &  a_i &  b_i &  b_i\\ 
+    b_i &  b_i &  a_i &  b_i\\ 
+    b_i &  b_i &  b_i &  a_i
     \end{pmatrix}$$
   probability_parametrization: |-
     $\begin{align}
@@ -39,10 +42,10 @@ details:
     \end{align}$
   fourier_parametrization: |-
     $\begin{align}
-    q_{AAA} &= x^{(1)}_{1}x^{(2)}_{1}x^{(3)}_{1}\\\\
-    q_{CGT} &= x^{(1)}_{2}x^{(2)}_{2}x^{(3)}_{2}\\\\
-    q_{CCA} &= x^{(3)}_{1}x^{(1)}_{2}x^{(2)}_{2}\\\\
-    q_{ACC} &= x^{(1)}_{1}x^{(2)}_{2}x^{(3)}_{2}\\\\
+    q_{AAA} &= x^{(1)}_{1}x^{(2)}_{1}x^{(3)}_{1}\\
+    q_{CGT} &= x^{(1)}_{2}x^{(2)}_{2}x^{(3)}_{2}\\
+    q_{CCA} &= x^{(3)}_{1}x^{(1)}_{2}x^{(2)}_{2}\\
+    q_{ACC} &= x^{(1)}_{1}x^{(2)}_{2}x^{(3)}_{2}\\
     q_{CAC} &= x^{(2)}_{1}x^{(1)}_{2}x^{(3)}_{2}
     \end{align}$
   equivalent_classes_fourier: |-
@@ -62,9 +65,17 @@ details:
     degrevlex $q_{AAA}, q_{CGT}, q_{CCA}, q_{ACC}, q_{CAC}$
   specialized_fourier_transform: |-
     $\frac{1}{3}\begin{pmatrix}
-    3 & 3 & 3 & 3 & 3\\\\ 3 & -1 & -1 & 3 & -1\\\\ 3 & -1 & 3 & -1 & -1\\\\ 3 & 3 & -1 & -1 & -1\\\\ 3 & -1 & -1 & -1 & 1
+    3 & 3 & 3 & 3 & 3\\
+    3 & -1 & -1 & 3 & -1\\
+    3 & -1 & 3 & -1 & -1\\
+    3 & 3 & -1 & -1 & -1\\
+    3 & -1 & -1 & -1 & 1
     \end{pmatrix}$
   inverse_specialized_fourier_transform: |-
     $\frac{1}{16}\begin{pmatrix}
-    1 & 3 & 3 & 3 & 6\\\\ 3 & -3 & -3 & 9 & -6\\\\ 3 & -3 & 9 & -3 & -6\\\\ 3 & 9 & -3 & -3 & -6\\\\ 6 & -6 & -6 & -6 & 12
+    1 & 3 & 3 & 3 & 6\\
+    3 & -3 & -3 & 9 & -6\\
+    3 & -3 & 9 & -3 & -6\\
+    3 & 9 & -3 & -3 & -6\\
+    6 & -6 & -6 & -6 & 12
     \end{pmatrix}$

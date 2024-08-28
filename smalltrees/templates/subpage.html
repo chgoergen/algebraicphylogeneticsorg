@@ -84,10 +84,28 @@
     </div>
     {% endif %}
 
-    {% if data.details.specialized_fourier_transform %}
+    {% if data.mu %}
     <div class="module span-2">
+        <div id="content", style="border-radius: var(--rounded-corners);">
+            The cardinality of the smallest set of generators that define the ideal of phylogenetic invariants: {{ data.mu }} <br>
+            The largest degree of a generator in the degree reverse lexicographic reduced Gröbner basis: {{ data.E }} <br>
+            The largest degree of an element in a minimal generating set for the ideal of phylogenetic invariants: {{ data.e }} <br>
+            The cardinality of the degree reverse lexicographic reduced Gröbner basis of the ideal of phylogenetic invariants: {{ data.M }}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if data.details.specialized_fourier_transform %}
+    <div class="module span-3">
         <div id="title">Specialized Fourier transform</div>
         <div id="content">{{ data.details.specialized_fourier_transform }}</div>
+    </div>
+    {% endif %}
+
+    {% if data.details.inverse_specialized_fourier_transform %}
+    <div class="module span-3">
+        <div id="title">Inverse specialized Fourier transform</div>
+        <div id="content">{{ data.details.inverse_specialized_fourier_transform }}</div>
     </div>
     {% endif %}
 </div>
