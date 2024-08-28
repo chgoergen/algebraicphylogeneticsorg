@@ -24,6 +24,10 @@ details:
     b_i &  b_i &  a_i &  b_i\\ 
     b_i &  b_i &  b_i &  a_i
     \end{pmatrix}$$
+  root_distributon: |-
+    $\pi = \left(\frac{1}{4},\frac{1}{4},\frac{1}{4},\frac{1}{4}\right)$
+  fourier_parameters: |-
+    $\left(x_1^{(i)},x_2^{(i)},x_2^{(i)},x_2^{(i)}\right)$
   probability_parametrization: |-
     $\begin{align}
     p_{ACA} &= \frac{1}{2}(a_1a_3b_2 + a_2b_1b_3 + 2b_1b_2b_3)\\

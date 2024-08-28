@@ -17,10 +17,11 @@
     {% endif %}
 
     {% if data.details.transition_matrix %}
-    <div class="module span-3">
+    <div class="module span-1">
         <div id="title">Evolutionary model</div>
-        <div id="content">{{ data.modelname }} with transition matrices
-            {{ data.details.transition_matrix }}
+        <div id="content"><a href="/notation#models">{{ data.modelname }}</a> model with <a href="/notation#labelling">root distribution</a> {{ data.details.root_distributon }}. <br>
+            The <a href="/notation#labelling">transition matrix</a>  associated to edge $i$ is of the form
+            {{ data.details.transition_matrix }} and the <a href="/notation#labelling">Fourier parameters</a> {{ data.details.fourier_parameters }}.
         </div>
     </div>
     {% endif %}
@@ -29,7 +30,7 @@
     <div class="module span-3">
         <div id="title">Summary</div>
         <div id="content">
-            Dimension: {{ data.dim }} <br>
+            <a href="/notation#invariants">Dimension:</a>  {{ data.dim }} <br>
             Degree: {{ data.deg }} <br>
             Probability coordinates: {{ data.np }} <br>
             Fourier coordinates: {{ data.nq }} <br>

@@ -6,10 +6,9 @@
 :root {
     /* variations of a forest green,
        see https://maketintsandshades.com/#228B22*/
-    --green-color:#407040;
-    --shade-green-color:#c9e1c8;
-    --grey-color:#f2f2f2;
-    --rounded-corners:0.5rem;
+    --green-color:#2E792D;
+    --shade-green-color:#bed3ab;
+    --grey-color:#F1F5ED;
 }
 
 body {
@@ -68,6 +67,12 @@ body {
   }
   .topnav a.split {
     float: right;
+  }
+
+  .anchor {
+    position: absolute;
+    top: -65px; /* given the fixed header is 50px tall, and you want 15px padding */
+    left: 0px;
   }
 
 /* headers */
@@ -149,7 +154,7 @@ tr:hover td {background:var(--grey-color);}
 .grid-container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin: 1rem 0;
 }
@@ -161,15 +166,15 @@ tr:hover td {background:var(--grey-color);}
 }
 
 .span-1 {
-    grid-column: span 3;
+    grid-column: span 2;
 }
 
 .span-2 {
-    grid-column: span 6;
+    grid-column: span 4;
 }
 
 .span-3 {
-    grid-column: span 2;
+    grid-column: span 1;
 }
 
 /* box settings */
