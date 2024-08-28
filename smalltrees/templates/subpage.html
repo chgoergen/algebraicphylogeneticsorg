@@ -49,17 +49,17 @@
     </div>
     {% endif %}
 
-    {% if data.details.equivalent_classes_prob %}
-    <div class="module span-1">
-        <div id="title">Equivalent classes of probability parametrization</div>
-        <div id="content">{{ data.details.equivalent_classes_prob | safe }}</div>
-    </div>
-    {% endif %}
-
     {% if data.details.fourier_parametrization %}
     <div class="module span-1">
         <div id="title">Fourier parametrization</div>
         <div id="content">{{ data.details.fourier_parametrization }}</div>
+    </div>
+    {% endif %}
+
+    {% if data.details.equivalent_classes_prob %}
+    <div class="module span-1">
+        <div id="title">Equivalent classes of probability parametrization</div>
+        <div id="content">{{ data.details.equivalent_classes_prob | safe }}</div>
     </div>
     {% endif %}
 

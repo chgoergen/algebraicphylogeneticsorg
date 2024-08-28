@@ -6,15 +6,15 @@
 :root {
     /* variations of a forest green,
        see https://maketintsandshades.com/#228B22*/
-    --green-color:#1f7d1f;
-    --shade-green-color:#bddcbd;
+    --green-color:#3c7d38;
+    --shade-green-color:#c9e1c8;
     --grey-color:#f2f2f2;
 }
 
 body {
     margin: 0px;
-    font-family: "Computer Modern Sans", sans-serif;
-    font-size: larger;
+    font-family: "Roboto", sans-serif;
+    font-size: large;
     max-width: 100%;
 }
 
@@ -148,7 +148,7 @@ tr:hover td {background:var(--grey-color);}
     width: 100%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 1rem;
+    gap: 2rem;
     margin: 1rem 0;
 }
 
@@ -173,7 +173,7 @@ tr:hover td {background:var(--grey-color);}
 /* box settings */
 .module div#title {
     text-align: center;
-    font-weight: bold;
+    font-weight: normal;
     color: black;
     border-bottom: 0.1rem solid var(--green-color);
     padding: 0.5rem;
@@ -191,7 +191,7 @@ tr:hover td {background:var(--grey-color);}
 
 .module div#content {
     margin: 0 auto;
-    padding: 1rem;
+    padding: 2rem;
     /*overflow-x: scroll;
     overflow-y: scroll;*/
     background-color: var(--grey-color);
@@ -199,7 +199,7 @@ tr:hover td {background:var(--grey-color);}
     border-bottom-right-radius: 0.2rem;
     overflow-x: auto;
     /*white-space: nowrap;  Prevents the content from wrapping to the next line */
-    height: 20rem;
+    height: 15rem;
     font-size: medium;
   }
 

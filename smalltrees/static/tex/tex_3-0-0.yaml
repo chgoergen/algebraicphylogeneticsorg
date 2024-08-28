@@ -10,7 +10,7 @@ image: |-
     \path (root) edge (\i);};
   \end{tikzpicture}
 imagelabelled: |-
-  \begin{tikzpicture}[scale=4,
+  \begin{tikzpicture}[scale=3.5,
     every node/.style={font=\huge},
     every edge/.style={draw,very thick},
     inner/.style={draw,circle,inner sep=3pt,fill=white},
@@ -18,7 +18,7 @@ imagelabelled: |-
   \node (root) [inner] at (0,0) {};
   \foreach \i in {1,2,3}{%
         \node (\i) [leaf] at (\i*360/3+60: 1) {};
-        \node at (\i*360/3+35: 0.6) {$M_\i$};
-        \node at (\i*360/3+60: 1.3) {\i};
+        \node at (\i*360/3+38: 0.6) {$M_\i$};
+        \node at (\i*360/3+60: 1.2) {\i};
         \path (root) edge (\i);};
   \end{tikzpicture}
