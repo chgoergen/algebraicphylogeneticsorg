@@ -1,33 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>
-    <strong>The algebraic phylogenetics database</strong>
+<div class="topheader">
+    <div id="emph">The algebraic phylogenetics database</div>
     specifying algebraic invariants of small trees and networks in phylogenetics
-</h1>
+</div>
 
 <div class="main">
 <table>
     <thead>
         <tr>
-            <th>Tree</th>
-            <th>Model</th>
-            <th>dim</th>
-            <th>deg</th>
+            <th style="border-top-left-radius:var(--rounded-corners);width: 10rem">
+                Tree graph</th>
+            <th style="width:11rem;">Phylogenetic model</th>
+            <th>Dimension</th>
+            <th>Degree</th>
             <th>number of <br> probability <br> coordinates</th>
             <th>number of <br> Fourier <br> coordinates</th>
-            <th>dim of <br> Singular Locus</th>
-            <th>deg of <br> Singular Locus</th>
+            <th>Dimension<br> Singular <br> Locus</th>
+            <th>Degree<br> Singular <br> Locus</th>
             <th>MLdeg</th>
-            <th>EDdeg</th>
+            <th style="border-top-right-radius:var(--rounded-corners);">EDdeg</th>
         </tr>
     </thead>
     <tbody>
         {% for tikzpicture in treesastex %}
         <tr class="tree-separator">
-            <td rowspan="4" style="padding: 0.5rem;"><script type="text/tikz">{{ tikzpicture.image }}</script></td>
+            <td rowspan="4" style="padding: 1rem;">
+                <script type="text/tikz">{{ tikzpicture.image }}</script></td>
         {% for treeandmodel in treesandmodels[tikzpicture.id] %}
-            <td><a href="{{ url_for('subpage', treeandmodel_id=treeandmodel.id) }}">{{ treeandmodel.modelname }}</a></td>
+            <td style="text-align: left;">
+                <a href="{{ url_for('subpage', treeandmodel_id=treeandmodel.id) }}">
+                {{ treeandmodel.modelname }}</a></td>
             <td>{{ treeandmodel.deg }}</td>
             <td>{{ treeandmodel.np }}</td>
             <td>{{ treeandmodel.dim }}</td>
