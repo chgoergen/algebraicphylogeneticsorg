@@ -68,12 +68,6 @@ body {
     float: right;
   }
 
-  .anchor {
-    position: absolute;
-    top: -65px; /* given the fixed header is 50px tall, and you want 15px padding */
-    left: 0px;
-  }
-
 /* headers */
 h1 {
     max-width: 100%;
@@ -153,7 +147,7 @@ tr:hover td {background:var(--grey-color);}
 .grid-container {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2rem;
     margin: 1rem 0;
 }
@@ -192,7 +186,9 @@ tr:hover td {background:var(--grey-color);}
     display: flex;
     justify-content: center;
     vertical-align: middle;
-    margin: auto;
+    margin: 0 auto;
+    padding: 2rem;
+    height: 15rem;
 }
 
 .module div#content {
