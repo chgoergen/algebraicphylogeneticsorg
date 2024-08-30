@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Details: {{ data.treename }} tree with {{data.modelname}} model ({{ treeandmodel_id }})</h1>
+<div class="topheader">Details: {{ data.treename }} tree with {{data.modelname}} model ({{ treeandmodel_id }})</div>
 
 <div class="main">
 <div class="grid-container">
@@ -87,7 +87,8 @@
 
     {% if data.mu %}
     <div class="module span-2">
-        <div id="content", style="border-radius: var(--rounded-corners);">
+        <div id="title">Additional information</div>
+        <div id="content">
             The cardinality of the smallest set of generators that define the ideal of phylogenetic invariants: {{ data.mu }} <br>
             The largest degree of a generator in the degree reverse lexicographic reduced Gröbner basis: {{ data.E }} <br>
             The largest degree of an element in a minimal generating set for the ideal of phylogenetic invariants: {{ data.e }} <br>
