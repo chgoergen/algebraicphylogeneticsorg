@@ -1,0 +1,241 @@
+/* ------------------------------------ */
+/* CSS STYLE FOR ALL OUR HTML DOCUMENTS */
+/* ------------------------------------ */
+
+/* background, overall settings */ 
+:root {
+    /* outdated: forest greens #2E792D and #bed3ab
+                 gray green #F1F5ED and gray #f2f2f2
+       for monochrome variations see https://maketintsandshades.com */
+    --grey-color:#f0eef0; /*gray aubergine*/
+    --main-color:#6a506d;
+    --shade-main-color:#c3b9c5;
+    --contrast-color:#af6421;
+    --shade-contrast-color:#d7b290;
+    --rounded-corners: 0.5rem;
+    --line-thickness: 0.2rem;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: medium;
+    max-width: 100%;
+}
+
+/* top navigation bar */
+.topnav {
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2; /* stack order; avoids tex going atop navigation */
+    background-color: var(--contrast-color);
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+    border-bottom: var(--line-thickness) solid var(--main-color);
+  }
+  .topnav a {
+    float: left;
+    text-align: center;
+    color: black;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-decoration: none;
+  }
+  .topnav a:hover {
+    color: var(--main-color);
+  }
+  .topnav a:active {
+    color: black;
+    font-weight: bold;
+  }
+  .topnav a.split {
+    float: right;
+  }
+
+/* headers */
+.topheader {
+    top: 2.2rem;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    border-collapse: collapse;
+    padding: 2rem;
+    margin-bottom: 4rem;
+    position: relative;
+    color: black;
+    font-size: large;
+    font-weight: normal;
+    background-color: var(--shade-main-color);
+    text-align: center;
+    overflow-x: hidden;
+}
+    /* landing page header */
+    .topheader div#emph {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        color: var(--main-color);
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+/* bottom bar */
+.footer {
+    left: 0;
+    bottom: 0;
+    margin-top: 4rem;
+    width: 100%;
+    padding: var(--line-thickness);
+    background-color: var(--grey-color);
+    color: black;
+    text-align: left;
+    font-size: smaller;
+    border-top: var(--line-thickness) solid var(--main-color);
+    overflow-x: hidden;
+}
+    .footer a {
+        text-decoration: none;
+        color: var(--main-color);
+    }
+
+/* main body of the website */
+.main {
+    width: 85%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+    /* clickable text */
+    .main a {
+        text-decoration: none;
+        color: var(--main-color);
+    }
+
+/* tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th, td {
+    font-weight: normal;
+    padding: 0.5rem;
+    border: none;
+    width: 4rem;
+    overflow: hidden; 
+}
+
+th {
+    background-color: var(--shade-contrast-color);
+    margin-bottom: var(--line-thickness);
+    margin-left: 1rem;
+    text-align: left;
+}
+
+tr.tree-separator td {
+    border-top: var(--line-thickness) solid var(--main-color);
+    margin-top: var(--line-thickness);
+    margin-bottom: var(--line-thickness);
+}
+
+tr.model-separator td {
+    border-top: var(--line-thickness) solid var(--grey-color);
+}
+
+tr:hover td {background:var(--grey-color);}
+
+/* subpage style and grid settings */
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.module {
+    padding: 0rem;
+    background-color: var(--grey-color);
+    border-radius: var(--rounded-corners);
+}
+
+.span-1 {
+    grid-column: span 2;
+}
+
+.span-2 {
+    grid-column: span 4;
+}
+
+.span-3 {
+    grid-column: span 1;
+}
+
+/* box settings */
+.module div#title {
+    text-align: center;
+    font-weight: normal;
+    color: black;
+    border-bottom: var(--line-thickness) solid var(--main-color);
+    padding: 0.5rem;
+    background-color: var(--shade-main-color); 
+    border-top-left-radius: var(--rounded-corners);
+    border-top-right-radius: var(--rounded-corners);
+  }
+
+.module div#picture { 
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    margin: auto;
+}
+
+.module div#content {
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--grey-color);
+    border-bottom-left-radius: var(--rounded-corners);
+    border-bottom-right-radius: var(--rounded-corners);
+    overflow-x: auto;
+    min-height: 6rem;
+    max-height: 15rem;
+    overflow-y: hidden;
+    font-size: medium;
+  }
+
+
+
+
+
+
+div {
+    text-align: left;
+}
+
+div.codebox {
+    text-align: left;
+    padding: 0.5rem;
+    border: none;
+    white-space: 0px;
+    font-family: monospace;
+    border-radius: var(--rounded-corners);
+}
+
+pre code {
+    background-color: #f2f2f2;
+    border: none;
+    display: block;
+    white-space: 0px;
+    margin: 0;
+  }
+  

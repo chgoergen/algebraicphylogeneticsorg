@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>algebraicphylogenetics.org</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+      };
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    <link rel="stylesheet" type="text/css"
+    href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+</head>
+<body>
+    <div class="topnav">
+                <a href="/" style="color:var(--green-color); font-weight:bold;">Database</a>
+                <a href="/notation">Notions and notation</a>
+                <a href="/about">About this project</a>               
+                <a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics/phylogenetics" class="split" target="_blank">AlgebraicPhylogenetics.jl documentation in <img style="height:1rem; vertical-align: middle;" src="https://docs.oscar-system.org/stable/assets/logo.png"></a>
+                <a href="https://www.coloradocollege.edu/aapps/ldg/small-trees/small-trees_0.html" class="split"  target="_blank">Small Phylogenetic Trees (2007)</a>
+    </div>
+    
+
+<div class="topheader">Details: three taxa tree with Jukes Cantor model (3-0-0-JC)</div>
+
+<div class="main">
+<div class="grid-container">
+    
+    <div class="module span-3">
+        <div id="title">Phylogenetic tree 3-0-0</div>
+        <div id="picture">
+            <script type="text/tikz">
+                \begin{tikzpicture}[scale=2.5,%green!30!darkgray
+  every node/.style={font=\huge},
+  every edge/.style={draw,line width=0.2em},
+  inner/.style={draw,circle,inner sep=4pt,fill=white},
+  leaf/.style={draw,circle,inner sep=4pt,fill=black}]
+\node (root) [inner] at (0,0) {};
+\foreach \i in {1,2,3}{%
+      \node (\i) [leaf] at (\i*360/3+60: 1) {};
+      \node at (\i*360/3+38: 0.6) {$M_\i$};
+      \node at (\i*360/3+60: 1.35) {\i};
+      \path (root) edge (\i);};
+\end{tikzpicture}
+            </script>
+        </div>
+    </div>
+    
+
+    
+    <div class="module span-1">
+        <div id="title">Evolutionary model</div>
+        <div id="content"><a href="/notation#models">Jukes Cantor</a> model with <a href="/notation#labelling">root distribution</a> $\pi = \left(\frac{1}{4},\frac{1}{4},\frac{1}{4},\frac{1}{4}\right)$. <br>
+            The <a href="/notation#labelling">transition matrix</a>  associated to edge $i$ is of the form
+            $$M_i = \begin{pmatrix}
+a_i &amp;  b_i &amp;  b_i &amp;  b_i\\
+b_i &amp;  a_i &amp;  b_i &amp;  b_i\\ 
+b_i &amp;  b_i &amp;  a_i &amp;  b_i\\ 
+b_i &amp;  b_i &amp;  b_i &amp;  a_i
+\end{pmatrix}$$ and the <a href="/notation#labelling">Fourier parameters</a> are $\left(x_1^{(i)},x_2^{(i)},x_2^{(i)},x_2^{(i)}\right)$ for all edges $i$.
+        </div>
+    </div>
+    
+
+    
+    <div class="module span-3">
+        <div id="title">Summary</div>
+        <div id="content">
+            <a href="/notation#invariants">Dimension:</a>  4 <br>
+            Degree: 3 <br>
+            Probability coordinates: 5 <br>
+            Fourier coordinates: 5 <br>
+            dim of Singular locus: 0 <br>
+            deg of Singular locus: 0 <br>
+            MLdeg: 0 <br>
+            EDdeg: 0 <br>
+        </div>
+    </div>
+    
+
+
+    
+    <div class="module span-1">
+        <div id="title">Probability parametrization</div>
+        <div id="content">$\begin{align}
+p_{ACA} &= \frac{1}{2}(a_1a_3b_2 + a_2b_1b_3 + 2b_1b_2b_3)\\
+p_{AAA} &= \frac{1}{2}(a_1a_2a_3 + 3b_1b_2b_3)\\
+p_{ACC} &= \frac{1}{2}(a_1b_2b_3 + a_2a_3b_1 + 2b_1b_2b_3)\\
+p_{ACG} &= \frac{1}{2}(a_1b_2b_3 + a_2b_1b_3 + a_3b_1b_2 + b_1b_2b_3)\\
+p_{AAC} &= \frac{1}{2}(a_1a_2b_3 + a_3b_1b_2 + 2b_1b_2b_3)
+\end{align}$</div>
+    </div>
+    
+
+    
+    <div class="module span-1">
+        <div id="title">Fourier parametrization</div>
+        <div id="content">$\begin{align}
+q_{AAA} &amp;= x^{(1)}_{1}x^{(2)}_{1}x^{(3)}_{1}\\
+q_{CGT} &amp;= x^{(1)}_{2}x^{(2)}_{2}x^{(3)}_{2}\\
+q_{CCA} &amp;= x^{(3)}_{1}x^{(1)}_{2}x^{(2)}_{2}\\
+q_{ACC} &amp;= x^{(1)}_{1}x^{(2)}_{2}x^{(3)}_{2}\\
+q_{CAC} &amp;= x^{(2)}_{1}x^{(1)}_{2}x^{(3)}_{2}
+\end{align}$</div>
+    </div>
+    
+
+    
+    <div class="module span-1">
+        <div id="title">Equivalent classes of probability parametrization</div>
+        <div id="content">$\begin{align}
+\text{Class } &p_{AAA}:\ p_{AAA},\ p_{CCC},\ p_{GGG},\ p_{TTT}\\
+\text{Class } &p_{AAC}:\ p_{AAC},\ p_{AAG},\ p_{AAT},\ p_{CCA}, p_{CCG}, p_{CCT}, p_{GGA}, p_{GGC}, p_{GGT}, p_{TTA}, p_{TTC}, p_{TTG}\\
+\text{Class } &p_{ACA}:\ p_{ACA},\ p_{AGA},\ p_{ATA},\ p_{CAC}, p_{CGC}, p_{CTC}, p_{GAG}, p_{GCG}, p_{GTG}, p_{TAT}, p_{TCT}, p_{TGT}\\
+\text{Class } &p_{ACC}:\ p_{ACC},\ p_{AGG},\ p_{ATT},\ p_{CAA}, p_{CGG}, p_{CTT}, p_{GAA}, p_{GCC}, p_{GTT}, p_{TAA}, p_{TCC}, p_{TGG}\\
+\text{Class } &p_{ACG}:\ p_{ACG},\ p_{ACT},\ p_{AGC},\ p_{AGT}, p_{ATC}, p_{ATG}, p_{CAG}, p_{CAT}, p_{CGA}, p_{CGT}, p_{CTA}, p_{CTG}, p_{GAC}, p_{GAT}, p_{GCA}, p_{GCT}, p_{GTA}, p_{GTC}, p_{TAC}, p_{TAG}, p_{TCA}, p_{TCG}, p_{TGA}, p_{TGC}
+\end{align}$</div>
+    </div>
+    
+
+    
+    <div class="module span-1">
+        <div id="title">Equivalent classes of Fourier parametrization</div>
+        <div id="content">$\begin{align}
+\text{Class } &amp;0:\ q_{\texttt{CAA}}, q_{GAA}, q_{TAA}, q_{ACA}, q_{GCA}, q_{TCA}, q_{AGA}, q_{CGA}, q_{TGA}, q_{ATA}, q_{CTA}, q_{GTA}, q_{AAC}, q_{GAC}, q_{TAC}, q_{CCC}, q_{GCC}, q_{TCC}, q_{AGC}, q_{CGC}, q_{GGC}, q_{ATC}, q_{CTC}, q_{TTC}, q_{AAG}, q_{CAG}, q_{TAG}, q_{ACG}, q_{CCG}, q_{GCG}, q_{CGG}, q_{GGG}, q_{TGG}, q_{ATG}, q_{GTG}, q_{TTG}, q_{AAT}, q_{CAT}, q_{GAT}, q_{ACT}, q_{CCT}, q_{TCT}, q_{AGT}, q_{GGT}, q_{TGT}, q_{CTT}, q_{GTT}, q_{TTT}\\[0.5em]
+\text{Class } &amp;q_{AAA}:\ q_{AAA}\\[0.5em]
+\text{Class } &amp;q_{ACC}:\ q_{ACC}, q_{AGG}, q_{ATT}\\
+\text{Class } &amp;q_{CAC}:\ q_{CAC}, q_{GAG}, q_{TAT}\\
+\text{Class } &amp;q_{CCA}:\ q_{CCA}, q_{GGA}, q_{TTA}\\
+\text{Class } &amp;q_{CGT}:\ q_{CGT}, q_{CTG}, q_{GCT}, q_{GTC}, q_{TCG}, q_{TGC}
+\end{align}$</div>
+    </div>
+    
+
+    
+    <div class="module span-1">
+        <div id="title">Invariants in Fourier coordinates</div>
+        <div id="content">Ideal generated by $$q_{AAA}q_{CGT}^2 - q_{CCA}q_{ACC}q_{CAC}$$</div>
+    </div>
+    
+
+    
+    <div class="module span-1">
+        <div id="title">Gröbner basis of ideal of invariants</div>
+        <div id="content">Gröbner basis with elements $$q_{AAA}q_{CGT}^2 - q_{CCA}q_{ACC}q_{CAC}$$
+with respect to the ordering
+degrevlex $q_{AAA}, q_{CGT}, q_{CCA}, q_{ACC}, q_{CAC}$</div>
+    </div>
+    
+
+    
+    <div class="module span-2">
+        <div id="title">Additional information</div>
+        <div id="content">
+            The cardinality of the smallest set of generators that define the ideal of phylogenetic invariants: 1 <br>
+            The largest degree of a generator in the degree reverse lexicographic reduced Gröbner basis: 3 <br>
+            The largest degree of an element in a minimal generating set for the ideal of phylogenetic invariants: 3 <br>
+            The cardinality of the degree reverse lexicographic reduced Gröbner basis of the ideal of phylogenetic invariants: 1
+        </div>
+    </div>
+    
+
+    
+    <div class="module span-3">
+        <div id="title">Specialized Fourier transform</div>
+        <div id="content">$$\frac{1}{3}\begin{pmatrix}
+3 &amp; 3 &amp; 3 &amp; 3 &amp; 3\\
+3 &amp; -1 &amp; -1 &amp; 3 &amp; -1\\
+3 &amp; -1 &amp; 3 &amp; -1 &amp; -1\\
+3 &amp; 3 &amp; -1 &amp; -1 &amp; -1\\
+3 &amp; -1 &amp; -1 &amp; -1 &amp; 1
+\end{pmatrix}$$</div>
+    </div>
+    
+
+    
+    <div class="module span-3">
+        <div id="title">Inverse specialized Fourier transform</div>
+        <div id="content">$$\frac{1}{16}\begin{pmatrix}
+1 &amp; 3 &amp; 3 &amp; 3 &amp; 6\\
+3 &amp; -3 &amp; -3 &amp; 9 &amp; -6\\
+3 &amp; -3 &amp; 9 &amp; -3 &amp; -6\\
+3 &amp; 9 &amp; -3 &amp; -3 &amp; -6\\
+6 &amp; -6 &amp; -6 &amp; -6 &amp; 12
+\end{pmatrix}$$</div>
+    </div>
+    
+</div>
+</div>
+
+
+    <div class="footer">
+    This website is hosted at the Max Planck Institute for Mathematics in the Sciences in Leipzig, Germany. <a href="https://www.mis.mpg.de/imprint" target="_blank">Impressum</a>.
+    </div>
+</body>
+</html>

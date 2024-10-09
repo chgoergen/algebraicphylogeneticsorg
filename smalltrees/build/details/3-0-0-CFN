@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>algebraicphylogenetics.org</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+      };
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    <link rel="stylesheet" type="text/css"
+    href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+</head>
+<body>
+    <div class="topnav">
+                <a href="/" style="color:var(--green-color); font-weight:bold;">Database</a>
+                <a href="/notation">Notions and notation</a>
+                <a href="/about">About this project</a>               
+                <a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics/phylogenetics" class="split" target="_blank">AlgebraicPhylogenetics.jl documentation in <img style="height:1rem; vertical-align: middle;" src="https://docs.oscar-system.org/stable/assets/logo.png"></a>
+                <a href="https://www.coloradocollege.edu/aapps/ldg/small-trees/small-trees_0.html" class="split"  target="_blank">Small Phylogenetic Trees (2007)</a>
+    </div>
+    
+
+<div class="topheader">Details: three taxa tree with Cavender Felsenstein Neyman model (3-0-0-CFN)</div>
+
+<div class="main">
+<div class="grid-container">
+    
+    <div class="module span-3">
+        <div id="title">Phylogenetic tree 3-0-0</div>
+        <div id="picture">
+            <script type="text/tikz">
+                \begin{tikzpicture}[scale=2.5,%green!30!darkgray
+  every node/.style={font=\huge},
+  every edge/.style={draw,line width=0.2em},
+  inner/.style={draw,circle,inner sep=4pt,fill=white},
+  leaf/.style={draw,circle,inner sep=4pt,fill=black}]
+\node (root) [inner] at (0,0) {};
+\foreach \i in {1,2,3}{%
+      \node (\i) [leaf] at (\i*360/3+60: 1) {};
+      \node at (\i*360/3+38: 0.6) {$M_\i$};
+      \node at (\i*360/3+60: 1.35) {\i};
+      \path (root) edge (\i);};
+\end{tikzpicture}
+            </script>
+        </div>
+    </div>
+    
+
+    
+    <div class="module span-1">
+        <div id="title">Evolutionary model</div>
+        <div id="content"><a href="/notation#models">Cavender Felsenstein Neyman</a> model with <a href="/notation#labelling">root distribution</a> . <br>
+            The <a href="/notation#labelling">transition matrix</a>  associated to edge $i$ is of the form
+            \[ M_j = \begin{pmatrix} a_i &amp; b_i\\ b_i &amp; a_i \end{pmatrix} \] and the <a href="/notation#labelling">Fourier parameters</a> are  for all edges $i$.
+        </div>
+    </div>
+    
+
+    
+    <div class="module span-3">
+        <div id="title">Summary</div>
+        <div id="content">
+            <a href="/notation#invariants">Dimension:</a>  4 <br>
+            Degree: 1 <br>
+            Probability coordinates: 4 <br>
+            Fourier coordinates: 4 <br>
+            dim of Singular locus: - <br>
+            deg of Singular locus: - <br>
+            MLdeg: 1 <br>
+            EDdeg: 1 <br>
+        </div>
+    </div>
+    
+
+
+    
+    <div class="module span-1">
+        <div id="title">Probability parametrization</div>
+        <div id="content">\\[\\begin{align}
+p_{AAA} &= a_1a_2a_3 + 3b_1b_2b_3\\\\
+p_{AAC} &= 3(a_1a_2b_3 + a_3b_1b_2 + 2b_1b_2b_3)\\\\
+p_{ACA} &= 3(a_1a_3b_2 + a_2b_1b_3 + 2b_1b_2b_3)\\\\
+p_{ACC} &= 3(a_1b_2b_3 + a_2a_3b_1 + 2b_1b_2b_3)\\\\
+p_{ACG} &= 6(a_1b_2b_3 + a_2b_1b_3 + a_3b_1b_2 + b_1b_2b_3)
+\\end{align}
+\\]</div>
+    </div>
+    
+
+    
+    <div class="module span-1">
+        <div id="title">Fourier parametrization</div>
+        <div id="content">Detailed Fourier parametrization</div>
+    </div>
+    
+
+    
+    <div class="module span-1">
+        <div id="title">Equivalent classes of probability parametrization</div>
+        <div id="content">Equivalent classes of probability parametrization</div>
+    </div>
+    
+
+    
+    <div class="module span-1">
+        <div id="title">Equivalent classes of Fourier parametrization</div>
+        <div id="content">Equivalent classes of Fourier parametrization</div>
+    </div>
+    
+
+    
+    <div class="module span-1">
+        <div id="title">Invariants in Fourier coordinates</div>
+        <div id="content">Invariants in Fourier coordinates</div>
+    </div>
+    
+
+    
+    <div class="module span-1">
+        <div id="title">Gröbner basis of ideal of invariants</div>
+        <div id="content">Grobner basis of ideal of invariants</div>
+    </div>
+    
+
+    
+
+    
+    <div class="module span-3">
+        <div id="title">Specialized Fourier transform</div>
+        <div id="content">Detailed specialized Fourier transform</div>
+    </div>
+    
+
+    
+</div>
+</div>
+
+
+    <div class="footer">
+    This website is hosted at the Max Planck Institute for Mathematics in the Sciences in Leipzig, Germany. <a href="https://www.mis.mpg.de/imprint" target="_blank">Impressum</a>.
+    </div>
+</body>
+</html>

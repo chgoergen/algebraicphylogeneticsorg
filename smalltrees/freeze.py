@@ -2,7 +2,8 @@
 # https://www.youtube.com/watch?v=W09zIet38kI
 
 from flask_frozen import Freezer
-import app
+#from website import app
+from smalltrees import app
 
 freezer = Freezer(app)
 
