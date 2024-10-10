@@ -1,11 +1,13 @@
 from flask import Flask, render_template
 import yaml
 import glob
+import natsort
+from natsort import natsorted
 
 app = Flask(__name__)
 
 datafiles = glob.glob("static/data/*.yaml")
-texfiles = glob.glob("static/tex/*.yaml")
+texfiles = natsorted(glob.glob("static/tex/*.yaml"))
 
 def load_data(filename):
     with open(filename, 'r') as file:

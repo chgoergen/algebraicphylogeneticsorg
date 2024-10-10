@@ -29,7 +29,7 @@
         <tr class="tree-separator">
             <td rowspan="4" style="padding: 1rem;">
                 <script type="text/tikz">{{ tikzpicture.image }}</script></td>
-        {% for treeandmodel in treesandmodels[tikzpicture.id] %}
+            {% for treeandmodel in treesandmodels[tikzpicture.id] %}
             <td style="text-align: left;">
                 <a href="{{ url_for('subpage', treeandmodel_id=treeandmodel.id) }}">
                 {{ treeandmodel.modelname }}</a></td>
