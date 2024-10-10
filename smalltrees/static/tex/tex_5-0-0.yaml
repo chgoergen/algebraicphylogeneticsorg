@@ -1,12 +1,12 @@
-id: "4-0-0"
+id: "5-0-0"
 image: |-
   \begin{tikzpicture}[scale=2,
       every edge/.style={draw,very thick},
       inner/.style={draw,circle,inner sep=3pt,fill=white},
       leaf/.style={draw,circle,inner sep=3pt,fill=black}]
     \node (root) [inner] at (0,0) {};
-    \foreach \i in {1,2,3,4}{%
-      \node (\i) [leaf] at (\i*360/4+45: 1) {};
+    \foreach \i in {1,2,3,4,5}{%
+      \node (\i) [leaf] at (\i*360/5: 1) {};
       \draw (root) edge (\i);};
   \end{tikzpicture}
 imagelabelled: |-
@@ -16,9 +16,10 @@ imagelabelled: |-
       inner/.style={draw,circle,inner sep=4pt,fill=white},
       leaf/.style={draw,circle,inner sep=4pt,fill=black}]
     \node (root) [inner] at (0,0) {};
-    \foreach \i in {1,2,3,4}{%
-      \node (\i) [leaf] at (\i*360/4+45: 1) {};
-      \node at (\i*360/4+70: 0.6) {$M_\i$};
-      \node at (\i*360/4+45: 1.25) {\i};
+    \node (root) [inner] at (0,0) {};
+    \foreach \i in {1,2,3,4,5}{%
+      \node (\i) [leaf] at (\i*360/5: 1) {};
+      \node at (\i*360/5+25: 0.6) {$M_\i$};
+      \node at (\i*360/5: 1.25) {\i};
       \draw (root) edge (\i);};
   \end{tikzpicture}

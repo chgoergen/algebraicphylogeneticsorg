@@ -16,16 +16,22 @@ def load_data(filename):
 texlist = [load_data(filename) for filename in texfiles]
 datalist = [load_data(filename) for filename in datafiles]
 
+# create dict sorted by tree indices, listing models after
+# is this sorted sensibly?
 treesandmodels = {}
+nrrowspertree = {}
 for tikzpicture in texlist:
     idx = tikzpicture['id']
     treesandmodels[idx] = [d for d in datalist if idx in d['id']]
+    nrrowspertree[idx] = max(1,len(treesandmodels[idx]))
+#nrmodels = [len(treesandmodels[idx]) for idx in treesandmodels]
 
 @app.route('/')
 def index():
     return render_template('index.html', 
                             treesandmodels=treesandmodels,
-                            treesastex=texlist)
+                            treesastex=texlist,
+                            nrrows=nrrowspertree)
 
 @app.route('/details/<treeandmodel_id>')
 def subpage(treeandmodel_id):
