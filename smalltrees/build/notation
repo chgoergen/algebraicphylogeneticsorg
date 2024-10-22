@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>algebraicphylogenetics.org</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        }
+      };
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    <link rel="stylesheet" type="text/css"
+    href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+</head>
+<body>
+    <div class="topnav">
+                <a href="/" style="color:var(--green-color); font-weight:bold;">Database</a>
+                <a href="/notation">Notions and notation</a>
+                <a href="/about">About this project</a>               
+                <a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics/phylogenetics" class="split" target="_blank">AlgebraicPhylogenetics.jl documentation in <img style="height:1rem; vertical-align: middle;" src="https://docs.oscar-system.org/stable/assets/logo.png"></a>
+                <a href="https://www.coloradocollege.edu/aapps/ldg/small-trees/small-trees_0.html" class="split"  target="_blank">Small Phylogenetic Trees (2007)</a>
+    </div>
+    
+
+<div class="topheader">Notions and notation</div>
+
+<div class="main">
+<div style="text-align: left;">
+    <p></p>
+    <dl>
+    <P>  
+  <dt><b>Introduction</b></dt><dd>  
+    <P>
+    The algebraic-geometry theory is based on results collected by Lior Pachter and Bernd Sturmfels (2005; Algebraic Statistics for computational biology. Cambridge University Press) and follow-up work. In particular, the 2006 version of this database is discussed in Chapter 15 "Catalog of Small Trees" in that book, written by Marta Casanellas, Luis David Garcia Puente, and Seth Sullivant.
+    <p>
+    The models studied here are the following. <div id="models"></div>
+    <p>
+    <b>CFN or Cavender-Ferris-Neyman</b>
+    <p>
+    <b>JC69 or Jukes-Cantor:</b>
+    Jukes, Thomas H. and Charles R. Cantor (1969). "Evolution of protein molecules". In: Mammalian protein metabolism 3, pp. 21–132. <a hef="https://doi.org/10.1016/B978-1-4832-3211-9.50009-7">doi: 10.1016/B978-1-4832-3211-9.50009-7</a>
+    <p>
+    <b>K80 or Kimura 3:</b>
+    Kimura, Motoo (1980). "A simple method for estimating evolutionary rates of base substitutions through comparative studies of nucleotide sequences". In: Journal of Molecular Evolution 16(2), pp. 111–120. issn: 0022-2844. <a hef="https://doi.org/10.1007/BF01731581">doi: 10.1007/BF01731581</a>.
+    <p>
+    <b>K81 or Kimura 2:</b>
+    Kimura, Motoo (1981). "Estimation of evolutionary distances between homologous nucleotide sequences." In: Proceedings of the National Academy of Sciences 78(1), pp. 454–458. issn: 0027-8424. <a hef="https://doi.org/10.1073/pnas.78.1.454">doi: 10.1073/pnas.78.1.454</a>
+    <p>
+    <b>GM or General Markov:</b>
+    Allman, Elizabeth S., John A. Rhodes, and Amelia Taylor (2014). "A Semialgebraic Description of the General Markov Model on Phylogenetic Trees". In: SIAM Journal on Discrete Mathematics 28(2), pp. 736–755. issn: 0895-4801. <a hef="https://doi.org/10.1137/120901568">doi: 10.1137/120901568</a>. eprint: 1212.1200 (q-bio.PE).
+  
+    <a class="anchor" name="labelling"></a>
+    <dt><b>Labelling conventions</b></dt><dd>  
+    <P>
+    If $T$ is a rooted tree, there is a distinguished vertex of $T$ called the root. The tree $T$ is drawn with the root at the top and all its children and their respective children below, with the leaves on the bottom-most level. The edges are numbered $e_1, e_2, ...$ starting at the upper left hand corner, proceeding left to right and top to bottom. The leaves are labeled with the numbers $1,2,3,...$ starting with the left-most leaf and proceeding left to right.
+    <P>
+    If $T$ is an unrooted tree, it is drawn with the leaves on a circle and all inner edges and vertices within that circle. The edges of $T$ are numbered $e_1,e_2,...$ starting at the upper left hand corner of the figure and proceeding left to right and top to bottom. The leaves are labeled with the numbers $1,2,3,...$ starting at the first leaf strictly left of the 12 o'clock position and proceeding counterclockwise around the perimeter of the circle. 
+    leaf i has ingoing edge  ei, labeled Mi; for inrerior nodes proceed top left to bottom righte
+    <P> Here's a test tikz treeeeee!
+    <script type="text/tikz">
+        \begin{tikzpicture}[%
+            inner/.style={draw,circle,inner sep=1pt,fill=black},
+            leaf/.style={draw,circle,inner sep=2pt}]
+        \node (root) [inner] at (0,0) {};
+        \node (leaf1) [leaf,label=left:$X_1$] at (-1,0) {};
+        \node (leaf2) [leaf,label=below:$X_2$] at (1,-1) {};
+        \node (leaf3) [leaf,label=right:$X_3$] at (1,1) {};
+        \draw (root) -- node [above] {$M_1$} (leaf1);
+        \draw (root) -- node [below=2pt,pos=0.4] {$M_2$} (leaf2);
+        \draw (root) -- node [below=3pt,pos=0.8] {$M_3$} (leaf3);
+        \end{tikzpicture}
+    </script>
+    And here's the same tree in julia cooooode
+    <div class="codebox">
+        <pre>
+        <code>
+        graph_from_edges(Directed,[[4,1],[4,2],[4,3]])
+        </code>
+        </pre>
+    </div>
+    <P>
+    <dt><b>Modelling assumptions</b></dt><dd>  
+    <P>
+    A phylogenetic model is uniquely identified by its tree graph together with its name in natural language: Neyman 2-state model, Jukes Cantor, Kimura 2-parameter or Kimura 3-parameter model or the General Markov Model.
+    <P>
+    To each node in a model, we associate a random variable with two or four states: in the case of binary data these states are ${0,1}$, and for DNA data they are $\{$A,C,G,T$\}$, in this order. The root distribution is hence a vector of length two or four, throughout assumed to be uniform. The inner nodes are assumed to be hidden variables with the respective same number of states. The leaves $1,2,3...$ are associated to random variables called $X_1,X_2,X_3,...$ respectively.
+    <P>
+    To each edge $e_1,e_2,...$, we associate a transition matrix $M_1,M_2,...$, respectively. These matrices are of dimension $2\times 2$ or $4\times 4$, depending on whether the model is for binary data or DNA data. They code the probabilities of passing from the head-random variable of an edge to its tail-random variable. These probabilities in matrix $M_i$ are parameters $a_i,b_i,c_i,d_i$, some equal, depending on the model. We assume mutual independence of all random variables. We further assume that the parameters satisfy additional linear constraints ensuring that the transition matrices are stochastic. We do not, however, use these linear relations to eliminate parameters.
+    <P> 
+    The distribution of each leaf is calculated using a root-to-leaf product of transition matrices. This may be expressed in a probability or Fourier parametrisation. The implicitisation we calculate of each model represents their joint distribution.
+    <P>
+    <dt id="invariants"><b>Invariants</b></dt><dd>  
+    <P>
+
+np
+    Number of equivalences classes of the probability coordinates.
+
+nq
+    Number of equivalence classes of Fourier coordinates without counting class 0. This is also the dimension of the smallest linear space that contains the model.
+
+
+pi
+    The sum of all probability coordinates in the ith equivalence class. These indeterminates form a set of sufficient statistics for the given model.
+
+qj
+    The average of all Fourier coordinates in the jth equivalence class.
+
+    D
+    The dimension of the model. This corresponds to the least number of parameters needed to specify the model plus one. This numerical invariant is actually the algebraic dimension of the toric ideal. After slicing the corresponding variety with the hyperplane given by the polynomial obtained from adding all indeterminates qj minus 1, the dimension drops by one giving exactly the minimum number of parameters needed to specify the model. This algebraic operation corresponds to considering only the points in the variety whose coordinates sum up to 1.
+
+d
+    The degree of the model. Algebraically, this is defined as the number of points in the intersection of the model and a generic (i.e. "random") subspace of complementary dimension. This is one of the most important numerical invariants of a variety. In particular, when the variety is zero-dimensional (a collection of points), this numerical invariant gives the actual number of points.
+
+E
+    The largest degree of a generator in the degree reverse lexicographic reduced Gröbner basis.
+
+e
+    The largest degree of an element in a minimal generating set for the ideal of phylogenetic invariants. This could be thought as a measure of the complexity of the model.
+
+M
+    The cardinality of the degree reverse lexicographic reduced Gröbner basis of the ideal of phylogenetic invariants. We always use the ordering q1 > q2 > q3 > ···.
+
+mld
+    The maximum likelihood degree of the model. This is the degree of the ML equations of the model. Given some data and a model, the likelihood function is a rational function on the corresponding (projective) variety. The set of solutions to the ML equations consists of all critical points of the Likelihood function. These gives an algebraic algorithm to compute symbolically all local maxima of the Likelihood function. the ML degree is a measure of how many local maxima are there. This numerical invariant should be useful when applying hill-climbing algorithms to compute local maxima if it is used as a measure of confidence on the chances that the local maxima approximated is actually a global maximum.
+
+µ
+    The cardinality of the smallest set of generators that define the ideal of phylogenetic invariants.
+
+sD
+    The dimension of the set of singular points of the model. The singular locus of a model is very important to understand the geometry of the model. In particular, it is necessary for the ML degree computation.
+
+sd
+    The algebraic degree of the set of singular points of the model.
+
+</div> 
+</div>
+
+    <div class="footer">
+    This website is hosted at the Max Planck Institute for Mathematics in the Sciences in Leipzig, Germany. <a href="https://www.mis.mpg.de/imprint" target="_blank">Impressum</a>.
+    </div>
+</body>
+</html>

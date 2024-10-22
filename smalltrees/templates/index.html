@@ -10,8 +10,9 @@
 <table>
     <thead>
         <tr>
-            <th style="border-top-left-radius:var(--rounded-corners);width: 10rem">
-                Tree graph</th>
+            <th style="border-top-left-radius:var(--rounded-corners);
+                width: 10rem; text-align:center;">
+                Tree graph <br> or network</th>
             <th style="width:11rem;">Phylogenetic model</th>
             <th>Dimension</th>
             <th>Degree</th>
@@ -26,9 +27,9 @@
     <tbody>
         {% for tikzpicture in treesastex %}
         <tr class="tree-separator">
-            <td rowspan="4" style="padding: 1rem;">
+            <td rowspan="{{ nrrows[tikzpicture.id] }}" style="padding: 1rem;">
                 <script type="text/tikz">{{ tikzpicture.image }}</script></td>
-        {% for treeandmodel in treesandmodels[tikzpicture.id] %}
+            {% for treeandmodel in treesandmodels[tikzpicture.id] %}
             <td style="text-align: left;">
                 <a href="{{ url_for('subpage', treeandmodel_id=treeandmodel.id) }}">
                 {{ treeandmodel.modelname }}</a></td>
