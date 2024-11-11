@@ -7,11 +7,11 @@
     /* outdated: forest greens #2E792D and #bed3ab
                  gray green #F1F5ED and gray #f2f2f2
        for monochrome variations see https://maketintsandshades.com */
-    --grey-color:#f0eef0; /*gray aubergine*/
-    --main-color:#6a506d;
-    --shade-main-color:#c3b9c5;
-    --contrast-color:#af6421;
-    --shade-contrast-color:#d7b290;
+    --grey-color:#e7e3e8; /*gray aubergine*/
+    --main-color:#3c252d;
+    --shade-main-color:#6a506d;
+    --contrast-color:#e8a109; /*#af6421*/
+    --shade-contrast-color:#e8a109;
     --rounded-corners: 0.5rem;
     --line-thickness: 0.2rem;
 }
@@ -69,7 +69,9 @@ body {
     color: black;
     font-size: large;
     font-weight: normal;
-    background-color: var(--shade-main-color);
+    text-shadow: -0.2rem 0 white, 0 0.2rem white, 0.2rem 0 white, 0 -0.2rem white;
+    /* background-color: var(--shade-main-color); */
+    background: url('header_gray.png') repeat top center ;
     text-align: center;
     overflow-x: hidden;
 }
@@ -81,6 +83,9 @@ body {
         color: var(--main-color);
         font-size: 2.5rem;
         font-weight: bold;
+        /*-webkit-text-fill-color: var(--main-color);
+        -webkit-text-stroke-color: white;
+        -webkit-text-stroke-width: 0.05rem; */
         text-align: center;
         overflow-x: hidden;
     }

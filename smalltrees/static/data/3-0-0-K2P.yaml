@@ -1,0 +1,135 @@
+id: "3-0-0-K2P"
+treename: "three taxa"
+modelname: "Kimura 2-parameter"
+rooted: "False"
+leaves: "3"
+internal_edges: "0"
+dim: "7"
+deg: "12"
+np: "10"
+nq: "10"
+mu: "9"
+e: "4"
+M: "9"
+E: "4"
+sD: "-"
+sd: "-"
+MLdeg: "-"
+EDdeg: "-"
+details:
+  transition_matrix: |-
+    $$M_j = \begin{pmatrix}
+    a_i &  b_i &  c_i &  b_i\\
+    b_i &  a_i &  b_i &  c_i\\
+    c_i &  b_i &  a_i &  b_i\\
+    b_i &  c_i &  b_i &  a_i
+    \end{pmatrix}$$
+  root_distributon: |-
+    $\pi = \left(\frac{1}{4}, \frac{1}{4}, \frac{1}{4}, \frac{1}{4} \right)$
+  fourier_parameters: |-
+    $\left(x^{(i)}_1, x^{(i)}_2, x^{(i)}_i, x^{(i)}_i\right)$
+  probability_parametrization: |-
+    $\begin{align}
+    p_{\texttt{ACA}} &= \frac{1}{2}(a_1a_3b_2 + a_2b_1b_3 + b_1b_3c_2 + b_2c_1c_3) \\[0.5em]
+    p_{\texttt{AAA}} &= \frac{1}{2}(a_1a_2a_3 + 2b_1b_2b_3 + c_1c_2c_3) \\[0.5em]
+    p_{\texttt{AGA}} &= \frac{1}{2}(a_1a_3c_2 + a_2c_1c_3 + 2b_1b_2b_3) \\[0.5em]
+    p_{\texttt{ACC}} &= \frac{1}{2}(a_1b_2b_3 + a_2a_3b_1 + b_1c_2c_3 + b_2b_3c_1) \\[0.5em]
+    p_{\texttt{ACG}} &= \frac{1}{2}(a_1b_2c_3 + a_2b_1b_3 + a_3b_2c_1 + b_1b_3c_2) \\[0.5em]
+    p_{\texttt{AAC}} &= \frac{1}{2}(a_1a_2b_3 + a_3b_1b_2 + b_1b_2c_3 + b_3c_1c_2) \\[0.5em]
+    p_{\texttt{AAG}} &= \frac{1}{2}(a_1a_2c_3 + a_3c_1c_2 + 2b_1b_2b_3) \\[0.5em]
+    p_{\texttt{ACT}} &= \frac{1}{2}(a_1b_2b_3 + a_2b_1c_3 + a_3b_1c_2 + b_2b_3c_1) \\[0.5em]
+    p_{\texttt{AGG}} &= \frac{1}{2}(a_1c_2c_3 + a_2a_3c_1 + 2b_1b_2b_3) \\[0.5em]
+    p_{\texttt{AGC}} &= \frac{1}{2}(a_1b_3c_2 + a_2b_3c_1 + a_3b_1b_2 + b_1b_2c_3)
+    \end{align}$
+  equivalent_classes_prob: |-
+    $\begin{align}
+    \text{Class } &p_{\texttt{AAA}}:\ p_{\texttt{AAA}},\ p_{\texttt{CCC}},\ p_{\texttt{GGG}},\ p_{\texttt{TTT}} \\[0.5em]
+    \text{Class } &p_{\texttt{AAC}}:\ p_{\texttt{AAC}},\ p_{\texttt{AAT}},\ p_{\texttt{CCA}},\ p_{\texttt{CCG}},\ p_{\texttt{GGC}},\ p_{\texttt{GGT}},\ p_{\texttt{TTA}},\ p_{\texttt{TTG}} \\[0.5em]
+    \text{Class } &p_{\texttt{AAG}}:\ p_{\texttt{AAG}},\ p_{\texttt{CCT}},\ p_{\texttt{GGA}},\ p_{\texttt{TTC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACA}}:\ p_{\texttt{ACA}},\ p_{\texttt{ATA}},\ p_{\texttt{CAC}},\ p_{\texttt{CGC}},\ p_{\texttt{GCG}},\ p_{\texttt{GTG}},\ p_{\texttt{TAT}},\ p_{\texttt{TGT}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACC}}:\ p_{\texttt{ACC}},\ p_{\texttt{ATT}},\ p_{\texttt{CAA}},\ p_{\texttt{CGG}},\ p_{\texttt{GCC}},\ p_{\texttt{GTT}},\ p_{\texttt{TAA}},\ p_{\texttt{TGG}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACG}}:\ p_{\texttt{ACG}},\ p_{\texttt{ATG}},\ p_{\texttt{CAT}},\ p_{\texttt{CGT}},\ p_{\texttt{GCA}},\ p_{\texttt{GTA}},\ p_{\texttt{TAC}},\ p_{\texttt{TGC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACT}}:\ p_{\texttt{ACT}},\ p_{\texttt{ATC}},\ p_{\texttt{CAG}},\ p_{\texttt{CGA}},\ p_{\texttt{GCT}},\ p_{\texttt{GTC}},\ p_{\texttt{TAG}},\ p_{\texttt{TGA}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGA}}:\ p_{\texttt{AGA}},\ p_{\texttt{CTC}},\ p_{\texttt{GAG}},\ p_{\texttt{TCT}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGC}}:\ p_{\texttt{AGC}},\ p_{\texttt{AGT}},\ p_{\texttt{CTA}},\ p_{\texttt{CTG}},\ p_{\texttt{GAC}},\ p_{\texttt{GAT}},\ p_{\texttt{TCA}},\ p_{\texttt{TCG}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGG}}:\ p_{\texttt{AGG}},\ p_{\texttt{CTT}},\ p_{\texttt{GAA}},\ p_{\texttt{TCC}}
+    \end{align}$
+  fourier_parametrization: |-
+    $\begin{align}
+    q_{\texttt{AAA}} &= x^{(1)}_{1}x^{(2)}_{1}x^{(3)}_{1} \\[0.5em]
+    q_{\texttt{GGA}} &= x^{(1)}_{3}x^{(2)}_{3}x^{(3)}_{1} \\[0.5em]
+    q_{\texttt{CCA}} &= x^{(1)}_{2}x^{(2)}_{2}x^{(3)}_{1} \\[0.5em]
+    q_{\texttt{ACC}} &= x^{(1)}_{1}x^{(2)}_{2}x^{(3)}_{2} \\[0.5em]
+    q_{\texttt{GAG}} &= x^{(1)}_{3}x^{(2)}_{1}x^{(3)}_{3} \\[0.5em]
+    q_{\texttt{CGT}} &= x^{(1)}_{2}x^{(2)}_{3}x^{(3)}_{3} \\[0.5em]
+    q_{\texttt{GCT}} &= x^{(1)}_{3}x^{(2)}_{2}x^{(3)}_{3} \\[0.5em]
+    q_{\texttt{AGG}} &= x^{(1)}_{1}x^{(2)}_{3}x^{(3)}_{3} \\[0.5em]
+    q_{\texttt{GTC}} &= x^{(1)}_{3}x^{(2)}_{3}x^{(3)}_{2} \\[0.5em]
+    q_{\texttt{CAC}} &= x^{(1)}_{2}x^{(2)}_{1}x^{(3)}_{2}
+    \end{align}$
+  equivalent_classes_fourier: |-
+    $\begin{align}
+    \text{Class } &0:\ q_{\texttt{CAA}}, q_{\texttt{GAA}}, q_{\texttt{TAA}}, q_{\texttt{ACA}}, q_{\texttt{GCA}}, q_{\texttt{TCA}}, q_{\texttt{AGA}}, q_{\texttt{CGA}}, q_{\texttt{TGA}}, q_{\texttt{ATA}}, q_{\texttt{CTA}}, q_{\texttt{GTA}}, q_{\texttt{AAC}}, q_{\texttt{GAC}}, q_{\texttt{TAC}}, q_{\texttt{CCC}}, q_{\texttt{GCC}}, q_{\texttt{TCC}}, q_{\texttt{AGC}}, q_{\texttt{CGC}}, q_{\texttt{GGC}}, q_{\texttt{ATC}}, q_{\texttt{CTC}}, q_{\texttt{TTC}}, q_{\texttt{AAG}}, q_{\texttt{CAG}}, q_{\texttt{TAG}}, q_{\texttt{ACG}}, q_{\texttt{CCG}}, q_{\texttt{GCG}}, q_{\texttt{CGG}}, q_{\texttt{GGG}}, q_{\texttt{TGG}}, q_{\texttt{ATG}}, q_{\texttt{GTG}}, q_{\texttt{TTG}}, q_{\texttt{AAT}}, q_{\texttt{CAT}}, q_{\texttt{GAT}}, q_{\texttt{ACT}}, q_{\texttt{CCT}}, q_{\texttt{TCT}}, q_{\texttt{AGT}}, q_{\texttt{GGT}}, q_{\texttt{TGT}}, q_{\texttt{CTT}}, q_{\texttt{GTT}}, q_{\texttt{TTT}} \\[0.5em]
+    \text{Class } &q_{\texttt{AAA}}:\ q_{\texttt{AAA}} \\[0.5em]
+    \text{Class } &q_{\texttt{ACC}}:\ q_{\texttt{ACC}} \\[0.5em]
+    \text{Class } &q_{\texttt{AGG}}:\ q_{\texttt{AGG}},\ q_{\texttt{ATT}} \\[0.5em]
+    \text{Class } &q_{\texttt{CAC}}:\ q_{\texttt{CAC}} \\[0.5em]
+    \text{Class } &q_{\texttt{CCA}}:\ q_{\texttt{CCA}} \\[0.5em]
+    \text{Class } &q_{\texttt{CGT}}:\ q_{\texttt{CGT}},\ q_{\texttt{CTG}} \\[0.5em]
+    \text{Class } &q_{\texttt{GAG}}:\ q_{\texttt{GAG}},\ q_{\texttt{TAT}} \\[0.5em]
+    \text{Class } &q_{\texttt{GCT}}:\ q_{\texttt{GCT}},\ q_{\texttt{TCG}} \\[0.5em]
+    \text{Class } &q_{\texttt{GGA}}:\ q_{\texttt{GGA}},\ q_{\texttt{TTA}} \\[0.5em]
+    \text{Class } &q_{\texttt{GTC}}:\ q_{\texttt{GTC}},\ q_{\texttt{TGC}}
+    \end{align}$
+  invariants: |-
+    Ideal generated by  $$ \begin{align}
+    q_{AAA}q_{CGT}q_{GTC} - q_{GGA}q_{AGG}q_{CAC} \\
+    -q_{GGA}q_{GCT}q_{CAC} + q_{CCA}q_{GAG}q_{GTC} \\
+    q_{AAA}q_{CGT}q_{GCT} - q_{CCA}q_{GAG}q_{AGG} \\
+    q_{ACC}q_{GAG}q_{CGT} - q_{GCT}q_{AGG}q_{CAC} \\
+    q_{GGA}q_{ACC}q_{CGT} - q_{CCA}q_{AGG}q_{GTC} \\
+    -q_{AAA}q_{GCT}q_{GTC} + q_{GGA}q_{ACC}q_{GAG} \\
+    q_{AAA}q_{CCA}q_{GTC}^2 - q_{GGA}^2q_{ACC}q_{CAC} \\
+    q_{AAA}q_{ACC}q_{CGT}^2 - q_{CCA}q_{AGG}^2q_{CAC} \\
+    -q_{AAA}q_{GCT}^2q_{CAC} + q_{CCA}q_{ACC}q_{GAG}^2
+    \end{align} $$
+  grobner_basis: |-
+    Gröbner basis with elements  $$ \begin{align}
+    q_{AAA}q_{CGT}q_{GTC} - q_{GGA}q_{AGG}q_{CAC} \\
+    -q_{GGA}q_{GCT}q_{CAC} + q_{CCA}q_{GAG}q_{GTC} \\
+    q_{AAA}q_{CGT}q_{GCT} - q_{CCA}q_{GAG}q_{AGG} \\
+    q_{ACC}q_{GAG}q_{CGT} - q_{GCT}q_{AGG}q_{CAC} \\
+    q_{GGA}q_{ACC}q_{CGT} - q_{CCA}q_{AGG}q_{GTC} \\
+    -q_{AAA}q_{GCT}q_{GTC} + q_{GGA}q_{ACC}q_{GAG} \\
+    q_{AAA}q_{CCA}q_{GTC}^2 - q_{GGA}^2q_{ACC}q_{CAC} \\
+    q_{AAA}q_{ACC}q_{CGT}^2 - q_{CCA}q_{AGG}^2q_{CAC} \\
+    -q_{AAA}q_{GCT}^2q_{CAC} + q_{CCA}q_{ACC}q_{GAG}^2
+    \end{align}$$
+    with respect to the ordering
+    degrevlex $ q_{\texttt{AAA}}, q_{\texttt{GGA}}, q_{\texttt{CCA}}, q_{\texttt{ACC}}, q_{\texttt{GAG}}, q_{\texttt{CGT}}, q_{\texttt{GCT}}, q_{\texttt{AGG}}, q_{\texttt{GTC}}, q_{\texttt{CAC}}$
+  specialized_fourier_transform: |-
+    $\frac{1}{1} \begin{pmatrix}
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1\\ 
+    1 & 0 & -1 & 0 & 1 & 0 & -1 & -1 & 0 & 1\\ 
+    1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1\\ 
+    1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1\\ 
+    1 & 0 & -1 & 0 & -1 & 0 & 1 & -1 & 0 & 1\\ 
+    1 & 0 & -1 & 1 & 0 & -1 & 0 & 1 & 0 & -1\\ 
+    1 & 0 & -1 & -1 & 0 & 1 & 0 & 1 & 0 & -1\\ 
+    1 & 1 & 1 & 0 & 0 & 0 & 0 & -1 & -1 & -1\\ 
+    1 & -1 & 1 & 0 & 0 & 0 & 0 & -1 & 1 & -1
+    \end{pmatrix} ] $
+  inverse_specialized_fourier_transform: |-
+    $\frac{1}{16} \begin{pmatrix}
+    1 & 1 & 2 & 1 & 1 & 2 & 2 & 2 & 2 & 2\\ 
+    2 & -2 & 0 & -2 & 2 & 0 & 0 & 0 & 4 & -4\\ 
+    1 & 1 & -2 & 1 & 1 & -2 & -2 & -2 & 2 & 2\\ 
+    2 & -2 & 0 & 2 & -2 & 0 & 4 & -4 & 0 & 0\\ 
+    2 & 2 & 4 & -2 & -2 & -4 & 0 & 0 & 0 & 0\\ 
+    2 & -2 & 0 & 2 & -2 & 0 & -4 & 4 & 0 & 0\\ 
+    2 & 2 & -4 & -2 & -2 & 4 & 0 & 0 & 0 & 0\\ 
+    1 & 1 & -2 & 1 & 1 & -2 & 2 & 2 & -2 & -2\\ 
+    2 & -2 & 0 & -2 & 2 & 0 & 0 & 0 & -4 & 4\\ 
+    1 & 1 & 2 & 1 & 1 & 2 & -2 & -2 & -2 & -2
+    \end{pmatrix} $
