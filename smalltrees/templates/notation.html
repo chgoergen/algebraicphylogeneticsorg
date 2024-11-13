@@ -10,54 +10,35 @@
     <P>  
   <dt><b>Introduction</b></dt><dd>  
     <P>
-    The algebraic-geometry theory is based on results collected by Lior Pachter and Bernd Sturmfels (2005; Algebraic Statistics for computational biology. Cambridge University Press) and follow-up work. In particular, the 2006 version of this database is discussed in Chapter 15 "Catalog of Small Trees" in that book, written by Marta Casanellas, Luis David Garcia Puente, and Seth Sullivant.
+    The algebraic-geometry theory behind the computations performed for display in this database was first presented by Lior Pachter and Bernd Sturmfels (2005; Algebraic Statistics for computational biology. Cambridge University Press. <a href="
+    https://doi.org/10.1017/CBO9780511610684" class="split" target="_blank">doi: 10.1017/CBO9780511610684</a>). In particular, the 2006 version of this database is discussed in Chapter 15 "Catalog of Small Trees" of that book, written by Marta Casanellas, Luis David Garcia Puente, and Seth Sullivant. We link to their original database version, called Small Phylogenetic Trees, in the upper-right hand corner of this website. 
+
+    <div id="models"></div>
+    The models studied here are the following. 
     <p>
-    The models studied here are the following. <div id="models"></div>
+    <b>Cavender-Ferris-Neyman (CFN)</b> ... MISSING
     <p>
-    <b>CFN or Cavender-Ferris-Neyman</b>
-    <p>
-    <b>JC69 or Jukes-Cantor:</b>
+    <b>Jukes-Cantor (JC69)</b>
     Jukes, Thomas H. and Charles R. Cantor (1969). "Evolution of protein molecules". In: Mammalian protein metabolism 3, pp. 21–132. <a hef="https://doi.org/10.1016/B978-1-4832-3211-9.50009-7">doi: 10.1016/B978-1-4832-3211-9.50009-7</a>
     <p>
-    <b>K80 or Kimura 3:</b>
-    Kimura, Motoo (1980). "A simple method for estimating evolutionary rates of base substitutions through comparative studies of nucleotide sequences". In: Journal of Molecular Evolution 16(2), pp. 111–120. issn: 0022-2844. <a hef="https://doi.org/10.1007/BF01731581">doi: 10.1007/BF01731581</a>.
+    <b>Kimura 3 (K3P)</b>
+    Kimura, Motoo (1980). "A simple method for estimating evolutionary rates of base substitutions through comparative studies of nucleotide sequences". In: Journal of Molecular Evolution 16(2), pp. 111–120. issn: 0022-2844. <a href="https://doi.org/10.1007/BF01731581"  class="split" target="_blank">doi: 10.1007/BF01731581</a>.
     <p>
-    <b>K81 or Kimura 2:</b>
-    Kimura, Motoo (1981). "Estimation of evolutionary distances between homologous nucleotide sequences." In: Proceedings of the National Academy of Sciences 78(1), pp. 454–458. issn: 0027-8424. <a hef="https://doi.org/10.1073/pnas.78.1.454">doi: 10.1073/pnas.78.1.454</a>
+    <b>Kimura 2 (K2P)</b>
+    Kimura, Motoo (1981). "Estimation of evolutionary distances between homologous nucleotide sequences." In: Proceedings of the National Academy of Sciences 78(1), pp. 454–458. issn: 0027-8424. <a href="https://doi.org/10.1073/pnas.78.1.454" class="split" target="_blank">doi: 10.1073/pnas.78.1.454</a>
     <p>
-    <b>GM or General Markov:</b>
-    Allman, Elizabeth S., John A. Rhodes, and Amelia Taylor (2014). "A Semialgebraic Description of the General Markov Model on Phylogenetic Trees". In: SIAM Journal on Discrete Mathematics 28(2), pp. 736–755. issn: 0895-4801. <a hef="https://doi.org/10.1137/120901568">doi: 10.1137/120901568</a>. eprint: 1212.1200 (q-bio.PE).
+    <b>General Markov (GMM)</b>
+    Allman, Elizabeth S., John A. Rhodes, and Amelia Taylor (2014). "A Semialgebraic Description of the General Markov Model on Phylogenetic Trees". In: SIAM Journal on Discrete Mathematics 28(2), pp. 736–755. issn: 0895-4801. <a href="https://doi.org/10.1137/120901568" class="split" target="_blank">doi: 10.1137/120901568</a>. eprint: 1212.1200 (q-bio.PE).
   
     <a class="anchor" name="labelling"></a>
     <dt><b>Labelling conventions</b></dt><dd>  
     <P>
     If $T$ is a rooted tree, there is a distinguished vertex of $T$ called the root. The tree $T$ is drawn with the root at the top and all its children and their respective children below, with the leaves on the bottom-most level. The edges are numbered $e_1, e_2, ...$ starting at the upper left hand corner, proceeding left to right and top to bottom. The leaves are labeled with the numbers $1,2,3,...$ starting with the left-most leaf and proceeding left to right.
     <P>
-    If $T$ is an unrooted tree, it is drawn with the leaves on a circle and all inner edges and vertices within that circle. The edges of $T$ are numbered $e_1,e_2,...$ starting at the upper left hand corner of the figure and proceeding left to right and top to bottom. The leaves are labeled with the numbers $1,2,3,...$ starting at the first leaf strictly left of the 12 o'clock position and proceeding counterclockwise around the perimeter of the circle. 
-    leaf i has ingoing edge  ei, labeled Mi; for inrerior nodes proceed top left to bottom righte
-    <P> Here's a test tikz treeeeee!
-    <script type="text/tikz">
-        \begin{tikzpicture}[%
-            inner/.style={draw,circle,inner sep=1pt,fill=black},
-            leaf/.style={draw,circle,inner sep=2pt}]
-        \node (root) [inner] at (0,0) {};
-        \node (leaf1) [leaf,label=left:$X_1$] at (-1,0) {};
-        \node (leaf2) [leaf,label=below:$X_2$] at (1,-1) {};
-        \node (leaf3) [leaf,label=right:$X_3$] at (1,1) {};
-        \draw (root) -- node [above] {$M_1$} (leaf1);
-        \draw (root) -- node [below=2pt,pos=0.4] {$M_2$} (leaf2);
-        \draw (root) -- node [below=3pt,pos=0.8] {$M_3$} (leaf3);
-        \end{tikzpicture}
-    </script>
-    And here's the same tree in julia cooooode
-    <div class="codebox">
-        <pre>
-        <code>
-        graph_from_edges(Directed,[[4,1],[4,2],[4,3]])
-        </code>
-        </pre>
-    </div>
-    <P>
+    Unrooted trees will be featured in a follow-up version of the current website.
+    <!-- If $T$ is an unrooted tree, it is drawn with the leaves on a circle and all inner edges and vertices within that circle. The edges of $T$ are numbered $e_1,e_2,...$ starting at the upper left hand corner of the figure and proceeding left to right and top to bottom. The leaves are labeled with the numbers $1,2,3,...$ starting at the first leaf strictly left of the 12 o'clock position and proceeding counterclockwise around the perimeter of the circle. 
+    leaf i has ingoing edge  ei, labeled Mi; for inrerior nodes proceed top left to bottom right. -->
+
     <dt><b>Modelling assumptions</b></dt><dd>  
     <P>
     A phylogenetic model is uniquely identified by its tree graph together with its name in natural language: Neyman 2-state model, Jukes Cantor, Kimura 2-parameter or Kimura 3-parameter model or the General Markov Model.
@@ -68,6 +49,13 @@
     <P> 
     The distribution of each leaf is calculated using a root-to-leaf product of transition matrices. This may be expressed in a probability or Fourier parametrisation. The implicitisation we calculate of each model represents their joint distribution.
     <P>
+
+    <dt><b>Computations</b></dt><dd> 
+    <P>
+    The software AlgebraicPhylogenetics.jl provides a coherent, open-source computational environment for defining phylogenetic models from trees, eliminating parameters to find a algebro-geometric representation of these models, and commands to calculate their properties as listed  below. Code snippets and an in-depth introduction to all functionalities are presented in the <a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics/phylogenetics/" class="split" target="_blank">software documentation</a>.
+    <P>
+    An upcoming version of this website will feature a running example using that software.
+
     <dt id="invariants"><b>Invariants</b></dt><dd>  
     <P>
 
