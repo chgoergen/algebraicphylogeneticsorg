@@ -125,7 +125,7 @@ body {
         color: var(--shade-main-color);
     }
 
-/* tables */
+/* main table */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -158,6 +158,27 @@ tr.model-separator td {
 }
 
 tr:hover td {background:var(--grey-color);}
+tr:hover td.first-child {background:none;} /*wasn't able to make this work...*/
+
+/* table in notation section */
+
+.invariantstable {
+    text-align: left;
+}
+
+.invariantstable tr {
+    border-top: var(--line-thickness) solid var(--main-color);
+    margin-top: var(--line-thickness);
+    margin-bottom: var(--line-thickness);
+}
+
+.invariantstable td:first-child {
+    width: max-content;
+}
+
+.invariantstable tr:hover td {background:none;}
+
+.invariantstable tr:nth-child(even) {background:var(--grey-color);}
 
 /* subpage style and grid settings */
 .grid-container {
