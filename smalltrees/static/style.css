@@ -271,7 +271,8 @@ tr:hover td:not(.no-hover) {
     max-height: 15rem;
     overflow-y: auto;
     font-size: medium;
-  }
+    line-height: 1.8; 
+}
 
 
 div {
