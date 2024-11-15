@@ -269,7 +269,7 @@ tr:hover td:not(.no-hover) {
     overflow-x: auto;
     min-height: 6rem;
     max-height: 15rem;
-    overflow-y: hidden;
+    overflow-y: auto;
     font-size: medium;
   }
 
@@ -299,6 +299,20 @@ pre code {
     border-radius: var(--rounded-corners);
     width: fit-content;
   }
+
+  #notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--main-color); /* Green */
+    color: var(--shade-main-color); /* Text color */
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 14px;
+}
   
   /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
