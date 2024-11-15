@@ -1,0 +1,437 @@
+id: "4-0-0-K3P"
+treename: "four taxa"
+modelname: "Kimura 3-parameter"
+rooted: "False"
+leaves: "4"
+internal_edges: "0"
+dim: "13"
+deg: "70784"
+np: "64"
+nq: "64"
+mu: "1096"
+e: "4"
+M: "4706"
+E: "5"
+sD: "-"
+sd: "-"
+MLdeg: "-"
+EDdeg: "-"
+details:
+  transition_matrix: |-
+    $$M_j = \begin{pmatrix}
+    a_i &  b_i &  c_i &  d_i\\
+    b_i &  a_i &  d_i &  c_i\\
+    c_i &  d_i &  a_i &  b_i\\
+    d_i &  c_i &  b_i &  a_i
+    \end{pmatrix}$$
+  root_distributon: |-
+    $\pi = \left(\frac{1}{4}, \frac{1}{4}, \frac{1}{4}, \frac{1}{4} \right)$
+  fourier_parameters: |-
+    $\left(x^{(i)}_1, x^{(i)}_2, x^{(i)}_3, x^{(i)}_i\right)$
+  probability_parametrization: |-
+    $\begin{align}
+    p_{\texttt{ACTC}} &= \frac{1}{2}(a_1b_2b_4d_3 + a_2a_4b_1c_3 + a_3c_2c_4d_1 + b_3c_1d_2d_4) \\[0.5em]
+    p_{\texttt{ACTA}} &= \frac{1}{2}(a_1a_4b_2d_3 + a_2b_1b_4c_3 + a_3c_2d_1d_4 + b_3c_1c_4d_2) \\[0.5em]
+    p_{\texttt{AATT}} &= \frac{1}{2}(a_1a_2d_3d_4 + a_3a_4d_1d_2 + b_1b_2c_3c_4 + b_3b_4c_1c_2) \\[0.5em]
+    p_{\texttt{ACAC}} &= \frac{1}{2}(a_1a_3b_2b_4 + a_2a_4b_1b_3 + c_1c_3d_2d_4 + c_2c_4d_1d_3) \\[0.5em]
+    p_{\texttt{ACAA}} &= \frac{1}{2}(a_1a_3a_4b_2 + a_2b_1b_3b_4 + c_1c_3c_4d_2 + c_2d_1d_3d_4) \\[0.5em]
+    p_{\texttt{AAAT}} &= \frac{1}{2}(a_1a_2a_3d_4 + a_4d_1d_2d_3 + b_1b_2b_3c_4 + b_4c_1c_2c_3) \\[0.5em]
+    p_{\texttt{ACGC}} &= \frac{1}{2}(a_1b_2b_4c_3 + a_2a_4b_1d_3 + a_3c_1d_2d_4 + b_3c_2c_4d_1) \\[0.5em]
+    p_{\texttt{AGCG}} &= \frac{1}{2}(a_1b_3c_2c_4 + a_2a_4c_1d_3 + a_3b_1d_2d_4 + b_2b_4c_3d_1) \\[0.5em]
+    p_{\texttt{ACGA}} &= \frac{1}{2}(a_1a_4b_2c_3 + a_2b_1b_4d_3 + a_3c_1c_4d_2 + b_3c_2d_1d_4) \\[0.5em]
+    p_{\texttt{AAGT}} &= \frac{1}{2}(a_1a_2c_3d_4 + a_3b_4c_1c_2 + a_4b_3d_1d_2 + b_1b_2c_4d_3) \\[0.5em]
+    p_{\texttt{ATCG}} &= \frac{1}{2}(a_1b_3c_4d_2 + a_2b_4c_3d_1 + a_3b_1c_2d_4 + a_4b_2c_1d_3) \\[0.5em]
+    p_{\texttt{ACTT}} &= \frac{1}{2}(a_1b_2d_3d_4 + a_2b_1c_3c_4 + a_3a_4c_2d_1 + b_3b_4c_1d_2) \\[0.5em]
+    p_{\texttt{ACAT}} &= \frac{1}{2}(a_1a_3b_2d_4 + a_2b_1b_3c_4 + a_4c_2d_1d_3 + b_4c_1c_3d_2) \\[0.5em]
+    p_{\texttt{ACGT}} &= \frac{1}{2}(a_1b_2c_3d_4 + a_2b_1c_4d_3 + a_3b_4c_1d_2 + a_4b_3c_2d_1) \\[0.5em]
+    p_{\texttt{AGCC}} &= \frac{1}{2}(a_1b_3b_4c_2 + a_2c_1d_3d_4 + a_3a_4b_1d_2 + b_2c_3c_4d_1) \\[0.5em]
+    p_{\texttt{AGCA}} &= \frac{1}{2}(a_1a_4b_3c_2 + a_2c_1c_4d_3 + a_3b_1b_4d_2 + b_2c_3d_1d_4) \\[0.5em]
+    p_{\texttt{ATCC}} &= \frac{1}{2}(a_1b_3b_4d_2 + a_2c_3c_4d_1 + a_3a_4b_1c_2 + b_2c_1d_3d_4) \\[0.5em]
+    p_{\texttt{ATCA}} &= \frac{1}{2}(a_1a_4b_3d_2 + a_2c_3d_1d_4 + a_3b_1b_4c_2 + b_2c_1c_4d_3) \\[0.5em]
+    p_{\texttt{AGCT}} &= \frac{1}{2}(a_1b_3c_2d_4 + a_2b_4c_1d_3 + a_3b_1c_4d_2 + a_4b_2c_3d_1) \\[0.5em]
+    p_{\texttt{AGTG}} &= \frac{1}{2}(a_1c_2c_4d_3 + a_2a_4b_3c_1 + a_3b_2b_4d_1 + b_1c_3d_2d_4) \\[0.5em]
+    p_{\texttt{ATCT}} &= \frac{1}{2}(a_1b_3d_2d_4 + a_2a_4c_3d_1 + a_3b_1c_2c_4 + b_2b_4c_1d_3) \\[0.5em]
+    p_{\texttt{ATTG}} &= \frac{1}{2}(a_1c_4d_2d_3 + a_2a_3b_4d_1 + a_4b_2b_3c_1 + b_1c_2c_3d_4) \\[0.5em]
+    p_{\texttt{AGAG}} &= \frac{1}{2}(a_1a_3c_2c_4 + a_2a_4c_1c_3 + b_1b_3d_2d_4 + b_2b_4d_1d_3) \\[0.5em]
+    p_{\texttt{AACG}} &= \frac{1}{2}(a_1a_2b_3c_4 + a_3b_1b_2d_4 + a_4c_1c_2d_3 + b_4c_3d_1d_2) \\[0.5em]
+    p_{\texttt{ATAG}} &= \frac{1}{2}(a_1a_3c_4d_2 + a_2b_4d_1d_3 + a_4b_2c_1c_3 + b_1b_3c_2d_4) \\[0.5em]
+    p_{\texttt{AGGG}} &= \frac{1}{2}(a_1c_2c_3c_4 + a_2a_3a_4c_1 + b_1d_2d_3d_4 + b_2b_3b_4d_1) \\[0.5em]
+    p_{\texttt{ATGG}} &= \frac{1}{2}(a_1c_3c_4d_2 + a_2b_3b_4d_1 + a_3a_4b_2c_1 + b_1c_2d_3d_4) \\[0.5em]
+    p_{\texttt{AGTC}} &= \frac{1}{2}(a_1b_4c_2d_3 + a_2b_3c_1d_4 + a_3b_2c_4d_1 + a_4b_1c_3d_2) \\[0.5em]
+    p_{\texttt{AGTA}} &= \frac{1}{2}(a_1a_4c_2d_3 + a_2b_3c_1c_4 + a_3b_2d_1d_4 + b_1b_4c_3d_2) \\[0.5em]
+    p_{\texttt{ACCG}} &= \frac{1}{2}(a_1b_2b_3c_4 + a_2a_3b_1d_4 + a_4c_1d_2d_3 + b_4c_2c_3d_1) \\[0.5em]
+    p_{\texttt{ATTC}} &= \frac{1}{2}(a_1b_4d_2d_3 + a_2a_3c_4d_1 + a_4b_1c_2c_3 + b_2b_3c_1d_4) \\[0.5em]
+    p_{\texttt{AGAC}} &= \frac{1}{2}(a_1a_3b_4c_2 + a_2c_1c_3d_4 + a_4b_1b_3d_2 + b_2c_4d_1d_3) \\[0.5em]
+    p_{\texttt{ATTA}} &= \frac{1}{2}(a_1a_4d_2d_3 + a_2a_3d_1d_4 + b_1b_4c_2c_3 + b_2b_3c_1c_4) \\[0.5em]
+    p_{\texttt{AGAA}} &= \frac{1}{2}(a_1a_3a_4c_2 + a_2c_1c_3c_4 + b_1b_3b_4d_2 + b_2d_1d_3d_4) \\[0.5em]
+    p_{\texttt{AACC}} &= \frac{1}{2}(a_1a_2b_3b_4 + a_3a_4b_1b_2 + c_1c_2d_3d_4 + c_3c_4d_1d_2) \\[0.5em]
+    p_{\texttt{ATAC}} &= \frac{1}{2}(a_1a_3b_4d_2 + a_2c_4d_1d_3 + a_4b_1b_3c_2 + b_2c_1c_3d_4) \\[0.5em]
+    p_{\texttt{AACA}} &= \frac{1}{2}(a_1a_2a_4b_3 + a_3b_1b_2b_4 + c_1c_2c_4d_3 + c_3d_1d_2d_4) \\[0.5em]
+    p_{\texttt{ATAA}} &= \frac{1}{2}(a_1a_3a_4d_2 + a_2d_1d_3d_4 + b_1b_3b_4c_2 + b_2c_1c_3c_4) \\[0.5em]
+    p_{\texttt{AGGC}} &= \frac{1}{2}(a_1b_4c_2c_3 + a_2a_3c_1d_4 + a_4b_1d_2d_3 + b_2b_3c_4d_1) \\[0.5em]
+    p_{\texttt{AGGA}} &= \frac{1}{2}(a_1a_4c_2c_3 + a_2a_3c_1c_4 + b_1b_4d_2d_3 + b_2b_3d_1d_4) \\[0.5em]
+    p_{\texttt{ATGC}} &= \frac{1}{2}(a_1b_4c_3d_2 + a_2b_3c_4d_1 + a_3b_2c_1d_4 + a_4b_1c_2d_3) \\[0.5em]
+    p_{\texttt{AGTT}} &= \frac{1}{2}(a_1c_2d_3d_4 + a_2b_3b_4c_1 + a_3a_4b_2d_1 + b_1c_3c_4d_2) \\[0.5em]
+    p_{\texttt{ATGA}} &= \frac{1}{2}(a_1a_4c_3d_2 + a_2b_3d_1d_4 + a_3b_2c_1c_4 + b_1b_4c_2d_3) \\[0.5em]
+    p_{\texttt{ATTT}} &= \frac{1}{2}(a_1d_2d_3d_4 + a_2a_3a_4d_1 + b_1c_2c_3c_4 + b_2b_3b_4c_1) \\[0.5em]
+    p_{\texttt{AGAT}} &= \frac{1}{2}(a_1a_3c_2d_4 + a_2b_4c_1c_3 + a_4b_2d_1d_3 + b_1b_3c_4d_2) \\[0.5em]
+    p_{\texttt{ACCC}} &= \frac{1}{2}(a_1b_2b_3b_4 + a_2a_3a_4b_1 + c_1d_2d_3d_4 + c_2c_3c_4d_1) \\[0.5em]
+    p_{\texttt{ACCA}} &= \frac{1}{2}(a_1a_4b_2b_3 + a_2a_3b_1b_4 + c_1c_4d_2d_3 + c_2c_3d_1d_4) \\[0.5em]
+    p_{\texttt{AACT}} &= \frac{1}{2}(a_1a_2b_3d_4 + a_3b_1b_2c_4 + a_4c_3d_1d_2 + b_4c_1c_2d_3) \\[0.5em]
+    p_{\texttt{AATG}} &= \frac{1}{2}(a_1a_2c_4d_3 + a_3b_4d_1d_2 + a_4b_3c_1c_2 + b_1b_2c_3d_4) \\[0.5em]
+    p_{\texttt{ATAT}} &= \frac{1}{2}(a_1a_3d_2d_4 + a_2a_4d_1d_3 + b_1b_3c_2c_4 + b_2b_4c_1c_3) \\[0.5em]
+    p_{\texttt{AGGT}} &= \frac{1}{2}(a_1c_2c_3d_4 + a_2a_3b_4c_1 + a_4b_2b_3d_1 + b_1c_4d_2d_3) \\[0.5em]
+    p_{\texttt{AAAG}} &= \frac{1}{2}(a_1a_2a_3c_4 + a_4c_1c_2c_3 + b_1b_2b_3d_4 + b_4d_1d_2d_3) \\[0.5em]
+    p_{\texttt{ATGT}} &= \frac{1}{2}(a_1c_3d_2d_4 + a_2a_4b_3d_1 + a_3b_2b_4c_1 + b_1c_2c_4d_3) \\[0.5em]
+    p_{\texttt{AAGG}} &= \frac{1}{2}(a_1a_2c_3c_4 + a_3a_4c_1c_2 + b_1b_2d_3d_4 + b_3b_4d_1d_2) \\[0.5em]
+    p_{\texttt{ACCT}} &= \frac{1}{2}(a_1b_2b_3d_4 + a_2a_3b_1c_4 + a_4c_2c_3d_1 + b_4c_1d_2d_3) \\[0.5em]
+    p_{\texttt{ACTG}} &= \frac{1}{2}(a_1b_2c_4d_3 + a_2b_1c_3d_4 + a_3b_4c_2d_1 + a_4b_3c_1d_2) \\[0.5em]
+    p_{\texttt{AATC}} &= \frac{1}{2}(a_1a_2b_4d_3 + a_3c_4d_1d_2 + a_4b_1b_2c_3 + b_3c_1c_2d_4) \\[0.5em]
+    p_{\texttt{ACAG}} &= \frac{1}{2}(a_1a_3b_2c_4 + a_2b_1b_3d_4 + a_4c_1c_3d_2 + b_4c_2d_1d_3) \\[0.5em]
+    p_{\texttt{AATA}} &= \frac{1}{2}(a_1a_2a_4d_3 + a_3d_1d_2d_4 + b_1b_2b_4c_3 + b_3c_1c_2c_4) \\[0.5em]
+    p_{\texttt{AAAC}} &= \frac{1}{2}(a_1a_2a_3b_4 + a_4b_1b_2b_3 + c_1c_2c_3d_4 + c_4d_1d_2d_3) \\[0.5em]
+    p_{\texttt{ACGG}} &= \frac{1}{2}(a_1b_2c_3c_4 + a_2b_1d_3d_4 + a_3a_4c_1d_2 + b_3b_4c_2d_1) \\[0.5em]
+    p_{\texttt{AAAA}} &= \frac{1}{2}(a_1a_2a_3a_4 + b_1b_2b_3b_4 + c_1c_2c_3c_4 + d_1d_2d_3d_4) \\[0.5em]
+    p_{\texttt{AAGC}} &= \frac{1}{2}(a_1a_2b_4c_3 + a_3c_1c_2d_4 + a_4b_1b_2d_3 + b_3c_4d_1d_2) \\[0.5em]
+    p_{\texttt{AAGA}} &= \frac{1}{2}(a_1a_2a_4c_3 + a_3c_1c_2c_4 + b_1b_2b_4d_3 + b_3d_1d_2d_4)
+    \end{align}$
+  equivalent_classes_prob: |-
+    $\begin{align}
+    \text{Class } &p_{\texttt{AAAA}}:\ p_{\texttt{AAAA}},\ p_{\texttt{CCCC}},\ p_{\texttt{GGGG}},\ p_{\texttt{TTTT}} \\[0.5em]
+    \text{Class } &p_{\texttt{AAAC}}:\ p_{\texttt{AAAC}},\ p_{\texttt{CCCA}},\ p_{\texttt{GGGT}},\ p_{\texttt{TTTG}} \\[0.5em]
+    \text{Class } &p_{\texttt{AAAG}}:\ p_{\texttt{AAAG}},\ p_{\texttt{CCCT}},\ p_{\texttt{GGGA}},\ p_{\texttt{TTTC}} \\[0.5em]
+    \text{Class } &p_{\texttt{AAAT}}:\ p_{\texttt{AAAT}},\ p_{\texttt{CCCG}},\ p_{\texttt{GGGC}},\ p_{\texttt{TTTA}} \\[0.5em]
+    \text{Class } &p_{\texttt{AACA}}:\ p_{\texttt{AACA}},\ p_{\texttt{CCAC}},\ p_{\texttt{GGTG}},\ p_{\texttt{TTGT}} \\[0.5em]
+    \text{Class } &p_{\texttt{AACC}}:\ p_{\texttt{AACC}},\ p_{\texttt{CCAA}},\ p_{\texttt{GGTT}},\ p_{\texttt{TTGG}} \\[0.5em]
+    \text{Class } &p_{\texttt{AACG}}:\ p_{\texttt{AACG}},\ p_{\texttt{CCAT}},\ p_{\texttt{GGTA}},\ p_{\texttt{TTGC}} \\[0.5em]
+    \text{Class } &p_{\texttt{AACT}}:\ p_{\texttt{AACT}},\ p_{\texttt{CCAG}},\ p_{\texttt{GGTC}},\ p_{\texttt{TTGA}} \\[0.5em]
+    \text{Class } &p_{\texttt{AAGA}}:\ p_{\texttt{AAGA}},\ p_{\texttt{CCTC}},\ p_{\texttt{GGAG}},\ p_{\texttt{TTCT}} \\[0.5em]
+    \text{Class } &p_{\texttt{AAGC}}:\ p_{\texttt{AAGC}},\ p_{\texttt{CCTA}},\ p_{\texttt{GGAT}},\ p_{\texttt{TTCG}} \\[0.5em]
+    \text{Class } &p_{\texttt{AAGG}}:\ p_{\texttt{AAGG}},\ p_{\texttt{CCTT}},\ p_{\texttt{GGAA}},\ p_{\texttt{TTCC}} \\[0.5em]
+    \text{Class } &p_{\texttt{AAGT}}:\ p_{\texttt{AAGT}},\ p_{\texttt{CCTG}},\ p_{\texttt{GGAC}},\ p_{\texttt{TTCA}} \\[0.5em]
+    \text{Class } &p_{\texttt{AATA}}:\ p_{\texttt{AATA}},\ p_{\texttt{CCGC}},\ p_{\texttt{GGCG}},\ p_{\texttt{TTAT}} \\[0.5em]
+    \text{Class } &p_{\texttt{AATC}}:\ p_{\texttt{AATC}},\ p_{\texttt{CCGA}},\ p_{\texttt{GGCT}},\ p_{\texttt{TTAG}} \\[0.5em]
+    \text{Class } &p_{\texttt{AATG}}:\ p_{\texttt{AATG}},\ p_{\texttt{CCGT}},\ p_{\texttt{GGCA}},\ p_{\texttt{TTAC}} \\[0.5em]
+    \text{Class } &p_{\texttt{AATT}}:\ p_{\texttt{AATT}},\ p_{\texttt{CCGG}},\ p_{\texttt{GGCC}},\ p_{\texttt{TTAA}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACAA}}:\ p_{\texttt{ACAA}},\ p_{\texttt{CACC}},\ p_{\texttt{GTGG}},\ p_{\texttt{TGTT}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACAC}}:\ p_{\texttt{ACAC}},\ p_{\texttt{CACA}},\ p_{\texttt{GTGT}},\ p_{\texttt{TGTG}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACAG}}:\ p_{\texttt{ACAG}},\ p_{\texttt{CACT}},\ p_{\texttt{GTGA}},\ p_{\texttt{TGTC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACAT}}:\ p_{\texttt{ACAT}},\ p_{\texttt{CACG}},\ p_{\texttt{GTGC}},\ p_{\texttt{TGTA}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACCA}}:\ p_{\texttt{ACCA}},\ p_{\texttt{CAAC}},\ p_{\texttt{GTTG}},\ p_{\texttt{TGGT}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACCC}}:\ p_{\texttt{ACCC}},\ p_{\texttt{CAAA}},\ p_{\texttt{GTTT}},\ p_{\texttt{TGGG}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACCG}}:\ p_{\texttt{ACCG}},\ p_{\texttt{CAAT}},\ p_{\texttt{GTTA}},\ p_{\texttt{TGGC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACCT}}:\ p_{\texttt{ACCT}},\ p_{\texttt{CAAG}},\ p_{\texttt{GTTC}},\ p_{\texttt{TGGA}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACGA}}:\ p_{\texttt{ACGA}},\ p_{\texttt{CATC}},\ p_{\texttt{GTAG}},\ p_{\texttt{TGCT}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACGC}}:\ p_{\texttt{ACGC}},\ p_{\texttt{CATA}},\ p_{\texttt{GTAT}},\ p_{\texttt{TGCG}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACGG}}:\ p_{\texttt{ACGG}},\ p_{\texttt{CATT}},\ p_{\texttt{GTAA}},\ p_{\texttt{TGCC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACGT}}:\ p_{\texttt{ACGT}},\ p_{\texttt{CATG}},\ p_{\texttt{GTAC}},\ p_{\texttt{TGCA}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACTA}}:\ p_{\texttt{ACTA}},\ p_{\texttt{CAGC}},\ p_{\texttt{GTCG}},\ p_{\texttt{TGAT}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACTC}}:\ p_{\texttt{ACTC}},\ p_{\texttt{CAGA}},\ p_{\texttt{GTCT}},\ p_{\texttt{TGAG}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACTG}}:\ p_{\texttt{ACTG}},\ p_{\texttt{CAGT}},\ p_{\texttt{GTCA}},\ p_{\texttt{TGAC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACTT}}:\ p_{\texttt{ACTT}},\ p_{\texttt{CAGG}},\ p_{\texttt{GTCC}},\ p_{\texttt{TGAA}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGAA}}:\ p_{\texttt{AGAA}},\ p_{\texttt{CTCC}},\ p_{\texttt{GAGG}},\ p_{\texttt{TCTT}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGAC}}:\ p_{\texttt{AGAC}},\ p_{\texttt{CTCA}},\ p_{\texttt{GAGT}},\ p_{\texttt{TCTG}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGAG}}:\ p_{\texttt{AGAG}},\ p_{\texttt{CTCT}},\ p_{\texttt{GAGA}},\ p_{\texttt{TCTC}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGAT}}:\ p_{\texttt{AGAT}},\ p_{\texttt{CTCG}},\ p_{\texttt{GAGC}},\ p_{\texttt{TCTA}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGCA}}:\ p_{\texttt{AGCA}},\ p_{\texttt{CTAC}},\ p_{\texttt{GATG}},\ p_{\texttt{TCGT}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGCC}}:\ p_{\texttt{AGCC}},\ p_{\texttt{CTAA}},\ p_{\texttt{GATT}},\ p_{\texttt{TCGG}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGCG}}:\ p_{\texttt{AGCG}},\ p_{\texttt{CTAT}},\ p_{\texttt{GATA}},\ p_{\texttt{TCGC}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGCT}}:\ p_{\texttt{AGCT}},\ p_{\texttt{CTAG}},\ p_{\texttt{GATC}},\ p_{\texttt{TCGA}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGGA}}:\ p_{\texttt{AGGA}},\ p_{\texttt{CTTC}},\ p_{\texttt{GAAG}},\ p_{\texttt{TCCT}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGGC}}:\ p_{\texttt{AGGC}},\ p_{\texttt{CTTA}},\ p_{\texttt{GAAT}},\ p_{\texttt{TCCG}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGGG}}:\ p_{\texttt{AGGG}},\ p_{\texttt{CTTT}},\ p_{\texttt{GAAA}},\ p_{\texttt{TCCC}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGGT}}:\ p_{\texttt{AGGT}},\ p_{\texttt{CTTG}},\ p_{\texttt{GAAC}},\ p_{\texttt{TCCA}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGTA}}:\ p_{\texttt{AGTA}},\ p_{\texttt{CTGC}},\ p_{\texttt{GACG}},\ p_{\texttt{TCAT}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGTC}}:\ p_{\texttt{AGTC}},\ p_{\texttt{CTGA}},\ p_{\texttt{GACT}},\ p_{\texttt{TCAG}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGTG}}:\ p_{\texttt{AGTG}},\ p_{\texttt{CTGT}},\ p_{\texttt{GACA}},\ p_{\texttt{TCAC}} \\[0.5em]
+    \text{Class } &p_{\texttt{AGTT}}:\ p_{\texttt{AGTT}},\ p_{\texttt{CTGG}},\ p_{\texttt{GACC}},\ p_{\texttt{TCAA}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATAA}}:\ p_{\texttt{ATAA}},\ p_{\texttt{CGCC}},\ p_{\texttt{GCGG}},\ p_{\texttt{TATT}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATAC}}:\ p_{\texttt{ATAC}},\ p_{\texttt{CGCA}},\ p_{\texttt{GCGT}},\ p_{\texttt{TATG}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATAG}}:\ p_{\texttt{ATAG}},\ p_{\texttt{CGCT}},\ p_{\texttt{GCGA}},\ p_{\texttt{TATC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATAT}}:\ p_{\texttt{ATAT}},\ p_{\texttt{CGCG}},\ p_{\texttt{GCGC}},\ p_{\texttt{TATA}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATCA}}:\ p_{\texttt{ATCA}},\ p_{\texttt{CGAC}},\ p_{\texttt{GCTG}},\ p_{\texttt{TAGT}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATCC}}:\ p_{\texttt{ATCC}},\ p_{\texttt{CGAA}},\ p_{\texttt{GCTT}},\ p_{\texttt{TAGG}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATCG}}:\ p_{\texttt{ATCG}},\ p_{\texttt{CGAT}},\ p_{\texttt{GCTA}},\ p_{\texttt{TAGC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATCT}}:\ p_{\texttt{ATCT}},\ p_{\texttt{CGAG}},\ p_{\texttt{GCTC}},\ p_{\texttt{TAGA}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATGA}}:\ p_{\texttt{ATGA}},\ p_{\texttt{CGTC}},\ p_{\texttt{GCAG}},\ p_{\texttt{TACT}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATGC}}:\ p_{\texttt{ATGC}},\ p_{\texttt{CGTA}},\ p_{\texttt{GCAT}},\ p_{\texttt{TACG}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATGG}}:\ p_{\texttt{ATGG}},\ p_{\texttt{CGTT}},\ p_{\texttt{GCAA}},\ p_{\texttt{TACC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATGT}}:\ p_{\texttt{ATGT}},\ p_{\texttt{CGTG}},\ p_{\texttt{GCAC}},\ p_{\texttt{TACA}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATTA}}:\ p_{\texttt{ATTA}},\ p_{\texttt{CGGC}},\ p_{\texttt{GCCG}},\ p_{\texttt{TAAT}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATTC}}:\ p_{\texttt{ATTC}},\ p_{\texttt{CGGA}},\ p_{\texttt{GCCT}},\ p_{\texttt{TAAG}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATTG}}:\ p_{\texttt{ATTG}},\ p_{\texttt{CGGT}},\ p_{\texttt{GCCA}},\ p_{\texttt{TAAC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ATTT}}:\ p_{\texttt{ATTT}},\ p_{\texttt{CGGG}},\ p_{\texttt{GCCC}},\ p_{\texttt{TAAA}}
+    \end{align}$
+  fourier_parametrization: |-
+    $\begin{align}
+    q_{\texttt{CCCC}} &= x^{(1)}_{2}x^{(2)}_{2}x^{(3)}_{2}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{GATC}} &= x^{(1)}_{3}x^{(2)}_{1}x^{(3)}_{4}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{CGAT}} &= x^{(1)}_{2}x^{(2)}_{3}x^{(3)}_{1}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{AATT}} &= x^{(1)}_{1}x^{(2)}_{1}x^{(3)}_{4}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{ACAC}} &= x^{(1)}_{1}x^{(2)}_{2}x^{(3)}_{1}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{TGCA}} &= x^{(1)}_{4}x^{(2)}_{3}x^{(3)}_{2}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{CATG}} &= x^{(1)}_{2}x^{(2)}_{1}x^{(3)}_{4}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{TTCC}} &= x^{(1)}_{4}x^{(2)}_{4}x^{(3)}_{2}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{GAGA}} &= x^{(1)}_{3}x^{(2)}_{1}x^{(3)}_{3}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{GCTA}} &= x^{(1)}_{3}x^{(2)}_{2}x^{(3)}_{4}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{ATCG}} &= x^{(1)}_{1}x^{(2)}_{4}x^{(3)}_{2}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{TGTG}} &= x^{(1)}_{4}x^{(2)}_{3}x^{(3)}_{4}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{GCGC}} &= x^{(1)}_{3}x^{(2)}_{2}x^{(3)}_{3}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{CAAC}} &= x^{(1)}_{2}x^{(2)}_{1}x^{(3)}_{1}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{ACGT}} &= x^{(1)}_{1}x^{(2)}_{2}x^{(3)}_{3}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{TACG}} &= x^{(1)}_{4}x^{(2)}_{1}x^{(3)}_{2}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{CCGG}} &= x^{(1)}_{2}x^{(2)}_{2}x^{(3)}_{3}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{GCAT}} &= x^{(1)}_{3}x^{(2)}_{2}x^{(3)}_{1}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{TTGG}} &= x^{(1)}_{4}x^{(2)}_{4}x^{(3)}_{3}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{CCAA}} &= x^{(1)}_{2}x^{(2)}_{2}x^{(3)}_{1}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{TGAC}} &= x^{(1)}_{4}x^{(2)}_{3}x^{(3)}_{1}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{GGCC}} &= x^{(1)}_{3}x^{(2)}_{3}x^{(3)}_{2}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{AGCT}} &= x^{(1)}_{1}x^{(2)}_{3}x^{(3)}_{2}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{CGCG}} &= x^{(1)}_{2}x^{(2)}_{3}x^{(3)}_{2}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{TTAA}} &= x^{(1)}_{4}x^{(2)}_{4}x^{(3)}_{1}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{GTCA}} &= x^{(1)}_{3}x^{(2)}_{4}x^{(3)}_{2}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{CAGT}} &= x^{(1)}_{2}x^{(2)}_{1}x^{(3)}_{3}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{CCTT}} &= x^{(1)}_{2}x^{(2)}_{2}x^{(3)}_{4}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{AGAG}} &= x^{(1)}_{1}x^{(2)}_{3}x^{(3)}_{1}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{TTTT}} &= x^{(1)}_{4}x^{(2)}_{4}x^{(3)}_{4}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{AGTC}} &= x^{(1)}_{1}x^{(2)}_{3}x^{(3)}_{4}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{GTTG}} &= x^{(1)}_{3}x^{(2)}_{4}x^{(3)}_{4}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{TGGT}} &= x^{(1)}_{4}x^{(2)}_{3}x^{(3)}_{3}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{ATTA}} &= x^{(1)}_{1}x^{(2)}_{4}x^{(3)}_{4}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{GGGG}} &= x^{(1)}_{3}x^{(2)}_{3}x^{(3)}_{3}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{AACC}} &= x^{(1)}_{1}x^{(2)}_{1}x^{(3)}_{2}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{TCCT}} &= x^{(1)}_{4}x^{(2)}_{2}x^{(3)}_{2}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{AGGA}} &= x^{(1)}_{1}x^{(2)}_{3}x^{(3)}_{3}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{ATGC}} &= x^{(1)}_{1}x^{(2)}_{4}x^{(3)}_{3}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{TCAG}} &= x^{(1)}_{4}x^{(2)}_{2}x^{(3)}_{1}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{TATA}} &= x^{(1)}_{4}x^{(2)}_{1}x^{(3)}_{4}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{GCCG}} &= x^{(1)}_{3}x^{(2)}_{2}x^{(3)}_{2}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{CTCT}} &= x^{(1)}_{2}x^{(2)}_{4}x^{(3)}_{2}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{GGAA}} &= x^{(1)}_{3}x^{(2)}_{3}x^{(3)}_{1}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{ACCA}} &= x^{(1)}_{1}x^{(2)}_{2}x^{(3)}_{2}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{GTAC}} &= x^{(1)}_{3}x^{(2)}_{4}x^{(3)}_{1}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{ATAT}} &= x^{(1)}_{1}x^{(2)}_{4}x^{(3)}_{1}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{CTAG}} &= x^{(1)}_{2}x^{(2)}_{4}x^{(3)}_{1}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{TAGC}} &= x^{(1)}_{4}x^{(2)}_{1}x^{(3)}_{3}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{TCTC}} &= x^{(1)}_{4}x^{(2)}_{2}x^{(3)}_{4}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{GGTT}} &= x^{(1)}_{3}x^{(2)}_{3}x^{(3)}_{4}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{AAGG}} &= x^{(1)}_{1}x^{(2)}_{1}x^{(3)}_{3}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{TAAT}} &= x^{(1)}_{4}x^{(2)}_{1}x^{(3)}_{1}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{CGTA}} &= x^{(1)}_{2}x^{(2)}_{3}x^{(3)}_{4}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{ACTG}} &= x^{(1)}_{1}x^{(2)}_{2}x^{(3)}_{4}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{CTTC}} &= x^{(1)}_{2}x^{(2)}_{4}x^{(3)}_{4}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{GACT}} &= x^{(1)}_{3}x^{(2)}_{1}x^{(3)}_{2}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{TCGA}} &= x^{(1)}_{4}x^{(2)}_{2}x^{(3)}_{3}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{GAAG}} &= x^{(1)}_{3}x^{(2)}_{1}x^{(3)}_{1}x^{(4)}_{3} \\[0.5em]
+    q_{\texttt{GTGT}} &= x^{(1)}_{3}x^{(2)}_{4}x^{(3)}_{3}x^{(4)}_{4} \\[0.5em]
+    q_{\texttt{CACA}} &= x^{(1)}_{2}x^{(2)}_{1}x^{(3)}_{2}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{CGGC}} &= x^{(1)}_{2}x^{(2)}_{3}x^{(3)}_{3}x^{(4)}_{2} \\[0.5em]
+    q_{\texttt{AAAA}} &= x^{(1)}_{1}x^{(2)}_{1}x^{(3)}_{1}x^{(4)}_{1} \\[0.5em]
+    q_{\texttt{CTGA}} &= x^{(1)}_{2}x^{(2)}_{4}x^{(3)}_{3}x^{(4)}_{1}
+    \end{align}$
+  equivalent_classes_fourier: |-
+    $\begin{align}
+    \text{Class } &0:\ q_{\texttt{CAAA}}, q_{\texttt{GAAA}}, q_{\texttt{TAAA}}, q_{\texttt{ACAA}}, q_{\texttt{GCAA}}, q_{\texttt{TCAA}}, q_{\texttt{AGAA}}, q_{\texttt{CGAA}}, q_{\texttt{TGAA}}, q_{\texttt{ATAA}}, q_{\texttt{CTAA}}, q_{\texttt{GTAA}}, q_{\texttt{AACA}}, q_{\texttt{GACA}}, q_{\texttt{TACA}}, q_{\texttt{CCCA}}, q_{\texttt{GCCA}}, q_{\texttt{TCCA}}, q_{\texttt{AGCA}}, q_{\texttt{CGCA}}, q_{\texttt{GGCA}}, q_{\texttt{ATCA}}, q_{\texttt{CTCA}}, q_{\texttt{TTCA}}, q_{\texttt{AAGA}}, q_{\texttt{CAGA}}, q_{\texttt{TAGA}}, q_{\texttt{ACGA}}, q_{\texttt{CCGA}}, q_{\texttt{GCGA}}, q_{\texttt{CGGA}}, q_{\texttt{GGGA}}, q_{\texttt{TGGA}}, q_{\texttt{ATGA}}, q_{\texttt{GTGA}}, q_{\texttt{TTGA}}, q_{\texttt{AATA}}, q_{\texttt{CATA}}, q_{\texttt{GATA}}, q_{\texttt{ACTA}}, q_{\texttt{CCTA}}, q_{\texttt{TCTA}}, q_{\texttt{AGTA}}, q_{\texttt{GGTA}}, q_{\texttt{TGTA}}, q_{\texttt{CTTA}}, q_{\texttt{GTTA}}, q_{\texttt{TTTA}}, q_{\texttt{AAAC}}, q_{\texttt{GAAC}}, q_{\texttt{TAAC}}, q_{\texttt{CCAC}}, q_{\texttt{GCAC}}, q_{\texttt{TCAC}}, q_{\texttt{AGAC}}, q_{\texttt{CGAC}}, q_{\texttt{GGAC}}, q_{\texttt{ATAC}}, q_{\texttt{CTAC}}, q_{\texttt{TTAC}}, q_{\texttt{CACC}}, q_{\texttt{GACC}}, q_{\texttt{TACC}}, q_{\texttt{ACCC}}, q_{\texttt{GCCC}}, q_{\texttt{TCCC}}, q_{\texttt{AGCC}}, q_{\texttt{CGCC}}, q_{\texttt{TGCC}}, q_{\texttt{ATCC}}, q_{\texttt{CTCC}}, q_{\texttt{GTCC}}, q_{\texttt{AAGC}}, q_{\texttt{CAGC}}, q_{\texttt{GAGC}}, q_{\texttt{ACGC}}, q_{\texttt{CCGC}}, q_{\texttt{TCGC}}, q_{\texttt{AGGC}}, q_{\texttt{GGGC}}, q_{\texttt{TGGC}}, q_{\texttt{CTGC}}, q_{\texttt{GTGC}}, q_{\texttt{TTGC}}, q_{\texttt{AATC}}, q_{\texttt{CATC}}, q_{\texttt{TATC}}, q_{\texttt{ACTC}}, q_{\texttt{CCTC}}, q_{\texttt{GCTC}}, q_{\texttt{CGTC}}, q_{\texttt{GGTC}}, q_{\texttt{TGTC}}, q_{\texttt{ATTC}}, q_{\texttt{GTTC}}, q_{\texttt{TTTC}}, q_{\texttt{AAAG}}, q_{\texttt{CAAG}}, q_{\texttt{TAAG}}, q_{\texttt{ACAG}}, q_{\texttt{CCAG}}, q_{\texttt{GCAG}}, q_{\texttt{CGAG}}, q_{\texttt{GGAG}}, q_{\texttt{TGAG}}, q_{\texttt{ATAG}}, q_{\texttt{GTAG}}, q_{\texttt{TTAG}}, q_{\texttt{AACG}}, q_{\texttt{CACG}}, q_{\texttt{GACG}}, q_{\texttt{ACCG}}, q_{\texttt{CCCG}}, q_{\texttt{TCCG}}, q_{\texttt{AGCG}}, q_{\texttt{GGCG}}, q_{\texttt{TGCG}}, q_{\texttt{CTCG}}, q_{\texttt{GTCG}}, q_{\texttt{TTCG}}, q_{\texttt{CAGG}}, q_{\texttt{GAGG}}, q_{\texttt{TAGG}}, q_{\texttt{ACGG}}, q_{\texttt{GCGG}}, q_{\texttt{TCGG}}, q_{\texttt{AGGG}}, q_{\texttt{CGGG}}, q_{\texttt{TGGG}}, q_{\texttt{ATGG}}, q_{\texttt{CTGG}}, q_{\texttt{GTGG}}, q_{\texttt{AATG}}, q_{\texttt{GATG}}, q_{\texttt{TATG}}, q_{\texttt{CCTG}}, q_{\texttt{GCTG}}, q_{\texttt{TCTG}}, q_{\texttt{AGTG}}, q_{\texttt{CGTG}}, q_{\texttt{GGTG}}, q_{\texttt{ATTG}}, q_{\texttt{CTTG}}, q_{\texttt{TTTG}}, q_{\texttt{AAAT}}, q_{\texttt{CAAT}}, q_{\texttt{GAAT}}, q_{\texttt{ACAT}}, q_{\texttt{CCAT}}, q_{\texttt{TCAT}}, q_{\texttt{AGAT}}, q_{\texttt{GGAT}}, q_{\texttt{TGAT}}, q_{\texttt{CTAT}}, q_{\texttt{GTAT}}, q_{\texttt{TTAT}}, q_{\texttt{AACT}}, q_{\texttt{CACT}}, q_{\texttt{TACT}}, q_{\texttt{ACCT}}, q_{\texttt{CCCT}}, q_{\texttt{GCCT}}, q_{\texttt{CGCT}}, q_{\texttt{GGCT}}, q_{\texttt{TGCT}}, q_{\texttt{ATCT}}, q_{\texttt{GTCT}}, q_{\texttt{TTCT}}, q_{\texttt{AAGT}}, q_{\texttt{GAGT}}, q_{\texttt{TAGT}}, q_{\texttt{CCGT}}, q_{\texttt{GCGT}}, q_{\texttt{TCGT}}, q_{\texttt{AGGT}}, q_{\texttt{CGGT}}, q_{\texttt{GGGT}}, q_{\texttt{ATGT}}, q_{\texttt{CTGT}}, q_{\texttt{TTGT}}, q_{\texttt{CATT}}, q_{\texttt{GATT}}, q_{\texttt{TATT}}, q_{\texttt{ACTT}}, q_{\texttt{GCTT}}, q_{\texttt{TCTT}}, q_{\texttt{AGTT}}, q_{\texttt{CGTT}}, q_{\texttt{TGTT}}, q_{\texttt{ATTT}}, q_{\texttt{CTTT}}, q_{\texttt{GTTT}} \\[0.5em]
+    \text{Class } &q_{\texttt{AAAA}}:\ q_{\texttt{AAAA}} \\[0.5em]
+    \text{Class } &q_{\texttt{AACC}}:\ q_{\texttt{AACC}} \\[0.5em]
+    \text{Class } &q_{\texttt{AAGG}}:\ q_{\texttt{AAGG}} \\[0.5em]
+    \text{Class } &q_{\texttt{AATT}}:\ q_{\texttt{AATT}} \\[0.5em]
+    \text{Class } &q_{\texttt{ACAC}}:\ q_{\texttt{ACAC}} \\[0.5em]
+    \text{Class } &q_{\texttt{ACCA}}:\ q_{\texttt{ACCA}} \\[0.5em]
+    \text{Class } &q_{\texttt{ACGT}}:\ q_{\texttt{ACGT}} \\[0.5em]
+    \text{Class } &q_{\texttt{ACTG}}:\ q_{\texttt{ACTG}} \\[0.5em]
+    \text{Class } &q_{\texttt{AGAG}}:\ q_{\texttt{AGAG}} \\[0.5em]
+    \text{Class } &q_{\texttt{AGCT}}:\ q_{\texttt{AGCT}} \\[0.5em]
+    \text{Class } &q_{\texttt{AGGA}}:\ q_{\texttt{AGGA}} \\[0.5em]
+    \text{Class } &q_{\texttt{AGTC}}:\ q_{\texttt{AGTC}} \\[0.5em]
+    \text{Class } &q_{\texttt{ATAT}}:\ q_{\texttt{ATAT}} \\[0.5em]
+    \text{Class } &q_{\texttt{ATCG}}:\ q_{\texttt{ATCG}} \\[0.5em]
+    \text{Class } &q_{\texttt{ATGC}}:\ q_{\texttt{ATGC}} \\[0.5em]
+    \text{Class } &q_{\texttt{ATTA}}:\ q_{\texttt{ATTA}} \\[0.5em]
+    \text{Class } &q_{\texttt{CAAC}}:\ q_{\texttt{CAAC}} \\[0.5em]
+    \text{Class } &q_{\texttt{CACA}}:\ q_{\texttt{CACA}} \\[0.5em]
+    \text{Class } &q_{\texttt{CAGT}}:\ q_{\texttt{CAGT}} \\[0.5em]
+    \text{Class } &q_{\texttt{CATG}}:\ q_{\texttt{CATG}} \\[0.5em]
+    \text{Class } &q_{\texttt{CCAA}}:\ q_{\texttt{CCAA}} \\[0.5em]
+    \text{Class } &q_{\texttt{CCCC}}:\ q_{\texttt{CCCC}} \\[0.5em]
+    \text{Class } &q_{\texttt{CCGG}}:\ q_{\texttt{CCGG}} \\[0.5em]
+    \text{Class } &q_{\texttt{CCTT}}:\ q_{\texttt{CCTT}} \\[0.5em]
+    \text{Class } &q_{\texttt{CGAT}}:\ q_{\texttt{CGAT}} \\[0.5em]
+    \text{Class } &q_{\texttt{CGCG}}:\ q_{\texttt{CGCG}} \\[0.5em]
+    \text{Class } &q_{\texttt{CGGC}}:\ q_{\texttt{CGGC}} \\[0.5em]
+    \text{Class } &q_{\texttt{CGTA}}:\ q_{\texttt{CGTA}} \\[0.5em]
+    \text{Class } &q_{\texttt{CTAG}}:\ q_{\texttt{CTAG}} \\[0.5em]
+    \text{Class } &q_{\texttt{CTCT}}:\ q_{\texttt{CTCT}} \\[0.5em]
+    \text{Class } &q_{\texttt{CTGA}}:\ q_{\texttt{CTGA}} \\[0.5em]
+    \text{Class } &q_{\texttt{CTTC}}:\ q_{\texttt{CTTC}} \\[0.5em]
+    \text{Class } &q_{\texttt{GAAG}}:\ q_{\texttt{GAAG}} \\[0.5em]
+    \text{Class } &q_{\texttt{GACT}}:\ q_{\texttt{GACT}} \\[0.5em]
+    \text{Class } &q_{\texttt{GAGA}}:\ q_{\texttt{GAGA}} \\[0.5em]
+    \text{Class } &q_{\texttt{GATC}}:\ q_{\texttt{GATC}} \\[0.5em]
+    \text{Class } &q_{\texttt{GCAT}}:\ q_{\texttt{GCAT}} \\[0.5em]
+    \text{Class } &q_{\texttt{GCCG}}:\ q_{\texttt{GCCG}} \\[0.5em]
+    \text{Class } &q_{\texttt{GCGC}}:\ q_{\texttt{GCGC}} \\[0.5em]
+    \text{Class } &q_{\texttt{GCTA}}:\ q_{\texttt{GCTA}} \\[0.5em]
+    \text{Class } &q_{\texttt{GGAA}}:\ q_{\texttt{GGAA}} \\[0.5em]
+    \text{Class } &q_{\texttt{GGCC}}:\ q_{\texttt{GGCC}} \\[0.5em]
+    \text{Class } &q_{\texttt{GGGG}}:\ q_{\texttt{GGGG}} \\[0.5em]
+    \text{Class } &q_{\texttt{GGTT}}:\ q_{\texttt{GGTT}} \\[0.5em]
+    \text{Class } &q_{\texttt{GTAC}}:\ q_{\texttt{GTAC}} \\[0.5em]
+    \text{Class } &q_{\texttt{GTCA}}:\ q_{\texttt{GTCA}} \\[0.5em]
+    \text{Class } &q_{\texttt{GTGT}}:\ q_{\texttt{GTGT}} \\[0.5em]
+    \text{Class } &q_{\texttt{GTTG}}:\ q_{\texttt{GTTG}} \\[0.5em]
+    \text{Class } &q_{\texttt{TAAT}}:\ q_{\texttt{TAAT}} \\[0.5em]
+    \text{Class } &q_{\texttt{TACG}}:\ q_{\texttt{TACG}} \\[0.5em]
+    \text{Class } &q_{\texttt{TAGC}}:\ q_{\texttt{TAGC}} \\[0.5em]
+    \text{Class } &q_{\texttt{TATA}}:\ q_{\texttt{TATA}} \\[0.5em]
+    \text{Class } &q_{\texttt{TCAG}}:\ q_{\texttt{TCAG}} \\[0.5em]
+    \text{Class } &q_{\texttt{TCCT}}:\ q_{\texttt{TCCT}} \\[0.5em]
+    \text{Class } &q_{\texttt{TCGA}}:\ q_{\texttt{TCGA}} \\[0.5em]
+    \text{Class } &q_{\texttt{TCTC}}:\ q_{\texttt{TCTC}} \\[0.5em]
+    \text{Class } &q_{\texttt{TGAC}}:\ q_{\texttt{TGAC}} \\[0.5em]
+    \text{Class } &q_{\texttt{TGCA}}:\ q_{\texttt{TGCA}} \\[0.5em]
+    \text{Class } &q_{\texttt{TGGT}}:\ q_{\texttt{TGGT}} \\[0.5em]
+    \text{Class } &q_{\texttt{TGTG}}:\ q_{\texttt{TGTG}} \\[0.5em]
+    \text{Class } &q_{\texttt{TTAA}}:\ q_{\texttt{TTAA}} \\[0.5em]
+    \text{Class } &q_{\texttt{TTCC}}:\ q_{\texttt{TTCC}} \\[0.5em]
+    \text{Class } &q_{\texttt{TTGG}}:\ q_{\texttt{TTGG}} \\[0.5em]
+    \text{Class } &q_{\texttt{TTTT}}:\ q_{\texttt{TTTT}}
+    \end{align}$
+  invariants: |-
+    Ideal generated by $$-$$
+  grobner_basis: |-
+    Gröbner basis with $0$ elements
+  specialized_fourier_transform: |-
+    $\frac{1}{1} \begin{pmatrix}
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1
+    \end{pmatrix} ] $
+  inverse_specialized_fourier_transform: |-
+    $\frac{1}{64} \begin{pmatrix}
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1\\ 
+    1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1\\ 
+    1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1\\ 
+    1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1\\ 
+    1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1\\ 
+    1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1\\ 
+    1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & 1 & -1 & -1 & 1 & 1 & -1 & -1\\ 
+    1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1\\ 
+    1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1
+    \end{pmatrix} $
