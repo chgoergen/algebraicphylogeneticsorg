@@ -269,7 +269,7 @@ tr:hover td:not(.no-hover) {
     overflow-x: auto;
     min-height: 6rem;
     max-height: 15rem;
-    overflow-y: hidden;
+    overflow-y: auto;
     font-size: medium;
   }
 
