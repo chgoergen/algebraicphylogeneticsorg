@@ -30,8 +30,21 @@
     <tbody>
         {% for tikzpicture in treesastex %}
         <tr class="tree-separator">
-            <td rowspan="{{ nrrows[tikzpicture.id] }}" style="padding: 1rem;">
-                <script type="text/tikz">{{ tikzpicture.image }}</script></td>
+            <td class="no-hover" rowspan="{{ nrrows[tikzpicture.id] }}" style="align-items: center; justify-content: center; text-align:center; padding: 1em;">
+                <div style="display: flex; justify-content: center; align-items: center; pointer-events: none;">
+                    <script type="text/tikz">{{ tikzpicture.image }}</script>
+                </div>
+                <style>
+                    svg {
+                        width: 90%;
+                        height: auto;
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                        pointer-events: none;
+                    }
+                </style>
+            </td>            
             {% for treeandmodel in treesandmodels[tikzpicture.id] %}
             <td style="text-align: left;">
                 <a href="{{ url_for('subpage', treeandmodel_id=treeandmodel.id) }}">
