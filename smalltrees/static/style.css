@@ -7,13 +7,15 @@
     /* outdated: forest greens #2E792D and #bed3ab
                  gray green #F1F5ED and gray #f2f2f2
        for monochrome variations see https://maketintsandshades.com */
-    --grey-color:#e7e3e8; /*gray aubergine*/
-    --main-color:#3c252d;
-    --shade-main-color:#6a506d;
-    --contrast-color:#e8a109; /*#af6421*/
+    --grey-color: #f8f9fa;
+    --main-color: #4b2c4d;
+    --shade-main-color: #e7e3e8;
+    --contrast-color: #DB9210;
     --shade-contrast-color:#e8a109;
     --rounded-corners: 0.5rem;
     --line-thickness: 0.2rem;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
 }
 
 body {
@@ -21,6 +23,8 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: medium;
     max-width: 100%;
+    background-color: #fafafa; /* Light background */
+    color: #333; /* Darker text color for readability */
 }
 
 /* top navigation bar */
@@ -34,6 +38,7 @@ body {
     padding: 0;
     width: 100%;
     border-bottom: var(--line-thickness) solid var(--main-color);
+    box-shadow: var(--box-shadow);
   }
   .topnav a {
     float: left;
@@ -44,6 +49,7 @@ body {
     margin-left: 1rem;
     margin-right: 1rem;
     text-decoration: none;
+    transition: color 0.3s;
   }
   .topnav a:hover {
     color: var(--main-color);
@@ -119,11 +125,15 @@ body {
     margin-right: auto;
 }
 
-    /* clickable text */
-    .main a {
-        text-decoration: none;
-        color: var(--shade-main-color);
-    }
+/* clickable text */
+.main a {
+    color: var(--main-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.main a:hover {
+    color: var(--contrast-color);
+}
 
 /* main table */
 table {
@@ -139,9 +149,16 @@ th, td {
     width: 4rem;
     overflow: hidden; 
 }
+td > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Make the div fill the cell height */
+}
 
 th {
     background-color: var(--shade-contrast-color);
+    color: var(--main-color);
     margin-bottom: var(--line-thickness);
     margin-left: 1rem;
     text-align: left;
@@ -158,7 +175,16 @@ tr.model-separator td {
 }
 
 tr:hover td {background:var(--grey-color);}
-tr:hover td.first-child {background:none;} /*wasn't able to make this work...*/
+/*tr:hover td.first-child {background:none;} /*wasn't able to make this work...*/
+
+.no-hover {
+    pointer-events: none;
+    background: transparent !important; /* Prevent background change on hover */
+}
+
+tr:hover td:not(.no-hover) {
+    background-color: #fdf5e5;  /* Highlight color */
+}
 
 /* table in notation section */
 
@@ -193,6 +219,9 @@ tr:hover td.first-child {background:none;} /*wasn't able to make this work...*/
     padding: 0rem;
     background-color: var(--grey-color);
     border-radius: var(--rounded-corners);
+    box-shadow: var(--box-shadow); /* Soft shadow for card effect */
+    overflow: hidden;
+    transition: transform 0.3s; /* Smooth hover animation */
 }
 
 .span-1 {
@@ -211,12 +240,14 @@ tr:hover td.first-child {background:none;} /*wasn't able to make this work...*/
 .module div#title {
     text-align: center;
     font-weight: normal;
-    color: black;
+    color: var(--main-color);
     border-bottom: var(--line-thickness) solid var(--main-color);
     padding: 0.5rem;
     background-color: var(--shade-main-color); 
     border-top-left-radius: var(--rounded-corners);
     border-top-right-radius: var(--rounded-corners);
+    padding: 0.75rem;
+    font-weight: 600;
   }
 
 .module div#picture { 
@@ -268,3 +299,17 @@ pre code {
     width: fit-content;
   }
   
+  /* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .topheader {
+        font-size: 1rem;
+        padding: 1.5rem;
+        margin-bottom: 4rem; 
+    }
+    .footer {
+        font-size: smaller;
+    }
+    .module div#content {
+        padding: 1rem;
+    }
+}
