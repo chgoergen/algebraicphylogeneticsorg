@@ -8,6 +8,7 @@ app = Flask(__name__)
 
 datafiles = glob.glob("static/data/*.yaml")
 texfiles = natsorted(glob.glob("static/tex/*.yaml"))
+datafiles.sort()
 
 def load_data(filename):
     with open(filename, 'r') as file:

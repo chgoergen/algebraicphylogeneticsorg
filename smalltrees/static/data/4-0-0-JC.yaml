@@ -14,8 +14,8 @@ M: "24"
 E: "3"
 sD: "-"
 sd: "-"
-MLdeg: "-"
-EDdeg: "-"
+MLdeg: "4315"
+EDdeg: "124"
 details:
   transition_matrix: |-
     $$M_j = \begin{pmatrix}

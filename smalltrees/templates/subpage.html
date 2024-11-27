@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
 <div class="topheader">Details: {{ data.treename }} tree with {{data.modelname}} model ({{ treeandmodel_id }})</div>
 
@@ -18,13 +19,55 @@
 
     {% if data.details.transition_matrix %}
     <div class="module span-1">
-        <div id="title">Evolutionary model</div>
+        <div id="title">
+            Evolutionary model
+            <button id="copy-evolutionary-model" style="float: right; background-color:#e7e3e8; color:#4b2c4d; border: none; border-radius: 5px;cursor: pointer;"
+                data-modelname="{{ data.modelname }}"
+                data-root-distribution="{{ data.details.root_distributon }}"
+                data-transition-matrix="{{ data.details.transition_matrix }}"
+                data-fourier-parameters="{{ data.details.fourier_parameters }}">
+                <i class="fa fa-clipboard" aria-hidden="true"></i> 
+            </button>
+        </div>
         <div id="content"><a href="/notation#models">{{ data.modelname }}</a> model with <a href="/notation#labelling">root distribution</a> {{ data.details.root_distributon }}. <br>
-            The <a href="/notation#labelling">transition matrix</a>  associated to edge $i$ is of the form
+            The <a href="/notation#labelling">transition matrix</a>  associated with edge $i$ is of the form
             {{ data.details.transition_matrix }} and the <a href="/notation#labelling">Fourier parameters</a> are {{ data.details.fourier_parameters }} for all edges $i$.
         </div>
     </div>
     {% endif %}
+    <div id="notification">
+        Copied to clipboard!
+    </div>
+    <script>
+        const evolutionaryModelButton = document.getElementById('copy-evolutionary-model');
+        evolutionaryModelButton.addEventListener('click', async function() {
+            try {
+        // Retrieve data attributes from the button
+        const modelName = this.getAttribute('data-modelname');
+        const rootDistribution = this.getAttribute('data-root-distribution');
+        const transitionMatrix = this.getAttribute('data-transition-matrix');
+        const fourierParameters = this.getAttribute('data-fourier-parameters');
+
+        const textToCopy = `${modelName} model with root distribution ${rootDistribution}.
+        The transition matrix associated with edge  $i$  is of the form 
+        ${transitionMatrix} 
+        and the Fourier parameters are ${fourierParameters} for all edges $i$.`;
+
+            await navigator.clipboard.writeText(textToCopy);
+
+        // Show notification
+        notification.style.display = 'block';
+
+        // Hide notification after 3 seconds
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+            } catch (err) {
+            console.error('Failed to copy text:', err);
+            }
+        
+    });
+      </script>
 
     {% if data.treename %}
     <div class="module span-3">
