@@ -14,5 +14,5 @@ You are welcome to clone and use the content of this repository at your leisure.
 
 ## Contact and contribution
 
-We would be delighted if you wanted to contribute to the development of this website or the generation of algebraic-phylogenetics data. To do so, simply clone this repository or the repository containing [our software package](https://github.com/bkholler/Oscar.jl) and let us know via email to <maintainers@algebraicphylogenetics.org>
+We would be delighted if you wanted to contribute to the development of this website or the generation of algebraic-phylogenetics data. To do so, simply clone this repository or the repository containing [our software package](https://github.com/bkholler/Oscar.jl) and let us know by sending an email to <maintainers@algebraicphylogenetics.org>.
 
