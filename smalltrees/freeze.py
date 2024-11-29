@@ -6,6 +6,6 @@ from flask_frozen import Freezer
 from smalltrees import app
 
 freezer = Freezer(app)
-
+url_default_functions={}
 if __name__ == '__main__':
     freezer.freeze()
