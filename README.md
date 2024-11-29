@@ -10,9 +10,9 @@ The file `app.py` uses flask to create a dynamic version of the website, drawing
 
 ## Usage and licensing
 
-You are welcome to clone and use the content of this repository at your leisure. This includes both the code generating the website as well as the underlying mathematical data. The former is provided under an MIT license with no attribution necessary, the latter CC-BY SA requiering acknowledgement. Guidance on how to cite the database can be found on the `about` page.
+You are welcome to clone and use the content of this repository at your leisure. This includes both the code generating the website as well as the underlying mathematical data. The former is provided under an MIT license with no attribution necessary, the latter CC-BY SA requiering acknowledgement. Guidance on how to cite the database can be found on the `about.html` page.
 
 ## Contact and contribution
 
-We would be delighted if you wanted to contribute to the development of this website or the generation of algebraic-phylogenetics data. To do so, simply clone this repository or the repository containing [our software package](https://github.com/bkholler/Oscar.jl) and let us know by sending an email to <maintainers@algebraicphylogenetics.org>.
+We would be delighted if you wanted to contribute to the development of this website or the generation of algebraic-phylogenetics data. To do so, simply clone this repository or the repository containing [our software package](https://github.com/bkholler/Oscar.jl) and introduce yourself to the team by sending an email to <maintainers@algebraicphylogenetics.org>.
 
