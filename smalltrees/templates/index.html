@@ -30,10 +30,15 @@
     <tbody>
         {% for tikzpicture in treesastex %}
         <tr class="tree-separator">
-            <td class="no-hover" rowspan="{{ nrrows[tikzpicture.id] }}" style="align-items: center; justify-content: center; text-align:center; padding: 1em;">
+            <td class="no-hover" rowspan="{{ nrrows[tikzpicture.id] }}" style="align-items: center; justify-content: center; text-align:center; padding: 1em;"> 
                 <div style="display: flex; justify-content: center; align-items: center; pointer-events: none;">
-                    <script type="text/tikz">{{ tikzpicture.image }}</script>
+                    <!--below is the tikzjax version-->
+                    <!-- <script type="text/tikz">{{ tikzpicture.image }}</script> -->
+                    <!--below is the pdf version-->
+                    <embed src="../static/tex/image_3-0-0.svg" max-width="10rem" max-height="5rem" type="application/pdf"/>
                 </div>
+                <!--below is another tikzjax specification-->
+                <!--
                 <style>
                     svg {
                         width: 90%;
@@ -44,6 +49,7 @@
                         pointer-events: none;
                     }
                 </style>
+                -->
             </td>            
             {% for treeandmodel in treesandmodels[tikzpicture.id] %}
             <td style="text-align: left;">
