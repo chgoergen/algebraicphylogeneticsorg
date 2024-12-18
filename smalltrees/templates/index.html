@@ -34,8 +34,8 @@
                 <div style="display: flex; justify-content: center; align-items: center; pointer-events: none;">
                     <!--below is the tikzjax version-->
                     <!-- <script type="text/tikz">{{ tikzpicture.image }}</script> -->
-                    <!--below is the pdf version-->
-                    <embed src="../static/tex/image_3-0-0.svg" max-width="10rem" max-height="5rem" type="application/pdf"/>
+                    <!--below is the svg version-->
+                    <img src="../static/tex/image_{{ tikzpicture.id }}.svg" alt="{{ tikzpicture.idx }}" style="height:8rem;"> 
                 </div>
                 <!--below is another tikzjax specification-->
                 <!--

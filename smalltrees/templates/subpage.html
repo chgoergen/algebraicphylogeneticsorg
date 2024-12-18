@@ -10,9 +10,11 @@
     <div class="module span-3">
         <div id="title">Phylogenetic tree {{ tree_id }}</div>
         <div id="picture">
-            <script type="text/tikz">
+            <img src="../static/tex/imagelabelled_{{ tree_id }}.svg" alt="{{ tree_id }}" style="height:70%;">
+            <!-- <script type="text/tikz">
                 {{ picture.imagelabelled }}
             </script>
+        -->
         </div>
     </div>
     {% endif %}
