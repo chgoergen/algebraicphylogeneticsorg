@@ -30,12 +30,12 @@
     <tbody>
         {% for tikzpicture in treesastex %}
         <tr class="tree-separator">
-            <td class="no-hover" rowspan="{{ nrrows[tikzpicture.id] }}" style="align-items: center; justify-content: center; text-align:center; padding: 1em;"> 
+            <td class="no-hover" rowspan="{{ nrrows[tikzpicture.id] }}" style="align-items: center; justify-content: center; text-align:center; padding:0;"> 
                 <div style="display: flex; justify-content: center; align-items: center; pointer-events: none;">
                     <!--below is the tikzjax version-->
                     <!-- <script type="text/tikz">{{ tikzpicture.image }}</script> -->
                     <!--below is the svg version-->
-                    <img src="../static/tex/image_{{ tikzpicture.id }}.svg" alt="{{ tikzpicture.idx }}" style="height:8rem;"> 
+                    <img src="../static/tex/image_{{ tikzpicture.id }}.svg" alt="{{ tikzpicture.idx }}" style="height:10rem;"> 
                 </div>
                 <!--below is another tikzjax specification-->
                 <!--
