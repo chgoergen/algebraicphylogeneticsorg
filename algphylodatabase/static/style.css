@@ -193,6 +193,7 @@ tr:hover td:not(.no-hover) {
 
 .invariantstable {
     text-align: left;
+    width: 100%;
 }
 
 .invariantstable tr {
@@ -202,8 +203,13 @@ tr:hover td:not(.no-hover) {
 }
 
 .invariantstable td:first-child {
-    width: max-content;
+    width: 10%;
 }
+
+.invariantstable td:nth-child(2) {
+    width: 90%;
+}
+
 
 .invariantstable tr:hover td {background:none;}
 
