@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 
 <div class="topheader">Details: {{ data.treename }} tree with {{data.modelname}} model ({{ treeandmodel_id }})</div>
 
@@ -8,7 +9,11 @@
 <div class="grid-container">
     {% if picture %}
     <div class="module span-3">
-        <div id="title">Phylogenetic tree {{ tree_id }}</div>
+        <div id="title">Phylogenetic tree {{ tree_id }}
+            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="treename" 
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;"><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+            <p id="status"></p>
+        </div>
         <div id="picture">
             <img src="../static/tex/imagelabelled_{{ tree_id }}.svg" alt="{{ tree_id }}" style="height:75%;">
             <!-- <script type="text/tikz">
@@ -17,13 +22,50 @@
         -->
         </div>
     </div>
+    <p id="status"></p>
+
+    <script>
+        document.querySelectorAll('.copyBtn').forEach(button => {
+          button.addEventListener('click', async function() {
+            const filePath = this.getAttribute('data-file'); // e.g., "data1.yaml"
+            const key = this.getAttribute('data-key');       // e.g., "settings"
+      
+            try {
+              // Fetch YAML file
+              const response = await fetch(filePath);
+              if (!response.ok) throw new Error(`File not found: ${filePath}`);
+      
+              // Parse YAML
+              const yamlText = await response.text();
+              const yamlData = jsyaml.load(yamlText);
+      
+              // Get the requested field
+              const value = yamlData[key];
+              if (value === undefined) throw new Error(`Key "${key}" not found in ${filePath}`);
+      
+              // Convert to string for copying
+              const copyText = typeof value === 'object'
+                ? JSON.stringify(value, null, 2)
+                : String(value);
+      
+              // Copy to clipboard
+              await navigator.clipboard.writeText(copyText);
+      
+              document.getElementById('status').textContent = `✅ Copied "${key}" from ${filePath}!`;
+            } catch (error) {
+              console.error(error);
+              document.getElementById('status').textContent = `❌ ${error.message}`;
+            }
+          });
+        });
+        </script>
     {% endif %}
 
     {% if data.details.transition_matrix %}
     <div class="module span-1">
         <div id="title">
             Evolutionary model
-            <button id="copy-evolutionary-model" style="float: right; background-color:#e7e3e8; color:#4b2c4d; border: none; border-radius: 5px;cursor: pointer;"
+            <button id="copy-evolutionary-model" style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;"
                 data-modelname="{{ data.modelname }}"
                 data-root-distribution="{{ data.details.root_distributon }}"
                 data-transition-matrix="{{ data.details.transition_matrix }}"
@@ -115,6 +157,21 @@
         <div id="content">{{ data.details.equivalent_classes_fourier }}</div>
     </div>
     {% endif %}
+
+    {% if data.details.equivalent_classes_prob %}
+    <div class="module span-1">
+        <div id="title">Reparametrization probability to Fourier coordinates</div>
+        <div id="content">THERE WILL BE NEW TEXT HERE{{ data.details.equivalent_classes_prob | safe }}</div>
+    </div>
+    {% endif %}
+
+    {% if data.details.equivalent_classes_fourier %}
+    <div class="module span-1">
+        <div id="title">Reparametrization Fourier to probability coordinates</div>
+        <div id="content">THERE WILL BE NEW TEXT HERE{{ data.details.equivalent_classes_fourier }}</div>
+    </div>
+    {% endif %}
+
 
     {% if data.details.invariants %}
     <div class="module span-1">
