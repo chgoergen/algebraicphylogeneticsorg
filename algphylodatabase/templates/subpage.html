@@ -1,18 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-
 <div class="topheader">Details: {{ data.treename }} tree with {{data.modelname}} model ({{ treeandmodel_id }})</div>
 
 <div class="main">
+
+    <p style="text-align:left;">Download for use in Julia/OSCAR: 
+    <a href="../static/data/{{ treeandmodel_id }}.yaml" download>
+            <button style="background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: 5px;cursor: pointer;">{{ treeandmodel_id }}.yaml</button></a>
+    but actually, phylogeneticmodel.mrdi and invariants.mrdi</p>
+
 <div class="grid-container">
     {% if picture %}
     <div class="module span-3">
         <div id="title">Phylogenetic tree {{ tree_id }}
-            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="treename" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;"><i class="fa fa-clipboard" aria-hidden="true"></i></button>
-            <p id="status"></p>
+            <button class="copyBtn" data-file="../static/tex/tex_{{ tree_id }}.yaml" data-key="imagelabelled" 
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tikz</i></button>
+            <div id="notification">
+            Copied to clipboard!
+            </div>
         </div>
         <div id="picture">
             <img src="../static/tex/imagelabelled_{{ tree_id }}.svg" alt="{{ tree_id }}" style="height:75%;">
@@ -22,43 +27,6 @@
         -->
         </div>
     </div>
-    <p id="status"></p>
-
-    <script>
-        document.querySelectorAll('.copyBtn').forEach(button => {
-          button.addEventListener('click', async function() {
-            const filePath = this.getAttribute('data-file'); // e.g., "data1.yaml"
-            const key = this.getAttribute('data-key');       // e.g., "settings"
-      
-            try {
-              // Fetch YAML file
-              const response = await fetch(filePath);
-              if (!response.ok) throw new Error(`File not found: ${filePath}`);
-      
-              // Parse YAML
-              const yamlText = await response.text();
-              const yamlData = jsyaml.load(yamlText);
-      
-              // Get the requested field
-              const value = yamlData[key];
-              if (value === undefined) throw new Error(`Key "${key}" not found in ${filePath}`);
-      
-              // Convert to string for copying
-              const copyText = typeof value === 'object'
-                ? JSON.stringify(value, null, 2)
-                : String(value);
-      
-              // Copy to clipboard
-              await navigator.clipboard.writeText(copyText);
-      
-              document.getElementById('status').textContent = `✅ Copied "${key}" from ${filePath}!`;
-            } catch (error) {
-              console.error(error);
-              document.getElementById('status').textContent = `❌ ${error.message}`;
-            }
-          });
-        });
-        </script>
     {% endif %}
 
     {% if data.details.transition_matrix %}
@@ -70,7 +38,7 @@
                 data-root-distribution="{{ data.details.root_distributon }}"
                 data-transition-matrix="{{ data.details.transition_matrix }}"
                 data-fourier-parameters="{{ data.details.fourier_parameters }}">
-                <i class="fa fa-clipboard" aria-hidden="true"></i> 
+                .tex 
             </button>
         </div>
         <div id="content"><a href="/notation#models">{{ data.modelname }}</a> model with <a href="/notation#labelling">root distribution</a> {{ data.details.root_distributon }}. <br>
@@ -132,28 +100,52 @@
 
     {% if data.details.probability_parametrization %}
     <div class="module span-1">
-        <div id="title">Probability parametrization</div>
+        <div id="title">Probability parametrization
+            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.probability_parametrization" 
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
+            <div id="notification">
+            Copied to clipboard!
+            </div>
+        </div>
         <div id="content">{{ data.details.probability_parametrization | safe }}</div>
     </div>
     {% endif %}
 
     {% if data.details.fourier_parametrization %}
     <div class="module span-1">
-        <div id="title">Fourier parametrization</div>
+        <div id="title">Fourier parametrization
+            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.fourier_parametrization" 
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
+            <div id="notification">
+            Copied to clipboard!
+            </div>
+        </div>
         <div id="content">{{ data.details.fourier_parametrization }}</div>
     </div>
     {% endif %}
 
     {% if data.details.equivalent_classes_prob %}
     <div class="module span-1">
-        <div id="title">Equivalent classes of probability parametrization</div>
+        <div id="title">Equivalent classes of probability parametrization
+            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_prob" 
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
+            <div id="notification">
+            Copied to clipboard!
+            </div>
+        </div>
         <div id="content">{{ data.details.equivalent_classes_prob | safe }}</div>
     </div>
     {% endif %}
 
     {% if data.details.equivalent_classes_fourier %}
     <div class="module span-1">
-        <div id="title">Equivalent classes of Fourier parametrization</div>
+        <div id="title">Equivalent classes of Fourier parametrization
+            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_fourier" 
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
+            <div id="notification">
+            Copied to clipboard!
+            </div>
+        </div>
         <div id="content">{{ data.details.equivalent_classes_fourier }}</div>
     </div>
     {% endif %}
@@ -175,14 +167,26 @@
 
     {% if data.details.invariants %}
     <div class="module span-1">
-        <div id="title">Invariants in Fourier coordinates</div>
+        <div id="title">Invariants in Fourier coordinates
+            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.invariants" 
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
+            <div id="notification">
+            Copied to clipboard!
+            </div>
+        </div>
         <div id="content">{{ data.details.invariants }}</div>
     </div>
     {% endif %}
 
     {% if data.details.grobner_basis %}
     <div class="module span-1">
-        <div id="title">Gröbner basis of ideal of invariants</div>
+        <div id="title">Gröbner basis of ideal of invariants
+            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.grobner_basis" 
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
+            <div id="notification">
+            Copied to clipboard!
+            </div>
+        </div>
         <div id="content">{{ data.details.grobner_basis }}</div>
     </div>
     {% endif %}
@@ -201,18 +205,71 @@
 
     {% if data.details.specialized_fourier_transform %}
     <div class="module span-3">
-        <div id="title">Specialized Fourier transform</div>
+        <div id="title">Specialized Fourier transform
+            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.specialized_fourier_transform" 
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
+            <div id="notification">
+            Copied to clipboard!
+            </div>
+        </div>
         <div id="content">{{ data.details.specialized_fourier_transform }}</div>
     </div>
     {% endif %}
 
     {% if data.details.inverse_specialized_fourier_transform %}
     <div class="module span-3">
-        <div id="title">Inverse specialized Fourier transform</div>
+        <div id="title">Inverse specialized Fourier transform
+            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.inverse_specialized_fourier_transform"
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
+            <div id="notification">
+            Copied to clipboard!
+            </div>
+        </div>
         <div id="content">{{ data.details.inverse_specialized_fourier_transform }}</div>
     </div>
     {% endif %}
 </div>
 </div>
+
+<script>
+  // Helper function: safely access nested keys like "a.b.c"
+  function getNestedValue(obj, path) {
+    return path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined) ? acc[key] : undefined, obj);
+  }
+
+  document.querySelectorAll('.copyBtn').forEach(button => {
+    button.addEventListener('click', async function() {
+      const filePath = this.getAttribute('data-file'); // e.g., "data1.yaml"
+      const keyPath = this.getAttribute('data-key');   // e.g., "settings.theme.color"
+
+      try {
+        // Fetch YAML file
+        const response = await fetch(filePath);
+        if (!response.ok) throw new Error(`File not found: ${filePath}`);
+
+        // Parse YAML
+        const yamlText = await response.text();
+        const yamlData = jsyaml.load(yamlText);
+
+        // Get nested key value
+        const value = getNestedValue(yamlData, keyPath);
+        if (value === undefined) throw new Error(`Key "${keyPath}" not found in ${filePath}`);
+
+        // Convert to string for copying
+        const copyText = typeof value === 'object'
+          ? JSON.stringify(value, null, 2)
+          : String(value);
+
+        // Copy to clipboard
+        await navigator.clipboard.writeText(copyText);
+
+        document.getElementById('status').textContent = `✅ Copied "${keyPath}" from ${filePath}!`;
+      } catch (error) {
+        console.error(error);
+        document.getElementById('status').textContent = `❌ ${error.message}`;
+      }
+    });
+  });
+</script>
 
 {% endblock %}
