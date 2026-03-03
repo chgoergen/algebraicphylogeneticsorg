@@ -14,11 +14,13 @@
     <div class="module span-3">
         <div id="title">Phylogenetic tree {{ tree_id }}
             <button class="copyBtn" data-file="../static/tex/tex_{{ tree_id }}.yaml" data-key="imagelabelled" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tikz<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>.tikz
+            </button>
         </div>
         <div id="picture">
             <img src="../static/tex/imagelabelled_{{ tree_id }}.svg" alt="{{ tree_id }}" style="height:75%;">
-            </div>
+        </div>
     </div>
     {% endif %}
 
@@ -31,11 +33,12 @@
                 data-root-distribution="{{ data.details.root_distributon }}"
                 data-transition-matrix="{{ data.details.transition_matrix }}"
                 data-fourier-parameters="{{ data.details.fourier_parameters }}">
-                .tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg> 
+                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>.tex 
             </button>
         </div>
-        <div id="content"><a href="/notation#models">{{ data.modelname }}</a> model with <a href="/notation#labelling">root distribution</a> {{ data.details.root_distributon }}. <br>
-            The <a href="/notation#labelling">transition matrix</a>  associated with edge $i$ is of the form
+        <div id="content" style="overflow-x: auto;">
+            <a href="/notation#models">{{ data.modelname }}</a> model with <a href="/notation#labelling">root distribution</a> {{ data.details.root_distributon }}. <br>
+            The <a href="/notation#labelling">transition matrix</a> associated with edge $i$ is of the form
             {{ data.details.transition_matrix }} and the <a href="/notation#labelling">Fourier parameters</a> are {{ data.details.fourier_parameters }} for all edges $i$.
         </div>
     </div>
@@ -57,14 +60,19 @@
     </div>
     {% endif %}
 
-
     {% if data.details.probability_parametrization %}
     <div class="module span-1">
         <div id="title">Probability parametrization
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.probability_parametrization" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>.tex
+            </button>
         </div>
-        <div id="content">{{ data.details.probability_parametrization | safe }}</div>
+        {% if data.details.probability_parametrization | length > 40000 %}
+            <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.probability_parametrization | safe }}</div>
+        {% else %}
+            <div id="content" style="overflow-x: auto;">{{ data.details.probability_parametrization | safe }}</div>
+        {% endif %}
     </div>
     {% endif %}
 
@@ -72,9 +80,15 @@
     <div class="module span-1">
         <div id="title">Fourier parametrization
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.fourier_parametrization" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>.tex
+            </button>
         </div>
-        <div id="content">{{ data.details.fourier_parametrization }}</div>
+        {% if data.details.fourier_parametrization | length > 40000 %}
+            <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.fourier_parametrization }}</div>
+        {% else %}
+            <div id="content" style="overflow-x: auto;">{{ data.details.fourier_parametrization }}</div>
+        {% endif %}
     </div>
     {% endif %}
 
@@ -82,9 +96,15 @@
     <div class="module span-1">
         <div id="title">Equivalent classes of probability parametrization
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_prob" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>.tex
+            </button>
         </div>
-        <div id="content">{{ data.details.equivalent_classes_prob | safe }}</div>
+        {% if data.details.equivalent_classes_prob | length > 40000 %}
+            <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.equivalent_classes_prob | safe }}</div>
+        {% else %}
+            <div id="content" style="overflow-x: auto;">{{ data.details.equivalent_classes_prob | safe }}</div>
+        {% endif %}
     </div>
     {% endif %}
 
@@ -92,9 +112,15 @@
     <div class="module span-1">
         <div id="title">Equivalent classes of Fourier parametrization
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_fourier" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>.tex
+            </button>
         </div>
-        <div id="content">{{ data.details.equivalent_classes_fourier }}</div>
+        {% if data.details.equivalent_classes_fourier | length > 40000 %}
+            <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.equivalent_classes_fourier }}</div>
+        {% else %}
+            <div id="content" style="overflow-x: auto;">{{ data.details.equivalent_classes_fourier }}</div>
+        {% endif %}
     </div>
     {% endif %}
 
@@ -102,9 +128,15 @@
     <div class="module span-1">
         <div id="title">Invariants in Fourier coordinates
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.invariants" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>.tex
+            </button>
         </div>
-        <div id="content">{{ data.details.invariants }}</div>
+        {% if data.details.invariants | length > 40000 %}
+            <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.invariants }}</div>
+        {% else %}
+            <div id="content" style="overflow-x: auto;">{{ data.details.invariants }}</div>
+        {% endif %}
     </div>
     {% endif %}
 
@@ -112,9 +144,15 @@
     <div class="module span-1">
         <div id="title">Gröbner basis of ideal of invariants
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.grobner_basis" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>.tex
+            </button>
         </div>
-        <div id="content">{{ data.details.grobner_basis }}</div>
+        {% if data.details.grobner_basis | length > 40000 %}
+            <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.grobner_basis }}</div>
+        {% else %}
+            <div id="content" style="overflow-x: auto;">{{ data.details.grobner_basis }}</div>
+        {% endif %}
     </div>
     {% endif %}
 
@@ -134,9 +172,15 @@
     <div class="module span-3">
         <div id="title">Specialized Fourier transform
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.specialized_fourier_transform" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>.tex
+            </button>
         </div>
-        <div id="content">{{ data.details.specialized_fourier_transform }}</div>
+        {% if data.details.specialized_fourier_transform | length > 40000 %}
+            <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.specialized_fourier_transform }}</div>
+        {% else %}
+            <div id="content" style="overflow-x: auto;">{{ data.details.specialized_fourier_transform }}</div>
+        {% endif %}
     </div>
     {% endif %}
 
@@ -144,9 +188,15 @@
     <div class="module span-3">
         <div id="title">Inverse specialized Fourier transform
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.inverse_specialized_fourier_transform"
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>.tex
+            </button>
         </div>
-        <div id="content">{{ data.details.inverse_specialized_fourier_transform }}</div>
+        {% if data.details.inverse_specialized_fourier_transform | length > 40000 %}
+            <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.inverse_specialized_fourier_transform }}</div>
+        {% else %}
+            <div id="content" style="overflow-x: auto;">{{ data.details.inverse_specialized_fourier_transform }}</div>
+        {% endif %}
     </div>
     {% endif %}
 </div>
@@ -172,7 +222,7 @@
         }, 3000);
     }
 
-    // Helper function: safely access nested keys like "a.b.c"
+    // Helper function: safely access nested keys
     function getNestedValue(obj, path) {
         return path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined) ? acc[key] : undefined, obj);
     }
@@ -201,7 +251,7 @@ and the Fourier parameters are ${fourierParameters} for all edges $i$.`;
         });
     }
 
-    // Generic YAML Button Logic
+    // Generic YAML Button Logic with DOM Fallback
     document.querySelectorAll('.copyBtn').forEach(button => {
         button.addEventListener('click', async function() {
             const filePath = this.getAttribute('data-file'); 
@@ -224,8 +274,28 @@ and the Fourier parameters are ${fourierParameters} for all edges $i$.`;
                 await navigator.clipboard.writeText(copyText);
                 showToast(`Copied to clipboard!`); 
             } catch (error) {
-                console.error(error);
-                showToast(`Error: ${error.message}`); 
+                console.warn("YAML fetch/parse failed. Attempting DOM extraction fallback.", error);
+                
+                // Fallback: extract text directly from the adjacent content div
+                const moduleContainer = this.closest('.module');
+                if (moduleContainer) {
+                    const contentDiv = moduleContainer.querySelector('#content');
+                    if (contentDiv) {
+                        const copyText = contentDiv.textContent || contentDiv.innerText;
+                        
+                        try {
+                            await navigator.clipboard.writeText(copyText.trim());
+                            showToast(`Copied ${keyPath} (from page)!`);
+                        } catch (clipboardErr) {
+                            console.error("Clipboard API failed during fallback:", clipboardErr);
+                            showToast("Failed to copy to clipboard.");
+                        }
+                    } else {
+                        showToast("Error: Content not found on page.");
+                    }
+                } else {
+                    showToast(`Error: ${error.message}`);
+                }
             }
         });
     });

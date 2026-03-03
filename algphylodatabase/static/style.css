@@ -362,3 +362,15 @@ pre code {
     opacity: 1;
     top: 40px; /* Creates a slight sliding down effect when appearing */
 }
+
+.long-data-box {
+    max-height: 400px;
+    overflow: auto;
+    white-space: pre; /* Forces horizontal scrolling instead of breaking the grid */
+    font-family: monospace;
+    font-size: 0.85em;
+    background-color: var(--shade-main-color);
+    padding: 10px;
+    border-radius: var(--rounded-corners, 5px);
+    border: 1px solid #ccc;
+}
