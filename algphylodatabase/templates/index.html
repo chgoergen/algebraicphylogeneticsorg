@@ -25,52 +25,57 @@
             <th>Degree<br> Singular <br> Locus</th>
             <th>MLdeg</th>
             <th>EDdeg</th>
-            <th style="border-top-right-radius:var(--rounded-corners);">Download data</th>
+            <th style="width:11rem; border-top-right-radius:var(--rounded-corners);">Download data</th>
         </tr>
     </thead>
     <tbody>
         {% for tikzpicture in treesastex %}
-        <tr class="tree-separator">
-            <td class="no-hover" rowspan="{{ nrrows[tikzpicture.id] }}" style="align-items: center; justify-content: center; text-align:center; padding:0;"> 
-                <div style="display: flex; justify-content: center; align-items: center; pointer-events: none;">
-                    <!--below is the tikzjax version-->
-                    <!-- <script type="text/tikz">{{ tikzpicture.image }}</script> -->
-                    <!--below is the svg version-->
-                    <img src="../static/tex/image_{{ tikzpicture.id }}.svg" alt="{{ tikzpicture.idx }}" style="height:10rem;max-width: 100%;"> 
-                </div>
-                <!--below is another tikzjax specification-->
-                <!--
-                <style>
-                    svg {
-                        width: 90%;
-                        height: auto;
-                        display: block;
-                        margin-left: auto;
-                        margin-right: auto;
-                        pointer-events: none;
-                    }
-                </style>
-                -->
-            </td>            
             {% for treeandmodel in treesandmodels[tikzpicture.id] %}
-            <td style="text-align: left;">
-                <a href="{{ url_for('subpage', treeandmodel_id=treeandmodel.id) }}">
-                {{ treeandmodel.modelname }}</a></td>
-            <td>{{ treeandmodel.dim }}</td>
-            <td>{{ treeandmodel.deg }}</td>
-            <td>{{ treeandmodel.np }}</td>
-            <td>{{ treeandmodel.nq }}</td>
-            <td>{{ treeandmodel.sD }}</td>
-            <td>{{ treeandmodel.sd }}</td>
-            <td>{{ treeandmodel.MLdeg }}</td>
-            <td>{{ treeandmodel.EDdeg }}</td>
-            <td>
-                <a href="../static/data/{{treeandmodel.id}}.yaml" download>
-                    <button style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: 5px;cursor: pointer;">{{treeandmodel.id}}.yaml</button>
-                  </a>
-            </td>
-        </tr>
-        {% endfor %}
+            <tr {% if loop.first %}class="tree-separator"{% endif %}>
+                
+                {% if loop.first %}
+                <td class="no-hover" rowspan="{{ nrrows[tikzpicture.id] }}" style="align-items: center; justify-content: center; text-align:center; padding:0;"> 
+                    <div style="display: flex; justify-content: center; align-items: center; pointer-events: none;">
+                        <img src="../static/tex/image_{{ tikzpicture.id }}.svg" alt="{{ tikzpicture.idx }}" style="height:10rem;max-width: 100%;"> 
+                    </div>
+                </td>            
+                {% endif %}
+
+                <td style="text-align: left;">
+                    <a href="{{ url_for('subpage', treeandmodel_id=treeandmodel.id) }}">
+                    {{ treeandmodel.modelname }}</a>
+                </td>
+                <td>{{ treeandmodel.dim }}</td>
+                <td>{{ treeandmodel.deg }}</td>
+                <td>{{ treeandmodel.np }}</td>
+                <td>{{ treeandmodel.nq }}</td>
+                <td>{{ treeandmodel.sD }}</td>
+                <td>{{ treeandmodel.sd }}</td>
+                <td>{{ treeandmodel.MLdeg }}</td>
+                <td>{{ treeandmodel.EDdeg }}</td>
+                
+                <td style="vertical-align: middle; padding: 0.5rem;">
+                    <div style="display: grid; grid-template-columns: 2.5rem 2.5rem 4rem; gap: 4px; justify-content: center; margin: 0 auto; width: max-content;">
+                        
+                        <a href="../static/data/{{treeandmodel.id}}.yaml" download style="text-decoration: none;">
+                            <button style="width: 100%; background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 2px 0;">yaml</button>
+                        </a>
+                        
+                        <a href="../static/data/phylogeneticmodel_{{treeandmodel.id}}.mrdi" download style="text-decoration: none;">
+                            <button style="width: 100%; background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 2px 0;">mrdi</button>
+                        </a>
+                        
+                        {% set inv_filename = 'invariants_' ~ treeandmodel.id ~ '.mrdi' %}
+                        {% if check_file_exists(inv_filename) %}
+                        <a href="../static/data/{{ inv_filename }}" download style="text-decoration: none;">
+                            <button style="width: 100%; background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 2px 0;">invariants</button>
+                        </a>
+                        {% endif %}
+
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
         {% endfor %}
     </tbody>
 </table>

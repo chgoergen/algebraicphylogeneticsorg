@@ -3,8 +3,20 @@ import yaml
 import glob
 import natsort
 from natsort import natsorted
+import os
 
 app = Flask(__name__)
+
+
+@app.context_processor
+def utility_processor():
+    def check_file_exists(filename):
+        # Construct the absolute path to the static/data folder
+        file_path = os.path.join(app.root_path, 'static', 'data', filename)
+        return os.path.isfile(file_path)
+    
+    return dict(check_file_exists=check_file_exists)
+
 
 datafiles = glob.glob("static/data/*.yaml")
 texfiles = natsorted(glob.glob("static/tex/*.yaml"))

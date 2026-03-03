@@ -163,7 +163,7 @@ th {
     color: var(--main-color);
     margin-bottom: var(--line-thickness);
     margin-left: 1rem;
-    text-align: left;
+    text-align: center;
     font-weight: 600;
 }
 
