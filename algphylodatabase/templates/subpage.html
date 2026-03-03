@@ -14,15 +14,11 @@
     <div class="module span-3">
         <div id="title">Phylogenetic tree {{ tree_id }}
             <button class="copyBtn" data-file="../static/tex/tex_{{ tree_id }}.yaml" data-key="imagelabelled" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tikz</i></button>
-            <div id="notification">
-            Copied to clipboard!
-            </div>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tikz<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
         </div>
         <div id="picture">
             <img src="../static/tex/imagelabelled_{{ tree_id }}.svg" alt="{{ tree_id }}" style="height:75%;">
-            <!-- <script type="text/tikz">{{ picture.imagelabelled }}</script>-->
-        </div>
+            </div>
     </div>
     {% endif %}
 
@@ -35,7 +31,7 @@
                 data-root-distribution="{{ data.details.root_distributon }}"
                 data-transition-matrix="{{ data.details.transition_matrix }}"
                 data-fourier-parameters="{{ data.details.fourier_parameters }}">
-                .tex 
+                .tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg> 
             </button>
         </div>
         <div id="content"><a href="/notation#models">{{ data.modelname }}</a> model with <a href="/notation#labelling">root distribution</a> {{ data.details.root_distributon }}. <br>
@@ -44,40 +40,6 @@
         </div>
     </div>
     {% endif %}
-    <div id="notification">
-        Copied to clipboard!
-    </div>
-    <script>
-        // copy button for this div only!
-        const evolutionaryModelButton = document.getElementById('copy-evolutionary-model');
-        evolutionaryModelButton.addEventListener('click', async function() {
-            try {
-        // Retrieve data attributes from the button
-        const modelName = this.getAttribute('data-modelname');
-        const rootDistribution = this.getAttribute('data-root-distribution');
-        const transitionMatrix = this.getAttribute('data-transition-matrix');
-        const fourierParameters = this.getAttribute('data-fourier-parameters');
-
-        const textToCopy = `${modelName} model with root distribution ${rootDistribution}.
-        The transition matrix associated with edge  $i$  is of the form 
-        ${transitionMatrix} 
-        and the Fourier parameters are ${fourierParameters} for all edges $i$.`;
-
-            await navigator.clipboard.writeText(textToCopy);
-
-        // Show notification
-        notification.style.display = 'block';
-
-        // Hide notification after 3 seconds
-            setTimeout(() => {
-                notification.style.display = 'none';
-            }, 3000);
-            } catch (err) {
-            console.error('Failed to copy text:', err);
-            }
-        
-    });
-    </script>
 
     {% if data.treename %}
     <div class="module span-3">
@@ -100,10 +62,7 @@
     <div class="module span-1">
         <div id="title">Probability parametrization
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.probability_parametrization" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
-            <div id="notification">
-            Copied to clipboard!
-            </div>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
         </div>
         <div id="content">{{ data.details.probability_parametrization | safe }}</div>
     </div>
@@ -113,10 +72,7 @@
     <div class="module span-1">
         <div id="title">Fourier parametrization
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.fourier_parametrization" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
-            <div id="notification">
-            Copied to clipboard!
-            </div>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
         </div>
         <div id="content">{{ data.details.fourier_parametrization }}</div>
     </div>
@@ -126,10 +82,7 @@
     <div class="module span-1">
         <div id="title">Equivalent classes of probability parametrization
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_prob" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
-            <div id="notification">
-            Copied to clipboard!
-            </div>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
         </div>
         <div id="content">{{ data.details.equivalent_classes_prob | safe }}</div>
     </div>
@@ -139,39 +92,17 @@
     <div class="module span-1">
         <div id="title">Equivalent classes of Fourier parametrization
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_fourier" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
-            <div id="notification">
-            Copied to clipboard!
-            </div>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
         </div>
         <div id="content">{{ data.details.equivalent_classes_fourier }}</div>
     </div>
     {% endif %}
 
-    <!--
-    {% if data.details.equivalent_classes_prob %}
-    <div class="module span-1">
-        <div id="title">Reparametrization probability to Fourier coordinates</div>
-        <div id="content">THERE WILL BE NEW TEXT HERE{{ data.details.equivalent_classes_prob | safe }}</div>
-    </div>
-    {% endif %}
-
-    {% if data.details.equivalent_classes_fourier %}
-    <div class="module span-1">
-        <div id="title">Reparametrization Fourier to probability coordinates</div>
-        <div id="content">THERE WILL BE NEW TEXT HERE{{ data.details.equivalent_classes_fourier }}</div>
-    </div>
-    {% endif %}
-    -->
-
     {% if data.details.invariants %}
     <div class="module span-1">
         <div id="title">Invariants in Fourier coordinates
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.invariants" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
-            <div id="notification">
-            Copied to clipboard!
-            </div>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
         </div>
         <div id="content">{{ data.details.invariants }}</div>
     </div>
@@ -181,10 +112,7 @@
     <div class="module span-1">
         <div id="title">Gröbner basis of ideal of invariants
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.grobner_basis" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
-            <div id="notification">
-            Copied to clipboard!
-            </div>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
         </div>
         <div id="content">{{ data.details.grobner_basis }}</div>
     </div>
@@ -206,10 +134,7 @@
     <div class="module span-3">
         <div id="title">Specialized Fourier transform
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.specialized_fourier_transform" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
-            <div id="notification">
-            Copied to clipboard!
-            </div>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
         </div>
         <div id="content">{{ data.details.specialized_fourier_transform }}</div>
     </div>
@@ -219,10 +144,7 @@
     <div class="module span-3">
         <div id="title">Inverse specialized Fourier transform
             <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.inverse_specialized_fourier_transform"
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex</i></button>
-            <div id="notification">
-            Copied to clipboard!
-            </div>
+            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">.tex<svg style="width: 12px; height: 12px; vertical-align: middle; margin-left: 2px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg></button>
         </div>
         <div id="content">{{ data.details.inverse_specialized_fourier_transform }}</div>
     </div>
@@ -231,44 +153,82 @@
 </div>
 
 <script>
-  // Helper function: safely access nested keys like "a.b.c"
-  function getNestedValue(obj, path) {
-    return path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined) ? acc[key] : undefined, obj);
-  }
+    // Global Toast Function
+    let toastTimeout;
+    function showToast(message) {
+        const toast = document.getElementById('global-toast');
+        if (!toast) {
+            console.error("Global toast element not found. Ensure <div id='global-toast'> is in base.html.");
+            return;
+        }
+        
+        if (message) toast.textContent = message; 
 
-  document.querySelectorAll('.copyBtn').forEach(button => {
-    button.addEventListener('click', async function() {
-      const filePath = this.getAttribute('data-file'); // e.g., "data1.yaml"
-      const keyPath = this.getAttribute('data-key');   // e.g., "settings.theme.color"
+        toast.classList.add('show');
+        
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
 
-      try {
-        // Fetch YAML file
-        const response = await fetch(filePath);
-        if (!response.ok) throw new Error(`File not found: ${filePath}`);
+    // Helper function: safely access nested keys like "a.b.c"
+    function getNestedValue(obj, path) {
+        return path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined) ? acc[key] : undefined, obj);
+    }
 
-        // Parse YAML
-        const yamlText = await response.text();
-        const yamlData = jsyaml.load(yamlText);
+    // Evolutionary Model Button Logic
+    const evolutionaryModelButton = document.getElementById('copy-evolutionary-model');
+    if (evolutionaryModelButton) {
+        evolutionaryModelButton.addEventListener('click', async function() {
+            try {
+                const modelName = this.getAttribute('data-modelname');
+                const rootDistribution = this.getAttribute('data-root-distribution');
+                const transitionMatrix = this.getAttribute('data-transition-matrix');
+                const fourierParameters = this.getAttribute('data-fourier-parameters');
 
-        // Get nested key value
-        const value = getNestedValue(yamlData, keyPath);
-        if (value === undefined) throw new Error(`Key "${keyPath}" not found in ${filePath}`);
+                const textToCopy = `${modelName} model with root distribution ${rootDistribution}.
+The transition matrix associated with edge $i$ is of the form 
+${transitionMatrix} 
+and the Fourier parameters are ${fourierParameters} for all edges $i$.`;
 
-        // Convert to string for copying
-        const copyText = typeof value === 'object'
-          ? JSON.stringify(value, null, 2)
-          : String(value);
+                await navigator.clipboard.writeText(textToCopy);
+                showToast("Evolutionary model copied!");
+            } catch (err) {
+                console.error('Failed to copy text:', err);
+                showToast("Failed to copy evolutionary model.");
+            }
+        });
+    }
 
-        // Copy to clipboard
-        await navigator.clipboard.writeText(copyText);
+    // Generic YAML Button Logic
+    document.querySelectorAll('.copyBtn').forEach(button => {
+        button.addEventListener('click', async function() {
+            const filePath = this.getAttribute('data-file'); 
+            const keyPath = this.getAttribute('data-key');   
 
-        document.getElementById('status').textContent = `✅ Copied "${keyPath}" from ${filePath}!`;
-      } catch (error) {
-        console.error(error);
-        document.getElementById('status').textContent = `❌ ${error.message}`;
-      }
+            try {
+                const response = await fetch(filePath);
+                if (!response.ok) throw new Error(`File not found: ${filePath}`);
+
+                const yamlText = await response.text();
+                const yamlData = jsyaml.load(yamlText);
+
+                const value = getNestedValue(yamlData, keyPath);
+                if (value === undefined) throw new Error(`Key "${keyPath}" not found`);
+
+                const copyText = typeof value === 'object'
+                    ? JSON.stringify(value, null, 2)
+                    : String(value);
+
+                await navigator.clipboard.writeText(copyText);
+                showToast(`Copied to clipboard!`); 
+            } catch (error) {
+                console.error(error);
+                showToast(`Error: ${error.message}`); 
+            }
+        });
     });
-  });
 </script>
 
 {% endblock %}

@@ -338,3 +338,27 @@ pre code {
         padding: 1rem;
     }
 }
+
+#global-toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: var(--shade-main-color);
+    color: var(--main-color);
+    text-align: center;
+    border-radius: var(--rounded-corners, 5px);
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%); /* Strictly centers the element */
+    opacity: 0;
+    transition: opacity 0.3s, top 0.3s;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+
+#global-toast.show {
+    visibility: visible;
+    opacity: 1;
+    top: 40px; /* Creates a slight sliding down effect when appearing */
+}
