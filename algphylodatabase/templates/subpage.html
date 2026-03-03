@@ -4,11 +4,12 @@
 
 <div class="main">
 
+   {% set inv_filename = 'invariants_' ~ treeandmodel_id ~ '.mrdi' %}
     <p style="text-align:left;">Download data for this tree and model: 
-    <a href="../static/data/{{ treeandmodel_id }}.yaml" download>
-            <button style="background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: 5px;cursor: pointer;">{{ treeandmodel_id }}.yaml</button></a>.
-    The files phylogeneticmodel_{{ treeandmodel_id }}.mrdi and invariants_{{ treeandmodel_id }}.mrdi for use in Julia/OSCAR will be available with the upcoming release mid November 2025.</p>
-
+        <a href="../static/data/{{ treeandmodel_id }}.yaml" download style="text-decoration: none;"><button style="background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: 5px; cursor: pointer;">{{ treeandmodel_id }}.yaml</button></a>{% if check_file_exists(inv_filename) %}, {% else %} and {% endif %}
+        <a href="../static/data/phylogeneticmodel_{{ treeandmodel_id }}.mrdi" download style="text-decoration: none;"><button style="background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: 5px; cursor: pointer;">phylogeneticmodel_{{ treeandmodel_id }}.mrdi</button></a>{% if check_file_exists(inv_filename) %} and 
+        <a href="../static/data/{{ inv_filename }}" download style="text-decoration: none;"><button style="background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: 5px; cursor: pointer;">{{ inv_filename }}</button></a>{% endif %}.
+    </p>
 <div class="grid-container">
     {% if picture %}
     <div class="module span-3">
