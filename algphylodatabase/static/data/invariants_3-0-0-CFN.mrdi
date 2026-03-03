@@ -1,0 +1,1 @@
+{"_ns":{"Oscar":["https://github.com/oscar-system/Oscar.jl","1.7.0"]},"_type":{"name":"MPolyIdeal","params":"e84802ee-cfa5-4e15-801d-6a23f790ea82"},"data":[[]],"_refs":{"e84802ee-cfa5-4e15-801d-6a23f790ea82":{"_type":{"name":"MPolyRing","params":{"_type":"QQField"}},"data":{"symbols":["q[2,2,1]","q[2,1,2]","q[1,2,2]","q[1,1,1]"]}}}}
