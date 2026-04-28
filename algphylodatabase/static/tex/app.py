@@ -7,6 +7,7 @@ import os
 
 app = Flask(__name__)
 
+
 @app.context_processor
 def utility_processor():
     def check_file_exists(filename):
@@ -20,7 +21,6 @@ def utility_processor():
 datafiles = glob.glob("static/data/*.yaml")
 texfiles = natsorted(glob.glob("static/tex/*.yaml"))
 datafiles.sort()
-
 
 def load_data(filename):
     with open(filename, 'r') as file:

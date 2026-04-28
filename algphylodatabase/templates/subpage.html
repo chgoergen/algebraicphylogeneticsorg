@@ -1,206 +1,339 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="topheader">Details: {{ data.treename }} tree with {{data.modelname}} model ({{ treeandmodel_id }})</div>
+<div class="topheader" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+    <div>Details: {{ data.treename }} tree with {{data.modelname}} model</div>
+    <div style="font-size: 0.75em; font-weight: normal; margin-top: 4px; opacity: 0.8;">
+        ({{ treeandmodel_id }})
+    </div>
+</div>
 
 <div class="main">
 
-   {% set inv_filename = 'invariants_' ~ treeandmodel_id ~ '.mrdi' %}
-    <p style="text-align:left;">Download data for this tree and model: 
-        <a href="../static/data/{{ treeandmodel_id }}.yaml" download style="text-decoration: none;"><button style="background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: 5px; cursor: pointer;">{{ treeandmodel_id }}.yaml</button></a>{% if check_file_exists(inv_filename) %}, {% else %} and {% endif %}
-        <a href="../static/data/phylogeneticmodel_{{ treeandmodel_id }}.mrdi" download style="text-decoration: none;"><button style="background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: 5px; cursor: pointer;">phylogeneticmodel_{{ treeandmodel_id }}.mrdi</button></a>{% if check_file_exists(inv_filename) %} and 
-        <a href="../static/data/{{ inv_filename }}" download style="text-decoration: none;"><button style="background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: 5px; cursor: pointer;">{{ inv_filename }}</button></a>{% endif %}.
-    </p>
-<div class="grid-container">
-    {% if picture %}
-    <div class="module span-3">
-        <div id="title">Phylogenetic tree {{ tree_id }}
-            <button class="copyBtn" data-file="../static/tex/tex_{{ tree_id }}.yaml" data-key="imagelabelled" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
-            </button>
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(0,0,0,0.05);">
+        
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <strong style="color: var(--main-color); margin-right: 8px;">Download data:</strong>
+
+            <a href="{{ url_for('static', filename='data/' ~ treeandmodel_id ~ '.yaml') }}" 
+            download="Phylogenetic_Data_{{ treeandmodel_id }}.yaml" 
+            style="text-decoration: none;">
+                <button style="background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 6px 12px; font-size: 0.9em;">
+                    LaTeX Data (.yaml)
+                </button>
+            </a>
+            
+            <a href="{{ url_for('static', filename='data/SmallPhylogeneticModels/SmallPhylogeneticModel_' ~ treeandmodel_id ~ '.mrdi') }}" 
+            download="SmallPhylogeneticModel_{{ treeandmodel_id }}.mrdi" 
+            style="text-decoration: none;">
+                <button style="background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 6px 12px; font-size: 0.9em;">
+                    OSCAR: SmallPhylogeneticModel (.mrdi)
+                </button>
+            </a>
+
+            <a href="{{ url_for('static', filename='data/SmallGroupBasedModels/SmallGroupBasedModel_' ~ treeandmodel_id ~ '.mrdi') }}" 
+            download="SmallGroupBasedModel_{{ treeandmodel_id }}.mrdi" 
+            style="text-decoration: none;">
+                <button style="background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 6px 12px; font-size: 0.9em;">
+                    OSCAR: SmallGroupBasedModel (.mrdi)
+                </button>
+            </a>
         </div>
-        <div id="picture">
-            <img src="../static/tex/imagelabelled_{{ tree_id }}.svg" alt="{{ tree_id }}" style="height:75%;">
+
+        <div style="font-size: 0.85em; font-style: italic; color: var(--main-color); opacity: 0.8;">
+            For examples on how to load and use .mrdi files, please see our <a href="{{ url_for('notation') }}" style="color: inherit; text-decoration: underline;">notions and notations</a> page or refer to the official <a href="https://docs.oscar-system.org/stable/" target="_blank" style="color: inherit; text-decoration: underline;">OSCAR documentation</a>.
         </div>
+
     </div>
+    
+    <section style="margin-bottom: 40px;">
+        <div class="grid-container">
+            {% if picture %}
+            <div class="module span-3">
+                <div id="title">Phylogenetic tree {{ tree_id }}
+                    <button class="copyBtn" data-file="../static/tex/tex_{{ tree_id }}.yaml" data-key="imagelabelled" 
+                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    </button>
+                </div>
+                <div id="picture">
+                    <img src="../static/tex/imagelabelled_{{ tree_id }}.svg" alt="{{ tree_id }}" style="height:75%;">
+                </div>
+            </div>
+            {% endif %}
+
+            {% if data.details.transition_matrix %}
+            <div class="module span-1">
+                <div id="title">
+                    Evolutionary model
+                    <button id="copy-evolutionary-model" style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;"
+                        data-modelname="{{ data.modelname }}"
+                        data-root-distribution="{{ data.details.root_distributon }}"
+                        data-transition-matrix="{{ data.details.transition_matrix }}"
+                        data-fourier-parameters="{{ data.details.fourier_parameters }}">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg> 
+                    </button>
+                </div>
+                <div id="content" style="overflow-x: auto;">
+                    <a href="/notation#models">{{ data.modelname }}</a> model with <a href="/notation#labelling">root distribution</a> {{ data.details.root_distributon }}. <br>
+                    The <a href="/notation#labelling">transition matrix</a> associated with edge $i$ is of the form
+                    {{ data.details.transition_matrix }} and the <a href="/notation#labelling">Fourier parameters</a> are {{ data.details.fourier_parameters }} for all edges $i$.
+                </div>
+            </div>
+            {% endif %}
+
+            {% if data.treename %}
+            <div class="module span-3">
+                <div id="title">Summary</div>
+                <div id="content" style="display: flex; flex-direction: column; gap: 8px; line-height: 1.1; width: fit-content;">
+    
+                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                        <span style="opacity: 0.9;"><a href="/notation#invariants" style="color: inherit; text-decoration: underline;">Dimension</a></span>
+                        <strong style="color: var(--main-color); text-align: right;">{{ data.dim }}</strong>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                        <span style="opacity: 0.9;">Degree</span>
+                        <strong style="color: var(--main-color); text-align: right;">{{ data.deg }}</strong>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                        <span style="opacity: 0.9;">Probability coordinates</span>
+                        <strong style="color: var(--main-color); text-align: right;">{{ data.np }}</strong>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                        <span style="opacity: 0.9;">Fourier coordinates</span>
+                        <strong style="color: var(--main-color); text-align: right;">{{ data.nq }}</strong>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                        <span style="opacity: 0.9;">Dimension of Singular locus</span>
+                        <strong style="color: var(--main-color); text-align: right;">{{ data.sd }}</strong>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                        <span style="opacity: 0.9;">Degree of Singular locus</span>
+                        <strong style="color: var(--main-color); text-align: right;">{{ data.sD }}</strong>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                        <span style="opacity: 0.9;">ML degree</span>
+                        <strong style="color: var(--main-color); text-align: right;">{{ data.MLdeg }}</strong>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; gap: 32px;">
+                        <span style="opacity: 0.9;">ED degree</span>
+                        <strong style="color: var(--main-color); text-align: right;">{{ data.EDdeg }}</strong>
+                    </div>
+
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    {% if data.details.probability_parametrization or data.details.fourier_parametrization or data.details.equivalent_classes_prob or data.details.equivalent_classes_fourier %}
+    <section style="margin-top: 48px; margin-bottom: 40px;">
+        <h3 style="color: var(--main-color); font-size: 1.5em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(0,0,0,0.05);">Model parametrizations</h3>
+        <div class="grid-container">
+            {% if data.details.probability_parametrization %}
+            <div class="module span-1">
+                <div id="title">Probability parametrization
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.probability_parametrization" 
+                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    </button>
+                </div>
+                {% if data.details.probability_parametrization | length > 40000 %}
+                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                        This expression is too large to render. Here is the raw LaTeX:
+                    </div>
+                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.probability_parametrization }}</div>
+                {% else %}
+                    <div id="content" style="overflow-x: auto;">{{ data.details.probability_parametrization | safe }}</div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if data.details.fourier_parametrization %}
+            <div class="module span-1">
+                <div id="title">Fourier parametrization
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.fourier_parametrization" 
+                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    </button>
+                </div>
+                {% if data.details.fourier_parametrization | length > 40000 %}
+                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                        This expression is too large to render. Here is the raw LaTeX:
+                    </div>
+                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.fourier_parametrization }}</div>
+                {% else %}
+                    <div id="content" style="overflow-x: auto;">{{ data.details.fourier_parametrization }}</div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if data.details.equivalent_classes_prob %}
+            <div class="module span-1">
+                <div id="title">Equivalent classes of probability parametrization
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_prob" 
+                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    </button>
+                </div>
+                {% if data.details.equivalent_classes_prob | length > 40000 %}
+                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                        This expression is too large to render. Here is the raw LaTeX:
+                    </div>
+                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.equivalent_classes_prob }}</div>
+                {% else %}
+                    <div id="content" style="overflow-x: auto;">{{ data.details.equivalent_classes_prob | safe }}</div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if data.details.equivalent_classes_fourier %}
+            <div class="module span-1">
+                <div id="title">Equivalent classes of Fourier parametrization
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_fourier" 
+                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    </button>
+                </div>
+                {% if data.details.equivalent_classes_fourier | length > 40000 %}
+                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                        This expression is too large to render. Here is the raw LaTeX:
+                    </div>
+                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.equivalent_classes_fourier }}</div>
+                {% else %}
+                    <div id="content" style="overflow-x: auto;">{{ data.details.equivalent_classes_fourier }}</div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </section>
     {% endif %}
 
-    {% if data.details.transition_matrix %}
-    <div class="module span-1">
-        <div id="title">
-            Evolutionary model
-            <button id="copy-evolutionary-model" style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;"
-                data-modelname="{{ data.modelname }}"
-                data-root-distribution="{{ data.details.root_distributon }}"
-                data-transition-matrix="{{ data.details.transition_matrix }}"
-                data-fourier-parameters="{{ data.details.fourier_parameters }}">
-                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg> 
-            </button>
+    {% if data.details.invariants or data.details.grobner_basis or data.mu %}
+    <section style="margin-top: 48px; margin-bottom: 40px;">
+        <h2 style="color: var(--main-color); font-size: 1.5em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(0,0,0,0.05);">Phylogenetic invariants</h2>
+        <div class="grid-container">
+            {% if data.details.invariants %}
+            <div class="module span-1">
+                <div id="title">Minimal generating set of the vanishing ideal
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.invariants" 
+                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    </button>
+                </div>
+                {% if data.details.invariants | length > 40000 %}
+                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                        This expression is too large to render. Here is the raw LaTeX:
+                    </div>
+                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.invariants }}</div>
+                {% else %}
+                    <div id="content" style="overflow-x: auto;">{{ data.details.invariants }}</div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if data.details.grobner_basis %}
+            <div class="module span-1">
+                <div id="title">Gröbner basis of the vanishing ideal
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.grobner_basis" 
+                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                    <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    </button>
+                </div>
+                {% if data.details.grobner_basis | length > 40000 %}
+                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                        This expression is too large to render. Here is the raw LaTeX:
+                    </div>
+                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.grobner_basis }}</div>
+                {% else %}
+                    <div id="content" style="overflow-x: auto;">{{ data.details.grobner_basis }}</div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if data.mu %}
+            <div class="module span-2">
+                <div id="title">Additional information</div>
+                    <div id="content" style="display: flex; flex-direction: column; gap: 12px; line-height: 1.4; width: fit-content;">
+        
+                        <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                            <span style="opacity: 0.9;">Cardinality of the smallest set of generators for the ideal</span>
+                            <strong style="color: var(--main-color); text-align: right;">{{ data.mu }}</strong>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                            <span style="opacity: 0.9;">Cardinality of the degree reverse lexicographic reduced Gröbner basis</span>
+                            <strong style="color: var(--main-color); text-align: right;">{{ data.M }}</strong>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                            <span style="opacity: 0.9;">Largest degree in a minimal generating set for the ideal</span>
+                            <strong style="color: var(--main-color); text-align: right;">{{ data.e }}</strong>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; gap: 32px;">
+                            <span style="opacity: 0.9;">Largest degree of a generator in the reduced Gröbner basis</span>
+                            <strong style="color: var(--main-color); text-align: right;">{{ data.E }}</strong>
+                        </div>
+
+                    </div>
+            </div>
+            {% endif %}
         </div>
-        <div id="content" style="overflow-x: auto;">
-            <a href="/notation#models">{{ data.modelname }}</a> model with <a href="/notation#labelling">root distribution</a> {{ data.details.root_distributon }}. <br>
-            The <a href="/notation#labelling">transition matrix</a> associated with edge $i$ is of the form
-            {{ data.details.transition_matrix }} and the <a href="/notation#labelling">Fourier parameters</a> are {{ data.details.fourier_parameters }} for all edges $i$.
-        </div>
-    </div>
+    </section>
     {% endif %}
 
-    {% if data.treename %}
-    <div class="module span-3">
-        <div id="title">Summary</div>
-        <div id="content">
-            <a href="/notation#invariants">Dimension:</a>  {{ data.dim }} <br>
-            Degree: {{ data.deg }} <br>
-            Probability coordinates: {{ data.np }} <br>
-            Fourier coordinates: {{ data.nq }} <br>
-            dim of Singular locus: {{ data.sd }} <br>
-            deg of Singular locus: {{ data.sD }} <br>
-            MLdeg: {{ data.MLdeg }} <br>
-            EDdeg: {{ data.EDdeg }} <br>
+    {% if data.details.coordinate_change or data.details.inverse_coordinate_change %}
+    <section style="margin-top: 48px; margin-bottom: 40px;">
+        <h2 style="color: var(--main-color); font-size: 1.5em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(0,0,0,0.05);"> Linear coordinate transformations </h2>
+        <div class="grid-container">
+            {% if data.details.coordinate_change %}
+            <div class="module span-1">
+                <div id="title">Probability $\to$ Fourier
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.probability_parametrization" 
+                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    </button>
+                </div>
+                {% if data.details.coordinate_change | length > 40000 %}
+                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                        This expression is too large to render. Here is the raw LaTeX:
+                    </div>
+                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.coordinate_change}}</div>
+                {% else %}
+                    <div id="content" style="overflow-x: auto;">{{ data.details.coordinate_change | safe}}</div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if data.details.inverse_coordinate_change %}
+            <div class="module span-1">
+                <div id="title">Fourier $\to$ Probability
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.inverse_coordinate_change" 
+                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    </button>
+                </div>
+                {% if data.details.inverse_coordinate_change | length > 40000 %}
+                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                        This expression is too large to render. Here is the raw LaTeX:
+                    </div>
+                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.inverse_coordinate_change }}</div>
+                {% else %}
+                    <div id="content" style="overflow-x: auto;">{{ data.details.inverse_coordinate_change }}</div>
+                {% endif %}
+            </div>
+            {% endif %}
         </div>
-    </div>
+    </section>
     {% endif %}
 
-    {% if data.details.probability_parametrization %}
-    <div class="module span-1">
-        <div id="title">Probability parametrization
-            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.probability_parametrization" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
-            </button>
-        </div>
-        {% if data.details.probability_parametrization | length > 40000 %}
-            <div id="content" class="tex2jax_ignore long-data-box">%LaTeX is not rendered due to size<br>{{ data.details.probability_parametrization | safe }}</div>
-        {% else %}
-            <div id="content" style="overflow-x: auto;">{{ data.details.probability_parametrization | safe }}</div>
-        {% endif %}
-    </div>
-    {% endif %}
-
-    {% if data.details.fourier_parametrization %}
-    <div class="module span-1">
-        <div id="title">Fourier parametrization
-            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.fourier_parametrization" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
-            </button>
-        </div>
-        {% if data.details.fourier_parametrization | length > 40000 %}
-            <div id="content" class="tex2jax_ignore long-data-box">%LaTeX is not rendered due to size<br>{{ data.details.fourier_parametrization }}</div>
-        {% else %}
-            <div id="content" style="overflow-x: auto;">{{ data.details.fourier_parametrization }}</div>
-        {% endif %}
-    </div>
-    {% endif %}
-
-    {% if data.details.equivalent_classes_prob %}
-    <div class="module span-1">
-        <div id="title">Equivalent classes of probability parametrization
-            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_prob" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
-            </button>
-        </div>
-        {% if data.details.equivalent_classes_prob | length > 40000 %}
-            <div id="content" class="tex2jax_ignore long-data-box">%LaTeX is not rendered due to size<br>{{ data.details.equivalent_classes_prob | safe }}</div>
-        {% else %}
-            <div id="content" style="overflow-x: auto;">{{ data.details.equivalent_classes_prob | safe }}</div>
-        {% endif %}
-    </div>
-    {% endif %}
-
-    {% if data.details.equivalent_classes_fourier %}
-    <div class="module span-1">
-        <div id="title">Equivalent classes of Fourier parametrization
-            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_fourier" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
-            </button>
-        </div>
-        {% if data.details.equivalent_classes_fourier | length > 40000 %}
-            <div id="content" class="tex2jax_ignore long-data-box">%LaTeX is not rendered due to size<br>{{ data.details.equivalent_classes_fourier }}</div>
-        {% else %}
-            <div id="content" style="overflow-x: auto;">{{ data.details.equivalent_classes_fourier }}</div>
-        {% endif %}
-    </div>
-    {% endif %}
-
-    {% if data.details.invariants %}
-    <div class="module span-1">
-        <div id="title">Invariants in Fourier coordinates
-            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.invariants" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
-            </button>
-        </div>
-        {% if data.details.invariants | length > 40000 %}
-            <div id="content" class="tex2jax_ignore long-data-box">%LaTeX is not rendered due to size<br>{{ data.details.invariants }}</div>
-        {% else %}
-            <div id="content" style="overflow-x: auto;">{{ data.details.invariants }}</div>
-        {% endif %}
-    </div>
-    {% endif %}
-
-    {% if data.details.grobner_basis %}
-    <div class="module span-1">
-        <div id="title">Gröbner basis of ideal of invariants
-            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.grobner_basis" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
-            </button>
-        </div>
-        {% if data.details.grobner_basis | length > 40000 %}
-            <div id="content" class="tex2jax_ignore long-data-box">%LaTeX is not rendered due to size<br>{{ data.details.grobner_basis }}</div>
-        {% else %}
-            <div id="content" style="overflow-x: auto;">{{ data.details.grobner_basis }}</div>
-        {% endif %}
-    </div>
-    {% endif %}
-
-    {% if data.mu %}
-    <div class="module span-2">
-        <div id="title">Additional information</div>
-        <div id="content">
-            The cardinality of the smallest set of generators that define the ideal of phylogenetic invariants: {{ data.mu }} <br>
-            The largest degree of a generator in the degree reverse lexicographic reduced Gröbner basis: {{ data.E }} <br>
-            The largest degree of an element in a minimal generating set for the ideal of phylogenetic invariants: {{ data.e }} <br>
-            The cardinality of the degree reverse lexicographic reduced Gröbner basis of the ideal of phylogenetic invariants: {{ data.M }}
-        </div>
-    </div>
-    {% endif %}
-
-    {% if data.details.specialized_fourier_transform %}
-    <div class="module span-3">
-        <div id="title">Specialized Fourier transform
-            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.specialized_fourier_transform" 
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
-            </button>
-        </div>
-        {% if data.details.specialized_fourier_transform | length > 40000 %}
-            <div id="content" class="tex2jax_ignore long-data-box">%LaTeX is not rendered due to size<br>{{ data.details.specialized_fourier_transform }}</div>
-        {% else %}
-            <div id="content" style="overflow-x: auto;">{{ data.details.specialized_fourier_transform }}</div>
-        {% endif %}
-    </div>
-    {% endif %}
-
-    {% if data.details.inverse_specialized_fourier_transform %}
-    <div class="module span-3">
-        <div id="title">Inverse specialized Fourier transform
-            <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.inverse_specialized_fourier_transform"
-            style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
-            </button>
-        </div>
-        {% if data.details.inverse_specialized_fourier_transform | length > 40000 %}
-            <div id="content" class="tex2jax_ignore long-data-box">%LaTeX is not rendered due to size<br>{{ data.details.inverse_specialized_fourier_transform }}</div>
-        {% else %}
-            <div id="content" style="overflow-x: auto;">{{ data.details.inverse_specialized_fourier_transform }}</div>
-        {% endif %}
-    </div>
-    {% endif %}
-</div>
 </div>
 
 <script>

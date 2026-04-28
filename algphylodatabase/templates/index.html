@@ -14,18 +14,18 @@
     <thead>
         <tr>
             <th style="border-top-left-radius:var(--rounded-corners);
-                width: 10rem; text-align:center;">
-                Tree graph or network</th>
-            <th style="width:11rem;">Phylogenetic model</th>
+                width: 12rem; text-align:center;">
+                Phylogenetic graph</th>
+            <th style="width:10rem;">Evolutionary model</th>
             <th>Dimension</th>
             <th>Degree</th>
-            <th>number of <br> probability <br> coordinates</th>
-            <th>number of <br> Fourier <br> coordinates</th>
-            <th>Dimension<br> Singular <br> Locus</th>
+            <th style="width:5rem;">no. of <br> probability <br> coordinates</th>
+            <th style="width:5rem;">no. of <br> Fourier <br> coordinates</th>
+            <th style="width:5rem;">Dimension<br> Singular <br> Locus</th>
             <th>Degree<br> Singular <br> Locus</th>
-            <th>MLdeg</th>
-            <th>EDdeg</th>
-            <th style="width:11rem; border-top-right-radius:var(--rounded-corners);">Download data</th>
+            <th>ML degree</th>
+            <th>ED degree</th>
+            <th style="width:9rem; border-top-right-radius:var(--rounded-corners);">Download data</th>
         </tr>
     </thead>
     <tbody>
@@ -54,25 +54,38 @@
                 <td>{{ treeandmodel.MLdeg }}</td>
                 <td>{{ treeandmodel.EDdeg }}</td>
                 
-                <td style="vertical-align: middle; padding: 0.5rem;">
-                    <div style="display: grid; grid-template-columns: 2.5rem 2.5rem 4rem; gap: 4px; justify-content: center; margin: 0 auto; width: max-content;">
-                        
-                        <a href="../static/data/{{treeandmodel.id}}.yaml" download style="text-decoration: none;">
-                            <button style="width: 100%; background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 2px 0;">yaml</button>
-                        </a>
-                        
-                        <a href="../static/data/phylogeneticmodel_{{treeandmodel.id}}.mrdi" download style="text-decoration: none;">
-                            <button style="width: 100%; background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 2px 0;">mrdi</button>
-                        </a>
-                        
-                        {% set inv_filename = 'invariants_' ~ treeandmodel.id ~ '.mrdi' %}
-                        {% if check_file_exists(inv_filename) %}
-                        <a href="../static/data/{{ inv_filename }}" download style="text-decoration: none;">
-                            <button style="width: 100%; background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 2px 0;">invariants</button>
-                        </a>
-                        {% endif %}
+                <td style="vertical-align: middle; text-align: center; padding: 0.5rem;">
+                    
+                    <details class="dl-dropdown">
+                        <summary>Download</summary>
+                        <div class="dl-menu">
+                            
+                            {% set yaml_file = treeandmodel.id ~ ".yaml" %}
+                            {% if check_file_exists(yaml_file) %}
+                            <a href="../static/data/{{treeandmodel.id}}.yaml" download>
+                                LaTeX (.yaml)
+                            </a>
+                            {% endif %}
+                            
+                            {% set phylo_file = "SmallPhylogeneticModels/SmallPhylogeneticModel_" ~ treeandmodel.id ~ ".mrdi" %}
+                            {% set phylo_file_zip = "SmallPhylogeneticModels/SmallPhylogeneticModel_" ~ treeandmodel.id ~ ".mrdi.zip" %}
+                            {% if check_file_exists(phylo_file) %}
+                            <a href="../static/data/SmallPhylogeneticModels/SmallPhylogeneticModel_{{treeandmodel.id}}.mrdi" download>
+                                OSCAR: SmallPhylogeneticModel (.mrdi)
+                            </a>
+                            {% elif check_file_exists(phylo_file_zip) %}
+                                <a href="../static/data/SmallPhylogeneticModels/SmallPhylogeneticModel_{{treeandmodel.id}}.mrdi.zip" download>
+                                    OSCAR: SmallPhylogeneticModel (.mrdi.zip)
+                                </a>
+                            {% endif %}
+                            
+                            <a href="../static/data/SmallGroupBasedModels/SmallGroupBasedModel_{{treeandmodel.id}}.mrdi" download>
+                                OSCAR: SmallGroupBasedModel (.mrdi)
+                            </a>
 
-                    </div>
+                        </div>
+                    </details>
+
                 </td>
             </tr>
             {% endfor %}
@@ -80,4 +93,26 @@
     </tbody>
 </table>
 </div>
+
+<script>
+    document.addEventListener('click', function(event) {
+        // Find all dropdowns that are currently open
+        const openDropdowns = document.querySelectorAll('details.dl-dropdown[open]');
+        
+        openDropdowns.forEach(dropdown => {
+            // Condition 1: The user clicked somewhere entirely outside this dropdown
+            if (!dropdown.contains(event.target)) {
+                dropdown.removeAttribute('open');
+            }
+            // Condition 2: The user clicked a valid download link INSIDE the menu
+            else if (event.target.tagName === 'A' || event.target.closest('a')) {
+                // We add a tiny delay (100ms) so the browser registers the download 
+                // before the UI element vanishes.
+                setTimeout(() => {
+                    dropdown.removeAttribute('open');
+                }, 100);
+            }
+        });
+    });
+</script>
 {% endblock %}

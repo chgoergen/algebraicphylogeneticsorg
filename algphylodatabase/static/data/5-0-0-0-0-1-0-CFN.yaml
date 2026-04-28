@@ -1,0 +1,205 @@
+id: "5-0-0-0-0-1-0-CFN"
+treename: "5-leaf non-binary tree"
+modelname: "Cavender Felsenstein Neyman"
+rooted: "False"
+leaves: "5"
+n_cycles: "0"
+level: "0"
+internal_edges: "1"
+dim: "7"
+deg: "44"
+np: "16"
+nq: "16"
+mu: "24"
+e: "2"
+M: "28"
+E: "3"
+sD: "-"
+sd: "-"
+MLdeg: "-"
+EDdeg: "-"
+details:
+  transition_matrix: |-
+    $$M_j = \begin{pmatrix}
+    a_i & b_i\\
+    b_i & a_i
+    \end{pmatrix}$$
+  root_distributon: |-
+    $\pi = \left(\frac{1}{2}, \frac{1}{2}\right)$
+  fourier_parameters: |-
+    $\left(x_i, y_i\right)$
+  probability_parametrization: |-
+    $\begin{align}
+    p_{\texttt{ACCCC}} &= \frac{1}{4}(2a_1a_3a_4a_5b_2b_6 + 2a_1a_6b_2b_3b_4b_5 + 2a_2a_3a_4a_5a_6b_1 + 2a_2b_1b_3b_4b_5b_6) \\[0.5em]
+    p_{\texttt{ACCCA}} &= \frac{1}{4}(2a_1a_3a_4b_2b_5b_6 + 2a_1a_5a_6b_2b_3b_4 + 2a_2a_3a_4a_6b_1b_5 + 2a_2a_5b_1b_3b_4b_6) \\[0.5em]
+    p_{\texttt{ACCAC}} &= \frac{1}{4}(2a_1a_3a_5b_2b_4b_6 + 2a_1a_4a_6b_2b_3b_5 + 2a_2a_3a_5a_6b_1b_4 + 2a_2a_4b_1b_3b_5b_6) \\[0.5em]
+    p_{\texttt{ACCAA}} &= \frac{1}{4}(2a_1a_3b_2b_4b_5b_6 + 2a_1a_4a_5a_6b_2b_3 + 2a_2a_3a_6b_1b_4b_5 + 2a_2a_4a_5b_1b_3b_6) \\[0.5em]
+    p_{\texttt{ACACC}} &= \frac{1}{4}(2a_1a_3a_6b_2b_4b_5 + 2a_1a_4a_5b_2b_3b_6 + 2a_2a_3b_1b_4b_5b_6 + 2a_2a_4a_5a_6b_1b_3) \\[0.5em]
+    p_{\texttt{ACACA}} &= \frac{1}{4}(2a_1a_3a_5a_6b_2b_4 + 2a_1a_4b_2b_3b_5b_6 + 2a_2a_3a_5b_1b_4b_6 + 2a_2a_4a_6b_1b_3b_5) \\[0.5em]
+    p_{\texttt{ACAAC}} &= \frac{1}{4}(2a_1a_3a_4a_6b_2b_5 + 2a_1a_5b_2b_3b_4b_6 + 2a_2a_3a_4b_1b_5b_6 + 2a_2a_5a_6b_1b_3b_4) \\[0.5em]
+    p_{\texttt{ACAAA}} &= \frac{1}{4}(2a_1a_3a_4a_5a_6b_2 + 2a_1b_2b_3b_4b_5b_6 + 2a_2a_3a_4a_5b_1b_6 + 2a_2a_6b_1b_3b_4b_5) \\[0.5em]
+    p_{\texttt{AACCC}} &= \frac{1}{4}(2a_1a_2a_3a_4a_5b_6 + 2a_1a_2a_6b_3b_4b_5 + 2a_3a_4a_5a_6b_1b_2 + 2b_1b_2b_3b_4b_5b_6) \\[0.5em]
+    p_{\texttt{AACCA}} &= \frac{1}{4}(2a_1a_2a_3a_4b_5b_6 + 2a_1a_2a_5a_6b_3b_4 + 2a_3a_4a_6b_1b_2b_5 + 2a_5b_1b_2b_3b_4b_6) \\[0.5em]
+    p_{\texttt{AACAC}} &= \frac{1}{4}(2a_1a_2a_3a_5b_4b_6 + 2a_1a_2a_4a_6b_3b_5 + 2a_3a_5a_6b_1b_2b_4 + 2a_4b_1b_2b_3b_5b_6) \\[0.5em]
+    p_{\texttt{AACAA}} &= \frac{1}{4}(2a_1a_2a_3b_4b_5b_6 + 2a_1a_2a_4a_5a_6b_3 + 2a_3a_6b_1b_2b_4b_5 + 2a_4a_5b_1b_2b_3b_6) \\[0.5em]
+    p_{\texttt{AAACC}} &= \frac{1}{4}(2a_1a_2a_3a_6b_4b_5 + 2a_1a_2a_4a_5b_3b_6 + 2a_3b_1b_2b_4b_5b_6 + 2a_4a_5a_6b_1b_2b_3) \\[0.5em]
+    p_{\texttt{AAACA}} &= \frac{1}{4}(2a_1a_2a_3a_5a_6b_4 + 2a_1a_2a_4b_3b_5b_6 + 2a_3a_5b_1b_2b_4b_6 + 2a_4a_6b_1b_2b_3b_5) \\[0.5em]
+    p_{\texttt{AAAAC}} &= \frac{1}{4}(2a_1a_2a_3a_4a_6b_5 + 2a_1a_2a_5b_3b_4b_6 + 2a_3a_4b_1b_2b_5b_6 + 2a_5a_6b_1b_2b_3b_4) \\[0.5em]
+    p_{\texttt{AAAAA}} &= \frac{1}{4}(2a_1a_2a_3a_4a_5a_6 + 2a_1a_2b_3b_4b_5b_6 + 2a_3a_4a_5b_1b_2b_6 + 2a_6b_1b_2b_3b_4b_5)
+    \end{align}$
+  equivalent_classes_prob: |-
+    $\begin{align}
+    \text{Class } &p_{\texttt{AAAAA}}:\ p_{\texttt{AAAAA}},\ p_{\texttt{CCCCC}} \\[0.5em]
+    \text{Class } &p_{\texttt{AAAAC}}:\ p_{\texttt{AAAAC}},\ p_{\texttt{CCCCA}} \\[0.5em]
+    \text{Class } &p_{\texttt{AAACA}}:\ p_{\texttt{AAACA}},\ p_{\texttt{CCCAC}} \\[0.5em]
+    \text{Class } &p_{\texttt{AAACC}}:\ p_{\texttt{AAACC}},\ p_{\texttt{CCCAA}} \\[0.5em]
+    \text{Class } &p_{\texttt{AACAA}}:\ p_{\texttt{AACAA}},\ p_{\texttt{CCACC}} \\[0.5em]
+    \text{Class } &p_{\texttt{AACAC}}:\ p_{\texttt{AACAC}},\ p_{\texttt{CCACA}} \\[0.5em]
+    \text{Class } &p_{\texttt{AACCA}}:\ p_{\texttt{AACCA}},\ p_{\texttt{CCAAC}} \\[0.5em]
+    \text{Class } &p_{\texttt{AACCC}}:\ p_{\texttt{AACCC}},\ p_{\texttt{CCAAA}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACAAA}}:\ p_{\texttt{ACAAA}},\ p_{\texttt{CACCC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACAAC}}:\ p_{\texttt{ACAAC}},\ p_{\texttt{CACCA}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACACA}}:\ p_{\texttt{ACACA}},\ p_{\texttt{CACAC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACACC}}:\ p_{\texttt{ACACC}},\ p_{\texttt{CACAA}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACCAA}}:\ p_{\texttt{ACCAA}},\ p_{\texttt{CAACC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACCAC}}:\ p_{\texttt{ACCAC}},\ p_{\texttt{CAACA}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACCCA}}:\ p_{\texttt{ACCCA}},\ p_{\texttt{CAAAC}} \\[0.5em]
+    \text{Class } &p_{\texttt{ACCCC}}:\ p_{\texttt{ACCCC}},\ p_{\texttt{CAAAA}}
+    \end{align}$
+  fourier_parametrization: |-
+    $\begin{align}
+    q_{\texttt{CCCCA}} &= x_5x_6y_1y_2y_3y_4 \\[0.5em]
+    q_{\texttt{CCCAC}} &= x_4x_6y_1y_2y_3y_5 \\[0.5em]
+    q_{\texttt{CCACC}} &= x_3x_6y_1y_2y_4y_5 \\[0.5em]
+    q_{\texttt{CCAAA}} &= x_3x_4x_5x_6y_1y_2 \\[0.5em]
+    q_{\texttt{CACCC}} &= x_2y_1y_3y_4y_5y_6 \\[0.5em]
+    q_{\texttt{CACAA}} &= x_2x_4x_5y_1y_3y_6 \\[0.5em]
+    q_{\texttt{CAACA}} &= x_2x_3x_5y_1y_4y_6 \\[0.5em]
+    q_{\texttt{CAAAC}} &= x_2x_3x_4y_1y_5y_6 \\[0.5em]
+    q_{\texttt{ACCCC}} &= x_1y_2y_3y_4y_5y_6 \\[0.5em]
+    q_{\texttt{ACCAA}} &= x_1x_4x_5y_2y_3y_6 \\[0.5em]
+    q_{\texttt{ACACA}} &= x_1x_3x_5y_2y_4y_6 \\[0.5em]
+    q_{\texttt{ACAAC}} &= x_1x_3x_4y_2y_5y_6 \\[0.5em]
+    q_{\texttt{AACCA}} &= x_1x_2x_5x_6y_3y_4 \\[0.5em]
+    q_{\texttt{AACAC}} &= x_1x_2x_4x_6y_3y_5 \\[0.5em]
+    q_{\texttt{AAACC}} &= x_1x_2x_3x_6y_4y_5 \\[0.5em]
+    q_{\texttt{AAAAA}} &= x_1x_2x_3x_4x_5x_6
+    \end{align}$
+  equivalent_classes_fourier: |-
+    $\begin{align}
+    \text{Class } &0:\ q_{\texttt{AAAAC}}, q_{\texttt{AAACA}}, q_{\texttt{AACAA}}, q_{\texttt{AACCC}}, q_{\texttt{ACAAA}}, q_{\texttt{ACACC}}, q_{\texttt{ACCAC}}, q_{\texttt{ACCCA}}, q_{\texttt{CAAAA}}, q_{\texttt{CAACC}}, q_{\texttt{CACAC}}, q_{\texttt{CACCA}}, q_{\texttt{CCAAC}}, q_{\texttt{CCACA}}, q_{\texttt{CCCAA}}, q_{\texttt{CCCCC}} \\[0.5em]
+    \text{Class } &q_{\texttt{AAAAA}}:\ q_{\texttt{AAAAA}} \\[0.5em]
+    \text{Class } &q_{\texttt{AAACC}}:\ q_{\texttt{AAACC}} \\[0.5em]
+    \text{Class } &q_{\texttt{AACAC}}:\ q_{\texttt{AACAC}} \\[0.5em]
+    \text{Class } &q_{\texttt{AACCA}}:\ q_{\texttt{AACCA}} \\[0.5em]
+    \text{Class } &q_{\texttt{ACAAC}}:\ q_{\texttt{ACAAC}} \\[0.5em]
+    \text{Class } &q_{\texttt{ACACA}}:\ q_{\texttt{ACACA}} \\[0.5em]
+    \text{Class } &q_{\texttt{ACCAA}}:\ q_{\texttt{ACCAA}} \\[0.5em]
+    \text{Class } &q_{\texttt{ACCCC}}:\ q_{\texttt{ACCCC}} \\[0.5em]
+    \text{Class } &q_{\texttt{CAAAC}}:\ q_{\texttt{CAAAC}} \\[0.5em]
+    \text{Class } &q_{\texttt{CAACA}}:\ q_{\texttt{CAACA}} \\[0.5em]
+    \text{Class } &q_{\texttt{CACAA}}:\ q_{\texttt{CACAA}} \\[0.5em]
+    \text{Class } &q_{\texttt{CACCC}}:\ q_{\texttt{CACCC}} \\[0.5em]
+    \text{Class } &q_{\texttt{CCAAA}}:\ q_{\texttt{CCAAA}} \\[0.5em]
+    \text{Class } &q_{\texttt{CCACC}}:\ q_{\texttt{CCACC}} \\[0.5em]
+    \text{Class } &q_{\texttt{CCCAC}}:\ q_{\texttt{CCCAC}} \\[0.5em]
+    \text{Class } &q_{\texttt{CCCCA}}:\ q_{\texttt{CCCCA}}
+    \end{align}$
+  invariants: |-
+    Ideal generated by  $$ \begin{align}
+    -q_{\texttt{ACCCC}}q_{\texttt{AAAAA}} + q_{\texttt{ACCAA}}q_{\texttt{AAACC}} \\
+    -q_{\texttt{CACCC}}q_{\texttt{AAAAA}} + q_{\texttt{CACAA}}q_{\texttt{AAACC}} \\
+    -q_{\texttt{CCACC}}q_{\texttt{AAAAA}} + q_{\texttt{CCAAA}}q_{\texttt{AAACC}} \\
+    -q_{\texttt{ACCCC}}q_{\texttt{AAAAA}} + q_{\texttt{ACACA}}q_{\texttt{AACAC}} \\
+    -q_{\texttt{CACCC}}q_{\texttt{AAAAA}} + q_{\texttt{CAACA}}q_{\texttt{AACAC}} \\
+    -q_{\texttt{CCCAC}}q_{\texttt{AAAAA}} + q_{\texttt{CCAAA}}q_{\texttt{AACAC}} \\
+    -q_{\texttt{CCCAC}}q_{\texttt{AAACC}} + q_{\texttt{CCACC}}q_{\texttt{AACAC}} \\
+    -q_{\texttt{ACCCC}}q_{\texttt{AAAAA}} + q_{\texttt{ACAAC}}q_{\texttt{AACCA}} \\
+    -q_{\texttt{CACCC}}q_{\texttt{AAAAA}} + q_{\texttt{CAAAC}}q_{\texttt{AACCA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{AAAAA}} + q_{\texttt{CCAAA}}q_{\texttt{AACCA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{AAACC}} + q_{\texttt{CCACC}}q_{\texttt{AACCA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{AACAC}} + q_{\texttt{CCCAC}}q_{\texttt{AACCA}} \\
+    -q_{\texttt{CAACA}}q_{\texttt{ACAAC}} + q_{\texttt{CAAAC}}q_{\texttt{ACACA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{ACAAC}} + q_{\texttt{CCCAC}}q_{\texttt{ACACA}} \\
+    -q_{\texttt{CACAA}}q_{\texttt{ACAAC}} + q_{\texttt{CAAAC}}q_{\texttt{ACCAA}} \\
+    -q_{\texttt{CACAA}}q_{\texttt{ACACA}} + q_{\texttt{CAACA}}q_{\texttt{ACCAA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{ACAAC}} + q_{\texttt{CCACC}}q_{\texttt{ACCAA}} \\
+    -q_{\texttt{CACCC}}q_{\texttt{ACAAC}} + q_{\texttt{CAAAC}}q_{\texttt{ACCCC}} \\
+    -q_{\texttt{CACCC}}q_{\texttt{ACACA}} + q_{\texttt{CAACA}}q_{\texttt{ACCCC}} \\
+    -q_{\texttt{CACCC}}q_{\texttt{ACCAA}} + q_{\texttt{CACAA}}q_{\texttt{ACCCC}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{ACAAC}} + q_{\texttt{CCAAA}}q_{\texttt{ACCCC}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{CAAAC}} + q_{\texttt{CCCAC}}q_{\texttt{CAACA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{CAAAC}} + q_{\texttt{CCACC}}q_{\texttt{CACAA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{CAAAC}} + q_{\texttt{CCAAA}}q_{\texttt{CACCC}}
+    \end{align} $$
+  grobner_basis: |-
+    Gröbner basis with respect to the ordering
+    $ \texttt{degrevlex}\ [ q_{\texttt{CCCCA}}, q_{\texttt{CCCAC}}, q_{\texttt{CCACC}}, q_{\texttt{CCAAA}}, q_{\texttt{CACCC}}, q_{\texttt{CACAA}}, q_{\texttt{CAACA}}, q_{\texttt{CAAAC}}, q_{\texttt{ACCCC}}, q_{\texttt{ACCAA}}, q_{\texttt{ACACA}}, q_{\texttt{ACAAC}}, q_{\texttt{AACCA}}, q_{\texttt{AACAC}}, q_{\texttt{AAACC}}, q_{\texttt{AAAAA}} ] $
+    and with elements  $$ \begin{align}
+    -q_{\texttt{ACCCC}}q_{\texttt{AAAAA}} + q_{\texttt{ACCAA}}q_{\texttt{AAACC}} \\
+    -q_{\texttt{CACCC}}q_{\texttt{AAAAA}} + q_{\texttt{CACAA}}q_{\texttt{AAACC}} \\
+    -q_{\texttt{CCACC}}q_{\texttt{AAAAA}} + q_{\texttt{CCAAA}}q_{\texttt{AAACC}} \\
+    -q_{\texttt{ACCCC}}q_{\texttt{AAAAA}} + q_{\texttt{ACACA}}q_{\texttt{AACAC}} \\
+    -q_{\texttt{CACCC}}q_{\texttt{AAAAA}} + q_{\texttt{CAACA}}q_{\texttt{AACAC}} \\
+    -q_{\texttt{CCCAC}}q_{\texttt{AAAAA}} + q_{\texttt{CCAAA}}q_{\texttt{AACAC}} \\
+    -q_{\texttt{CCCAC}}q_{\texttt{AAACC}} + q_{\texttt{CCACC}}q_{\texttt{AACAC}} \\
+    -q_{\texttt{ACCCC}}q_{\texttt{AAAAA}} + q_{\texttt{ACAAC}}q_{\texttt{AACCA}} \\
+    -q_{\texttt{CACCC}}q_{\texttt{AAAAA}} + q_{\texttt{CAAAC}}q_{\texttt{AACCA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{AAAAA}} + q_{\texttt{CCAAA}}q_{\texttt{AACCA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{AAACC}} + q_{\texttt{CCACC}}q_{\texttt{AACCA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{AACAC}} + q_{\texttt{CCCAC}}q_{\texttt{AACCA}} \\
+    -q_{\texttt{CAACA}}q_{\texttt{ACAAC}} + q_{\texttt{CAAAC}}q_{\texttt{ACACA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{ACAAC}} + q_{\texttt{CCCAC}}q_{\texttt{ACACA}} \\
+    -q_{\texttt{CACAA}}q_{\texttt{ACAAC}} + q_{\texttt{CAAAC}}q_{\texttt{ACCAA}} \\
+    -q_{\texttt{CACAA}}q_{\texttt{ACACA}} + q_{\texttt{CAACA}}q_{\texttt{ACCAA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{ACAAC}} + q_{\texttt{CCACC}}q_{\texttt{ACCAA}} \\
+    -q_{\texttt{CACCC}}q_{\texttt{ACAAC}} + q_{\texttt{CAAAC}}q_{\texttt{ACCCC}} \\
+    -q_{\texttt{CACCC}}q_{\texttt{ACACA}} + q_{\texttt{CAACA}}q_{\texttt{ACCCC}} \\
+    -q_{\texttt{CACCC}}q_{\texttt{ACCAA}} + q_{\texttt{CACAA}}q_{\texttt{ACCCC}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{ACAAC}} + q_{\texttt{CCAAA}}q_{\texttt{ACCCC}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{CAAAC}} + q_{\texttt{CCCAC}}q_{\texttt{CAACA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{CAAAC}} + q_{\texttt{CCACC}}q_{\texttt{CACAA}} \\
+    -q_{\texttt{CCCCA}}q_{\texttt{CAAAC}} + q_{\texttt{CCAAA}}q_{\texttt{CACCC}} \\
+    q_{\texttt{CCCCA}}q_{\texttt{ACAAC}}q_{\texttt{AAACC}} - q_{\texttt{CCACC}}q_{\texttt{ACCCC}}q_{\texttt{AAAAA}} \\
+    q_{\texttt{CCCCA}}q_{\texttt{CAAAC}}q_{\texttt{AAACC}} - q_{\texttt{CCACC}}q_{\texttt{CACCC}}q_{\texttt{AAAAA}} \\
+    q_{\texttt{CCCCA}}q_{\texttt{ACAAC}}q_{\texttt{AACAC}} - q_{\texttt{CCCAC}}q_{\texttt{ACCCC}}q_{\texttt{AAAAA}} \\
+    q_{\texttt{CCCCA}}q_{\texttt{CAAAC}}q_{\texttt{AACAC}} - q_{\texttt{CCCAC}}q_{\texttt{CACCC}}q_{\texttt{AAAAA}}
+    \end{align} $$
+  coordinate_change: |-
+    $\begin{align}
+    q_{\texttt{CCCCA}} &= -p_{\texttt{ACCCC}} - p_{\texttt{ACCCA}} + p_{\texttt{ACCAC}} + p_{\texttt{ACCAA}} + p_{\texttt{ACACC}} + p_{\texttt{ACACA}} - p_{\texttt{ACAAC}} - p_{\texttt{ACAAA}} + p_{\texttt{AACCC}} + p_{\texttt{AACCA}} - p_{\texttt{AACAC}} - p_{\texttt{AACAA}} - p_{\texttt{AAACC}} - p_{\texttt{AAACA}} + p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{CCCAC}} &= -p_{\texttt{ACCCC}} + p_{\texttt{ACCCA}} - p_{\texttt{ACCAC}} + p_{\texttt{ACCAA}} + p_{\texttt{ACACC}} - p_{\texttt{ACACA}} + p_{\texttt{ACAAC}} - p_{\texttt{ACAAA}} + p_{\texttt{AACCC}} - p_{\texttt{AACCA}} + p_{\texttt{AACAC}} - p_{\texttt{AACAA}} - p_{\texttt{AAACC}} + p_{\texttt{AAACA}} - p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{CCACC}} &= -p_{\texttt{ACCCC}} + p_{\texttt{ACCCA}} + p_{\texttt{ACCAC}} - p_{\texttt{ACCAA}} - p_{\texttt{ACACC}} + p_{\texttt{ACACA}} + p_{\texttt{ACAAC}} - p_{\texttt{ACAAA}} + p_{\texttt{AACCC}} - p_{\texttt{AACCA}} - p_{\texttt{AACAC}} + p_{\texttt{AACAA}} + p_{\texttt{AAACC}} - p_{\texttt{AAACA}} - p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{CCAAA}} &= -p_{\texttt{ACCCC}} - p_{\texttt{ACCCA}} - p_{\texttt{ACCAC}} - p_{\texttt{ACCAA}} - p_{\texttt{ACACC}} - p_{\texttt{ACACA}} - p_{\texttt{ACAAC}} - p_{\texttt{ACAAA}} + p_{\texttt{AACCC}} + p_{\texttt{AACCA}} + p_{\texttt{AACAC}} + p_{\texttt{AACAA}} + p_{\texttt{AAACC}} + p_{\texttt{AAACA}} + p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{CACCC}} &= -p_{\texttt{ACCCC}} + p_{\texttt{ACCCA}} + p_{\texttt{ACCAC}} - p_{\texttt{ACCAA}} + p_{\texttt{ACACC}} - p_{\texttt{ACACA}} - p_{\texttt{ACAAC}} + p_{\texttt{ACAAA}} - p_{\texttt{AACCC}} + p_{\texttt{AACCA}} + p_{\texttt{AACAC}} - p_{\texttt{AACAA}} + p_{\texttt{AAACC}} - p_{\texttt{AAACA}} - p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{CACAA}} &= -p_{\texttt{ACCCC}} - p_{\texttt{ACCCA}} - p_{\texttt{ACCAC}} - p_{\texttt{ACCAA}} + p_{\texttt{ACACC}} + p_{\texttt{ACACA}} + p_{\texttt{ACAAC}} + p_{\texttt{ACAAA}} - p_{\texttt{AACCC}} - p_{\texttt{AACCA}} - p_{\texttt{AACAC}} - p_{\texttt{AACAA}} + p_{\texttt{AAACC}} + p_{\texttt{AAACA}} + p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{CAACA}} &= -p_{\texttt{ACCCC}} - p_{\texttt{ACCCA}} + p_{\texttt{ACCAC}} + p_{\texttt{ACCAA}} - p_{\texttt{ACACC}} - p_{\texttt{ACACA}} + p_{\texttt{ACAAC}} + p_{\texttt{ACAAA}} - p_{\texttt{AACCC}} - p_{\texttt{AACCA}} + p_{\texttt{AACAC}} + p_{\texttt{AACAA}} - p_{\texttt{AAACC}} - p_{\texttt{AAACA}} + p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{CAAAC}} &= -p_{\texttt{ACCCC}} + p_{\texttt{ACCCA}} - p_{\texttt{ACCAC}} + p_{\texttt{ACCAA}} - p_{\texttt{ACACC}} + p_{\texttt{ACACA}} - p_{\texttt{ACAAC}} + p_{\texttt{ACAAA}} - p_{\texttt{AACCC}} + p_{\texttt{AACCA}} - p_{\texttt{AACAC}} + p_{\texttt{AACAA}} - p_{\texttt{AAACC}} + p_{\texttt{AAACA}} - p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{ACCCC}} &= p_{\texttt{ACCCC}} - p_{\texttt{ACCCA}} - p_{\texttt{ACCAC}} + p_{\texttt{ACCAA}} - p_{\texttt{ACACC}} + p_{\texttt{ACACA}} + p_{\texttt{ACAAC}} - p_{\texttt{ACAAA}} - p_{\texttt{AACCC}} + p_{\texttt{AACCA}} + p_{\texttt{AACAC}} - p_{\texttt{AACAA}} + p_{\texttt{AAACC}} - p_{\texttt{AAACA}} - p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{ACCAA}} &= p_{\texttt{ACCCC}} + p_{\texttt{ACCCA}} + p_{\texttt{ACCAC}} + p_{\texttt{ACCAA}} - p_{\texttt{ACACC}} - p_{\texttt{ACACA}} - p_{\texttt{ACAAC}} - p_{\texttt{ACAAA}} - p_{\texttt{AACCC}} - p_{\texttt{AACCA}} - p_{\texttt{AACAC}} - p_{\texttt{AACAA}} + p_{\texttt{AAACC}} + p_{\texttt{AAACA}} + p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{ACACA}} &= p_{\texttt{ACCCC}} + p_{\texttt{ACCCA}} - p_{\texttt{ACCAC}} - p_{\texttt{ACCAA}} + p_{\texttt{ACACC}} + p_{\texttt{ACACA}} - p_{\texttt{ACAAC}} - p_{\texttt{ACAAA}} - p_{\texttt{AACCC}} - p_{\texttt{AACCA}} + p_{\texttt{AACAC}} + p_{\texttt{AACAA}} - p_{\texttt{AAACC}} - p_{\texttt{AAACA}} + p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{ACAAC}} &= p_{\texttt{ACCCC}} - p_{\texttt{ACCCA}} + p_{\texttt{ACCAC}} - p_{\texttt{ACCAA}} + p_{\texttt{ACACC}} - p_{\texttt{ACACA}} + p_{\texttt{ACAAC}} - p_{\texttt{ACAAA}} - p_{\texttt{AACCC}} + p_{\texttt{AACCA}} - p_{\texttt{AACAC}} + p_{\texttt{AACAA}} - p_{\texttt{AAACC}} + p_{\texttt{AAACA}} - p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{AACCA}} &= p_{\texttt{ACCCC}} + p_{\texttt{ACCCA}} - p_{\texttt{ACCAC}} - p_{\texttt{ACCAA}} - p_{\texttt{ACACC}} - p_{\texttt{ACACA}} + p_{\texttt{ACAAC}} + p_{\texttt{ACAAA}} + p_{\texttt{AACCC}} + p_{\texttt{AACCA}} - p_{\texttt{AACAC}} - p_{\texttt{AACAA}} - p_{\texttt{AAACC}} - p_{\texttt{AAACA}} + p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{AACAC}} &= p_{\texttt{ACCCC}} - p_{\texttt{ACCCA}} + p_{\texttt{ACCAC}} - p_{\texttt{ACCAA}} - p_{\texttt{ACACC}} + p_{\texttt{ACACA}} - p_{\texttt{ACAAC}} + p_{\texttt{ACAAA}} + p_{\texttt{AACCC}} - p_{\texttt{AACCA}} + p_{\texttt{AACAC}} - p_{\texttt{AACAA}} - p_{\texttt{AAACC}} + p_{\texttt{AAACA}} - p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{AAACC}} &= p_{\texttt{ACCCC}} - p_{\texttt{ACCCA}} - p_{\texttt{ACCAC}} + p_{\texttt{ACCAA}} + p_{\texttt{ACACC}} - p_{\texttt{ACACA}} - p_{\texttt{ACAAC}} + p_{\texttt{ACAAA}} + p_{\texttt{AACCC}} - p_{\texttt{AACCA}} - p_{\texttt{AACAC}} + p_{\texttt{AACAA}} + p_{\texttt{AAACC}} - p_{\texttt{AAACA}} - p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}} \\[0.5em]
+    q_{\texttt{AAAAA}} &= p_{\texttt{ACCCC}} + p_{\texttt{ACCCA}} + p_{\texttt{ACCAC}} + p_{\texttt{ACCAA}} + p_{\texttt{ACACC}} + p_{\texttt{ACACA}} + p_{\texttt{ACAAC}} + p_{\texttt{ACAAA}} + p_{\texttt{AACCC}} + p_{\texttt{AACCA}} + p_{\texttt{AACAC}} + p_{\texttt{AACAA}} + p_{\texttt{AAACC}} + p_{\texttt{AAACA}} + p_{\texttt{AAAAC}} + p_{\texttt{AAAAA}}
+    \end{align}$
+  inverse_coordinate_change: |-
+    $\begin{align}
+    p_{\texttt{ACCCC}} &= -\frac{1}{16}q_{\texttt{CCCCA}} - \frac{1}{16}q_{\texttt{CCCAC}} - \frac{1}{16}q_{\texttt{CCACC}} - \frac{1}{16}q_{\texttt{CCAAA}} - \frac{1}{16}q_{\texttt{CACCC}} - \frac{1}{16}q_{\texttt{CACAA}} - \frac{1}{16}q_{\texttt{CAACA}} - \frac{1}{16}q_{\texttt{CAAAC}} + \frac{1}{16}q_{\texttt{ACCCC}} + \frac{1}{16}q_{\texttt{ACCAA}} + \frac{1}{16}q_{\texttt{ACACA}} + \frac{1}{16}q_{\texttt{ACAAC}} + \frac{1}{16}q_{\texttt{AACCA}} + \frac{1}{16}q_{\texttt{AACAC}} + \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{ACCCA}} &= -\frac{1}{16}q_{\texttt{CCCCA}} + \frac{1}{16}q_{\texttt{CCCAC}} + \frac{1}{16}q_{\texttt{CCACC}} - \frac{1}{16}q_{\texttt{CCAAA}} + \frac{1}{16}q_{\texttt{CACCC}} - \frac{1}{16}q_{\texttt{CACAA}} - \frac{1}{16}q_{\texttt{CAACA}} + \frac{1}{16}q_{\texttt{CAAAC}} - \frac{1}{16}q_{\texttt{ACCCC}} + \frac{1}{16}q_{\texttt{ACCAA}} + \frac{1}{16}q_{\texttt{ACACA}} - \frac{1}{16}q_{\texttt{ACAAC}} + \frac{1}{16}q_{\texttt{AACCA}} - \frac{1}{16}q_{\texttt{AACAC}} - \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{ACCAC}} &= \frac{1}{16}q_{\texttt{CCCCA}} - \frac{1}{16}q_{\texttt{CCCAC}} + \frac{1}{16}q_{\texttt{CCACC}} - \frac{1}{16}q_{\texttt{CCAAA}} + \frac{1}{16}q_{\texttt{CACCC}} - \frac{1}{16}q_{\texttt{CACAA}} + \frac{1}{16}q_{\texttt{CAACA}} - \frac{1}{16}q_{\texttt{CAAAC}} - \frac{1}{16}q_{\texttt{ACCCC}} + \frac{1}{16}q_{\texttt{ACCAA}} - \frac{1}{16}q_{\texttt{ACACA}} + \frac{1}{16}q_{\texttt{ACAAC}} - \frac{1}{16}q_{\texttt{AACCA}} + \frac{1}{16}q_{\texttt{AACAC}} - \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{ACCAA}} &= \frac{1}{16}q_{\texttt{CCCCA}} + \frac{1}{16}q_{\texttt{CCCAC}} - \frac{1}{16}q_{\texttt{CCACC}} - \frac{1}{16}q_{\texttt{CCAAA}} - \frac{1}{16}q_{\texttt{CACCC}} - \frac{1}{16}q_{\texttt{CACAA}} + \frac{1}{16}q_{\texttt{CAACA}} + \frac{1}{16}q_{\texttt{CAAAC}} + \frac{1}{16}q_{\texttt{ACCCC}} + \frac{1}{16}q_{\texttt{ACCAA}} - \frac{1}{16}q_{\texttt{ACACA}} - \frac{1}{16}q_{\texttt{ACAAC}} - \frac{1}{16}q_{\texttt{AACCA}} - \frac{1}{16}q_{\texttt{AACAC}} + \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{ACACC}} &= \frac{1}{16}q_{\texttt{CCCCA}} + \frac{1}{16}q_{\texttt{CCCAC}} - \frac{1}{16}q_{\texttt{CCACC}} - \frac{1}{16}q_{\texttt{CCAAA}} + \frac{1}{16}q_{\texttt{CACCC}} + \frac{1}{16}q_{\texttt{CACAA}} - \frac{1}{16}q_{\texttt{CAACA}} - \frac{1}{16}q_{\texttt{CAAAC}} - \frac{1}{16}q_{\texttt{ACCCC}} - \frac{1}{16}q_{\texttt{ACCAA}} + \frac{1}{16}q_{\texttt{ACACA}} + \frac{1}{16}q_{\texttt{ACAAC}} - \frac{1}{16}q_{\texttt{AACCA}} - \frac{1}{16}q_{\texttt{AACAC}} + \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{ACACA}} &= \frac{1}{16}q_{\texttt{CCCCA}} - \frac{1}{16}q_{\texttt{CCCAC}} + \frac{1}{16}q_{\texttt{CCACC}} - \frac{1}{16}q_{\texttt{CCAAA}} - \frac{1}{16}q_{\texttt{CACCC}} + \frac{1}{16}q_{\texttt{CACAA}} - \frac{1}{16}q_{\texttt{CAACA}} + \frac{1}{16}q_{\texttt{CAAAC}} + \frac{1}{16}q_{\texttt{ACCCC}} - \frac{1}{16}q_{\texttt{ACCAA}} + \frac{1}{16}q_{\texttt{ACACA}} - \frac{1}{16}q_{\texttt{ACAAC}} - \frac{1}{16}q_{\texttt{AACCA}} + \frac{1}{16}q_{\texttt{AACAC}} - \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{ACAAC}} &= -\frac{1}{16}q_{\texttt{CCCCA}} + \frac{1}{16}q_{\texttt{CCCAC}} + \frac{1}{16}q_{\texttt{CCACC}} - \frac{1}{16}q_{\texttt{CCAAA}} - \frac{1}{16}q_{\texttt{CACCC}} + \frac{1}{16}q_{\texttt{CACAA}} + \frac{1}{16}q_{\texttt{CAACA}} - \frac{1}{16}q_{\texttt{CAAAC}} + \frac{1}{16}q_{\texttt{ACCCC}} - \frac{1}{16}q_{\texttt{ACCAA}} - \frac{1}{16}q_{\texttt{ACACA}} + \frac{1}{16}q_{\texttt{ACAAC}} + \frac{1}{16}q_{\texttt{AACCA}} - \frac{1}{16}q_{\texttt{AACAC}} - \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{ACAAA}} &= -\frac{1}{16}q_{\texttt{CCCCA}} - \frac{1}{16}q_{\texttt{CCCAC}} - \frac{1}{16}q_{\texttt{CCACC}} - \frac{1}{16}q_{\texttt{CCAAA}} + \frac{1}{16}q_{\texttt{CACCC}} + \frac{1}{16}q_{\texttt{CACAA}} + \frac{1}{16}q_{\texttt{CAACA}} + \frac{1}{16}q_{\texttt{CAAAC}} - \frac{1}{16}q_{\texttt{ACCCC}} - \frac{1}{16}q_{\texttt{ACCAA}} - \frac{1}{16}q_{\texttt{ACACA}} - \frac{1}{16}q_{\texttt{ACAAC}} + \frac{1}{16}q_{\texttt{AACCA}} + \frac{1}{16}q_{\texttt{AACAC}} + \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{AACCC}} &= \frac{1}{16}q_{\texttt{CCCCA}} + \frac{1}{16}q_{\texttt{CCCAC}} + \frac{1}{16}q_{\texttt{CCACC}} + \frac{1}{16}q_{\texttt{CCAAA}} - \frac{1}{16}q_{\texttt{CACCC}} - \frac{1}{16}q_{\texttt{CACAA}} - \frac{1}{16}q_{\texttt{CAACA}} - \frac{1}{16}q_{\texttt{CAAAC}} - \frac{1}{16}q_{\texttt{ACCCC}} - \frac{1}{16}q_{\texttt{ACCAA}} - \frac{1}{16}q_{\texttt{ACACA}} - \frac{1}{16}q_{\texttt{ACAAC}} + \frac{1}{16}q_{\texttt{AACCA}} + \frac{1}{16}q_{\texttt{AACAC}} + \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{AACCA}} &= \frac{1}{16}q_{\texttt{CCCCA}} - \frac{1}{16}q_{\texttt{CCCAC}} - \frac{1}{16}q_{\texttt{CCACC}} + \frac{1}{16}q_{\texttt{CCAAA}} + \frac{1}{16}q_{\texttt{CACCC}} - \frac{1}{16}q_{\texttt{CACAA}} - \frac{1}{16}q_{\texttt{CAACA}} + \frac{1}{16}q_{\texttt{CAAAC}} + \frac{1}{16}q_{\texttt{ACCCC}} - \frac{1}{16}q_{\texttt{ACCAA}} - \frac{1}{16}q_{\texttt{ACACA}} + \frac{1}{16}q_{\texttt{ACAAC}} + \frac{1}{16}q_{\texttt{AACCA}} - \frac{1}{16}q_{\texttt{AACAC}} - \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{AACAC}} &= -\frac{1}{16}q_{\texttt{CCCCA}} + \frac{1}{16}q_{\texttt{CCCAC}} - \frac{1}{16}q_{\texttt{CCACC}} + \frac{1}{16}q_{\texttt{CCAAA}} + \frac{1}{16}q_{\texttt{CACCC}} - \frac{1}{16}q_{\texttt{CACAA}} + \frac{1}{16}q_{\texttt{CAACA}} - \frac{1}{16}q_{\texttt{CAAAC}} + \frac{1}{16}q_{\texttt{ACCCC}} - \frac{1}{16}q_{\texttt{ACCAA}} + \frac{1}{16}q_{\texttt{ACACA}} - \frac{1}{16}q_{\texttt{ACAAC}} - \frac{1}{16}q_{\texttt{AACCA}} + \frac{1}{16}q_{\texttt{AACAC}} - \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{AACAA}} &= -\frac{1}{16}q_{\texttt{CCCCA}} - \frac{1}{16}q_{\texttt{CCCAC}} + \frac{1}{16}q_{\texttt{CCACC}} + \frac{1}{16}q_{\texttt{CCAAA}} - \frac{1}{16}q_{\texttt{CACCC}} - \frac{1}{16}q_{\texttt{CACAA}} + \frac{1}{16}q_{\texttt{CAACA}} + \frac{1}{16}q_{\texttt{CAAAC}} - \frac{1}{16}q_{\texttt{ACCCC}} - \frac{1}{16}q_{\texttt{ACCAA}} + \frac{1}{16}q_{\texttt{ACACA}} + \frac{1}{16}q_{\texttt{ACAAC}} - \frac{1}{16}q_{\texttt{AACCA}} - \frac{1}{16}q_{\texttt{AACAC}} + \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{AAACC}} &= -\frac{1}{16}q_{\texttt{CCCCA}} - \frac{1}{16}q_{\texttt{CCCAC}} + \frac{1}{16}q_{\texttt{CCACC}} + \frac{1}{16}q_{\texttt{CCAAA}} + \frac{1}{16}q_{\texttt{CACCC}} + \frac{1}{16}q_{\texttt{CACAA}} - \frac{1}{16}q_{\texttt{CAACA}} - \frac{1}{16}q_{\texttt{CAAAC}} + \frac{1}{16}q_{\texttt{ACCCC}} + \frac{1}{16}q_{\texttt{ACCAA}} - \frac{1}{16}q_{\texttt{ACACA}} - \frac{1}{16}q_{\texttt{ACAAC}} - \frac{1}{16}q_{\texttt{AACCA}} - \frac{1}{16}q_{\texttt{AACAC}} + \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{AAACA}} &= -\frac{1}{16}q_{\texttt{CCCCA}} + \frac{1}{16}q_{\texttt{CCCAC}} - \frac{1}{16}q_{\texttt{CCACC}} + \frac{1}{16}q_{\texttt{CCAAA}} - \frac{1}{16}q_{\texttt{CACCC}} + \frac{1}{16}q_{\texttt{CACAA}} - \frac{1}{16}q_{\texttt{CAACA}} + \frac{1}{16}q_{\texttt{CAAAC}} - \frac{1}{16}q_{\texttt{ACCCC}} + \frac{1}{16}q_{\texttt{ACCAA}} - \frac{1}{16}q_{\texttt{ACACA}} + \frac{1}{16}q_{\texttt{ACAAC}} - \frac{1}{16}q_{\texttt{AACCA}} + \frac{1}{16}q_{\texttt{AACAC}} - \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{AAAAC}} &= \frac{1}{16}q_{\texttt{CCCCA}} - \frac{1}{16}q_{\texttt{CCCAC}} - \frac{1}{16}q_{\texttt{CCACC}} + \frac{1}{16}q_{\texttt{CCAAA}} - \frac{1}{16}q_{\texttt{CACCC}} + \frac{1}{16}q_{\texttt{CACAA}} + \frac{1}{16}q_{\texttt{CAACA}} - \frac{1}{16}q_{\texttt{CAAAC}} - \frac{1}{16}q_{\texttt{ACCCC}} + \frac{1}{16}q_{\texttt{ACCAA}} + \frac{1}{16}q_{\texttt{ACACA}} - \frac{1}{16}q_{\texttt{ACAAC}} + \frac{1}{16}q_{\texttt{AACCA}} - \frac{1}{16}q_{\texttt{AACAC}} - \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}} \\[0.5em]
+    p_{\texttt{AAAAA}} &= \frac{1}{16}q_{\texttt{CCCCA}} + \frac{1}{16}q_{\texttt{CCCAC}} + \frac{1}{16}q_{\texttt{CCACC}} + \frac{1}{16}q_{\texttt{CCAAA}} + \frac{1}{16}q_{\texttt{CACCC}} + \frac{1}{16}q_{\texttt{CACAA}} + \frac{1}{16}q_{\texttt{CAACA}} + \frac{1}{16}q_{\texttt{CAAAC}} + \frac{1}{16}q_{\texttt{ACCCC}} + \frac{1}{16}q_{\texttt{ACCAA}} + \frac{1}{16}q_{\texttt{ACACA}} + \frac{1}{16}q_{\texttt{ACAAC}} + \frac{1}{16}q_{\texttt{AACCA}} + \frac{1}{16}q_{\texttt{AACAC}} + \frac{1}{16}q_{\texttt{AAACC}} + \frac{1}{16}q_{\texttt{AAAAA}}
+    \end{align}$

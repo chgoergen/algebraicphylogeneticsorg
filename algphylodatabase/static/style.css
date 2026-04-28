@@ -31,8 +31,8 @@ body {
 .topnav {
     top: 0;
     left: 0;
-    position: fixed;
-    z-index: 2; /* stack order; avoids tex going atop navigation */
+    position: sticky;
+    z-index: 100; /* stack order; avoids tex going atop navigation */
     background-color: var(--contrast-color);
     overflow: hidden;
     padding: 0;
@@ -64,13 +64,16 @@ body {
 
 /* headers */
 .topheader {
-    top: 2.2rem;
     left: 0;
     margin: 0;
     width: 100%;
     border-collapse: collapse;
-    padding: 0;
-    height: 10rem;
+    
+    min-height: 10rem;
+    height: auto;
+    padding: 2rem 0;
+    box-sizing: border-box;
+
     margin-bottom: 4rem;
     position: relative;
     color: var(--main-color);
@@ -83,20 +86,20 @@ body {
     align-content: center;
     overflow-x: hidden;
 }
-    /* landing page header */
-    .topheader div#emph {
-        margin: 0;
-        padding: 0;
-        width: 99%;
-        color: var(--main-color);
-        font-size: 3rem;
-        font-weight: bold;
-        /*-webkit-text-fill-color: var(--main-color);
-        -webkit-text-stroke-color: white;
-        -webkit-text-stroke-width: 0.05rem; */
-        text-align: center;
-        overflow-x: hidden;
-    }
+/* landing page header */
+.topheader div#emph {
+    margin: 0;
+    padding: 0;
+    width: 99%;
+    color: var(--main-color);
+    font-size: min(3rem, 7vw);
+    font-weight: bold;
+    /*-webkit-text-fill-color: var(--main-color);
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 0.05rem; */
+    text-align: center;
+    overflow-x: hidden;
+}
 
 /* bottom bar */
 .footer {
@@ -119,7 +122,7 @@ body {
 
 /* main body of the website */
 .main {
-    width: 85%;
+    width: 87%;
     padding: 0;
     margin: 0;
     text-align: center;
@@ -373,4 +376,93 @@ pre code {
     padding: 10px;
     border-radius: var(--rounded-corners, 5px);
     border: 1px solid #ccc;
+}
+
+/* The dropdown container */
+details.dl-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* The visible button */
+details.dl-dropdown summary {
+    background-color: var(--shade-main-color);
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px 12px;
+    list-style: none; /* Removes the default HTML triangle */
+    user-select: none;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+/* Custom arrow for the button */
+details.dl-dropdown summary::after {
+    content: " ▼";
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+
+/* Hide default triangle for Safari/Chrome */
+details.dl-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+/* The floating menu */
+details.dl-dropdown .dl-menu {
+    position: absolute;
+    top: 110%; /* Places it slightly below the button */
+    right: 0;  /* Aligns the menu to the right edge of the button */
+    background-color: #ffffff; /* Prevents table text from bleeding through */
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 100; /* Forces it to render on top of the table */
+    display: flex;
+    flex-direction: column;
+    min-width: max-content;
+    overflow: hidden;
+}
+
+/* The links inside the menu */
+details.dl-dropdown .dl-menu a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.85em;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: background-color 0.2s ease;
+}
+
+details.dl-dropdown .dl-menu a:last-child {
+    border-bottom: none;
+}
+
+/* Hover state for the menu items */
+details.dl-dropdown .dl-menu a:hover {
+    background-color: var(--shade-main-color);
+    color: var(--main-color);
+}
+
+/* 1. Elevate the dropdown container when it is clicked open */
+details.dl-dropdown[open] {
+    z-index: 9999;
+}
+
+/* 2. Ensure the dropdown menu itself is on the highest layer */
+details.dl-dropdown .dl-menu {
+    z-index: 9999;
+}
+
+/* 3. Force table cells to allow elements to break out of their borders */
+td {
+    overflow: visible !important;
+}
+
+/* 4. Force table rows to allow elements to break out of their borders */
+tr {
+    overflow: visible !important;
 }
