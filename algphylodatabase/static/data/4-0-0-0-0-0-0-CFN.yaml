@@ -14,10 +14,10 @@ mu: "3"
 e: "2"
 M: "3"
 E: "2"
-sD: "-"
-sd: "-"
-MLdeg: "-"
-EDdeg: "-"
+sD: "2"
+sd: "24"
+MLdeg: "92"
+EDdeg: "92"
 details:
   transition_matrix: |-
     $$M_j = \begin{pmatrix}

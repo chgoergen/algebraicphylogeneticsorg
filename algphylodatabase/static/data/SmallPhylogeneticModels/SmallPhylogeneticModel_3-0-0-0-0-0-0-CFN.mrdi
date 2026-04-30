@@ -1,1 +1,1194 @@
-{"_ns":{"Oscar":["https://github.com/oscar-system/Oscar.jl","1.8.0-DEV-2-206f08c23e20b71c87d7a1f27d06153ff1e7c04d"]},"_type":{"name":"SmallPhylogeneticModel","params":{"model":"d5061a83-070b-4554-a99a-abcceead4bf7","ideal_ordering_type":"Nothing"}},"data":{"model_encoding":"3-0-0-0-0-0-0-CFN","model_type":"CFN","n_leaves":3,"level":0,"n_cycles":0,"dimension":4,"degree":1,"n_coordinates":4,"dimension_singular_locus":null,"degree_singular_locus":null,"maximum_likelihood_degree":null,"euclidean_distance_degree":null,"parametrization":{"images":[[[[1,0,0,0,1,1],"1//2"],[[0,1,1,1,0,0],"1//2"]],[[[1,0,1,0,1,0],"1//2"],[[0,1,0,1,0,1],"1//2"]],[[[1,1,0,0,0,1],"1//2"],[[0,0,1,1,1,0],"1//2"]],[[[1,1,1,0,0,0],"1//2"],[[0,0,0,1,1,1],"1//2"]]]},"equivalent_classes":[[[1,2,1],[[[[0,0,1,0,0,0,0,0],"1"]],[[[0,0,0,0,0,1,0,0],"1"]]]],[[1,1,1],[[[[1,0,0,0,0,0,0,0],"1"]],[[[0,0,0,0,0,0,0,1],"1"]]]],[[1,2,2],[[[[0,0,0,0,0,0,1,0],"1"]],[[[0,1,0,0,0,0,0,0],"1"]]]],[[1,1,2],[[[[0,0,0,0,1,0,0,0],"1"]],[[[0,0,0,1,0,0,0,0],"1"]]]]],"vanishing_ideal":null},"_refs":{"d5061a83-070b-4554-a99a-abcceead4bf7":{"_type":{"name":"PhylogeneticModel","params":{"base_field":{"_type":"QQField"},"graph_type":"PhylogeneticTree","model_parameter_name_type":"Symbol","transition_matrix_entry_type":"Symbol","transition_matrix_params":{"name":"Matrix","params":"Symbol"},"root_distribution_entry_type":"QQFieldElem","root_distribution_params":{"name":"Vector","params":{"name":"QQFieldElem","params":{"_type":"QQField"}}}}},"data":{"graph":{"pm_tree":{"ADJACENCY":[[1,2,3],[0],[0],[0]],"_type":"graph::PhylogeneticTree<Rational>","_ns":{"polymake":["https://polymake.org","4.15"]},"LEAVES":{"leaf 1":3,"leaf 2":1,"leaf 3":2},"EDGE_LENGTHS":["1","1","1"],"LABELS":["","leaf 2","leaf 3","leaf 1"]},"vertex_perm":[4,2,3,1]},"transition_matrix":[["a","b"],["b","a"]],"model_parameter_name":"p","n_states":2,"root_distribution":["1//2","1//2"]},"attrs":{"parameter_ring":{"_type":{"name":"Tuple","params":[{"name":"MPolyRing","params":{"_type":"QQField"}},{"name":"GraphTransDict","params":{"name":"MPolyRingElem","params":"be42e328-2783-4337-9938-2dc4c0634a40"}},{"name":"Vector","params":{"name":"QQFieldElem","params":{"_type":"QQField"}}}]},"data":["be42e328-2783-4337-9938-2dc4c0634a40",[[["a",[4,1]],[[[1,0,0,0,0,0],"1"]]],[["a",[4,3]],[[[0,0,1,0,0,0],"1"]]],[["b",[4,1]],[[[0,0,0,1,0,0],"1"]]],[["b",[4,3]],[[[0,0,0,0,0,1],"1"]]],[["b",[4,2]],[[[0,0,0,0,1,0],"1"]]],[["a",[4,2]],[[[0,1,0,0,0,0],"1"]]]],["1//2","1//2"]]},"model_ring":{"_type":{"name":"Tuple","params":[{"name":"IndexedRing","params":{"ring":"784de759-6ff2-4866-9b0e-fd2cea5db784","index_type":{"name":"Tuple","params":["Base.Int","Base.Int","Base.Int"]}}},{"name":"Dict","params":{"key_params":{"name":"Tuple","params":["Base.Int","Base.Int","Base.Int"]},"value_params":{"name":"MPolyRingElem","params":"784de759-6ff2-4866-9b0e-fd2cea5db784"}}}]},"data":[[[[[[0,0,1,0],"1"]],[1,1,2]],[[[[1,0,0,0],"1"]],[1,2,2]],[[[[0,0,0,1],"1"]],[1,1,1]],[[[[0,1,0,0],"1"]],[1,2,1]]],[[[1,2,1],[[[0,1,0,0],"1"]]],[[1,1,1],[[[0,0,0,1],"1"]]],[[1,2,2],[[[1,0,0,0],"1"]]],[[1,1,2],[[[0,0,1,0],"1"]]]]]},"full_model_ring":{"_type":{"name":"Tuple","params":[{"name":"IndexedRing","params":{"ring":"744fa5a2-438d-4c22-8385-a88ac36aa2a5","index_type":{"name":"Tuple","params":["Base.Int","Base.Int","Base.Int"]}}},{"name":"Dict","params":{"key_params":{"name":"Tuple","params":["Base.Int","Base.Int","Base.Int"]},"value_params":{"name":"MPolyRingElem","params":"744fa5a2-438d-4c22-8385-a88ac36aa2a5"}}}]},"data":[[[[[[0,0,0,0,0,0,0,1],"1"]],[2,2,2]],[[[[0,0,0,0,0,0,1,0],"1"]],[1,2,2]],[[[[1,0,0,0,0,0,0,0],"1"]],[1,1,1]],[[[[0,0,0,0,0,1,0,0],"1"]],[2,1,2]],[[[[0,0,0,0,1,0,0,0],"1"]],[1,1,2]],[[[[0,0,1,0,0,0,0,0],"1"]],[1,2,1]],[[[[0,0,0,1,0,0,0,0],"1"]],[2,2,1]],[[[[0,1,0,0,0,0,0,0],"1"]],[2,1,1]]],[[[1,2,1],[[[0,0,1,0,0,0,0,0],"1"]]],[[1,1,1],[[[1,0,0,0,0,0,0,0],"1"]]],[[2,2,1],[[[0,0,0,1,0,0,0,0],"1"]]],[[1,2,2],[[[0,0,0,0,0,0,1,0],"1"]]],[[2,1,1],[[[0,1,0,0,0,0,0,0],"1"]]],[[1,1,2],[[[0,0,0,0,1,0,0,0],"1"]]],[[2,2,2],[[[0,0,0,0,0,0,0,1],"1"]]],[[2,1,2],[[[0,0,0,0,0,1,0,0],"1"]]]]]}}},"be42e328-2783-4337-9938-2dc4c0634a40":{"_type":{"name":"MPolyRing","params":{"_type":"QQField"}},"data":{"symbols":["a[1]","a[2]","a[3]","b[1]","b[2]","b[3]"]}},"784de759-6ff2-4866-9b0e-fd2cea5db784":{"_type":{"name":"MPolyRing","params":{"_type":"QQField"}},"data":{"symbols":["p[1,2,2]","p[1,2,1]","p[1,1,2]","p[1,1,1]"]}},"744fa5a2-438d-4c22-8385-a88ac36aa2a5":{"_type":{"name":"MPolyRing","params":{"_type":"QQField"}},"data":{"symbols":["p[1,1,1]","p[2,1,1]","p[1,2,1]","p[2,2,1]","p[1,1,2]","p[2,1,2]","p[1,2,2]","p[2,2,2]"]}}}}
+{
+    "_ns": {
+        "Oscar": [
+            "https://github.com/oscar-system/Oscar.jl",
+            "1.8.0-DEV-2-206f08c23e20b71c87d7a1f27d06153ff1e7c04d"
+        ]
+    },
+    "_type": {
+        "name": "SmallPhylogeneticModel",
+        "params": {
+            "model": "d5061a83-070b-4554-a99a-abcceead4bf7",
+            "ideal_ordering_type": "Nothing"
+        }
+    },
+    "data": {
+        "model_encoding": "3-0-0-0-0-0-0-CFN",
+        "model_type": "CFN",
+        "n_leaves": 3,
+        "level": 0,
+        "n_cycles": 0,
+        "dimension": 4,
+        "degree": 1,
+        "n_coordinates": 4,
+        "dimension_singular_locus": null,
+        "degree_singular_locus": null,
+        "maximum_likelihood_degree": 1,
+        "euclidean_distance_degree": 1,
+        "parametrization": {
+            "images": [
+                [
+                    [
+                        [
+                            1,
+                            0,
+                            0,
+                            0,
+                            1,
+                            1
+                        ],
+                        "1//2"
+                    ],
+                    [
+                        [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0,
+                            0
+                        ],
+                        "1//2"
+                    ]
+                ],
+                [
+                    [
+                        [
+                            1,
+                            0,
+                            1,
+                            0,
+                            1,
+                            0
+                        ],
+                        "1//2"
+                    ],
+                    [
+                        [
+                            0,
+                            1,
+                            0,
+                            1,
+                            0,
+                            1
+                        ],
+                        "1//2"
+                    ]
+                ],
+                [
+                    [
+                        [
+                            1,
+                            1,
+                            0,
+                            0,
+                            0,
+                            1
+                        ],
+                        "1//2"
+                    ],
+                    [
+                        [
+                            0,
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                        ],
+                        "1//2"
+                    ]
+                ],
+                [
+                    [
+                        [
+                            1,
+                            1,
+                            1,
+                            0,
+                            0,
+                            0
+                        ],
+                        "1//2"
+                    ],
+                    [
+                        [
+                            0,
+                            0,
+                            0,
+                            1,
+                            1,
+                            1
+                        ],
+                        "1//2"
+                    ]
+                ]
+            ]
+        },
+        "equivalent_classes": [
+            [
+                [
+                    1,
+                    2,
+                    1
+                ],
+                [
+                    [
+                        [
+                            [
+                                0,
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "1"
+                        ]
+                    ],
+                    [
+                        [
+                            [
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                1,
+                                0,
+                                0
+                            ],
+                            "1"
+                        ]
+                    ]
+                ]
+            ],
+            [
+                [
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    [
+                        [
+                            [
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "1"
+                        ]
+                    ],
+                    [
+                        [
+                            [
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "1"
+                        ]
+                    ]
+                ]
+            ],
+            [
+                [
+                    1,
+                    2,
+                    2
+                ],
+                [
+                    [
+                        [
+                            [
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                1,
+                                0
+                            ],
+                            "1"
+                        ]
+                    ],
+                    [
+                        [
+                            [
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "1"
+                        ]
+                    ]
+                ]
+            ],
+            [
+                [
+                    1,
+                    1,
+                    2
+                ],
+                [
+                    [
+                        [
+                            [
+                                0,
+                                0,
+                                0,
+                                0,
+                                1,
+                                0,
+                                0,
+                                0
+                            ],
+                            "1"
+                        ]
+                    ],
+                    [
+                        [
+                            [
+                                0,
+                                0,
+                                0,
+                                1,
+                                0,
+                                0,
+                                0,
+                                0
+                            ],
+                            "1"
+                        ]
+                    ]
+                ]
+            ]
+        ],
+        "vanishing_ideal": null
+    },
+    "_refs": {
+        "d5061a83-070b-4554-a99a-abcceead4bf7": {
+            "_type": {
+                "name": "PhylogeneticModel",
+                "params": {
+                    "base_field": {
+                        "_type": "QQField"
+                    },
+                    "graph_type": "PhylogeneticTree",
+                    "model_parameter_name_type": "Symbol",
+                    "transition_matrix_entry_type": "Symbol",
+                    "transition_matrix_params": {
+                        "name": "Matrix",
+                        "params": "Symbol"
+                    },
+                    "root_distribution_entry_type": "QQFieldElem",
+                    "root_distribution_params": {
+                        "name": "Vector",
+                        "params": {
+                            "name": "QQFieldElem",
+                            "params": {
+                                "_type": "QQField"
+                            }
+                        }
+                    }
+                }
+            },
+            "data": {
+                "graph": {
+                    "pm_tree": {
+                        "ADJACENCY": [
+                            [
+                                1,
+                                2,
+                                3
+                            ],
+                            [
+                                0
+                            ],
+                            [
+                                0
+                            ],
+                            [
+                                0
+                            ]
+                        ],
+                        "_type": "graph::PhylogeneticTree<Rational>",
+                        "_ns": {
+                            "polymake": [
+                                "https://polymake.org",
+                                "4.15"
+                            ]
+                        },
+                        "LEAVES": {
+                            "leaf 1": 3,
+                            "leaf 2": 1,
+                            "leaf 3": 2
+                        },
+                        "EDGE_LENGTHS": [
+                            "1",
+                            "1",
+                            "1"
+                        ],
+                        "LABELS": [
+                            "",
+                            "leaf 2",
+                            "leaf 3",
+                            "leaf 1"
+                        ]
+                    },
+                    "vertex_perm": [
+                        4,
+                        2,
+                        3,
+                        1
+                    ]
+                },
+                "transition_matrix": [
+                    [
+                        "a",
+                        "b"
+                    ],
+                    [
+                        "b",
+                        "a"
+                    ]
+                ],
+                "model_parameter_name": "p",
+                "n_states": 2,
+                "root_distribution": [
+                    "1//2",
+                    "1//2"
+                ]
+            },
+            "attrs": {
+                "parameter_ring": {
+                    "_type": {
+                        "name": "Tuple",
+                        "params": [
+                            {
+                                "name": "MPolyRing",
+                                "params": {
+                                    "_type": "QQField"
+                                }
+                            },
+                            {
+                                "name": "GraphTransDict",
+                                "params": {
+                                    "name": "MPolyRingElem",
+                                    "params": "be42e328-2783-4337-9938-2dc4c0634a40"
+                                }
+                            },
+                            {
+                                "name": "Vector",
+                                "params": {
+                                    "name": "QQFieldElem",
+                                    "params": {
+                                        "_type": "QQField"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "data": [
+                        "be42e328-2783-4337-9938-2dc4c0634a40",
+                        [
+                            [
+                                [
+                                    "a",
+                                    [
+                                        4,
+                                        1
+                                    ]
+                                ],
+                                [
+                                    [
+                                        [
+                                            1,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    "a",
+                                    [
+                                        4,
+                                        3
+                                    ]
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            1,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    "b",
+                                    [
+                                        4,
+                                        1
+                                    ]
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            1,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    "b",
+                                    [
+                                        4,
+                                        3
+                                    ]
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    "b",
+                                    [
+                                        4,
+                                        2
+                                    ]
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            1,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    "a",
+                                    [
+                                        4,
+                                        2
+                                    ]
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            1,
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ]
+                        ],
+                        [
+                            "1//2",
+                            "1//2"
+                        ]
+                    ]
+                },
+                "model_ring": {
+                    "_type": {
+                        "name": "Tuple",
+                        "params": [
+                            {
+                                "name": "IndexedRing",
+                                "params": {
+                                    "ring": "784de759-6ff2-4866-9b0e-fd2cea5db784",
+                                    "index_type": {
+                                        "name": "Tuple",
+                                        "params": [
+                                            "Base.Int",
+                                            "Base.Int",
+                                            "Base.Int"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Dict",
+                                "params": {
+                                    "key_params": {
+                                        "name": "Tuple",
+                                        "params": [
+                                            "Base.Int",
+                                            "Base.Int",
+                                            "Base.Int"
+                                        ]
+                                    },
+                                    "value_params": {
+                                        "name": "MPolyRingElem",
+                                        "params": "784de759-6ff2-4866-9b0e-fd2cea5db784"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "data": [
+                        [
+                            [
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            1,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ],
+                                [
+                                    1,
+                                    1,
+                                    2
+                                ]
+                            ],
+                            [
+                                [
+                                    [
+                                        [
+                                            1,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ],
+                                [
+                                    1,
+                                    2,
+                                    2
+                                ]
+                            ],
+                            [
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "1"
+                                    ]
+                                ],
+                                [
+                                    1,
+                                    1,
+                                    1
+                                ]
+                            ],
+                            [
+                                [
+                                    [
+                                        [
+                                            0,
+                                            1,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ],
+                                [
+                                    1,
+                                    2,
+                                    1
+                                ]
+                            ]
+                        ],
+                        [
+                            [
+                                [
+                                    1,
+                                    2,
+                                    1
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            1,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    1,
+                                    2,
+                                    2
+                                ],
+                                [
+                                    [
+                                        [
+                                            1,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    1,
+                                    1,
+                                    2
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            1,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                },
+                "full_model_ring": {
+                    "_type": {
+                        "name": "Tuple",
+                        "params": [
+                            {
+                                "name": "IndexedRing",
+                                "params": {
+                                    "ring": "744fa5a2-438d-4c22-8385-a88ac36aa2a5",
+                                    "index_type": {
+                                        "name": "Tuple",
+                                        "params": [
+                                            "Base.Int",
+                                            "Base.Int",
+                                            "Base.Int"
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Dict",
+                                "params": {
+                                    "key_params": {
+                                        "name": "Tuple",
+                                        "params": [
+                                            "Base.Int",
+                                            "Base.Int",
+                                            "Base.Int"
+                                        ]
+                                    },
+                                    "value_params": {
+                                        "name": "MPolyRingElem",
+                                        "params": "744fa5a2-438d-4c22-8385-a88ac36aa2a5"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "data": [
+                        [
+                            [
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "1"
+                                    ]
+                                ],
+                                [
+                                    2,
+                                    2,
+                                    2
+                                ]
+                            ],
+                            [
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            1,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ],
+                                [
+                                    1,
+                                    2,
+                                    2
+                                ]
+                            ],
+                            [
+                                [
+                                    [
+                                        [
+                                            1,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ],
+                                [
+                                    1,
+                                    1,
+                                    1
+                                ]
+                            ],
+                            [
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            1,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ],
+                                [
+                                    2,
+                                    1,
+                                    2
+                                ]
+                            ],
+                            [
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            1,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ],
+                                [
+                                    1,
+                                    1,
+                                    2
+                                ]
+                            ],
+                            [
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            1,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ],
+                                [
+                                    1,
+                                    2,
+                                    1
+                                ]
+                            ],
+                            [
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            1,
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ],
+                                [
+                                    2,
+                                    2,
+                                    1
+                                ]
+                            ],
+                            [
+                                [
+                                    [
+                                        [
+                                            0,
+                                            1,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ],
+                                [
+                                    2,
+                                    1,
+                                    1
+                                ]
+                            ]
+                        ],
+                        [
+                            [
+                                [
+                                    1,
+                                    2,
+                                    1
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            1,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    1,
+                                    1,
+                                    1
+                                ],
+                                [
+                                    [
+                                        [
+                                            1,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    2,
+                                    2,
+                                    1
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            1,
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    1,
+                                    2,
+                                    2
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            1,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    2,
+                                    1,
+                                    1
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            1,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    1,
+                                    1,
+                                    2
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            1,
+                                            0,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    2,
+                                    2,
+                                    2
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            1
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    2,
+                                    1,
+                                    2
+                                ],
+                                [
+                                    [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            0,
+                                            1,
+                                            0,
+                                            0
+                                        ],
+                                        "1"
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                }
+            }
+        },
+        "be42e328-2783-4337-9938-2dc4c0634a40": {
+            "_type": {
+                "name": "MPolyRing",
+                "params": {
+                    "_type": "QQField"
+                }
+            },
+            "data": {
+                "symbols": [
+                    "a[1]",
+                    "a[2]",
+                    "a[3]",
+                    "b[1]",
+                    "b[2]",
+                    "b[3]"
+                ]
+            }
+        },
+        "784de759-6ff2-4866-9b0e-fd2cea5db784": {
+            "_type": {
+                "name": "MPolyRing",
+                "params": {
+                    "_type": "QQField"
+                }
+            },
+            "data": {
+                "symbols": [
+                    "p[1,2,2]",
+                    "p[1,2,1]",
+                    "p[1,1,2]",
+                    "p[1,1,1]"
+                ]
+            }
+        },
+        "744fa5a2-438d-4c22-8385-a88ac36aa2a5": {
+            "_type": {
+                "name": "MPolyRing",
+                "params": {
+                    "_type": "QQField"
+                }
+            },
+            "data": {
+                "symbols": [
+                    "p[1,1,1]",
+                    "p[2,1,1]",
+                    "p[1,2,1]",
+                    "p[2,2,1]",
+                    "p[1,1,2]",
+                    "p[2,1,2]",
+                    "p[1,2,2]",
+                    "p[2,2,2]"
+                ]
+            }
+        }
+    }
+}
