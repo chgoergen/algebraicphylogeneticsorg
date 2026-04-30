@@ -326,17 +326,36 @@ tr:hover td:not(.no-hover) {
 
 /* box settings */
 .module div#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     text-align: center;
-    font-weight: normal;
     color: var(--main-color);
     border-bottom: var(--line-thickness) solid var(--main-color);
-    padding: 0.5rem;
     background-color: var(--shade-main-color); 
     border-top-left-radius: var(--rounded-corners);
     border-top-right-radius: var(--rounded-corners);
-    padding: 0.75rem;
+    padding: 0.75rem 2.5rem; /* Extra padding to prevent text overlapping button */
     font-weight: 600;
-  }
+    min-height: 1.5rem;
+}
+
+.module div#title button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--shade-main-color);
+    color: var(--main-color);
+    border: none;
+    border-radius: var(--line-thickness);
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .module div#picture { 
     display: flex;

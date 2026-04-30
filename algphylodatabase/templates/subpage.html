@@ -49,10 +49,9 @@
         <div class="grid-container">
             {% if picture %}
             <div class="module span-3">
-                <div id="title">Phylogenetic tree {{ tree_id }}
-                    <button class="copyBtn" data-file="../static/tex/tex_{{ tree_id }}.yaml" data-key="imagelabelled" 
-                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                <div id="title">Tree {{ tree_id }}
+                    <button class="copyBtn" data-file="../static/tex/tex_{{ tree_id }}.yaml" data-key="imagelabelled">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
                     </button>
                 </div>
                 <div id="picture">
@@ -65,12 +64,12 @@
             <div class="module span-1">
                 <div id="title">
                     Evolutionary model
-                    <button id="copy-evolutionary-model" style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;"
+                    <button id="copy-evolutionary-model"
                         data-modelname="{{ data.modelname }}"
                         data-root-distribution="{{ data.details.root_distributon }}"
                         data-transition-matrix="{{ data.details.transition_matrix }}"
                         data-fourier-parameters="{{ data.details.fourier_parameters }}">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg> 
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg> 
                     </button>
                 </div>
                 <div id="content" style="overflow-x: auto;">
@@ -139,9 +138,8 @@
             {% if data.details.probability_parametrization %}
             <div class="module span-1">
                 <div id="title">Probability parametrization
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.probability_parametrization" 
-                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.probability_parametrization">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
                     </button>
                 </div>
                 {% if data.details.probability_parametrization | length > 40000 %}
@@ -158,9 +156,8 @@
             {% if data.details.fourier_parametrization %}
             <div class="module span-1">
                 <div id="title">Fourier parametrization
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.fourier_parametrization" 
-                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.fourier_parametrization">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
                     </button>
                 </div>
                 {% if data.details.fourier_parametrization | length > 40000 %}
@@ -177,9 +174,8 @@
             {% if data.details.equivalent_classes_prob %}
             <div class="module span-1">
                 <div id="title">Equivalent classes of probability parametrization
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_prob" 
-                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_prob">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
                     </button>
                 </div>
                 {% if data.details.equivalent_classes_prob | length > 40000 %}
@@ -196,9 +192,8 @@
             {% if data.details.equivalent_classes_fourier %}
             <div class="module span-1">
                 <div id="title">Equivalent classes of Fourier parametrization
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_fourier" 
-                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_fourier">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
                     </button>
                 </div>
                 {% if data.details.equivalent_classes_fourier | length > 40000 %}
@@ -222,9 +217,8 @@
             {% if data.details.invariants %}
             <div class="module span-1">
                 <div id="title">Minimal generating set of the vanishing ideal
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.invariants" 
-                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.invariants">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
                     </button>
                 </div>
                 {% if data.details.invariants | length > 40000 %}
@@ -241,9 +235,8 @@
             {% if data.details.grobner_basis %}
             <div class="module span-1">
                 <div id="title">Gröbner basis of the vanishing ideal
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.grobner_basis" 
-                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                    <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.grobner_basis">
+                    <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
                     </button>
                 </div>
                 {% if data.details.grobner_basis | length > 40000 %}
@@ -296,9 +289,8 @@
             {% if data.details.coordinate_change %}
             <div class="module span-1">
                 <div id="title">Probability $\to$ Fourier
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.probability_parametrization" 
-                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.probability_parametrization">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
                     </button>
                 </div>
                 {% if data.details.coordinate_change | length > 40000 %}
@@ -315,9 +307,8 @@
             {% if data.details.inverse_coordinate_change %}
             <div class="module span-1">
                 <div id="title">Fourier $\to$ Probability
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.inverse_coordinate_change" 
-                    style="float: right; background-color:var(--shade-main-color); color:var(--main-color); border: none; border-radius: var(--line-thickness);cursor: pointer;">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; margin-bottom: 2px;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.inverse_coordinate_change">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
                     </button>
                 </div>
                 {% if data.details.inverse_coordinate_change | length > 40000 %}
