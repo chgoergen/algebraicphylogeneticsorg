@@ -51,13 +51,50 @@
         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
       </symbol>
     </svg>
-    <div class="topnav">
-                <a href="/" style="color:var(--green-color); font-weight:bold;">Database v0.2</a>
-                <a href="/notation">Notions and notation</a>
-                <a href="/about">About this project</a>               
-                <a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics/phylogenetics" class="split" target="_blank">AlgebraicPhylogenetics.jl documentation in <img style="height:1rem; vertical-align: middle;" src="https://docs.oscar-system.org/stable/assets/logo.svg"></a>
-                <a href="https://www.coloradocollege.edu/aapps/ldg/small-trees/small-trees_0.html" class="split"  target="_blank">Small Phylogenetic Trees (2007)</a>
+    <div class="topnav" id="myTopnav">
+        <div class="topnav-brand-container">
+            <a href="/" style="color:var(--green-color); font-weight:bold;">Database v0.2</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </a>
+        </div>
+        <div class="topnav-links" id="myLinks">
+            <a href="/notation">Notions and notation</a>
+            <a href="/about">About this project</a>               
+            <a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics/phylogenetics" class="split push-right" target="_blank">AlgebraicPhylogenetics.jl documentation in <img style="height:1rem; vertical-align: middle;" src="https://docs.oscar-system.org/stable/assets/logo.svg"></a>
+            <a href="https://www.coloradocollege.edu/aapps/ldg/small-trees/small-trees_0.html" class="split"  target="_blank">Small Phylogenetic Trees (2007)</a>
+        </div>
     </div>
+
+    <script>
+        function toggleNav() {
+            var x = document.getElementById("myLinks");
+            if (x.classList.contains("show")) {
+                x.classList.remove("show");
+            } else {
+                x.classList.add("show");
+            }
+            // Update the height variable so the sticky table header adjusts
+            setTimeout(updateNavHeight, 50);
+        }
+
+        function updateNavHeight() {
+            const topnav = document.getElementById('myTopnav');
+            if (topnav) {
+                const height = topnav.offsetHeight;
+                document.documentElement.style.setProperty('--topnav-height', `${height}px`);
+            }
+        }
+
+        window.addEventListener('resize', updateNavHeight);
+        window.addEventListener('load', updateNavHeight);
+        // Initial call
+        updateNavHeight();
+    </script>
     {% block content %}{% endblock %}
     <div class="footer">
     This website is hosted at the Max Planck Institute for Mathematics in the Sciences in Leipzig, Germany. <a href="https://www.mis.mpg.de/imprint" target="_blank">Impressum</a>.

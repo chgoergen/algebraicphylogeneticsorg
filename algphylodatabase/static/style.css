@@ -20,6 +20,8 @@
 
 body {
     margin: 0;
+    padding-top: var(--topnav-height); /* Offset for the fixed topnav */
+    min-width: fit-content; /* Ensures the page and masks span the full width of overflowing tables */
     font-family: "Roboto", sans-serif;
     font-size: medium;
     max-width: 100%;
@@ -27,21 +29,37 @@ body {
     color: #333; /* Darker text color for readability */
 }
 
+:root {
+    --topnav-height: 2.4rem; /* Fallback for sticky calculations */
+}
+
 /* top navigation bar */
 .topnav {
     top: 0;
     left: 0;
-    position: sticky;
+    position: fixed; /* Fixed so it stays on screen horizontally and vertically */
     z-index: 100; /* stack order; avoids tex going atop navigation */
     background-color: var(--contrast-color);
-    overflow: hidden;
-    padding: 0;
     width: 100%;
     border-bottom: var(--line-thickness) solid var(--main-color);
     box-shadow: var(--box-shadow);
-  }
-  .topnav a {
-    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.topnav-brand-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topnav-links {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.topnav a {
     text-align: center;
     color: black;
     margin-top: 0.5rem;
@@ -50,17 +68,63 @@ body {
     margin-right: 1rem;
     text-decoration: none;
     transition: color 0.3s;
-  }
-  .topnav a:hover {
+    white-space: nowrap;
+}
+
+.topnav a:hover {
     color: var(--main-color);
-  }
-  .topnav a:active {
+}
+
+.topnav a:active {
     color: black;
     font-weight: bold;
-  }
-  .topnav a.split {
-    float: right;
-  }
+}
+
+.topnav a.push-right {
+    margin-left: auto;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+/* Mobile responsive navigation */
+@media screen and (max-width: 768px) {
+    .topnav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .topnav-brand-container {
+        width: 100%;
+    }
+    
+    .topnav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background-color: var(--contrast-color);
+        padding-bottom: 0.5rem;
+    }
+    
+    .topnav-links.show {
+        display: flex;
+    }
+    
+    .topnav a.icon {
+        display: block;
+        margin-left: auto;
+    }
+    
+    .topnav a {
+        margin: 0.5rem 1rem;
+    }
+    
+    .topnav a.push-right {
+        margin-left: 1rem; /* Reset auto margin on mobile */
+    }
+}
 
 /* headers */
 .topheader {
@@ -161,6 +225,15 @@ td > div {
     height: 100%; /* Make the div fill the cell height */
 }
 
+.sticky-table-gap {
+    position: sticky;
+    top: calc(var(--topnav-height) - 0.4rem); /* Tucks safely behind the topnav to prevent text from showing */
+    height: 1.5rem; /* Creates the visual gap */
+    margin-bottom: -1.5rem; /* Removes the extra space natively so it looks like before */
+    background-color: #fafafa; /* Matches page background */
+    z-index: 10;
+}
+
 th {
     background-color: var(--shade-contrast-color);
     color: var(--main-color);
@@ -168,6 +241,9 @@ th {
     margin-left: 1rem;
     text-align: center;
     font-weight: 600;
+    position: sticky;
+    top: calc(var(--topnav-height) + 1.1rem); /* Distance from fixed topnav */
+    z-index: 10; 
 }
 
 tr.tree-separator td {

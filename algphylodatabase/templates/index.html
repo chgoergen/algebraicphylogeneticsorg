@@ -10,6 +10,8 @@
 
 <p style="text-align:left;">This is database version 0.2 of November 06, 2025.</p>
 
+<div class="sticky-table-gap"></div>
+
 <table>
     <thead>
         <tr>
@@ -95,6 +97,17 @@
 </div>
 
 <script>
+    function updateGapWidth() {
+        const table = document.querySelector('.main table');
+        const gap = document.querySelector('.sticky-table-gap');
+        if (table && gap) {
+            gap.style.width = table.offsetWidth + 'px';
+        }
+    }
+    window.addEventListener('resize', updateGapWidth);
+    window.addEventListener('load', updateGapWidth);
+    setTimeout(updateGapWidth, 100);
+
     document.addEventListener('click', function(event) {
         // Find all dropdowns that are currently open
         const openDropdowns = document.querySelectorAll('details.dl-dropdown[open]');
