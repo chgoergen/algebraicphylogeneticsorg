@@ -83,8 +83,8 @@
             {% if data.treename %}
             <div class="module span-3">
                 <div id="title">Summary</div>
-                <div id="content" style="display: flex; flex-direction: column; gap: 8px; line-height: 1.1; width: fit-content;">
-    
+                <div id="content" style="display: flex; flex-direction: column; gap: 8px; line-height: 1.1;">
+                    <div style="min-width: max-content; display: flex; flex-direction: column; gap: 8px;">
                     <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
                         <span style="opacity: 0.9;">Dimension
                             <!-- <a href="/notation#invariants" style="color: inherit; text-decoration: underline;">Dimension</a> -->
@@ -127,6 +127,7 @@
                         <strong style="color: var(--main-color); text-align: right;">{{ data.EDdeg }}</strong>
                     </div>
 
+                    </div>
                 </div>
             </div>
             {% endif %}

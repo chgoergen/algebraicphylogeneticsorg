@@ -310,6 +310,7 @@ tr:hover td:not(.no-hover) {
     box-shadow: var(--box-shadow); /* Soft shadow for card effect */
     overflow: hidden;
     transition: transform 0.3s; /* Smooth hover animation */
+    min-width: 0; /* Allows the grid item to shrink and trigger inner scrollbars */
 }
 
 .span-1 {
