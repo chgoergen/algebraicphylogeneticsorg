@@ -8,44 +8,46 @@
 
 <div class="main">
 
-<p style="text-align:left;">This is database version 0.3 of April 30, 2026.</p>
+    <p style="text-align:left;">This is database version 0.3 of April 30, 2026.</p>
 
-<div class="sticky-table-gap"></div>
+    <div class="sticky-table-gap"></div>
 
-<table>
-    <thead>
-        <tr>
-            <th style="border-top-left-radius:var(--rounded-corners);
+    <table>
+        <thead>
+            <tr>
+                <th style="border-top-left-radius:var(--rounded-corners);
                 width: 12rem; text-align:center;">
-                Phylogenetic graph</th>
-            <th style="width:10rem;">Evolutionary model</th>
-            <th>Dimension</th>
-            <th>Degree</th>
-            <th style="width:5rem;">no. of <br> probability <br> coordinates</th>
-            <th style="width:5rem;">no. of <br> Fourier <br> coordinates</th>
-            <th style="width:5rem;">Dimension<br> Singular <br> Locus</th>
-            <th>Degree<br> Singular <br> Locus</th>
-            <th>ML degree</th>
-            <th>ED degree</th>
-            <th style="width:9rem; border-top-right-radius:var(--rounded-corners);">Data</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for tikzpicture in treesastex %}
+                    Phylogenetic graph</th>
+                <th style="width:10rem;">Evolutionary model</th>
+                <th>Dimension</th>
+                <th>Degree</th>
+                <th style="width:5rem;">no. of <br> probability <br> coordinates</th>
+                <th style="width:5rem;">no. of <br> Fourier <br> coordinates</th>
+                <th style="width:5rem;">Dimension<br> Singular <br> Locus</th>
+                <th>Degree<br> Singular <br> Locus</th>
+                <th>ML degree</th>
+                <th>ED degree</th>
+                <th style="width:9rem; border-top-right-radius:var(--rounded-corners);">Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tikzpicture in treesastex %}
             {% for treeandmodel in treesandmodels[tikzpicture.id] %}
-            <tr {% if loop.first %}class="tree-separator"{% endif %}>
-                
+            <tr {% if loop.first %}class="tree-separator" {% endif %}>
+
                 {% if loop.first %}
-                <td class="no-hover" rowspan="{{ nrrows[tikzpicture.id] }}" style="align-items: center; justify-content: center; text-align:center; padding:0;"> 
+                <td class="no-hover" rowspan="{{ nrrows[tikzpicture.id] }}"
+                    style="align-items: center; justify-content: center; text-align:center; padding:0;">
                     <div style="display: flex; justify-content: center; align-items: center; pointer-events: none;">
-                        <img src="../static/tex/image_{{ tikzpicture.id }}.svg" alt="{{ tikzpicture.idx }}" style="height:10rem;max-width: 100%;"> 
+                        <img src="../static/tex/image_{{ tikzpicture.id }}.svg" alt="{{ tikzpicture.idx }}"
+                            style="height:10rem;max-width: 100%;">
                     </div>
-                </td>            
+                </td>
                 {% endif %}
 
                 <td style="text-align: left;">
                     <a href="{{ url_for('subpage', treeandmodel_id=treeandmodel.id) }}">
-                    {{ treeandmodel.modelname }}</a>
+                        {{ treeandmodel.modelname }}</a>
                 </td>
                 <td>{{ treeandmodel.dim }}</td>
                 <td>{{ treeandmodel.deg }}</td>
@@ -55,33 +57,24 @@
                 <td>{{ treeandmodel.sd }}</td>
                 <td>{{ treeandmodel.MLdeg }}</td>
                 <td>{{ treeandmodel.EDdeg }}</td>
-                
+
                 <td style="vertical-align: middle; text-align: center; padding: 0.5rem;">
-                    
+
                     <details class="dl-dropdown">
                         <summary>Download</summary>
                         <div class="dl-menu">
-                            
-                            {% set yaml_file = treeandmodel.id ~ ".yaml" %}
-                            {% if check_file_exists(yaml_file) %}
+
                             <a href="../static/data/{{treeandmodel.id}}.yaml" download>
                                 LaTeX (.yaml)
                             </a>
-                            {% endif %}
-                            
-                            {% set phylo_file = "SmallPhylogeneticModels/SmallPhylogeneticModel_" ~ treeandmodel.id ~ ".mrdi" %}
-                            {% set phylo_file_zip = "SmallPhylogeneticModels/SmallPhylogeneticModel_" ~ treeandmodel.id ~ ".mrdi.zip" %}
-                            {% if check_file_exists(phylo_file) %}
-                            <a href="../static/data/SmallPhylogeneticModels/SmallPhylogeneticModel_{{treeandmodel.id}}.mrdi" download>
+
+                            <a href="../static/data/SmallPhylogeneticModels/SmallPhylogeneticModel_{{treeandmodel.id}}.mrdi"
+                                download>
                                 OSCAR: SmallPhylogeneticModel (.mrdi)
                             </a>
-                            {% elif check_file_exists(phylo_file_zip) %}
-                                <a href="../static/data/SmallPhylogeneticModels/SmallPhylogeneticModel_{{treeandmodel.id}}.mrdi.zip" download>
-                                    OSCAR: SmallPhylogeneticModel (.mrdi.zip)
-                                </a>
-                            {% endif %}
-                            
-                            <a href="../static/data/SmallGroupBasedModels/SmallGroupBasedModel_{{treeandmodel.id}}.mrdi" download>
+
+                            <a href="../static/data/SmallGroupBasedModels/SmallGroupBasedModel_{{treeandmodel.id}}.mrdi"
+                                download>
                                 OSCAR: SmallGroupBasedModel (.mrdi)
                             </a>
 
@@ -91,9 +84,9 @@
                 </td>
             </tr>
             {% endfor %}
-        {% endfor %}
-    </tbody>
-</table>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
 <script>
@@ -108,10 +101,10 @@
     window.addEventListener('load', updateGapWidth);
     setTimeout(updateGapWidth, 100);
 
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
         // Find all dropdowns that are currently open
         const openDropdowns = document.querySelectorAll('details.dl-dropdown[open]');
-        
+
         openDropdowns.forEach(dropdown => {
             // Condition 1: The user clicked somewhere entirely outside this dropdown
             if (!dropdown.contains(event.target)) {
