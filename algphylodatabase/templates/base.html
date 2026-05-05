@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}algebraicphylogenetics.org{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-    <script type="text/x-mathjax-config">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}algebraicphylogenetics.org{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
         extensions: ['tex2jax.js'],
         jax: ['input/TeX','output/HTML-CSS'],
@@ -25,79 +26,87 @@
         'HTML-CSS': { scale: 90, availableFonts: [] },
       });
     </script>
-  
-    <script type="text/javascript" async src="../static/texdisplay//MathJax-2.7.7/MathJax.js"></script>
 
-    <script src="../static/texdisplay/js-yaml.min.js"></script>
+  <script type="text/javascript" async src="../static/texdisplay//MathJax-2.7.7/MathJax.js"></script>
 
-    <!-- the two lines below would call tikzjax remotely (works fine)-->
-    <!-- 
+  <script src="../static/texdisplay/js-yaml.min.js"></script>
+
+  <!-- the two lines below would call tikzjax remotely (works fine)-->
+  <!-- 
     <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
     <script src="https://tikzjax.com/v1/tikzjax.js"></script>
     -->
 
-    <!-- the two lines below try to call tikzjax locally (doesn't work) -->
-    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='texdisplay/tikzjax-master_29112024/fonts.css') }}">
+  <!-- the two lines below try to call tikzjax locally (doesn't work) -->
+  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='texdisplay/tikzjax-master_29112024/fonts.css') }}">
     <script src="../static/texdisplay/tikzjax-master_29112024/src/TikZJax.js"></script> 
     -->
 
 
 </head>
+
 <body>
-    <div id="global-toast">Copied to clipboard!</div>
-    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
-      <symbol id="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-      </symbol>
-    </svg>
-    <div class="topnav" id="myTopnav">
-        <div class="topnav-brand-container">
-            <a href="/" style="color:var(--green-color); font-weight:bold;">Database v0.3</a>
-            <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </a>
-        </div>
-        <div class="topnav-links" id="myLinks">
-            <a href="/notation">Notions and notation</a>
-            <a href="/about">About this project</a>               
-            <a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics/phylogenetics" class="split push-right" target="_blank">AlgebraicPhylogenetics.jl documentation in <img style="height:1rem; vertical-align: middle;" src="https://docs.oscar-system.org/stable/assets/logo.svg"></a>
-            <a href="https://www.coloradocollege.edu/aapps/ldg/small-trees/small-trees_0.html" class="split"  target="_blank">Small Phylogenetic Trees (2007)</a>
-        </div>
+  <div id="global-toast">Copied to clipboard!</div>
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+    </symbol>
+  </svg>
+  <div class="topnav" id="myTopnav">
+    <div class="topnav-brand-container">
+      <a href="/" style="color:var(--green-color); font-weight:bold;">Database v0.3</a>
+      <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" style="width: 24px; height: 24px;">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </a>
     </div>
-
-    <script>
-        function toggleNav() {
-            var x = document.getElementById("myLinks");
-            if (x.classList.contains("show")) {
-                x.classList.remove("show");
-            } else {
-                x.classList.add("show");
-            }
-            // Update the height variable so the sticky table header adjusts
-            setTimeout(updateNavHeight, 50);
-        }
-
-        function updateNavHeight() {
-            const topnav = document.getElementById('myTopnav');
-            if (topnav) {
-                const height = topnav.offsetHeight;
-                document.documentElement.style.setProperty('--topnav-height', `${height}px`);
-            }
-        }
-
-        window.addEventListener('resize', updateNavHeight);
-        window.addEventListener('load', updateNavHeight);
-        // Initial call
-        updateNavHeight();
-    </script>
-    {% block content %}{% endblock %}
-    <div class="footer">
-    This website is hosted at the Max Planck Institute for Mathematics in the Sciences in Leipzig, Germany. <a href="https://www.mis.mpg.de/imprint" target="_blank">Impressum</a>.
+    <div class="topnav-links" id="myLinks">
+      <a href="/notation">Notions and notation</a>
+      <a href="/about">About this project</a>
+      <a href="https://docs.oscar-system.org/dev/Experimental/AlgebraicStatistics/phylogenetics"
+        class="split push-right" target="_blank">AlgebraicPhylogenetics.jl documentation in <img
+          style="height:1rem; vertical-align: middle;" src="https://docs.oscar-system.org/stable/assets/logo.svg"></a>
+      <a href="https://www.coloradocollege.edu/aapps/ldg/small-trees/small-trees_0.html" class="split"
+        target="_blank">Small Phylogenetic Trees (2007)</a>
     </div>
+  </div>
+
+  <script>
+    function toggleNav() {
+      var x = document.getElementById("myLinks");
+      if (x.classList.contains("show")) {
+        x.classList.remove("show");
+      } else {
+        x.classList.add("show");
+      }
+      // Update the height variable so the sticky table header adjusts
+      setTimeout(updateNavHeight, 50);
+    }
+
+    function updateNavHeight() {
+      const topnav = document.getElementById('myTopnav');
+      if (topnav) {
+        const height = topnav.offsetHeight;
+        document.documentElement.style.setProperty('--topnav-height', `${height}px`);
+      }
+    }
+
+    window.addEventListener('resize', updateNavHeight);
+    window.addEventListener('load', updateNavHeight);
+    // Initial call
+    updateNavHeight();
+  </script>
+  {% block content %}{% endblock %}
+  <div class="footer">
+    This website is hosted at the Max Planck Institute for Mathematics in the Sciences in Leipzig, Germany. <a
+      href="https://www.mis.mpg.de/imprint" target="_blank">Impressum</a>.
+  </div>
 </body>
+
 </html>

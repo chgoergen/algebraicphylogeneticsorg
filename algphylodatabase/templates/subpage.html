@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="topheader" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+<div class="topheader"
+    style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
     <div>Details: {{ data.treename }} tree with {{data.modelname}} model</div>
     <div style="font-size: 0.75em; font-weight: normal; margin-top: 4px; opacity: 0.8;">
         ({{ treeandmodel_id }})
@@ -9,49 +10,55 @@
 
 <div class="main">
 
-    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(0,0,0,0.05);">
-        
+    <div
+        style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(0,0,0,0.05);">
+
         <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 12px;">
             <strong style="color: var(--main-color); margin-right: 8px;">Download data:</strong>
 
-            <a href="{{ url_for('static', filename='data/' ~ treeandmodel_id ~ '.yaml') }}" 
-            download="Phylogenetic_Data_{{ treeandmodel_id }}.yaml" 
-            style="text-decoration: none;">
-                <button style="background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 6px 12px; font-size: 0.9em;">
+            <a href="{{ url_for('static', filename='data/' ~ treeandmodel_id ~ '.yaml') }}"
+                download="Phylogenetic_Data_{{ treeandmodel_id }}.yaml" style="text-decoration: none;">
+                <button
+                    style="background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 6px 12px; font-size: 0.9em;">
                     LaTeX data (.yaml)
                 </button>
             </a>
-            
-            <a href="{{ url_for('static', filename='data/SmallPhylogeneticModels/SmallPhylogeneticModel_' ~ treeandmodel_id ~ '.mrdi') }}" 
-            download="SmallPhylogeneticModel_{{ treeandmodel_id }}.mrdi" 
-            style="text-decoration: none;">
-                <button style="background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 6px 12px; font-size: 0.9em;">
+
+            <a href="{{ url_for('static', filename='data/SmallPhylogeneticModels/SmallPhylogeneticModel_' ~ treeandmodel_id ~ '.mrdi') }}"
+                download="SmallPhylogeneticModel_{{ treeandmodel_id }}.mrdi" style="text-decoration: none;">
+                <button
+                    style="background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 6px 12px; font-size: 0.9em;">
                     OSCAR: SmallPhylogeneticModel (.mrdi)
                 </button>
             </a>
 
-            <a href="{{ url_for('static', filename='data/SmallGroupBasedModels/SmallGroupBasedModel_' ~ treeandmodel_id ~ '.mrdi') }}" 
-            download="SmallGroupBasedModel_{{ treeandmodel_id }}.mrdi" 
-            style="text-decoration: none;">
-                <button style="background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 6px 12px; font-size: 0.9em;">
+            <a href="{{ url_for('static', filename='data/SmallGroupBasedModels/SmallGroupBasedModel_' ~ treeandmodel_id ~ '.mrdi') }}"
+                download="SmallGroupBasedModel_{{ treeandmodel_id }}.mrdi" style="text-decoration: none;">
+                <button
+                    style="background-color:var(--shade-main-color); color:var(--main-color); border: 1px solid var(--main-color); border-radius: 4px; cursor: pointer; padding: 6px 12px; font-size: 0.9em;">
                     OSCAR: SmallGroupBasedModel (.mrdi)
                 </button>
             </a>
         </div>
 
         <div style="font-size: 0.85em; font-style: italic; color: var(--main-color); opacity: 0.8;">
-            For examples on how to load and use .mrdi files, please see our <a href="{{ url_for('notation') }}" style="color: inherit; text-decoration: underline;">notions and notations</a> page or refer to the official <a href="https://docs.oscar-system.org/stable/" target="_blank" style="color: inherit; text-decoration: underline;">OSCAR documentation</a>.
+            For examples on how to load and use .mrdi files, please see our <a href="{{ url_for('notation') }}"
+                style="color: inherit; text-decoration: underline;">notions and notations</a> page or refer to the
+            official <a href="https://docs.oscar-system.org/dev/Experimental/OscarDB/introduction/" target="_blank"
+                style="color: inherit; text-decoration: underline;">OSCAR documentation</a>.
         </div>
 
     </div>
-    
+
     <section style="margin-bottom: 40px;">
         <div class="grid-container">
             {% if picture %}
             <div class="module span-3">
                 <div id="title">Tree {{ tree_id }}
                     <button class="copyBtn" data-file="../static/tex/tex_{{ tree_id }}.yaml" data-key="imagelabelled">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;">
+                            <use href="#icon-copy"></use>
+                        </svg>
                     </button>
                 </div>
                 <div id="picture">
@@ -64,18 +71,21 @@
             <div class="module span-1">
                 <div id="title">
                     Evolutionary model
-                    <button id="copy-evolutionary-model"
-                        data-modelname="{{ data.modelname }}"
+                    <button id="copy-evolutionary-model" data-modelname="{{ data.modelname }}"
                         data-root-distribution="{{ data.details.root_distributon }}"
                         data-transition-matrix="{{ data.details.transition_matrix }}"
                         data-fourier-parameters="{{ data.details.fourier_parameters }}">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg> 
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;">
+                            <use href="#icon-copy"></use>
+                        </svg>
                     </button>
                 </div>
                 <div id="content" style="overflow-x: auto;">
-                    <a href="/notation#models">{{ data.modelname }}</a> model with <a href="/notation#labelling">root distribution</a> {{ data.details.root_distributon }}. <br>
+                    <a href="/notation#models">{{ data.modelname }}</a> model with <a href="/notation#labelling">root
+                        distribution</a> {{ data.details.root_distributon }}. <br>
                     The <a href="/notation#labelling">transition matrix</a> associated with edge $i$ is of the form
-                    {{ data.details.transition_matrix }} and the <a href="/notation#labelling">Fourier parameters</a> are {{ data.details.fourier_parameters }} for all edges $i$.
+                    {{ data.details.transition_matrix }} and the <a href="/notation#labelling">Fourier parameters</a>
+                    are {{ data.details.fourier_parameters }} for all edges $i$.
                 </div>
             </div>
             {% endif %}
@@ -85,47 +95,54 @@
                 <div id="title">Summary</div>
                 <div id="content" style="display: flex; flex-direction: column; gap: 8px; line-height: 1.1;">
                     <div style="min-width: max-content; display: flex; flex-direction: column; gap: 8px;">
-                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
-                        <span style="opacity: 0.9;">Dimension
-                            <!-- <a href="/notation#invariants" style="color: inherit; text-decoration: underline;">Dimension</a> -->
-                        </span>
-                        <strong style="color: var(--main-color); text-align: right;">{{ data.dim }}</strong>
-                    </div>
+                        <div
+                            style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                            <span style="opacity: 0.9;">Dimension
+                                <!-- <a href="/notation#invariants" style="color: inherit; text-decoration: underline;">Dimension</a> -->
+                            </span>
+                            <strong style="color: var(--main-color); text-align: right;">{{ data.dim }}</strong>
+                        </div>
 
-                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
-                        <span style="opacity: 0.9;">Degree</span>
-                        <strong style="color: var(--main-color); text-align: right;">{{ data.deg }}</strong>
-                    </div>
+                        <div
+                            style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                            <span style="opacity: 0.9;">Degree</span>
+                            <strong style="color: var(--main-color); text-align: right;">{{ data.deg }}</strong>
+                        </div>
 
-                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
-                        <span style="opacity: 0.9;">Probability coordinates</span>
-                        <strong style="color: var(--main-color); text-align: right;">{{ data.np }}</strong>
-                    </div>
+                        <div
+                            style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                            <span style="opacity: 0.9;">Probability coordinates</span>
+                            <strong style="color: var(--main-color); text-align: right;">{{ data.np }}</strong>
+                        </div>
 
-                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
-                        <span style="opacity: 0.9;">Fourier coordinates</span>
-                        <strong style="color: var(--main-color); text-align: right;">{{ data.nq }}</strong>
-                    </div>
+                        <div
+                            style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                            <span style="opacity: 0.9;">Fourier coordinates</span>
+                            <strong style="color: var(--main-color); text-align: right;">{{ data.nq }}</strong>
+                        </div>
 
-                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
-                        <span style="opacity: 0.9;">Dimension of Singular locus</span>
-                        <strong style="color: var(--main-color); text-align: right;">{{ data.sd }}</strong>
-                    </div>
+                        <div
+                            style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                            <span style="opacity: 0.9;">Dimension of Singular locus</span>
+                            <strong style="color: var(--main-color); text-align: right;">{{ data.sd }}</strong>
+                        </div>
 
-                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
-                        <span style="opacity: 0.9;">Degree of Singular locus</span>
-                        <strong style="color: var(--main-color); text-align: right;">{{ data.sD }}</strong>
-                    </div>
+                        <div
+                            style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                            <span style="opacity: 0.9;">Degree of Singular locus</span>
+                            <strong style="color: var(--main-color); text-align: right;">{{ data.sD }}</strong>
+                        </div>
 
-                    <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
-                        <span style="opacity: 0.9;">ML degree</span>
-                        <strong style="color: var(--main-color); text-align: right;">{{ data.MLdeg }}</strong>
-                    </div>
+                        <div
+                            style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                            <span style="opacity: 0.9;">ML degree</span>
+                            <strong style="color: var(--main-color); text-align: right;">{{ data.MLdeg }}</strong>
+                        </div>
 
-                    <div style="display: flex; justify-content: space-between; gap: 32px;">
-                        <span style="opacity: 0.9;">ED degree</span>
-                        <strong style="color: var(--main-color); text-align: right;">{{ data.EDdeg }}</strong>
-                    </div>
+                        <div style="display: flex; justify-content: space-between; gap: 32px;">
+                            <span style="opacity: 0.9;">ED degree</span>
+                            <strong style="color: var(--main-color); text-align: right;">{{ data.EDdeg }}</strong>
+                        </div>
 
                     </div>
                 </div>
@@ -134,24 +151,32 @@
         </div>
     </section>
 
-    {% if data.details.probability_parametrization or data.details.fourier_parametrization or data.details.equivalent_classes_prob or data.details.equivalent_classes_fourier %}
+    {% if data.details.probability_parametrization or data.details.fourier_parametrization or
+    data.details.equivalent_classes_prob or data.details.equivalent_classes_fourier %}
     <section style="margin-top: 48px; margin-bottom: 40px;">
-        <h3 style="color: var(--main-color); font-size: 1.5em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(0,0,0,0.05);">Model parametrizations</h3>
+        <h3
+            style="color: var(--main-color); font-size: 1.5em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(0,0,0,0.05);">
+            Model parametrizations</h3>
         <div class="grid-container">
             {% if data.details.probability_parametrization %}
             <div class="module span-1">
                 <div id="title">Probability parametrization
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.probability_parametrization">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml"
+                        data-key="details.probability_parametrization">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;">
+                            <use href="#icon-copy"></use>
+                        </svg>
                     </button>
                 </div>
                 {% if data.details.probability_parametrization | length > 40000 %}
-                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
-                        This expression is too large to render. Here is the raw LaTeX:
-                    </div>
-                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.probability_parametrization }}</div>
+                <div
+                    style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                    This expression is too large to render. Here is the raw LaTeX:
+                </div>
+                <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.probability_parametrization }}
+                </div>
                 {% else %}
-                    <div id="content" style="overflow-x: auto;">{{ data.details.probability_parametrization | safe }}</div>
+                <div id="content" style="overflow-x: auto;">{{ data.details.probability_parametrization | safe }}</div>
                 {% endif %}
             </div>
             {% endif %}
@@ -159,17 +184,21 @@
             {% if data.details.fourier_parametrization %}
             <div class="module span-1">
                 <div id="title">Fourier parametrization
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.fourier_parametrization">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml"
+                        data-key="details.fourier_parametrization">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;">
+                            <use href="#icon-copy"></use>
+                        </svg>
                     </button>
                 </div>
                 {% if data.details.fourier_parametrization | length > 40000 %}
-                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
-                        This expression is too large to render. Here is the raw LaTeX:
-                    </div>
-                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.fourier_parametrization }}</div>
+                <div
+                    style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                    This expression is too large to render. Here is the raw LaTeX:
+                </div>
+                <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.fourier_parametrization }}</div>
                 {% else %}
-                    <div id="content" style="overflow-x: auto;">{{ data.details.fourier_parametrization }}</div>
+                <div id="content" style="overflow-x: auto;">{{ data.details.fourier_parametrization }}</div>
                 {% endif %}
             </div>
             {% endif %}
@@ -177,17 +206,21 @@
             {% if data.details.equivalent_classes_prob %}
             <div class="module span-1">
                 <div id="title">Equivalent classes of probability parametrization
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_prob">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml"
+                        data-key="details.equivalent_classes_prob">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;">
+                            <use href="#icon-copy"></use>
+                        </svg>
                     </button>
                 </div>
                 {% if data.details.equivalent_classes_prob | length > 40000 %}
-                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
-                        This expression is too large to render. Here is the raw LaTeX:
-                    </div>
-                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.equivalent_classes_prob }}</div>
+                <div
+                    style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                    This expression is too large to render. Here is the raw LaTeX:
+                </div>
+                <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.equivalent_classes_prob }}</div>
                 {% else %}
-                    <div id="content" style="overflow-x: auto;">{{ data.details.equivalent_classes_prob | safe }}</div>
+                <div id="content" style="overflow-x: auto;">{{ data.details.equivalent_classes_prob | safe }}</div>
                 {% endif %}
             </div>
             {% endif %}
@@ -195,17 +228,22 @@
             {% if data.details.equivalent_classes_fourier %}
             <div class="module span-1">
                 <div id="title">Equivalent classes of Fourier parametrization
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.equivalent_classes_fourier">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml"
+                        data-key="details.equivalent_classes_fourier">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;">
+                            <use href="#icon-copy"></use>
+                        </svg>
                     </button>
                 </div>
                 {% if data.details.equivalent_classes_fourier | length > 40000 %}
-                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
-                        This expression is too large to render. Here is the raw LaTeX:
-                    </div>
-                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.equivalent_classes_fourier }}</div>
+                <div
+                    style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                    This expression is too large to render. Here is the raw LaTeX:
+                </div>
+                <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.equivalent_classes_fourier }}
+                </div>
                 {% else %}
-                    <div id="content" style="overflow-x: auto;">{{ data.details.equivalent_classes_fourier }}</div>
+                <div id="content" style="overflow-x: auto;">{{ data.details.equivalent_classes_fourier }}</div>
                 {% endif %}
             </div>
             {% endif %}
@@ -215,22 +253,28 @@
 
     {% if data.details.invariants or data.details.grobner_basis or data.mu %}
     <section style="margin-top: 48px; margin-bottom: 40px;">
-        <h2 style="color: var(--main-color); font-size: 1.5em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(0,0,0,0.05);">Phylogenetic invariants</h2>
+        <h2
+            style="color: var(--main-color); font-size: 1.5em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(0,0,0,0.05);">
+            Phylogenetic invariants</h2>
         <div class="grid-container">
             {% if data.details.invariants %}
             <div class="module span-1">
                 <div id="title">Minimal generating set of the vanishing ideal
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.invariants">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml"
+                        data-key="details.invariants">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;">
+                            <use href="#icon-copy"></use>
+                        </svg>
                     </button>
                 </div>
                 {% if data.details.invariants | length > 40000 %}
-                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
-                        This expression is too large to render. Here is the raw LaTeX:
-                    </div>
-                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.invariants }}</div>
+                <div
+                    style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                    This expression is too large to render. Here is the raw LaTeX:
+                </div>
+                <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.invariants }}</div>
                 {% else %}
-                    <div id="content" style="overflow-x: auto;">{{ data.details.invariants }}</div>
+                <div id="content" style="overflow-x: auto;">{{ data.details.invariants }}</div>
                 {% endif %}
             </div>
             {% endif %}
@@ -238,17 +282,21 @@
             {% if data.details.grobner_basis %}
             <div class="module span-1">
                 <div id="title">Gröbner basis of the vanishing ideal
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.grobner_basis">
-                    <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml"
+                        data-key="details.grobner_basis">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;">
+                            <use href="#icon-copy"></use>
+                        </svg>
                     </button>
                 </div>
                 {% if data.details.grobner_basis | length > 40000 %}
-                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
-                        This expression is too large to render. Here is the raw LaTeX:
-                    </div>
-                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.grobner_basis }}</div>
+                <div
+                    style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                    This expression is too large to render. Here is the raw LaTeX:
+                </div>
+                <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.grobner_basis }}</div>
                 {% else %}
-                    <div id="content" style="overflow-x: auto;">{{ data.details.grobner_basis }}</div>
+                <div id="content" style="overflow-x: auto;">{{ data.details.grobner_basis }}</div>
                 {% endif %}
             </div>
             {% endif %}
@@ -256,29 +304,34 @@
             {% if data.mu %}
             <div class="module span-2">
                 <div id="title">Additional information</div>
-                    <div id="content" style="display: flex; flex-direction: column; gap: 12px; line-height: 1.4; width: fit-content;">
-        
-                        <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
-                            <span style="opacity: 0.9;">Cardinality of the smallest set of generators for the ideal</span>
-                            <strong style="color: var(--main-color); text-align: right;">{{ data.mu }}</strong>
-                        </div>
+                <div id="content"
+                    style="display: flex; flex-direction: column; gap: 12px; line-height: 1.4; width: fit-content;">
 
-                        <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
-                            <span style="opacity: 0.9;">Cardinality of the degree reverse lexicographic reduced Gröbner basis</span>
-                            <strong style="color: var(--main-color); text-align: right;">{{ data.M }}</strong>
-                        </div>
-
-                        <div style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
-                            <span style="opacity: 0.9;">Largest degree in a minimal generating set for the ideal</span>
-                            <strong style="color: var(--main-color); text-align: right;">{{ data.e }}</strong>
-                        </div>
-
-                        <div style="display: flex; justify-content: space-between; gap: 32px;">
-                            <span style="opacity: 0.9;">Largest degree of a generator in the reduced Gröbner basis</span>
-                            <strong style="color: var(--main-color); text-align: right;">{{ data.E }}</strong>
-                        </div>
-
+                    <div
+                        style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                        <span style="opacity: 0.9;">Cardinality of the smallest set of generators for the ideal</span>
+                        <strong style="color: var(--main-color); text-align: right;">{{ data.mu }}</strong>
                     </div>
+
+                    <div
+                        style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                        <span style="opacity: 0.9;">Cardinality of the degree reverse lexicographic reduced Gröbner
+                            basis</span>
+                        <strong style="color: var(--main-color); text-align: right;">{{ data.M }}</strong>
+                    </div>
+
+                    <div
+                        style="display: flex; justify-content: space-between; gap: 32px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 4px;">
+                        <span style="opacity: 0.9;">Largest degree in a minimal generating set for the ideal</span>
+                        <strong style="color: var(--main-color); text-align: right;">{{ data.e }}</strong>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; gap: 32px;">
+                        <span style="opacity: 0.9;">Largest degree of a generator in the reduced Gröbner basis</span>
+                        <strong style="color: var(--main-color); text-align: right;">{{ data.E }}</strong>
+                    </div>
+
+                </div>
             </div>
             {% endif %}
         </div>
@@ -287,22 +340,28 @@
 
     {% if data.details.coordinate_change or data.details.inverse_coordinate_change %}
     <section style="margin-top: 48px; margin-bottom: 40px;">
-        <h2 style="color: var(--main-color); font-size: 1.5em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(0,0,0,0.05);"> Linear coordinate transformations </h2>
+        <h2
+            style="color: var(--main-color); font-size: 1.5em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid rgba(0,0,0,0.05);">
+            Linear coordinate transformations </h2>
         <div class="grid-container">
             {% if data.details.coordinate_change %}
             <div class="module span-1">
                 <div id="title">Probability $\to$ Fourier
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.probability_parametrization">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml"
+                        data-key="details.probability_parametrization">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;">
+                            <use href="#icon-copy"></use>
+                        </svg>
                     </button>
                 </div>
                 {% if data.details.coordinate_change | length > 40000 %}
-                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
-                        This expression is too large to render. Here is the raw LaTeX:
-                    </div>
-                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.coordinate_change}}</div>
+                <div
+                    style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                    This expression is too large to render. Here is the raw LaTeX:
+                </div>
+                <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.coordinate_change}}</div>
                 {% else %}
-                    <div id="content" style="overflow-x: auto;">{{ data.details.coordinate_change | safe}}</div>
+                <div id="content" style="overflow-x: auto;">{{ data.details.coordinate_change | safe}}</div>
                 {% endif %}
             </div>
             {% endif %}
@@ -310,17 +369,22 @@
             {% if data.details.inverse_coordinate_change %}
             <div class="module span-1">
                 <div id="title">Fourier $\to$ Probability
-                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml" data-key="details.inverse_coordinate_change">
-                        <svg style="width: 14px; height: 14px; vertical-align: middle;"><use href="#icon-copy"></use></svg>
+                    <button class="copyBtn" data-file="../static/data/{{ treeandmodel_id }}.yaml"
+                        data-key="details.inverse_coordinate_change">
+                        <svg style="width: 14px; height: 14px; vertical-align: middle;">
+                            <use href="#icon-copy"></use>
+                        </svg>
                     </button>
                 </div>
                 {% if data.details.inverse_coordinate_change | length > 40000 %}
-                    <div style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
-                        This expression is too large to render. Here is the raw LaTeX:
-                    </div>
-                    <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.inverse_coordinate_change }}</div>
+                <div
+                    style="font-size: 0.85em; font-style: italic; margin-bottom: 6px; margin-top: 4px; color: var(--main-color);">
+                    This expression is too large to render. Here is the raw LaTeX:
+                </div>
+                <div id="content" class="tex2jax_ignore long-data-box">{{ data.details.inverse_coordinate_change }}
+                </div>
                 {% else %}
-                    <div id="content" style="overflow-x: auto;">{{ data.details.inverse_coordinate_change }}</div>
+                <div id="content" style="overflow-x: auto;">{{ data.details.inverse_coordinate_change }}</div>
                 {% endif %}
             </div>
             {% endif %}
@@ -339,11 +403,11 @@
             console.error("Global toast element not found. Ensure <div id='global-toast'> is in base.html.");
             return;
         }
-        
-        if (message) toast.textContent = message; 
+
+        if (message) toast.textContent = message;
 
         toast.classList.add('show');
-        
+
         clearTimeout(toastTimeout);
         toastTimeout = setTimeout(() => {
             toast.classList.remove('show');
@@ -358,7 +422,7 @@
     // Evolutionary Model Button Logic
     const evolutionaryModelButton = document.getElementById('copy-evolutionary-model');
     if (evolutionaryModelButton) {
-        evolutionaryModelButton.addEventListener('click', async function() {
+        evolutionaryModelButton.addEventListener('click', async function () {
             try {
                 const modelName = this.getAttribute('data-modelname');
                 const rootDistribution = this.getAttribute('data-root-distribution');
@@ -381,9 +445,9 @@ and the Fourier parameters are ${fourierParameters} for all edges $i$.`;
 
     // Generic YAML Button Logic with DOM Fallback
     document.querySelectorAll('.copyBtn').forEach(button => {
-        button.addEventListener('click', async function() {
-            const filePath = this.getAttribute('data-file'); 
-            const keyPath = this.getAttribute('data-key');   
+        button.addEventListener('click', async function () {
+            const filePath = this.getAttribute('data-file');
+            const keyPath = this.getAttribute('data-key');
 
             try {
                 const response = await fetch(filePath);
@@ -400,17 +464,17 @@ and the Fourier parameters are ${fourierParameters} for all edges $i$.`;
                     : String(value);
 
                 await navigator.clipboard.writeText(copyText);
-                showToast(`Copied to clipboard!`); 
+                showToast(`Copied to clipboard!`);
             } catch (error) {
                 console.warn("YAML fetch/parse failed. Attempting DOM extraction fallback.", error);
-                
+
                 // Fallback: extract text directly from the adjacent content div
                 const moduleContainer = this.closest('.module');
                 if (moduleContainer) {
                     const contentDiv = moduleContainer.querySelector('#content');
                     if (contentDiv) {
                         const copyText = contentDiv.textContent || contentDiv.innerText;
-                        
+
                         try {
                             await navigator.clipboard.writeText(copyText.trim());
                             showToast(`Copied ${keyPath} (from page)!`);
