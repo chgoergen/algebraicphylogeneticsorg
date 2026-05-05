@@ -2,7 +2,7 @@
 /* CSS STYLE FOR ALL OUR HTML DOCUMENTS */
 /* ------------------------------------ */
 
-/* background, overall settings */ 
+/* background, overall settings */
 :root {
     /* outdated: forest greens #2E792D and #bed3ab
                  gray green #F1F5ED and gray #f2f2f2
@@ -11,34 +11,42 @@
     --main-color: #4b2c4d;
     --shade-main-color: #e7e3e8;
     --contrast-color: #DB9210;
-    --shade-contrast-color:#e8a109;
+    --shade-contrast-color: #e8a109;
     --rounded-corners: 0.5rem;
     --line-thickness: 0.2rem;
-    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
 
 }
 
 body {
     margin: 0;
-    padding-top: var(--topnav-height); /* Offset for the fixed topnav */
-    min-width: fit-content; /* Ensures the page and masks span the full width of overflowing tables */
+    padding-top: var(--topnav-height);
+    /* Offset for the fixed topnav */
+    min-width: fit-content;
+    /* Ensures the page and masks span the full width of overflowing tables */
     font-family: "Roboto", sans-serif;
     font-size: medium;
     max-width: 100%;
-    background-color: #fafafa; /* Light background */
-    color: #333; /* Darker text color for readability */
+    background-color: #fafafa;
+    /* Light background */
+    color: #333;
+    /* Darker text color for readability */
 }
 
 :root {
-    --topnav-height: 2.4rem; /* Fallback for sticky calculations */
+    --topnav-height: 2.4rem;
+    /* Fallback for sticky calculations */
 }
 
 /* top navigation bar */
 .topnav {
     top: 0;
     left: 0;
-    position: fixed; /* Fixed so it stays on screen horizontally and vertically */
-    z-index: 100; /* stack order; avoids tex going atop navigation */
+    position: fixed;
+    /* Fixed so it stays on screen horizontally and vertically */
+    z-index: 100;
+    /* stack order; avoids tex going atop navigation */
     background-color: var(--contrast-color);
     width: 100%;
     border-bottom: var(--line-thickness) solid var(--main-color);
@@ -94,11 +102,11 @@ body {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .topnav-brand-container {
         width: 100%;
     }
-    
+
     .topnav-links {
         display: none;
         flex-direction: column;
@@ -107,22 +115,23 @@ body {
         background-color: var(--contrast-color);
         padding-bottom: 0.5rem;
     }
-    
+
     .topnav-links.show {
         display: flex;
     }
-    
+
     .topnav a.icon {
         display: block;
         margin-left: auto;
     }
-    
+
     .topnav a {
         margin: 0.5rem 1rem;
     }
-    
+
     .topnav a.push-right {
-        margin-left: 1rem; /* Reset auto margin on mobile */
+        margin-left: 1rem;
+        /* Reset auto margin on mobile */
     }
 }
 
@@ -132,7 +141,7 @@ body {
     margin: 0;
     width: 100%;
     border-collapse: collapse;
-    
+
     min-height: 10rem;
     height: auto;
     padding: 2rem 0;
@@ -145,11 +154,13 @@ body {
     font-weight: 600;
     text-shadow: -0.2rem 0 white, 0 0.2rem white, 0.2rem 0 white, 0 -0.2rem white;
     /* background-color: var(--shade-main-color); */
-    background: url('241129_Header-grau-weiss-TE.png'); background-size: cover;
+    background: url('241129_Header-grau-weiss-TE.png');
+    background-size: cover;
     text-align: center;
     align-content: center;
     overflow-x: hidden;
 }
+
 /* landing page header */
 .topheader div#emph {
     margin: 0;
@@ -179,10 +190,11 @@ body {
     border-top: var(--line-thickness) solid var(--main-color);
     overflow-x: hidden;
 }
-    .footer a {
-        text-decoration: none;
-        color: var(--main-color);
-    }
+
+.footer a {
+    text-decoration: none;
+    color: var(--main-color);
+}
 
 /* main body of the website */
 .main {
@@ -190,18 +202,23 @@ body {
     padding: 0;
     margin: 0;
     text-align: center;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: auto;
 }
 
 /* clickable text */
 .main a {
     color: var(--main-color);
-    text-decoration: none;
-    transition: color 0.3s;
+    text-decoration: underline;
+    text-decoration-color: var(--contrast-color);
+    text-decoration-thickness: 1.2px;
+    text-underline-offset: 2px;
+    transition: color 0.3s, text-decoration-color 0.3s;
 }
+
 .main a:hover {
     color: var(--contrast-color);
+    text-decoration-color: var(--main-color);
 }
 
 /* main table */
@@ -211,26 +228,33 @@ table {
     table-layout: fixed;
 }
 
-th, td {
+th,
+td {
     font-weight: normal;
     padding: 0.5rem;
     border: none;
     width: 4rem;
-    overflow: hidden; 
+    overflow: hidden;
 }
-td > div {
+
+td>div {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; /* Make the div fill the cell height */
+    height: 100%;
+    /* Make the div fill the cell height */
 }
 
 .sticky-table-gap {
     position: sticky;
-    top: calc(var(--topnav-height) - 0.4rem); /* Tucks safely behind the topnav to prevent text from showing */
-    height: 1.5rem; /* Creates the visual gap */
-    margin-bottom: -1.5rem; /* Removes the extra space natively so it looks like before */
-    background-color: #fafafa; /* Matches page background */
+    top: calc(var(--topnav-height) - 0.4rem);
+    /* Tucks safely behind the topnav to prevent text from showing */
+    height: 1.5rem;
+    /* Creates the visual gap */
+    margin-bottom: -1.5rem;
+    /* Removes the extra space natively so it looks like before */
+    background-color: #fafafa;
+    /* Matches page background */
     z-index: 10;
 }
 
@@ -242,8 +266,9 @@ th {
     text-align: center;
     font-weight: 600;
     position: sticky;
-    top: calc(var(--topnav-height) + 1.1rem); /* Distance from fixed topnav */
-    z-index: 10; 
+    top: calc(var(--topnav-height) + 1.1rem);
+    /* Distance from fixed topnav */
+    z-index: 10;
 }
 
 tr.tree-separator td {
@@ -256,16 +281,21 @@ tr.model-separator td {
     border-top: var(--line-thickness) solid var(--grey-color);
 }
 
-tr:hover td {background:var(--grey-color);}
+tr:hover td {
+    background: var(--grey-color);
+}
+
 /*tr:hover td.first-child {background:none;} /*wasn't able to make this work...*/
 
 .no-hover {
     pointer-events: none;
-    background: transparent !important; /* Prevent background change on hover */
+    background: transparent !important;
+    /* Prevent background change on hover */
 }
 
 tr:hover td:not(.no-hover) {
-    background-color: #fdf5e5;  /* Highlight color */
+    background-color: #fdf5e5;
+    /* Highlight color */
 }
 
 /* table in notation section */
@@ -273,26 +303,29 @@ tr:hover td:not(.no-hover) {
 .invariantstable {
     text-align: left;
     width: 100%;
+    border-collapse: collapse;
 }
 
 .invariantstable tr {
-    border-top: var(--line-thickness) solid var(--main-color);
-    margin-top: var(--line-thickness);
-    margin-bottom: var(--line-thickness);
+    border-bottom: 1px solid var(--shade-main-color);
+}
+
+.invariantstable td {
+    padding: 0.5rem 0;
 }
 
 .invariantstable td:first-child {
-    width: 10%;
+    width: 17%;
+    color: var(--main-color);
 }
 
 .invariantstable td:nth-child(2) {
-    width: 90%;
+    width: 83%;
 }
 
-
-.invariantstable tr:hover td {background:none;}
-
-.invariantstable tr:nth-child(even) {background:var(--grey-color);}
+.invariantstable tr:hover td {
+    background: none;
+}
 
 /* subpage style and grid settings */
 .grid-container {
@@ -307,10 +340,13 @@ tr:hover td:not(.no-hover) {
     padding: 0rem;
     background-color: var(--grey-color);
     border-radius: var(--rounded-corners);
-    box-shadow: var(--box-shadow); /* Soft shadow for card effect */
+    box-shadow: var(--box-shadow);
+    /* Soft shadow for card effect */
     overflow: hidden;
-    transition: transform 0.3s; /* Smooth hover animation */
-    min-width: 0; /* Allows the grid item to shrink and trigger inner scrollbars */
+    transition: transform 0.3s;
+    /* Smooth hover animation */
+    min-width: 0;
+    /* Allows the grid item to shrink and trigger inner scrollbars */
 }
 
 .span-1 {
@@ -334,10 +370,11 @@ tr:hover td:not(.no-hover) {
     text-align: center;
     color: var(--main-color);
     border-bottom: var(--line-thickness) solid var(--main-color);
-    background-color: var(--shade-main-color); 
+    background-color: var(--shade-main-color);
     border-top-left-radius: var(--rounded-corners);
     border-top-right-radius: var(--rounded-corners);
-    padding: 0.75rem 2.5rem; /* Extra padding to prevent text overlapping button */
+    padding: 0.75rem 2.5rem;
+    /* Extra padding to prevent text overlapping button */
     font-weight: 600;
     min-height: 1.5rem;
 }
@@ -358,7 +395,7 @@ tr:hover td:not(.no-hover) {
     justify-content: center;
 }
 
-.module div#picture { 
+.module div#picture {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -379,7 +416,7 @@ tr:hover td:not(.no-hover) {
     max-height: 15rem;
     overflow-y: auto;
     font-size: medium;
-    line-height: 1.8; 
+    line-height: 1.8;
 }
 
 
@@ -407,32 +444,36 @@ pre code {
     font-size: 0.8rem;
     border-radius: var(--rounded-corners);
     width: fit-content;
-  }
+}
 
-  #notification {
+#notification {
     display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: var(--main-color); /* Green */
-    color: var(--shade-main-color); /* Text color */
+    background-color: var(--main-color);
+    /* Green */
+    color: var(--shade-main-color);
+    /* Text color */
     padding: 10px 15px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     font-size: 14px;
 }
-  
-  /* Responsive adjustments for smaller screens */
+
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .topheader {
         font-size: 1rem;
         padding: 1.5rem;
-        margin-bottom: 4rem; 
+        margin-bottom: 4rem;
     }
+
     .footer {
         font-size: smaller;
     }
+
     .module div#content {
         padding: 1rem;
     }
@@ -450,22 +491,25 @@ pre code {
     z-index: 1000;
     left: 50%;
     top: 20px;
-    transform: translateX(-50%); /* Strictly centers the element */
+    transform: translateX(-50%);
+    /* Strictly centers the element */
     opacity: 0;
     transition: opacity 0.3s, top 0.3s;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #global-toast.show {
     visibility: visible;
     opacity: 1;
-    top: 40px; /* Creates a slight sliding down effect when appearing */
+    top: 40px;
+    /* Creates a slight sliding down effect when appearing */
 }
 
 .long-data-box {
     max-height: 400px;
     overflow: auto;
-    white-space: pre; /* Forces horizontal scrolling instead of breaking the grid */
+    white-space: pre;
+    /* Forces horizontal scrolling instead of breaking the grid */
     font-family: monospace;
     font-size: 0.85em;
     background-color: var(--shade-main-color);
@@ -488,7 +532,8 @@ details.dl-dropdown summary {
     border-radius: 4px;
     cursor: pointer;
     padding: 4px 12px;
-    list-style: none; /* Removes the default HTML triangle */
+    list-style: none;
+    /* Removes the default HTML triangle */
     user-select: none;
     font-size: 0.9em;
     white-space: nowrap;
@@ -509,13 +554,17 @@ details.dl-dropdown summary::-webkit-details-marker {
 /* The floating menu */
 details.dl-dropdown .dl-menu {
     position: absolute;
-    top: 110%; /* Places it slightly below the button */
-    right: 0;  /* Aligns the menu to the right edge of the button */
-    background-color: #ffffff; /* Prevents table text from bleeding through */
+    top: 110%;
+    /* Places it slightly below the button */
+    right: 0;
+    /* Aligns the menu to the right edge of the button */
+    background-color: #ffffff;
+    /* Prevents table text from bleeding through */
     border: 1px solid var(--main-color);
     border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 100; /* Forces it to render on top of the table */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    /* Forces it to render on top of the table */
     display: flex;
     flex-direction: column;
     min-width: max-content;
@@ -529,7 +578,7 @@ details.dl-dropdown .dl-menu a {
     color: #333;
     font-size: 0.85em;
     text-align: left;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     transition: background-color 0.2s ease;
 }
 
