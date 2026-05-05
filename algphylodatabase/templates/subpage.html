@@ -42,7 +42,7 @@
         </div>
 
         <div style="font-size: 0.85em; font-style: italic; color: var(--main-color); opacity: 0.8;">
-            For examples on how to load and use .mrdi files, please see our <a href="{{ url_for('notation') }}"
+            For examples on how to load and use .mrdi files, please see our <a href="{{ url_for('notation') }}#oscar"
                 style="color: inherit; text-decoration: underline;">notions and notations</a> page or refer to the
             official <a href="https://docs.oscar-system.org/dev/Experimental/OscarDB/introduction/" target="_blank"
                 style="color: inherit; text-decoration: underline;">OSCAR documentation</a>.
@@ -81,10 +81,10 @@
                     </button>
                 </div>
                 <div id="content" style="overflow-x: auto;">
-                    <a href="/notation#models">{{ data.modelname }}</a> model with <a href="/notation#labelling">root
+                    <a href="/notation#models">{{ data.modelname }}</a> model with <a href="/notation#models">root
                         distribution</a> {{ data.details.root_distributon }}. <br>
-                    The <a href="/notation#labelling">transition matrix</a> associated with edge $i$ is of the form
-                    {{ data.details.transition_matrix }} and the <a href="/notation#labelling">Fourier parameters</a>
+                    The <a href="/notation#models">transition matrix</a> associated with edge $i$ is of the form
+                    {{ data.details.transition_matrix }} and the <a href="/notation#models">Fourier parameters</a>
                     are {{ data.details.fourier_parameters }} for all edges $i$.
                 </div>
             </div>

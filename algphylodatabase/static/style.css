@@ -34,6 +34,11 @@ body {
     /* Darker text color for readability */
 }
 
+/* Fix for anchor links being covered by fixed topnav */
+[id] {
+    scroll-margin-top: calc(var(--topnav-height) + 1rem);
+}
+
 :root {
     --topnav-height: 2.4rem;
     /* Fallback for sticky calculations */
