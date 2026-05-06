@@ -269,22 +269,118 @@
             style="color: var(--main-color); border-bottom: 2px solid var(--shade-main-color); padding-bottom: 0.5rem; margin-top: 2rem;">
             Phylogenetics in OSCAR</h2>
         <p>
-            This website and database of pre-computed invariants are linked to, but operate independently
-            from, the
+            All invariants stored in this database were computed using the
             <a href="https://oscar-system.org/" target="_blank">OSCAR computer algebra system</a> <a
                 href="#ref-OSCAR"></a>.
+            In addition, OSCAR can be used to <em>load</em> the downloaded <code>.mrdi</code> files directly,
+            giving access to the pre-computed algebraic objects (parametrizations, ideals, etc.)
+            in a fully interactive Julia session.
         </p>
 
-        <!-- 4.1 Loading data in Oscar -->
+        <!-- 4.1 Setting up OSCAR -->
+        <h3 id="setup" style="margin-top: 1.5rem; color: var(--main-color);">Setting up OSCAR</h3>
+        <p>
+            The algebraic phylogenetics functionality used to generate and load the data on this website
+            is currently available in a development branch of OSCAR that has not yet been merged into the
+            official release. To use it, you need to install OSCAR directly from that branch.
+        </p>
+
+        <h4 style="margin-top: 1rem; color: var(--main-color);"><span style="color: var(--contrast-color);">Option
+                A:</span> Install from the development branch</h4>
+        <p>
+            The simplest approach is to add the development version of OSCAR directly to your Julia installation.
+            Open a Julia session and run:
+        </p>
+        <div class="codebox" style="margin-bottom: 1.5rem;">
+            <pre
+                style="background-color: var(--shade-main-color); padding: 1rem; border-radius: var(--rounded-corners); overflow-x: auto;"><code>julia> using Pkg
+julia> Pkg.add(url="https://github.com/marinagarrote/Oscar.jl", rev="load_phylogenetics_data-dev")
+julia> using Oscar</code></pre>
+        </div>
+        <p style="font-size: 0.9em; color: #888; margin-top: -1.8rem;">
+            ⚠ Note: this installs the development branch into your <em>global</em> Julia environment,
+            replacing any previously installed version of OSCAR.
+            To revert to the latest official release afterwards, run
+            <code>Pkg.add("Oscar")</code> or <code>Pkg.free("Oscar")</code> in a Julia session.
+            If you prefer not to affect your global setup, use <span style="color: var(--contrast-color);">Option
+                B</span> instead.
+        </p>
+
+
+        <h4 style="margin-top: 1rem; color: var(--main-color);"><span style="color: var(--contrast-color);">Option
+                B:</span> Use an isolated Julia environment
+            (recommended)</h4>
+        <p>
+            For reproducibility and to avoid conflicts with your main Julia installation, we recommend
+            setting up an isolated environment using Julia's built-in package manager. This approach
+            pins the exact version of OSCAR needed and keeps it separate from your other projects.
+        </p>
+        <p>Create a new directory for your project and activate it:</p>
+        <div class="codebox" style="margin-bottom: 1rem;">
+            <pre
+                style="background-color: var(--shade-main-color); padding: 1rem; border-radius: var(--rounded-corners); overflow-x: auto;"><code># In your terminal, navigate to (or create) your project folder:
+$ mkdir my-phylogenetics-project && cd my-phylogenetics-project
+
+# Start Julia and activate the local environment:
+$ julia
+
+julia> using Pkg
+julia> Pkg.activate(".")           # Creates a local Project.toml
+julia> Pkg.add(url="https://github.com/marinagarrote/Oscar.jl", rev="load_phylogenetics_data-dev")
+julia> Pkg.instantiate()           # Resolves and downloads all dependencies
+julia> using Oscar</code></pre>
+        </div>
+        <p>
+            After this first setup, simply start Julia with <code>julia --project=.</code> from the same
+            directory (or run <code>Pkg.activate(".")</code> at the start of each session) to automatically
+            use the pinned version of OSCAR without reinstalling.
+        </p>
+
+        <h4 style="margin-top: 1rem; color: var(--main-color);"><span style="color: var(--contrast-color);">Option
+                C:</span> Use our Pluto notebook (quickest start)</h4>
+        <p>
+            <a href="https://plutojl.org" target="_blank">Pluto.jl</a> is a reactive Julia notebook environment
+            that manages its own package environment automatically. We provide a ready-to-use Pluto notebook
+            that sets up OSCAR and includes worked examples for loading and querying the database.
+        </p>
+        <p>
+            To get started, download the notebook, then open it in Pluto:
+        </p>
+        <div class="codebox" style="margin-bottom: 1rem;">
+            <pre
+                style="background-color: var(--shade-main-color); padding: 1rem; border-radius: var(--rounded-corners); overflow-x: auto;"><code>julia> using Pkg; Pkg.add("Pluto")
+julia> import Pluto; Pluto.run()</code></pre>
+        </div>
+        <p>
+            Then open the downloaded <code>.jl</code> file from within the Pluto browser interface.
+            Pluto will automatically install the correct version of OSCAR and all dependencies —
+            no manual environment setup required.
+        </p>
+        <p>
+            <a href="{{ url_for('static', filename='notebooks/algebraic_phylogenetics.jl') }}"
+                download="algebraic_phylogenetics.jl"
+                style="display: inline-block; margin-top: 0.5rem; text-decoration: none;">
+                <button
+                    style="background-color: var(--main-color); color: white; border: none; border-radius: 4px; cursor: pointer; padding: 8px 18px; font-size: 0.95em; font-weight: 600;">
+                    ⬇ Download Pluto notebook (.jl)
+                </button>
+            </a>
+        </p>
+
+        <!-- 4.2 Loading data in Oscar -->
         <h3 id="loading" style="margin-top: 1.5rem; color: var(--main-color);">Loading data in OSCAR</h3>
         <p>
             The data available for download on this site uses the <code>mrdi</code> file format, a
             JSON-based
             format developed for the long-term storage of algebraic data that preserves the necessary algebraic
             context <a href="#ref-MRDI"></a>.
-            If you have downloaded a <code>.mrdi</code> file from this website, you can easily load it
-            into your
-            OSCAR session using the built-in <code>load</code> function:
+            If you have downloaded a <code>.mrdi</code> file from this website, you can load it
+            into your OSCAR session using the built-in <code>load</code> function. This returns a
+            <code>SmallPhylogeneticModel</code>
+            or <code>SmallGroupBasedModel</code> object (see documentation <a
+                href="https://docs.oscar-system.org/dev/Experimental/OscarDB/introduction/" target="_blank">here</a>),
+            which provides access to all pre-computed
+            algebraic properties:
         </p>
         <div class="codebox" style="margin-bottom: 1.5rem;">
             <pre
@@ -296,7 +392,9 @@ Small group-based phylogenetic model 4-0-0-0-0-1-0-CFN
 julia> graph(model)
 Phylogenetic tree with QQFieldElem type coefficients
 
-julia> group_based_phylogenetic_model(model)
+julia> # Extract the interactive model object:
+julia> # (Use phylogenetic_model for general, non-group-based models)
+julia> PM = group_based_phylogenetic_model(model)
 Group-based phylogenetic model on a tree with 4 leaves and 5 edges 
   with root distribution [1//2, 1//2], 
     transition matrices of the form 

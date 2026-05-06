@@ -39,6 +39,21 @@ body {
     scroll-margin-top: calc(var(--topnav-height) + 1rem);
 }
 
+/* Reduce gap between text and following code blocks */
+p+div.codebox {
+    margin-top: -1.3rem;
+}
+
+/* Reduce gap after code blocks when followed by normal text (not headings) */
+div.codebox+p {
+    margin-top: -1.3rem;
+}
+
+/* Equalize space before h4 subheadings that directly follow a codebox */
+div.codebox+h4 {
+    margin-top: -0.7rem !important;
+}
+
 :root {
     --topnav-height: 2.4rem;
     /* Fallback for sticky calculations */
