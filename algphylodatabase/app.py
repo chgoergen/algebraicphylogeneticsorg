@@ -53,7 +53,7 @@ def about():
 
 @app.route('/notation')
 def notation():
-    return render_template('proposed_notation.html')
+    return render_template('notation.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
